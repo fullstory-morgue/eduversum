@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>scribus</name>
+	<seminarix>Allgemein</seminarix>
+	<homepage>http://www.scribus.net</homepage>
+	<description lang="de">Scribus ist ein Desktop-Publishing-Programm. Es dient der professionellen Erstellung von Layouts und ist vergleichbar mit Adobe PageMaker, QuarkXpress oder Adobe InDesign. Im Unterschied zu diesen proprietären Programmen ist Scribus freie Software und unter der GNU GPL lizenziert.\n\n
+
+	Scribus unterstützt eine Vielzahl von Funktionen, die für professionelle Druckvorlagen benötigt werden. Dazu zählen Farbmanagement, Farbseparation durch CMYK-Ausgabe, PDFs nach PDF/X-3 Standard, PDF-Import, Tabellen und Vektorzeichnungen. Scribus bietet dabei auch erweiterte PDF-Funktionaliäten wie Erstellung von PDF-Präsentationen und PDF-Formularen.</description>
+</eduversum>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>glame</name>
+	<seminarix>Musik</seminarix>
+	<homepage>http://glame.sourceforge.net/</homepage>
+	<desktoppath>/usr/share/gnome/apps/Multimedia/glame.desktop</desktoppath>
+	<description lang="de">LINUX-Audio-Editor, umfangreiche Bearbeitungsmöglichkeiten, Schwerpunkt Bearbeitung durch diverse Effekte, Kreation neuer Effekte durch Kombinationen sogenannter Bausteine. Ein interessantes Programm, im schulischen Bereich aber eher für Arbeitsgemeinschaften im Bereich Ton und Technik geeignet.</description>
+</eduversum>

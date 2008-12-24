@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>kpdf</name>
+	<seminarix>Allgemein</seminarix>
+	<homepage>http://kpdf.kde.org/</homepage>
+	<description lang="de">Mit Kpdf kann man Dateien im PDF-Format ansehen, die Seiten durchblättern, zoomen und ausdrucken. </description>
+</eduversum>

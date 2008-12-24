@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>celestia</name>
+	<seminarix>Physik</seminarix>
+	<homepage>http://www.shatters.net/celestia</homepage>
+	<desktoppath>/usr/share/applnk/Edutainment/Science/celestia.desktop</desktoppath>
+	<description lang="de">Anders als die meisten Software-Planetarien ist Celestia nicht erdgebunden. Es simuliert einen freien Flug durch die Galaxis mit atemberaubenden Ansichten des Sonnensystems oder zu über 100,000 anderen Sternen. Für die Nutzung von Celestia ist eine Grafikkarte mit eingerichteter 3D-Beschleunigung erforderlich.</description>
+</eduversum>

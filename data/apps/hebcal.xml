@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>hebcal</name>
+	<seminarix>Religion</seminarix>
+	<homepage>http://www.hebcal.com/</homepage>
+	<terminal>true</terminal>
+	<description lang="de">hebcal enthält einen immerwährenden jüdischen Kalender. Hebcal ist ein Programm, das die Tage im Jüdischen Kalender für ein gegebenes gregorianisches Jahr ausdruckt. Hebcal kann flexibel die Ereignisse im Jüdischen Kalender anzeigen.</description>
+</eduversum>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>tipptrainer</name>
+	<seminarix>Lernspiele</seminarix>
+	<homepage>http://tipptrainer.pingos.org/index.shtml</homepage>
+	<exec>/usr/bin/tipptrainer</exec>
+	<description lang="de">Tipptrainer dient dem Erlernen und Festigen des 10-Finger-Tippsystems. Dafür stehen dem Schüler zahlreiche Lektionen für das Tippen bestimmter Buchstabenkombinationen und Texte zur Verfügung. Es gibt dabei Kurse für Anfänger und Fortgeschrittene.</description>
+</eduversum>

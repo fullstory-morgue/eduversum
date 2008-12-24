@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>kaffeine</name>
+	<seminarix>Musik</seminarix>
+	<homepage>http://kaffeine.kde.org/</homepage>
+	<description lang="de">Kaffeine ist ein Multimediaspieler für KDE. Kaffeine selber bringt keine Routinen zum Abspielen von Audio- und Videodaten mit, sondern greift dazu auf verschiedene Backends zurück. Kaffeine integriert sich dadurch gut in KDE, ist bei der Möglichkeit, Mediendaten abspielen zu können aber auf die Fähigkeiten des verwendeten Backends angewiesen. </description>
+</eduversum>

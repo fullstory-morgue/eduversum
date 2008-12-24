@@ -1,0 +1,22 @@
+eduversum (0.1.2) unstable; urgency=low
+
+  [ Fabian Wuertz ]
+  * Button icons added
+  * Remove message added
+  * typos
+
+ -- Fabian Wuertz <xadras@sidux.com>  Tue, 23 Dec 2008 23:59:59 +0100
+
+eduversum (0.1.1) unstable; urgency=low
+
+  [ Fabian Wuertz ]
+  * Install Mode added
+
+ -- Fabian Wuertz <xadras@sidux.com>  Mon, 22 Dec 2008 23:59:59 +0100
+
+eduversum (0.1.0) unstable; urgency=low
+
+  [ Fabian Wuertz ]
+  * Initial release.
+
+ -- Fabian Wuertz <xadras@sidux.com>  Sun, 21 Dec 2008 23:59:59 +0100

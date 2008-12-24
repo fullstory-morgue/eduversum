@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>gimp</name>
+	<seminarix>Kunst</seminarix>
+	<homepage>http://www.gimp.org</homepage>
+	<description lang="de">GIMP (GNU Image Manipulation Program) ist ein Bildbearbeitungsprogramm. Der Leistungsumfang für die reine Bildbearbeitung ist vergleichbar mit der des kommerziellen Programms Adobe Photoshop. Der Schwerpunkt der Software liegt insgesamt eher bei der intensiven Bearbeitung einzelner Bilder, wofür vielfältige Effekte zur Verfügung stehen.</description>
+</eduversum>

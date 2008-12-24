@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>kdissert</name>
+	<seminarix>Allgemein</seminarix>
+	<homepage>http://freehackers.org/~tnagy/kdissert/</homepage>
+	<description lang="de">Programm aus dem KDE-Projekt, mit dessen Hilfe man Mindmaps erstellen kann. Zur Darstellung grösserer - auch gedanklicher - Zusammenhänge und Projekte sehr nützlich. Mit Hilfe eines Clicks der rechten Maustaste fügen Sie Objekte in die Mindmap ein und bearbeiten Sie die "Gedankenkarte".</description>
+</eduversum>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>childsplay</name>
+	<seminarix>Lernspiele</seminarix>
+	<homepage>http://childsplay.sourceforge.net/</homepage>
+	<description lang="de">Childsplay ist eine Sammlung von Lernspielen für Kinder, ähnlich GCompris. Childsplay enthält u.a. Mathe-, Schreibspiele und kann um andere Spiele erweitert werden.</description>
+	<icon>logo_cp_48x48.xpm</icon>
+</eduversum>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>openoffice.org-draw</name>
+	<seminarix>Kunst</seminarix>
+	<homepage>http://de.openoffice.org/</homepage>
+	<desktoppath>/usr/share/applications/ooo-draw.desktop</desktoppath>
+	<description lang="de">Draw erstellt alle Zeichnungen, vom einfachen Diagramm bis zu dynamischen 3-D-Illustrationen mit Spezialeffekten.</description>
+	<icon>ooo-draw</icon>
+</eduversum>

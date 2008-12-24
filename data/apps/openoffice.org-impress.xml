@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>openoffice.org-impress</name>
+	<seminarix>Allgemein</seminarix>
+	<homepage>http://de.openoffice.org/</homepage>
+	<desktoppath>/usr/share/applications/ooo-impress.desktop</desktoppath>
+	<description lang="de">Impress ist der schnellste und einfachste Weg, um effektive Multimedia-Pr&auml;sentationen zu erstellen. Eindrucksvolle Animationen und Aufsehen erregende Spezialeffekte unterstützen Sie dabei, Ihre Zuh&ouml;rer zu &uuml;berzeugen.</description>
+	<icon>ooo-impress</icon>
+</eduversum>

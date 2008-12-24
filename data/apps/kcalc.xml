@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>kcalc</name>
+	<seminarix>Mathematik</seminarix>
+	<homepage>http://docs.kde.org/stable/de/kdeutils/kcalc/index.html</homepage>
+	<description lang="de">KCalc ist eine Software für einen wisssenschaflichen Taschenrechner auf dem Computer-Desktop. KCalc verfügt über allgemein übliche Taschenrechnerfunktionen (auch Statistikfunktionen). Das Programm ermöglicht, Dezimal-, Hexadezimal-, Oktal- und Binärzahlen einfach ineinander umzuwandeln. KCalc bringt zahlreiche mathematische und Naturkonstanten mit und bietet das Selbstdefinieren von weiteren Konstanten an. Berechnungen können in andere Applikationen kopiert werden. </description>
+</eduversum>

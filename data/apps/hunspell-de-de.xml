@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>hunspell-de-de</name>
+	<seminarix>Allgemein</seminarix>
+	<homepage>http://hunspell.sourceforge.net/</homepage>
+	<desktoppath>/usr/share/applications/openoffice.desktop</desktoppath>
+	<description lang="de"></description>
+</eduversum>

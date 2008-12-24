@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>ktouch</name>
+	<seminarix>Lernspiele</seminarix>
+	<homepage>http://edu.kde.org/ktouch/</homepage>
+	<description lang="de">KTouch ist ein Übungsprogramm zum Maschinenschreiben für KDE. Zunächst stellen Sie das gewünschte Tastaturlayout (vermutlich de) ein. Unter "Lektion bearbeiten" Standardlektionen auswählen und dort eine der ...german...xml-Dateien anklicken.</description>
+</eduversum>

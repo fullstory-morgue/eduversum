@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>ksimus</name>
+	<seminarix>Technik</seminarix>
+	<homepage>http://ksimus.berlios.de/</homepage>
+	<description lang="de">KSimus ist eine Simulation logischer Schaltungen (man könnte auch Digitalschaltungen sagen). Es verfügt über keine eingebaute Elemente. Stattdessen besitzt es eine Plugin-Schnittstelle, über die dynamische Bibliotheken geladen werden können, die die digitalen Elemente implementieren. Zwei Bibliotheken lieferte der Autor mit. Boolean implementiert ein RS-Flipflop, AND, OR, XOR und deren Negationen, einen Taktgenerator, einen Ein- und einen Ausgang. Data Recorder ist für die Aufzeichnung von Signalen vorgesehen.</description>
+</eduversum>

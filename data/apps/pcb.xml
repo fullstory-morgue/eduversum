@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>pcb</name>
+	<seminarix>Technik</seminarix>
+	<homepage>http://pcb.sourceforge.net/</homepage>
+	<description lang="de">Wer auf fertig hergestellte Platinen (auch gedruckte Schaltungen oder Leiterplatten genannt) verzichten möchte und statt dessen selbst eine erstellen will, kann dies mittels dieses Programms verwirklichen. Vorhandene elektronische Bauteile müssen durch den Nutzer verknüpft und positioniert werden (virtueller Test des Stromkreislaufes ist integraler Bestandteil). Neben der automatischen Leiterbahnberechnung können diese auch manuell verändert werden.</description>
+</eduversum>
