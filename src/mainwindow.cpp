@@ -1,5 +1,5 @@
 /*
- * edu.cpp
+ * mainwidow.cpp
  *
  * Copyright (c) 2009 Fabian Wuertz <xadras@sidux.com>
  *
@@ -430,7 +430,7 @@ void MainWindow::showChanges()
 	if( noChanges )
 		QMessageBox::information(this, tr("Keine Veraenderungen"), tr("Es sind keine Veraenderungen vorhanden. Zum Programme zu installieren oder zu deinstallieren einfach das Markierungsfeld aktiveren bzw. deaktivieren.") );
 	else {
-		descriptionTextBrowser->setText("<h3>&Auml;nderungen ausf&uuml;hren</h3>Die aufgef&uuml;hrten Programme in der oberen Liste werden installiert (gr&uuml;n) beziehungsweise deinistalliert (rot).");
+		descriptionTextBrowser->setText("<h3>&Auml;nderungen ausf&uuml;hren</h3>Die aufgef&uuml;hrten Programme in der oberen Liste werden installiert (gr&uuml;n) beziehungsweise deinstalliert (rot).");
 		frame1->hide();
 		frame2->show();
 	}
