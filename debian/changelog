@@ -7,7 +7,10 @@ eduversum (0.1.2) unstable; urgency=low
   * tray icon added
   * typos
 
- -- Fabian Wuertz <xadras@sidux.com>  Thu, 25 Dec 2008 00:45:40 +0100
+  [ Stefan Lippers-Hollmann ]
+  * final touches.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 26 Dec 2008 14:37:34 +0100
 
 eduversum (0.1.1) unstable; urgency=low
 
