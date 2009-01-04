@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>openoffice.org-l10n-de</name>
+	<name>OpenOffice (de)</name>
 	<seminarix>Allgemein</seminarix>
 	<homepage>http://de.openoffice.org/</homepage>
 	<desktoppath>/usr/share/applications/ooimpress.desktop</desktoppath>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>ksociograma</name>
+	<name>KSociograma</name>
 	<seminarix>Allgemein</seminarix>
 	<homepage>http://www.kde-apps.org/content/show.php?content=12666</homepage>
 	<desktoppath>/usr/share/applnk/Edutainment/Micellaneous/ksociograma.desktop</desktoppath>

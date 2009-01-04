@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>openoffice.org-base</name>
+	<name>OpenOffice Base (Datenbank)</name>
 	<seminarix>Allgemein</seminarix>
 	<homepage>http://de.openoffice.org/</homepage>
 	<desktoppath>/usr/share/applications/ooo-base.desktop</desktoppath>
+	<exec>ooffice -base</exec>
 	<description lang="de">Base ist das ganz neue Datenbankmodul. Mit BASE integrieren Sie Ihre Datenbank nahtlos in OpenOffice.org. Erstellen und modifizieren Sie Tabellen, Formulare, Abfragen und Berichte, benutzen Sie Ihre eigene Datenbank (MySQL, PostgreSQL oder Microsoft Access) oder die in BASE integrierte HSQL-Datenbank.</description>
 	<icon>ooo-base</icon>
 </eduversum>

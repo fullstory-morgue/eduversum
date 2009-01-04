@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>xsane</name>
+	<name>XSane</name>
 	<seminarix>Allgemein</seminarix>
 	<homepage>http://www.xsane.org/</homepage>
-	<description lang="de">xsane ist eine Anwendung zum Scannen.</description>
+	<description lang="de">XSane ist eine Anwendung zum Scannen.</description>
 </eduversum>

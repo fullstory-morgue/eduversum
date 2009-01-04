@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>hydrogen</name>
+	<name>Hydrogen</name>
 	<seminarix>Musik</seminarix>
 	<homepage>http://www.hydrogen-music.org/</homepage>
 	<description lang="de">Hydrogen ist ein virtueller Drumcomputer und -sequenzer. Hydrogen kombiniert eine einfache, an Pattern orientierte Programmierung mit professionellen Funktionen wie vollständige Ansteuerung über MIDI und frei definierbaren Samples. Unter Linux ist Hydrogen kompatibel zum Soundserver JACK.</description>

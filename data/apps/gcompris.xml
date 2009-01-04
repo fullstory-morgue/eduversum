@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>gcompris</name>
+	<name>Gcompris</name>
 	<seminarix>Lernspiele</seminarix>
 	<homepage>http://gcompris.net/-de-</homepage>
-	<description lang="de">Gcompris ist eine grosse Sammlung von Lernspielen für Kinder im Vorschul- und Grundschulalter.  Gegenwärtig kann man mit gcompris:<ul>den Umgang mit Maus und Tastatur erlernen</ul><ul>Grundrechenarten lernen</ul><ul>lernen von einer analogen Uhr abzulesen</ul><ul>lernen, Buchstaben an ihrem Namen erkennen</ul><ul>üben zu lesen</ul><ul>kleine Spiele (Memory, Puzzle-Spiele, etc.) spielen</ul><ul>kleine Animationen erstellen</ul><ul>...und Einiges mehr</ul></description>
+	<description lang="de">Gcompris ist eine grosse Sammlung von Lernspielen für Kinder im Vorschul- und Grundschulalter. Gegenwärtig kann man mit gcompris:[ul]
+		[li]den Umgang mit Maus und Tastatur erlernen[/li]
+		[li]Grundrechenarten lernen[/li]
+		[li]lernen von einer analogen Uhr abzulesen[/li]
+		[li]lernen, Buchstaben an ihrem Namen erkennen[/li]
+		[li]üben zu lesen[/li]
+		[li]kleine Spiele (Memory, Puzzle-Spiele, etc.) spielen[/li]
+		[li]kleine Animationen erstellen[/li]
+		[li]und Einiges mehr[/li]
+	[/ul]</description>
 </eduversum>

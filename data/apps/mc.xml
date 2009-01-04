@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>mc</name>
+	<name>Midnight Commander</name>
 	<seminarix>Allgemein</seminarix>
 	<homepage>http://www.ibiblio.org/mc/</homepage>
 	<terminal>true</terminal>

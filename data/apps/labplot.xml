@@ -9,33 +9,33 @@
 
 	Die erhaltenen Funktionsplots können im Anschluß analysiert und ausgewertet werden. Dazu bietet Labplot Möglichkeiten, die weit über die Diagramm-Fähigkeiten eines Tabellenkalkulationsprogramms hinausgehen. Die Schüler erhalten mit Labplot für die Auswertung von Messreihen ihrer Schülerexperimente insbesondere in der Oberstufe ein wertvolles Werkzeug. \n\n
 
-	Einige Fähigkeiten von Labplot:\n
-	-Erzeugung von Oberflächen, Polar und Ternary Plots sowie Tortendiagrammen aus Funktionen und Datendateien.\n
-	-flexibler 3D Plot mit Rotation, etc., mehrere Plots pro Arbeitsblatt Datenoperationen, Speed Modus für grosse Daten und Daten Modus zur Untersuchung von einzelnen Datenpunkten\n
-	-Graphen klonen und Plots löschen/klonen\n
-	-vielseitige Tabellen für Datenmanipulationen\n
-	-Online Skalierung und Änderung von Plots\n
-	-Auswertungsausdrücke und direktes Editieren von Daten\n
-	-freies oder Schwenk-Zoomen. Maskierung von Datenpunkten und Marker\n
-	-Unterstützung für Panelplots\n
-	-vielseitige Fehlerbalken\n\n
-
-	Analyse von Daten und Funktionen:\n
-	*Mittelung, Glättung und Kürzung von Daten\n
-	*Komprimierung, Periodische und Zeitliche Analyse\n
-	*Spitzen finden\n
-	*Interpolation (Splines, etc.)\n
-	*Unterschiede\n
-	*Integration\n
-	*Histogramm (Balkendiagramm)\n
-	*Regression (bis zur 10. Ordnung)\n
-	*Nichtlineare Anpassung (auch jede benutzerdefiniete Funktion mit bis zu 9 Parametern)\n
-	*Fourier-, Laplace, Hankel und Wavelet Transformation (Ent)Faltung\n
-	*Bildbearbeitung\n
-	*Rauschen, Signalfilter und Auto/Cross-Korrelation\n
-	*Capability Analyse\n
-	*R für zusätzliche Funktionen und beschreibende Statistik bzw. 1-/2-Sample Tests\n
-	*LaTeX und RichText label Unterstützung\n\n
-
+	Einige Fähigkeiten von Labplot:[ul]
+		[li]Erzeugung von Oberflächen, Polar und Ternary Plots sowie Tortendiagrammen aus Funktionen und Datendateien.[/li]
+		[li]flexibler 3D Plot mit Rotation, etc., mehrere Plots pro Arbeitsblatt Datenoperationen, Speed Modus für grosse Daten und Daten Modus zur Untersuchung von einzelnen Datenpunkten[/li]
+		[li]Graphen klonen und Plots löschen/klonen[/li]
+		[li]vielseitige Tabellen für Datenmanipulationen[/li]
+		[li]Online Skalierung und Änderung von Plots[/li]
+		[li]Auswertungsausdrücke und direktes Editieren von Daten[/li]
+		[li]freies oder Schwenk-Zoomen. Maskierung von Datenpunkten und Marker[/li]
+		[li]Unterstützung für Panelplots[/li]
+		[li]vielseitige Fehlerbalken[/li]
+	[/ul]
+	Analyse von Daten und Funktionen:[ul]
+		[li]Mittelung, Glättung und Kürzung von Daten[/li]
+		[li]Komprimierung, Periodische und Zeitliche Analyse[/li]
+		[li]Spitzen finden[/li]
+		[li]Interpolation (Splines, etc.)[/li]
+		[li]Unterschiede[/li]
+		[li]Integration[/li]
+		[li]Histogramm (Balkendiagramm)[/li]
+		[li]Regression (bis zur 10. Ordnung)[/li]
+		[li]Nichtlineare Anpassung (auch jede benutzerdefiniete Funktion mit bis zu 9 Parametern)[/li]
+		[li]Fourier-, Laplace, Hankel und Wavelet Transformation (Ent)Faltung[/li]
+		[li]Bildbearbeitung[/li]
+		[li]Rauschen, Signalfilter und Auto/Cross-Korrelation[/li]
+		[li]Capability Analyse[/li]
+		[li]R für zusätzliche Funktionen und beschreibende Statistik bzw. 1-/2-Sample Tests[/li]
+		[li]LaTeX und RichText label Unterstützung[/li]
+	[/ul]
 	Labplot bietet Im- und Exportfilter für über 80 Bildformate an: z.B. ps, eps oder pdf. Auch die Unterstützung zur Anbindung an Datenbanken wir Mysql, Postgresql via KexiDB ist realisiert.</description>
 </eduversum>

@@ -32,6 +32,7 @@ class IconLoader
 		QPixmap getIcon(QString);
 		QString appdir;
 		QString iconpath;
+		QString iconpath2;
 
 };
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>celestia</name>
+	<name>Celestia</name>
 	<seminarix>Physik</seminarix>
 	<homepage>http://www.shatters.net/celestia</homepage>
 	<desktoppath>/usr/share/applnk/Edutainment/Science/celestia.desktop</desktoppath>

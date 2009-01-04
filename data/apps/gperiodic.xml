@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>gperiodic</name>
+	<name>GPeriodic</name>
 	<seminarix>Chemie</seminarix>
 	<homepage>http://gperiodic.seul.org/</homepage>
-	<description lang="de">GPeriodic ist ein kleines Programm über das Periodensystem, das tabellarisch detaillierte Informationen über jedes der im Periodensystem aufgeführten Elemente enthält. Java-Applet.</description>
+	<description lang="de">GPeriodic ist ein kleines Programm über das Periodensystem, das tabellarisch detaillierte Informationen über jedes der im Periodensystem aufgeführten Elemente enthält.</description>
 </eduversum>

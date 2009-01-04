@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>openclipart-openoffice.org</name>
+	<name>OpenOffice Cliparts</name>
 	<seminarix>Allgemein</seminarix>
 	<homepage>http://www.openclipart.org</homepage>
 	<desktoppath>/usr/share/applications/openoffice.desktop</desktoppath>

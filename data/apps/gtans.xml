@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>gtans</name>
+	<name>gTans</name>
 	<seminarix>Lernspiele</seminarix>
 	<homepage>http://gtans.sourceforge.net/</homepage>
 	<desktoppath>/usr/share/gnome/apps/Games/gtans.desktop</desktoppath>

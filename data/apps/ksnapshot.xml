@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>ksnapshot</name>
+	<name>KSnapshot</name>
 	<seminarix>Kunst</seminarix>
 	<homepage>http://www.kde.de/software/screenshots/graphik.php</homepage>
-	<description lang="de">Das Programm stellt auf einfache Weise Screenshots (mit Maus, ohne Maus, Vollbild, Ausz&uuml;ge) her, die f&uuml;r Demonstrationen bestimmter Bildschirmeinstellungen oder Arbeitsfortschritten hilfreich und n&uuml;tzlich sind.</description>
+	<description lang="de">Das Programm stellt auf einfache Weise Screenshots (mit Maus, ohne Maus, Vollbild, Auszüge) her, die für Demonstrationen bestimmter Bildschirmeinstellungen oder Arbeitsfortschritten hilfreich und nützlich sind.</description>
 </eduversum>

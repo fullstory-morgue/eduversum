@@ -84,7 +84,7 @@ void MainWindow::loadGui()
 	// tray
 	trayIcon = new QSystemTrayIcon;
 
-	quitAction = new QAction(tr("&Quit"), this);
+	quitAction = new QAction(tr("&Beenden"), this);
 	connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
 
 	trayIconMenu = new QMenu(this);
@@ -99,6 +99,11 @@ void MainWindow::loadGui()
 	//connect(trayIcon, SIGNAL(messageClicked()), this, SLOT(messageClicked()));
 	connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
 		this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+
+
+	descriptionTextBrowser->setText( QString::fromUtf8("Eduversum ist Hilfsmittel, mit dessen Hilfe Programme aus dem Bildungsbereich sehr einfach installiert (im leeren Kästchen vor der Anwendung einen Haken setzen) oder deinstalliert werden (den Haken entfernen) können. Zu diesem Zwecke ist das Administratorenpasswort erforderlich, da Softwareinstallation bzw. die Deinstallation von Anwendungen in der Regel eine systemweite Arbeit ist.") );
+
+
 
 	unsetGui();
 
@@ -237,8 +242,6 @@ void MainWindow::showApp()
 	// Show description
 	QString name = treeWidget->selectedItems().first()->text(0);
 	QString description =  treeWidget->selectedItems().first()->text(6);
-	description.replace("	", "");
-	description.replace("\\n", "<br>");
 	descriptionTextBrowser->setText( "<h2>"+name+"</h2>"+description );
 
 	//Show homepage buttons
@@ -342,11 +345,11 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
  void MainWindow::closeEvent(QCloseEvent *event)
  {
 	if (trayIcon->isVisible()) {
-	    QMessageBox::information(this, tr("Systray"),
-				    tr("The program will keep running in the "
-					"system tray. To terminate the program, "
-					"choose <b>Quit</b> in the context menu "
-					"of the system tray entry."));
+	    QMessageBox::information(this, "Systray",
+				    QString::fromUtf8("Um das Programm zu beenden, wählen sie 'Beenden' im Kontextmenue des Programms im Systemabschnitt der Leiste.") );
+
+
+
 	    hide();
 	    event->ignore();
 	}
@@ -428,7 +431,7 @@ void MainWindow::showChanges()
 	}
 
 	if( noChanges )
-		QMessageBox::information(this, tr("Keine Veraenderungen"), tr("Es sind keine Veraenderungen vorhanden. Zum Programme zu installieren oder zu deinstallieren einfach das Markierungsfeld aktiveren bzw. deaktivieren.") );
+		QMessageBox::information(this, QString::fromUtf8("Keine Veränderungen"), QString::fromUtf8("Es sind keine Veränderungen vorhanden. Zum Programme zu installieren oder zu deinstallieren einfach das Markierungsfeld aktiveren bzw. deaktivieren.") );
 	else {
 		descriptionTextBrowser->setText("<h3>&Auml;nderungen ausf&uuml;hren</h3>Die aufgef&uuml;hrten Programme in der oberen Liste werden installiert (gr&uuml;n) beziehungsweise deinstalliert (rot).");
 		frame1->hide();
@@ -456,7 +459,21 @@ void MainWindow::applyChanges()
 void MainWindow::applyChangesFinished()
 {
 	setEnabled ( TRUE );
-	discardChanges();
+	QTreeWidgetItemIterator it(appTreeWidget);
+	while (*it) {
+			QString name = (*it)->text(0) ;
+			QString package = (*it)->text(3);
+			QString status;
+			// status
+			if( QFile::exists( "/usr/share/doc/"+package.split(" ")[0]+"/copyright" ) )
+				status = "installed";
+			else
+				status = "notinstalled";
+			appTreeWidget->findItems(name, Qt::MatchExactly, 0 ).first()->setText(4, status );
+
+		++it;
+	}
+	cancelChanges();
 }
 
 void MainWindow::discardChanges()

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>openoffice.org-writer</name>
+	<name>OpenOffice Writer (Textverabreitungsprogramm)</name>
 	<seminarix>Allgemein</seminarix>
 	<homepage>http://de.openoffice.org/</homepage>
 	<desktoppath>/usr/share/applications/ooo-writer.desktop</desktoppath>
-	<description lang="de">Writer ist das Textverarbeitungsprogramm von OpenOffice.org: Nutzen Sie es f&uuml;r alles vom einfachen Brief bis zum komplexen Buch mit Hyperlinks, Inhaltsverzeichnis, eingebetteten Illustrationen, Literaturverzeichnissen und was bei Ihnen sonst noch an Aufgaben anf&auml;llt. Auto-Vervollst&auml;ndigen, Auto-Format und die Rechtschreibpr&uuml;fung w&auml;hrend der Eingabe erleichtern schwierige Aufgaben. Writer beherrscht auch verschiedene Desktop-Publishing-Aufgaben wie die Erstellung von Newslettern mit mehreren Spalten oder Brosch&uuml;ren. Die einzige Grenze ist Ihre Vorstellungskraft.</description>
+	<exec>ooffice -writer</exec>
+	<description lang="de">Writer ist das Textverarbeitungsprogramm von OpenOffice.org: Nutzen Sie es fü;r alles vom einfachen Brief bis zum komplexen Buch mit Hyperlinks, Inhaltsverzeichnis, eingebetteten Illustrationen, Literaturverzeichnissen und was bei Ihnen sonst noch an Aufgaben anfällt. Auto-Vervollständigen, Auto-Format und die Rechtschreibprüfung während der Eingabe erleichtern schwierige Aufgaben. Writer beherrscht auch verschiedene Desktop-Publishing-Aufgaben wie die Erstellung von Newslettern mit mehreren Spalten oder Broschü;ren. Die einzige Grenze ist Ihre Vorstellungskraft.</description>
 	<icon>ooo-writer</icon>
 </eduversum>

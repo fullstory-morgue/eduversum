@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>rkward</name>
+	<name>RKWard</name>
 	<seminarix>Mathematik</seminarix>
 	<description lang="de">RKWard ist eine graphische Benutzeroberfläche für die Skriptsprache R. R bietet ein breites Feld an Funktionen zum lösen statistischer Probleme. Daneben lässt sich R ohne Weiteres mit zusätzlichen und eigenen Paketen erweitern.</description>
 </eduversum>

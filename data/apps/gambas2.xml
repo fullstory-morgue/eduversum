@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>gambas2</name>
+	<name>Gambas</name>
 	<seminarix>Informatik</seminarix>
 	<homepage>http://gambas.sourceforge.net/</homepage>
 	<description lang="de">Gambas ist eine sehr leistungsfähige Entwicklungsumgebung mit einem Basic-Dialekt, die ein wenig an VisualBasic erinnert</description>

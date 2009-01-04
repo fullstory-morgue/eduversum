@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>lmemory</name>
+	<name>LMemory</name>
 	<seminarix>Lernspiele</seminarix>
 	<homepage>http://lgames.sourceforge.net/index.php?project=LMemory</homepage>
 	<exec>/usr/games/lmemory</exec>
-	<description lang="de">lmemory ist das bekannte Memoryspiel mit verdeckten Bildkarten. Es gibt bei lmemory verschiedene Schwierigkeitsgrade. Als Option gibt es darüberhinaus z.B., dass 3 gleiche Karten gefunden werden müssen.</description>
+	<description lang="de">LMemory ist das bekannte Memoryspiel mit verdeckten Bildkarten. Es gibt bei lmemory verschiedene Schwierigkeitsgrade. Als Option gibt es darüberhinaus z.B., dass 3 gleiche Karten gefunden werden müssen.</description>
 </eduversum>

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>noteedit</name>
+	<name>NoteEdit</name>
 	<seminarix>Musik</seminarix>
 	<homepage>http://noteedit.berlios.de/</homepage>
 	<package>noteedit timidity lilypond</package>
-	<description lang="de">NoteEdit ist ein freies Musik-Notensatzprogramm. Es bietet folgende Funktionen:\n 
-	*Unterstützung u.a. polyphoner Stimmen in unbegrenzter Anzahl und Länge\n
-	*MIDI-Wiedergabe von geschriebenen Noten, Akkorden, Texten\n
-	*Menthält eine Anzahl von Export- und Import-Filtern zu vielen verschiedenen Formaten wie MIDI, MusicXML, ABC, MUP, PMX, MusiXTeX und LilyPond.\n
-	*graphische Oberflälche zur Eingabe von Noten und ein Druckfassung davon, die man dann noch mit den mächtigen Satzprogrammen LilyPond (das automatisch mitinstalliert wird) oder MusiXTeX optimieren kann\n
-	*Lesen und Wiedergabe von einem MIDI-Keyboard\n
-	*automatisches Setzen der Taktstriche bei vorgegebenen Takt u.s.w.</description>
+	<description lang="de">NoteEdit ist ein freies Musik-Notensatzprogramm. Es bietet folgende Funktionen:[ul]
+		[li]Unterstützung u.a. polyphoner Stimmen in unbegrenzter Anzahl und Länge[/li]
+		[li]MIDI-Wiedergabe von geschriebenen Noten, Akkorden, Texten[/li]
+		[li]Enthält eine Anzahl von Export- und Import-Filtern zu vielen verschiedenen Formaten wie MIDI, MusicXML, ABC, MUP, PMX, MusiXTeX und LilyPond.[/li]
+		[li]graphische Oberflälche zur Eingabe von Noten und ein Druckfassung davon, die man dann noch mit den mächtigen Satzprogrammen LilyPond (das automatisch mitinstalliert wird) oder MusiXTeX optimieren kann[/li]
+		[li]Lesen und Wiedergabe von einem MIDI-Keyboard[/li]
+		[li]automatisches Setzen der Taktstriche bei vorgegebenen Takt u.s.w.[/li]
+	[/ul]</description>
 </eduversum>

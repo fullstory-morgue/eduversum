@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>glame</name>
+	<name>Glame</name>
 	<seminarix>Musik</seminarix>
 	<homepage>http://glame.sourceforge.net/</homepage>
 	<desktoppath>/usr/share/gnome/apps/Multimedia/glame.desktop</desktoppath>

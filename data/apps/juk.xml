@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>juk</name>
+	<name>JuK</name>
 	<seminarix>Musik</seminarix>
 	<homepage>http://developer.kde.org/~wheeler/juk.html</homepage>
 	<description lang="de">JuK ist eine Audio-Jukebox für KDE, mit der Dateien im MP3-, Ogg-Vorbis- und FLAC-Format verwaltet, umbenannt und abgespielt werden können.</description>

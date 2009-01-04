@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>kspread</name>
+	<name>KSpread</name>
 	<seminarix>Mathematik</seminarix>
 	<homepage>http://www.koffice.org/kspread/</homepage>
 	<description lang="de">KSpread ist eine Tabellenkalkulation, die auch komplexe mathematische Formeln und Statistik beherrscht. Ebenfalls aus dem KOffice-Projekt.</description>

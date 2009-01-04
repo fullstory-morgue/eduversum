@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>pingus</name>
+	<name>Pingus</name>
 	<seminarix>Lernspiele</seminarix>
 	<homepage>http://pingus.seul.org/</homepage>
-	<description lang="de">Pingus ist ein freier Clone des sch&ouml;nen alten Spiels "Lemminge": Retten Sie die Pinguine!</description>
+	<description lang="de">Pingus ist ein freier Clone des schönen alten Spiels "Lemminge": Retten Sie die Pinguine!</description>
 </eduversum>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>kformula</name>
+	<name>KFormula</name>
 	<seminarix>Mathematik</seminarix>
 	<homepage>http://www.koffice.org/kformula/</homepage>
-	<description lang="de">KFormula stammt aus dem KOffice-Projekt und ist dafür ausgelegt, Formeln zu zeichnen bzw. zu gestalten, die in einen Text eingebunden, werden können.</description>
+	<description lang="de">KFormula ist der Formeleditor des KOffice-Projekts. Das Programm kann zum Beispiel in der Textbearbungssoftware KWord verwendet werden.</description>
 </eduversum>

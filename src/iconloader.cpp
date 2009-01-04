@@ -27,44 +27,52 @@
 IconLoader::IconLoader()
 {
 	iconpath = "/usr/share/icons/hicolor/";
+	iconpath2 = "/usr/share/icons/crystalsvg/";
 	appdir      = "/usr/share/eduversum/";
 }
 
 
 QPixmap IconLoader::getIcon(QString iconname)
 {
-	iconname = iconname.replace(".png", "").replace(".xpm", "");
 
 	QImage ico;
 
-
-	if( QFile::exists(iconpath+"32x32/apps/"+iconname+".png") )
-		ico = QImage(iconpath+"32x32/apps/"+iconname+".png");
-	else if( QFile::exists(iconpath+"48x48/apps/"+iconname+".png") )
-		ico = QImage(iconpath+"48x48/apps/"+iconname+".png");
-	else if( QFile::exists("/usr/share/pixmaps/"+iconname+".xpm") )
-		ico = QImage("/usr/share/pixmaps/"+iconname+".xpm");
-	else if( QFile::exists("/usr/share/pixmaps/"+iconname+"-icon.xpm") )
-		ico = QImage("/usr/share/pixmaps/"+iconname+"-icon.xpm");
-	else if( QFile::exists("/usr/share/pixmaps/"+iconname+".png") )
-		ico = QImage("/usr/share/pixmaps/"+iconname+".png");
-	else if( QFile::exists("/usr/share/icons/"+iconname+".png") )
-		ico = QImage("/usr/share/icons/"+iconname+".png");
-	else if( QFile::exists("/usr/share/"+iconname+"/"+iconname+".xpm") )
-		ico = QImage("/usr/share/"+iconname+"/"+iconname+".xpm");
-	else if( QFile::exists("/usr/share/"+iconname+"/pixmaps/"+iconname+".xpm") )
-		ico = QImage("/usr/share/"+iconname+"/pixmaps/"+iconname+".xpm");
-	else if( QFile::exists("/usr/share/"+iconname+"/icons/"+iconname+".ico") )
-		ico = QImage("/usr/share/"+iconname+"/icons/"+iconname+".ico");
-	else if( QFile::exists("/usr/share/"+iconname+"/icons/"+iconname+".xpm") )
-		ico = QImage("/usr/share/"+iconname+"/icons/"+iconname+".xpm");
-	else if( QFile::exists ( "/usr/share/app-install/+icons/"+iconname+".png" ) )
-		ico = QImage( "/usr/share/app-install/icons/"+iconname+".png" );
-	else if( QFile::exists( "/usr/share/app-install/icons/"+iconname+".xpm" ) )
-		ico = QImage( "/usr/share/app-install/icons/"+iconname+".xpm" );
-	else
-	{
-		ico = QImage( appdir+"icons/empty.png" );
+	if( QFile::exists(iconname) )
+		ico = QImage(iconname);
+	else {
+		iconname = iconname.replace(".png", "").replace(".xpm", "");
+		if( QFile::exists(iconpath+"32x32/apps/"+iconname+".png") )
+			ico = QImage(iconpath+"32x32/apps/"+iconname+".png");
+		if( QFile::exists(iconpath2+"32x32/apps/"+iconname+".png") )
+			ico = QImage(iconpath2+"32x32/apps/"+iconname+".png");
+		else if( QFile::exists(iconpath+"48x48/apps/"+iconname+".png") )
+			ico = QImage(iconpath+"48x48/apps/"+iconname+".png");
+		else if( QFile::exists("/usr/share/pixmaps/"+iconname+".xpm") )
+			ico = QImage("/usr/share/pixmaps/"+iconname+".xpm");
+		else if( QFile::exists("/usr/share/pixmaps/"+iconname+"-icon.xpm") )
+			ico = QImage("/usr/share/pixmaps/"+iconname+"-icon.xpm");
+		else if( QFile::exists("/usr/share/pixmaps/"+iconname+".png") )
+			ico = QImage("/usr/share/pixmaps/"+iconname+".png");
+		else if( QFile::exists("/usr/share/icons/"+iconname+".png") )
+			ico = QImage("/usr/share/icons/"+iconname+".png");
+		else if( QFile::exists("/usr/share/"+iconname+"/"+iconname+".xpm") )
+			ico = QImage("/usr/share/"+iconname+"/"+iconname+".xpm");
+		else if( QFile::exists("/usr/share/"+iconname+"/pixmaps/"+iconname+".xpm") )
+			ico = QImage("/usr/share/"+iconname+"/pixmaps/"+iconname+".xpm");
+		else if( QFile::exists("/usr/share/"+iconname+"/icons/"+iconname+".ico") )
+			ico = QImage("/usr/share/"+iconname+"/icons/"+iconname+".ico");
+		else if( QFile::exists("/usr/share/"+iconname+"/icons/"+iconname+".xpm") )
+			ico = QImage("/usr/share/"+iconname+"/icons/"+iconname+".xpm");
+		else if( QFile::exists("/usr/share/"+iconname+"/images/icons/icon.png") )
+			ico = QImage("/usr/share/"+iconname+"/images/icons/icon.png");
+		else if( QFile::exists ( "/usr/share/app-install/+icons/"+iconname+".png" ) )
+			ico = QImage( "/usr/share/app-install/icons/"+iconname+".png" );
+		else if( QFile::exists( "/usr/share/app-install/icons/"+iconname+".xpm" ) )
+			ico = QImage( "/usr/share/app-install/icons/"+iconname+".xpm" );
+		else
+		{
+			ico = QImage( appdir+"icons/empty.png" );
+		}
 	}
 
 	ico.scaledToHeight( 32, Qt::SmoothTransformation );

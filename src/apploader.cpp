@@ -77,6 +77,13 @@ QTreeWidget* AppLoader::importApps()
 			exec = id.toLower();
 		if( icon == "")
 			icon = id.toLower();
+		//descripition
+		description.replace("	", "");
+		description.replace("\\n", "<br>");
+		description.replace("[ul]", "<ul>");
+		description.replace("[/ul]", "</ul>");
+		description.replace("[li]", "<li>");
+		description.replace("[/li]", "</li>");
 		// status
 		if( QFile::exists( "/usr/share/doc/"+package.split(" ")[0]+"/copyright" ) )
 			status = "installed";
