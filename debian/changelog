@@ -1,9 +1,5 @@
-eduversum (0.1.4) UNRELEASED; urgency=low
+eduversum (0.1.4) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Fabian Wuertz ]
   * data: title tags updated (case)
   * data: Umlaute problem solved
   * data: ".." and "  " removed
