@@ -133,7 +133,7 @@ void MainWindow::loadData()
 	QTreeWidgetItemIterator it(catTreeWidget);
 	while (*it) {
 		QTreeWidgetItem *item = new QTreeWidgetItem(categoriesTreeWidget, 0);
-		item->setIcon( 0, QIcon( "/usr/share/icons/hicolor/32x32/apps/"+(*it)->text(0)) );
+		item->setIcon( 0, QIcon( appdir+"categories/icons/"+(*it)->text(0)) );
 		item->setText( 0, (*it)->text(1) );
 		item->setText( 1, (*it)->text(2) );
 		++it;
