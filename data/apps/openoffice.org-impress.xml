@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>OpenOffice Impress (Präsentationen)</name>
+	<name>OpenOffice.org Impress (Präsentationsprogramm)</name>
 	<seminarix>Allgemein</seminarix>
 	<homepage>http://de.openoffice.org/</homepage>
 	<desktoppath>/usr/share/applications/ooo-impress.desktop</desktoppath>
