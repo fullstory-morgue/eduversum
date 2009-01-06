@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>Hunspell (de-de)</name>
+	<name>Hunspell (Rechtschreibprüfung)</name>
 	<seminarix>Allgemein</seminarix>
 	<homepage>http://hunspell.sourceforge.net/</homepage>
 	<desktoppath>/usr/share/applications/openoffice.desktop</desktoppath>
-	<description lang="de"></description>
+	<description lang="de">Hunspell ist eine Rechtschreibprüfung, die unter anderem von KDE Programmen wie zum Beispiel KWord verwendet wird.</description>
 </eduversum>

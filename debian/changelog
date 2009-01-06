@@ -8,8 +8,10 @@ eduversum (0.1.5) UNRELEASED; urgency=low
   * main: welcome message updated
   * main: gui: hompage typo fixed 
   * main: category icons problem fixed 
+  * data: qgis added 
+  * data: openclipart&hunspell descriptions improved 
 
- -- Fabian Wuertz <xadras@sidux.com>  Tue, 06 Jan 2009 19:38:40 +0100
+ -- Fabian Wuertz <xadras@sidux.com>  Tue, 06 Jan 2009 19:54:05 +0100
 
 eduversum (0.1.4) unstable; urgency=low
 

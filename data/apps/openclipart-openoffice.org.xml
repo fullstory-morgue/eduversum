@@ -5,5 +5,7 @@
 	<seminarix>Allgemein</seminarix>
 	<homepage>http://www.openclipart.org</homepage>
 	<desktoppath>/usr/share/applications/openoffice.desktop</desktoppath>
-	<description lang="de"></description>
+	<description lang="de">In OpenClipart werden zahllose Clips und Bilder (meist) zur freien Verwendung in (nicht nur) OpenOffice Anwendungen angeboten. Die zu den Clips gehörige Lizenz ist jeweils aufgeführt. Vieles ist Public Domain, anderes steht unter der Creative Common License.
+Die Bibliothek erspart manche langwierige Suche nach nutzbarem  Bildmaterial für Schule und Ausbildung.
+</description>
 </eduversum>
