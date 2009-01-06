@@ -68,6 +68,7 @@ void MainWindow::loadGui()
 	connect(categoriesTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)),this, SLOT( showCategoryApps() ) );
 	connect(treeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)),this, SLOT( showApp() ) );
 	connect(treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*,int)),this, SLOT( changed() ) );
+	connect(treeWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),this, SLOT( execApp() ) );
 	connect(searchLineEdit, SIGNAL(textChanged(const QString)), SLOT(searchApps()));
 	connect(comboBox, SIGNAL(currentIndexChanged(int)),this, SLOT( showCategoryApps() ) );
 	connect(execPushButton, SIGNAL(clicked()), SLOT(execApp()));
@@ -101,7 +102,7 @@ void MainWindow::loadGui()
 		this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 
 
-	descriptionTextBrowser->setText( QString::fromUtf8("Eduversum ist Hilfsmittel, mit dessen Hilfe Programme aus dem Bildungsbereich sehr einfach installiert (im leeren Kästchen vor der Anwendung einen Haken setzen) oder deinstalliert werden (den Haken entfernen) können. Zu diesem Zwecke ist das Administratorenpasswort erforderlich, da Softwareinstallation bzw. die Deinstallation von Anwendungen in der Regel eine systemweite Arbeit ist.") );
+	descriptionTextBrowser->setText( QString::fromUtf8("<h2>Willkomen</h2>Eduversum ist Hilfsmittel, mit dessen Hilfe Programme aus dem Bildungsbereich sehr einfach installiert (im leeren Kästchen vor der Anwendung einen Haken setzen) oder deinstalliert werden (den Haken entfernen) können. Zu diesem Zwecke ist das Administratorenpasswort erforderlich, da Softwareinstallation bzw. die Deinstallation von Anwendungen in der Regel eine systemweite Arbeit ist.") );
 
 
 
