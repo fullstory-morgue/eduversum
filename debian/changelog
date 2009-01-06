@@ -11,8 +11,9 @@ eduversum (0.1.5) UNRELEASED; urgency=low
   * data: qgis added 
   * data: openclipart&hunspell descriptions improved 
   * data: OpenOffice data files imporved
+  * main: copyExamples function fixed 
 
- -- Fabian Wuertz <xadras@sidux.com>  Tue, 06 Jan 2009 21:07:35 +0100
+ -- Fabian Wuertz <xadras@sidux.com>  Tue, 06 Jan 2009 21:49:49 +0100
 
 eduversum (0.1.4) unstable; urgency=low
 

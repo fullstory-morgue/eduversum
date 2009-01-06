@@ -38,12 +38,14 @@ class MainWindow : public QWidget, Ui::eduversumGui
 		virtual void execApp();
 		virtual void showHomepage();
 		virtual void copyExample();
+		virtual void copyDir(QString, QString);
 		virtual void changed();
 		virtual void applyChanges();
 		virtual void applyChangesFinished();
 		virtual void cancelChanges();
 		virtual void discardChanges();
 		virtual void showChanges();
+
 
 
 

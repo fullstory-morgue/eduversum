@@ -223,12 +223,12 @@ void MainWindow::showAppInList(QTreeWidgetItemIterator it)
 		item->setCheckState(0,Qt::Unchecked);
 	else if( status == "install" ) {
 		item->setCheckState(0,Qt::Checked);
-		for(uint i = 0; i < 3; i++)
+		for( int i = 0; i < 3; i++)
 				item->setBackground(i, QColor(Qt::green) );
 	}
 	else if( status == "remove" ) {
 		item->setCheckState(0,Qt::Unchecked);
-		for(uint i = 0; i < 3; i++)
+		for( int i = 0; i < 3; i++)
 				item->setBackground(i, QColor(Qt::red) );
 	}
 
@@ -311,14 +311,22 @@ void MainWindow::copyExample()
 	{
 		QString package = treeWidget->selectedItems().first()->text(3);
 		package = package.split(" ")[0];
-		QString program =  appdir+"sh/copyExample";
-		QStringList arguments;
-		arguments << package;
-
-		QProcess *myProcess = new QProcess(this);
-		myProcess->start(program, arguments);
-
+		copyDir("/usr/share/seminarix-samples/"+package, QDir::homePath ()+"/Desktop/"+package );
 	}
+}
+
+void MainWindow::copyDir(QString sourceDir, QString destinationDir)
+{
+	if( !QFile::exists( destinationDir ) )
+		QDir().mkdir(destinationDir);
+
+	QStringList fileList = QDir( sourceDir ).entryList( QDir::Files );
+	for ( QStringList::Iterator it = fileList.begin(); it != fileList.end(); ++it )
+		QFile(sourceDir+"/"+*it).copy( destinationDir+"/"+*it );
+
+	QStringList dirList = QDir( sourceDir ).entryList( QDir::Dirs );
+	for( int i = 2; i < dirList.count(); i++)
+	      copyDir(sourceDir+"/"+dirList[i], destinationDir+"/"+dirList[i] ); 
 }
 
 
@@ -394,7 +402,7 @@ void MainWindow::changed()
 
 
 
-	for(uint i = 0; i < 3; i++)
+	for( int i = 0; i < 3; i++)
 		treeWidget->selectedItems().first()->setBackground(i, color );
 
 	appTreeWidget->findItems(name, Qt::MatchExactly, 0 ).first()->setText(4,newStatus );
