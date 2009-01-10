@@ -254,10 +254,11 @@ void MainWindow::showApp()
 
 	// Show exec button
 	QString status = treeWidget->selectedItems().first()->text(4);
-	if( status == "installed" or status == "remove" )
-		execPushButton->show();
-	else
+	QString exec = treeWidget->selectedItems().first()->text(5);
+	if( status == "notinstalled" or status == "install" or exec == "none")
 		execPushButton->hide();
+	else
+		execPushButton->show();
 
 	// Show exmaple button
 	QString example = treeWidget->selectedItems().first()->text(10);
@@ -278,7 +279,12 @@ void MainWindow::execApp()
 	if ( treeWidget->selectedItems().count() < 1 ) 
 		return;
 
+	QString status = treeWidget->selectedItems().first()->text(4);
 	QString exec = treeWidget->selectedItems().first()->text(5);
+
+	if(  status == "notinstalled" or status == "install" or exec == "none" )
+		return;
+
 	QString terminal = treeWidget->selectedItems().first()->text(8);
 	if( terminal == "true" or terminal == "yes")
 		exec = "konsole --noclose -e "+exec;
@@ -356,9 +362,6 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 	if (trayIcon->isVisible()) {
 	    QMessageBox::information(this, "Systray",
 				    QString::fromUtf8("Um das Programm zu beenden, wählen sie 'Beenden' im Kontextmenue des Programms im Systemabschnitt der Leiste.") );
-
-
-
 	    hide();
 	    event->ignore();
 	}
@@ -454,7 +457,8 @@ void MainWindow::applyChanges()
 {
 	QString program = "su-to-root";
 	QStringList arguments;
-	arguments << "-X" << "-c" << "x-terminal-emulator -e /usr/share/eduversum/sh/applyChanges"+addRemoveApp;
+	//arguments << "-X" << "-c" << "x-terminal-emulator -e /usr/share/eduversum/sh/applyChanges"+addRemoveApp;
+	arguments << "-X" << "-c" << "/home/wuertz/qhttp/eduversum-installer"+addRemoveApp;
 
 	QProcess *myProcess = new QProcess(this);
 	myProcess->start(program, arguments);

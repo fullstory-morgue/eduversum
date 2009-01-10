@@ -4,6 +4,6 @@
 	<name>Hunspell (Rechtschreibprüfung)</name>
 	<seminarix>Allgemein</seminarix>
 	<homepage>http://hunspell.sourceforge.net/</homepage>
-	<desktoppath>/usr/share/applications/openoffice.desktop</desktoppath>
+	<exec>none</exec>
 	<description lang="de">Hunspell ist eine Rechtschreibprüfung, die unter anderem von KDE Programmen wie zum Beispiel KWord verwendet wird.</description>
 </eduversum>
