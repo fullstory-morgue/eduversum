@@ -7,8 +7,9 @@ eduversum (0.1.6) UNRELEASED; urgency=low
   * eduversum-installer added
   * eduversum-installer added
   * eudversum-installer added
+  * qhttp removed
 
- -- Fabian Wuertz <xadras@sidux.com>  Sat, 10 Jan 2009 15:47:00 +0100
+ -- Fabian Wuertz <xadras@sidux.com>  Sat, 10 Jan 2009 20:08:11 +0100
 
 eduversum (0.1.5) unstable; urgency=low
 

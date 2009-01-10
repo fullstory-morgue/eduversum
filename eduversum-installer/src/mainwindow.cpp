@@ -42,6 +42,7 @@
 
 	timer = new QTimer(this);
 	process = new QProcess(this);
+	process2 = new QProcess(this);
 	http = new QHttp(this);
 	setupUi(this);
 	contentStackedWidget->setCurrentIndex(0);
@@ -218,7 +219,7 @@ void MainWindow::downloadPackages()
 			item->setText( 0, packageName);
 			item->setText( 1, packageVersion);
 			item->setText( 2, download);
-			item->setIcon( 0, QIcon( appDir+"icons/notok.png") );
+			//item->setIcon( 0, QIcon( appDir+"icons/notok.png") );
 		}
 		currentDownload = 0;
 		downloadFile();
@@ -434,100 +435,52 @@ void MainWindow::runProgressBar()
 //-- download functions --------------------------------------------------------
 //------------------------------------------------------------------------------
 
+
+
  void MainWindow::downloadFile()
  {
-
-
-	connect(http, SIGNAL(requestFinished(int, bool)), this, SLOT(downloadFinished(int, bool)));
-	connect(http, SIGNAL(dataReadProgress(int, int)), this, SLOT(updateDataReadProgress(int, int)));
-	connect(http, SIGNAL(responseHeaderReceived(const QHttpResponseHeader &)), this, SLOT(readResponseHeader(const QHttpResponseHeader &)));
-
-	QUrl url(downloads[currentDownload]);
-	QFileInfo fileInfo(url.path());
-	QString fileName = "/var/cache/apt/archives/"+fileInfo.fileName();
-
-	if (QFile::exists(fileName))
-		return;
-
-	QFile *file = new QFile(fileName);
-	if (!file->open(QIODevice::WriteOnly)) {
-		QMessageBox::information(this, tr("Error"), tr("Unable to save the file %1: %2.").arg(fileName).arg(file->errorString()));
-		delete file;
-		file = 0;
-		return;
+	if( currentDownload < downloads.count()) {
+		output.clear();
+		QStringList arguments;
+		arguments.append(downloads[currentDownload]);
+		QString program = "wget";
+		connect( process2, SIGNAL(readyReadStandardError()),this, SLOT(updateDownloadStatus()));
+		connect( process2, SIGNAL(finished(int)),this, SLOT(downloadFinished()));
+		process2->setWorkingDirectory("/var/cache/apt/archives");
+		process2->start(program, arguments );
+		downloadLabel->setText(tr("Downloading %1.").arg(downloads[currentDownload]));
 	}
+	else 
+		nextPushButton->setEnabled(TRUE);
 
-	QHttp::ConnectionMode mode = url.scheme().toLower() == "https" ? QHttp::ConnectionModeHttps : QHttp::ConnectionModeHttp;
-	http->setHost(url.host(), mode, url.port() == -1 ? 0 : url.port());
-
-
-	httpRequestAborted = false;
-	QByteArray path = QUrl::toPercentEncoding(url.path(), "!$&'()*+,;=:@/");
-	if (path.isEmpty())
-		path = "/";
-	httpGetId = http->get(path, file);
-
-	downloadLabel->setText(tr("Downloading %1.").arg(fileName));
 
  }
 
- void MainWindow::cancelDownload()
+ void MainWindow::updateDownloadStatus()
  {
-	//statusLabel->setText(tr("Download canceled."));
-	httpRequestAborted = true;
-	http->abort();
+	QByteArray result= process2->readAllStandardError();
+	QStringList test = QString::fromUtf8(result).split(" ");
+
+
+	if(test.count() > 1 ) {
+		if( test[1].contains("%") ) {
+			QString percentage = test[1].split("%")[0];
+			if( percentage.toInt() < 100 )
+ 				    downloadProgressBar->setValue(percentage.toInt());
+ 		}
+ 	}
+
  }
 
-void MainWindow::downloadFinished(int requestId, bool error)
-{
-
-	if (requestId != httpGetId)
-		return;
-	if ( error ) 
-		QMessageBox::information( this, tr( "Error" ), tr( "Download failed: %1." ).arg( http->errorString() ));
-	else {
-		if ( downloadTreeWidget->findItems(downloads[currentDownload], Qt::MatchExactly, 2 ).count() > 0 ) {
-			downloadTreeWidget->findItems(downloads[currentDownload], Qt::MatchExactly, 2 ).first()->setIcon( 0, QIcon( appDir+"icons/ok.png") );
-		}
-		http->close();
-		currentDownload++;
-		if(currentDownload < downloads.count())
-			downloadFile();
-		else
-			nextPushButton->setEnabled(TRUE);
-	}
- }
-
-
- void MainWindow::readResponseHeader(const QHttpResponseHeader &responseHeader)
+ void MainWindow::downloadFinished()
  {
-	switch (responseHeader.statusCode()) {
-		case 200:                   // Ok
-		case 301:                   // Moved Permanently
-		case 302:                   // Found
-		case 303:                   // See Other
-		case 307:                   // Temporary Redirect
-		// these are not error conditions
-		break;
+ 	downloadProgressBar->setValue(100);
+	//if( downloadTreeWidget->findItems(downloads[currentDownload], Qt::MatchExactly, 2 ).count() > 0 ) {
+	//	downloadTreeWidget->findItems(downloads[currentDownload], Qt::MatchExactly, 2 ).first()->setIcon(0,QIcon( appDir+"icons/install.png") ); }
 
-		default:
-			QMessageBox::information(this, tr("Error"), tr("Download failed: %1.").arg(responseHeader.reasonPhrase()));
-			httpRequestAborted = true;
-			//progressDialog->hide();
-			http->abort();
-	}
+	currentDownload++;
+	downloadFile();
  }
-
-void MainWindow::updateDataReadProgress(int bytesRead, int totalBytes)
-{
-	if (httpRequestAborted)
-		return;
-
-	downloadProgressBar->setMaximum(totalBytes);
-	downloadProgressBar->setValue(bytesRead);
-	
-		
-}
 
 
 

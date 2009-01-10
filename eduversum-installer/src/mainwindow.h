@@ -57,7 +57,7 @@ class MainWindow : public QWidget, Ui::eduversumGui
 		QString status, appDir;
 		int progress, currentDownload;
 		QTimer *timer;
-		QProcess *process;
+		QProcess *process,  *process2;
 		QStringList output, install, remove, newPackages, updatedPackages, removedPackages, downloads;
 
 
@@ -87,10 +87,8 @@ class MainWindow : public QWidget, Ui::eduversumGui
 
 		// download functions
 		void downloadFile();
-		void cancelDownload();
-		void downloadFinished(int, bool);
-		void readResponseHeader(const QHttpResponseHeader &responseHeader);
-		void updateDataReadProgress(int bytesRead, int totalBytes);
+		void downloadFinished();
+		void updateDownloadStatus();
 
 		void toggleDetails();
 
