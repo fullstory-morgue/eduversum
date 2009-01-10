@@ -8,6 +8,8 @@ eduversum (0.1.6) UNRELEASED; urgency=low
   * eduversum-installer added
   * eudversum-installer added
 
+ -- Fabian Wuertz <xadras@sidux.com>  Sat, 10 Jan 2009 15:47:00 +0100
+
 eduversum (0.1.5) unstable; urgency=low
 
   * data: kworldclock, labplot & bibletime improved
