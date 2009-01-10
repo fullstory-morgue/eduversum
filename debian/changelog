@@ -6,8 +6,7 @@ eduversum (0.1.6) UNRELEASED; urgency=low
   [ Fabian Wuertz ]
   * eduversum-installer added
   * eduversum-installer added
-
- -- Fabian Wuertz <xadras@sidux.com>  Sat, 10 Jan 2009 15:37:18 +0100
+  * eudversum-installer added
 
 eduversum (0.1.5) unstable; urgency=low
 

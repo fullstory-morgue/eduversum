@@ -137,7 +137,7 @@ void MainWindow::removePackages()
 		QStringList arguments;
 		arguments.append("remove");
 		arguments += remove;
-		QString program = appdir+"sh/getDep.sh";
+		QString program = appDir+"sh/getDep.sh";
 		connect( process, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
 		connect( process, SIGNAL(finished(int)),this, SLOT(processOutput()));
 		process->start(program, arguments );
