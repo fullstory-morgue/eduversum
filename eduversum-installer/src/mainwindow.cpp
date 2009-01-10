@@ -19,9 +19,6 @@
  ***************************************************************************/
 
 
-//todo
-//----
-//-wuertz
 
  #include <QtGui>
  #include <QtNetwork>
@@ -58,6 +55,7 @@
 
 	status = "welcome";
 	titleLabel->setText("<h3>Welcome</h3>");
+	appDir = "/usr/share/eduversum-installer/"; 
  }
 
 
@@ -132,14 +130,14 @@ void MainWindow::removePackages()
 		nextPushButton->setDisabled(TRUE);
 
 		QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
-		item1->setIcon( 0, QIcon( "/home/wuertz/qhttp/icons/wait.png") );
+		item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
 		item1->setText( 0, "Please wait..." );
 
 		output.clear();
 		QStringList arguments;
 		arguments.append("remove");
 		arguments += remove;
-		QString program = "/home/wuertz/test.sh";
+		QString program = appdir+"sh/getDep.sh";
 		connect( process, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
 		connect( process, SIGNAL(finished(int)),this, SLOT(processOutput()));
 		process->start(program, arguments );
@@ -186,14 +184,14 @@ void MainWindow::installPackages()
 
 		treeWidget->clear();
 		QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
-		item1->setIcon( 0, QIcon( "/home/wuertz/qhttp/icons/wait.png") );
+		item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
 		item1->setText( 0, "Please wait..." );
 	
 		output.clear();
 		QStringList arguments;
 		arguments.append("install");
 		arguments += install;
-		QString program = "/home/wuertz/test.sh";
+		QString program = appDir+"sh/getDep.sh";
 		connect( process, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
 		connect( process, SIGNAL(finished(int)),this, SLOT(processOutput()));
 		process->start(program, arguments );
@@ -220,7 +218,7 @@ void MainWindow::downloadPackages()
 			item->setText( 0, packageName);
 			item->setText( 1, packageVersion);
 			item->setText( 2, download);
-			item->setIcon( 0, QIcon( "/home/wuertz/qhttp/icons/notok.png") );
+			item->setIcon( 0, QIcon( appDir+"icons/notok.png") );
 		}
 		currentDownload = 0;
 		downloadFile();
@@ -357,7 +355,7 @@ void MainWindow::processOutput()
 
 		if( newPackages.count() > 0 ) {
 			QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
-			item1->setIcon( 0, QIcon( "/home/wuertz/qhttp/icons/install.png") );
+			item1->setIcon( 0, QIcon( appDir+"icons/install.png") );
 			item1->setText( 0, "Packages to install ("+QString::number(newPackages.count())+"):" );
 			foreach (QString package, newPackages) {
 				QTreeWidgetItem *item = new QTreeWidgetItem(item1, 0);
@@ -368,7 +366,7 @@ void MainWindow::processOutput()
 		}
 		if( updatedPackages.count() > 0 ) {
 			QTreeWidgetItem *item2 = new QTreeWidgetItem(treeWidget, 0);
-			item2->setIcon( 0, QIcon( "/home/wuertz/qhttp/icons/update.png") );
+			item2->setIcon( 0, QIcon( appDir+"icons/update.png") );
 			item2->setText( 0, "Packages to update ("+QString::number(updatedPackages.count())+"):" );
 			foreach (QString package, updatedPackages) {
 				QTreeWidgetItem *item = new QTreeWidgetItem(item2, 0);;
@@ -379,7 +377,7 @@ void MainWindow::processOutput()
 		}
 		if( removedPackages.count() > 0 ) {
 			QTreeWidgetItem *item3 = new QTreeWidgetItem(treeWidget, 0);
-			item3->setIcon( 0, QIcon( "/home/wuertz/qhttp/icons/remove.png") );
+			item3->setIcon( 0, QIcon( appDir+"icons/remove.png") );
 			item3->setText( 0, "Packages to remove ("+QString::number(removedPackages.count())+"):" );
 			foreach (QString package, removedPackages) {
 				QTreeWidgetItem *item = new QTreeWidgetItem(item3, 0);
@@ -489,7 +487,7 @@ void MainWindow::downloadFinished(int requestId, bool error)
 		QMessageBox::information( this, tr( "Error" ), tr( "Download failed: %1." ).arg( http->errorString() ));
 	else {
 		if ( downloadTreeWidget->findItems(downloads[currentDownload], Qt::MatchExactly, 2 ).count() > 0 ) {
-			downloadTreeWidget->findItems(downloads[currentDownload], Qt::MatchExactly, 2 ).first()->setIcon( 0, QIcon( "/home/wuertz/qhttp/icons/ok.png") );
+			downloadTreeWidget->findItems(downloads[currentDownload], Qt::MatchExactly, 2 ).first()->setIcon( 0, QIcon( appDir+"icons/ok.png") );
 		}
 		http->close();
 		currentDownload++;

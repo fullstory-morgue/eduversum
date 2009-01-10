@@ -54,7 +54,7 @@ class MainWindow : public QWidget, Ui::eduversumGui
 
 	public:
 		MainWindow(QStringList, QWidget* parent = 0, Qt::WFlags flags = 0);
-		QString status;
+		QString status, appDir;
 		int progress, currentDownload;
 		QTimer *timer;
 		QProcess *process;

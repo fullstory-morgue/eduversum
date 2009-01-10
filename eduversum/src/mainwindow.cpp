@@ -458,7 +458,7 @@ void MainWindow::applyChanges()
 	QString program = "su-to-root";
 	QStringList arguments;
 	//arguments << "-X" << "-c" << "x-terminal-emulator -e /usr/share/eduversum/sh/applyChanges"+addRemoveApp;
-	arguments << "-X" << "-c" << "/home/wuertz/qhttp/eduversum-installer"+addRemoveApp;
+	arguments << "-X" << "-c" << "eduversum-installer"+addRemoveApp;
 
 	QProcess *myProcess = new QProcess(this);
 	myProcess->start(program, arguments);
