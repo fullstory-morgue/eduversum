@@ -212,10 +212,11 @@ void MainWindow::downloadPackages()
 			QStringList tmpArray2 = tmpArray[tmpArray.count()-1].split("_");
 			QString packageName = tmpArray2[0];
 			QString packageVersion = tmpArray2[1];
-			item->setText( 0, packageName);
-			item->setText( 1, packageVersion);
-			item->setText( 2, download);
-			//item->setIcon( 0, QIcon( appDir+"icons/notok.png") );
+			item->setIcon( 0, QIcon( appDir+"icons/notok.png") );
+			item->setText( 1, packageName);
+			item->setText( 2, packageVersion);
+			item->setText( 3, download);
+			downloadTreeWidget->header()->resizeSection(0, 23);
 		}
 		currentDownload = 0;
 		downloadFile();
@@ -402,11 +403,7 @@ void MainWindow::processOutput()
 			if(line.contains("http://")) { 
 				line = line.split(" ")[0];
 				line.replace("'","");
-				QStringList tmpArray = line.split("/");
-				QString fileName = tmpArray[tmpArray.count()-1];
-				if( !QFile::exists("/var/cache/apt/archives/"+fileName) ) {
-					downloads.append(line);
-				}
+				downloads.append(line);
 			}
 	} 
 }
@@ -457,7 +454,7 @@ void MainWindow::runProgressBar()
 	connect( downloadProcess, SIGNAL(finished(int)),this, SLOT(downloadFinished()));
 	downloadProcess->setWorkingDirectory("/var/cache/apt/archives");
 	downloadProcess->start(program, downloads );
-	//downloadLabel->setText(tr("Downloading %1.").arg(downloads[currentDownload]));	
+	//downloadLabel->setText(tr("Downloading %1.").arg(downloads[currentDownload]));
 
 
  }
@@ -465,8 +462,21 @@ void MainWindow::runProgressBar()
  void MainWindow::updateDownloadStatus()
  {
 	QByteArray result= downloadProcess->readAllStandardError();
+
+
+
 	QStringList test = QString::fromUtf8(result).split(" ");
 
+	if( currentDownload < downloads.count() )
+		if( QString::fromUtf8(result).contains(downloads[currentDownload]) ) {
+			    downloadLabel->setText( "Downloading "+downloads[currentDownload]+"." );
+			    if(currentDownload > 0) {
+					if( downloadTreeWidget->findItems(downloads[currentDownload-1], Qt::MatchExactly, 3 ).count() > 0 ) {
+						downloadTreeWidget->findItems(downloads[currentDownload-1], Qt::MatchExactly, 3 ).first()->setIcon(0,QIcon( appDir+"icons/ok.png") );
+					 }
+			    }
+			    currentDownload++;
+		}
 
 	if(test.count() > 1 ) {
 		if( test[1].contains("%") ) {
@@ -481,8 +491,9 @@ void MainWindow::runProgressBar()
  void MainWindow::downloadFinished()
  {
  	downloadProgressBar->setValue(100);
-	//if( downloadTreeWidget->findItems(downloads[currentDownload], Qt::MatchExactly, 2 ).count() > 0 ) {
-	//	downloadTreeWidget->findItems(downloads[currentDownload], Qt::MatchExactly, 2 ).first()->setIcon(0,QIcon( appDir+"icons/install.png") ); }
+	if( downloadTreeWidget->findItems(downloads[downloads.count()-1], Qt::MatchExactly, 3 ).count() > 0 ) {
+		downloadTreeWidget->findItems(downloads[downloads.count()-1], Qt::MatchExactly, 3 ).first()->setIcon(0,QIcon( appDir+"icons/ok.png") );
+	}
 	nextPushButton->setEnabled(TRUE);
  }
 
