@@ -1,9 +1,5 @@
-eduversum (0.1.7) UNRELEASED; urgency=low
+eduversum (0.1.7) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Fabian Wuertz ]
   * installer: qprocess problem solved
   * installer: header to getDep.sh added 
   * installer: Status label for the downloadProgressBar added 
