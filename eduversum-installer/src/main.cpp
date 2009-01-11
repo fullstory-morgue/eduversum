@@ -19,13 +19,22 @@
  ***************************************************************************/
 
  #include <QApplication>
-
+ #include <QTranslator>
  #include "mainwindow.h"
+
+
 
  int main(int argc, char *argv[])
  {
+
+
 	QApplication app(argc, argv);
 	QStringList args = app.arguments();
+        QString locale = QLocale::system().name();
+        QTranslator translator;
+        translator.load("eduversum-installer_"+locale, "/usr/share/eduversum-installer/translations" );
+        app.installTranslator(&translator);
+
 	if (getuid() != 0)
 		printf("No root\n");
 	else if( args.count() < 2 )

@@ -11,8 +11,7 @@ MOC_DIR = build/
 UI_DIR = ui/
 
 
-#FORMS =
-#TRANSLATIONS = qbat_de.ts
+#TRANSLATIONS = de.ts
 
 
 
@@ -26,7 +25,7 @@ target.path = /usr/bin
 iconstarget.path = /usr/share/icons/hicolor/32x32/apps/
 iconstarget.files = src/eduversum.png
 langtarget.path = /usr/share/eduversum/lang
-langtarget.files = eduversum_*.qm
+langtarget.files = *.qm
 shortcuttarget.path = /usr/share/applications
 shortcuttarget.files = src/eduversum.desktop
 

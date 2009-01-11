@@ -53,7 +53,7 @@
 	connect(detailsPushButton, SIGNAL(clicked()), SLOT(toggleDetails()));
 
 	status = "welcome";
-	titleLabel->setText("<h3>Welcome</h3>");
+	titleLabel->setText("<h3>"+tr("Welcome")+QLocale::system().name()+"</h3>");
 	appDir = "/usr/share/eduversum-installer/"; 
  }
 
@@ -92,7 +92,7 @@ void MainWindow::aptGetUpdate()
 
 	if( radioButton->isChecked() ) {
 		status = "aptGetUpdate";
-		titleLabel->setText("<h3>Resynchronize the package index files</h3>");
+		titleLabel->setText("<h3>"+tr("Resynchronize the package index files")+"</h3>");
 		contentStackedWidget->setCurrentIndex(1);
 		nextPushButton->setDisabled(TRUE);
 
@@ -119,13 +119,13 @@ void MainWindow::removePackages()
 {
 	if( remove.count() > 0 ) {
 		status = "removePackages";
-		titleLabel->setText("<h3>Remove packages</h3>");
+		titleLabel->setText("<h3>"+tr("Remove packages")+"</h3>");
 		contentStackedWidget->setCurrentIndex(2);
 		nextPushButton->setDisabled(TRUE);
 
 		QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
 		item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
-		item1->setText( 0, "Please wait..." );
+		item1->setText( 0, tr("Please wait...") );
 
 		removeProcess1 = new QProcess(this);
 		output.clear();
@@ -144,7 +144,7 @@ void MainWindow::removePackages()
 void MainWindow::removePackagesDpkg()
 {
 	status = "removePackagesDpkg";
-	titleLabel->setText("<h3>Remove packages</h3>");
+	titleLabel->setText("<h3>"+tr("Remove packages")+"</h3>");
 	contentStackedWidget->setCurrentIndex(1);
 	nextPushButton->setDisabled(TRUE);
 	outputTextBrowser->clear();
@@ -173,7 +173,7 @@ void MainWindow::installPackages()
 
 	if( install.count() > 0 ) {
 		status = "installPackages";
-		titleLabel->setText("<h3>Install packages</h3>");
+		titleLabel->setText("<h3>"+tr("Install packages")+"</h3>");
 		contentStackedWidget->setCurrentIndex(2);
 		nextPushButton->setDisabled(TRUE);
 
@@ -181,7 +181,7 @@ void MainWindow::installPackages()
 		treeWidget->clear();
 		QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
 		item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
-		item1->setText( 0, "Please wait..." );
+		item1->setText( 0, tr("Please wait...") );
 
 		installProcess1 = new QProcess(this);
 		output.clear();
@@ -201,7 +201,7 @@ void MainWindow::downloadPackages()
 {
 	if( downloads.count() > 0 ) {
 		status = "downloadPackages";
-		titleLabel->setText("<h3>Download packages</h3>");
+		titleLabel->setText("<h3>"+tr("Download packages")+"</h3>");
 		nextPushButton->setDisabled(TRUE);
 		contentStackedWidget->setCurrentIndex(3);
 		treeWidget->clear();
@@ -229,7 +229,7 @@ void MainWindow::downloadPackages()
 void MainWindow::installPackagesDpkg()
 {
 	status = "installPackagesDpkg";
-	titleLabel->setText("<h3>Install packages</h3>");
+	titleLabel->setText("<h3>"+tr("Install packages")+"</h3>");
 	QStringList storedDebFiles;
 	contentStackedWidget->setCurrentIndex(1);
 
@@ -258,7 +258,6 @@ void MainWindow::installPackagesDpkg()
 	connect( installProcess2, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
 	connect( installProcess2, SIGNAL(finished(int)),this, SLOT(processOutput()));
 	installProcess2->start(program, arguments );
-
 }
 
 //------------------------------------------------------------------------------
@@ -268,9 +267,9 @@ void MainWindow::installPackagesDpkg()
 void MainWindow::workDone()
 {
 	status = "workDone";
-	titleLabel->setText("<h3>Process finished</h3>");
+	titleLabel->setText("<h3>"+tr("Process finished")+"</h3>");
 	nextPushButton->setEnabled(TRUE);
-	nextPushButton->setText("close");
+	nextPushButton->setText( tr("close") );
 	contentStackedWidget->setCurrentIndex(4);
 }
 
@@ -352,7 +351,7 @@ void MainWindow::processOutput()
 		allPackages += updatedPackages;
 		allPackages += removedPackages;
 		if( allPackages.filter("xorg").count() > 0 or allPackages.filter("xserver").count() > 0 or allPackages.filter("x11").count()  ) {
-			QMessageBox::information(this, tr("Error"), "It is not allowed to change xserver packages during the xserver is running!");
+			QMessageBox::information(this, tr("Error"), tr("It is not allowed to change xserver packages during the xserver is running!") );
 			close();
 		}
 
@@ -368,7 +367,7 @@ void MainWindow::processOutput()
 		if( newPackages.count() > 0 ) {
 			QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
 			item1->setIcon( 0, QIcon( appDir+"icons/install.png") );
-			item1->setText( 0, "Packages to install ("+QString::number(newPackages.count())+"):" );
+			item1->setText( 0, tr("Packages to install")+"  ("+QString::number(newPackages.count())+"):" );
 			foreach (QString package, newPackages) {
 				QTreeWidgetItem *item = new QTreeWidgetItem(item1, 0);
 				item->setText( 0, package );
@@ -379,7 +378,7 @@ void MainWindow::processOutput()
 		if( updatedPackages.count() > 0 ) {
 			QTreeWidgetItem *item2 = new QTreeWidgetItem(treeWidget, 0);
 			item2->setIcon( 0, QIcon( appDir+"icons/update.png") );
-			item2->setText( 0, "Packages to update ("+QString::number(updatedPackages.count())+"):" );
+			item2->setText( 0, tr("Packages to update")+" ("+QString::number(updatedPackages.count())+"):" );
 			foreach (QString package, updatedPackages) {
 				QTreeWidgetItem *item = new QTreeWidgetItem(item2, 0);;
 				item->setText( 0, package );
@@ -390,7 +389,7 @@ void MainWindow::processOutput()
 		if( removedPackages.count() > 0 ) {
 			QTreeWidgetItem *item3 = new QTreeWidgetItem(treeWidget, 0);
 			item3->setIcon( 0, QIcon( appDir+"icons/remove.png") );
-			item3->setText( 0, "Packages to remove ("+QString::number(removedPackages.count())+"):" );
+			item3->setText( 0, tr("Packages to remove")+ " ("+QString::number(removedPackages.count())+"):" );
 			foreach (QString package, removedPackages) {
 				QTreeWidgetItem *item = new QTreeWidgetItem(item3, 0);
 				item->setText( 0, package );
@@ -454,7 +453,6 @@ void MainWindow::runProgressBar()
 	connect( downloadProcess, SIGNAL(finished(int)),this, SLOT(downloadFinished()));
 	downloadProcess->setWorkingDirectory("/var/cache/apt/archives");
 	downloadProcess->start(program, downloads );
-	//downloadLabel->setText(tr("Downloading %1.").arg(downloads[currentDownload]));
 
 
  }
@@ -469,7 +467,7 @@ void MainWindow::runProgressBar()
 
 	if( currentDownload < downloads.count() )
 		if( QString::fromUtf8(result).contains(downloads[currentDownload]) ) {
-			    downloadLabel->setText( "Downloading "+downloads[currentDownload]+"." );
+			    downloadLabel->setText( tr("Downloading")+ " "+downloads[currentDownload]+"." );
 			    if(currentDownload > 0) {
 					if( downloadTreeWidget->findItems(downloads[currentDownload-1], Qt::MatchExactly, 3 ).count() > 0 ) {
 						downloadTreeWidget->findItems(downloads[currentDownload-1], Qt::MatchExactly, 3 ).first()->setIcon(0,QIcon( appDir+"icons/ok.png") );
@@ -507,11 +505,11 @@ void MainWindow::toggleDetails()
 {
 	if( outputTextBrowser->isVisible() ) {
 		outputTextBrowser->hide();
-		detailsPushButton->setText("show details");
+		detailsPushButton->setText( tr("show details") );
 	}
 	else {
 		outputTextBrowser->show();
-		detailsPushButton->setText("hide details");
+		detailsPushButton->setText( tr("hide details") );
 	}
 }
 
