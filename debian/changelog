@@ -1,8 +1,13 @@
 eduversum (0.1.7) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 10 Jan 2009 20:33:19 +0100
+  [ Fabian Wuertz ]
+  * installer: qprocess problem solved
+  * installer: header to getDep.sh added 
+
+ -- Fabian Wuertz <xadras@sidux.com>  Sun, 11 Jan 2009 11:35:43 +0100
 
 eduversum (0.1.6) unstable; urgency=low
 

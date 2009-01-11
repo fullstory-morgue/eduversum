@@ -57,7 +57,7 @@ class MainWindow : public QWidget, Ui::eduversumGui
 		QString status, appDir;
 		int progress, currentDownload;
 		QTimer *timer;
-		QProcess *process,  *process2;
+		QProcess *updateProcess, *removeProcess1, *removeProcess2, *installProcess1, *installProcess2, *downloadProcess;
 		QStringList output, install, remove, newPackages, updatedPackages, removedPackages, downloads;
 
 

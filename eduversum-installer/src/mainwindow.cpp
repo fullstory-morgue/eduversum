@@ -41,8 +41,6 @@
 
 
 	timer = new QTimer(this);
-	process = new QProcess(this);
-	process2 = new QProcess(this);
 	http = new QHttp(this);
 	setupUi(this);
 	contentStackedWidget->setCurrentIndex(0);
@@ -82,12 +80,6 @@ void MainWindow::next()
 		workDone();
 	else if(  status == "workDone" )
 		close();
-	else {
-		int i = contentStackedWidget->currentIndex()+1;
-		if( i == contentStackedWidget->count() )
-			i = 0;
-		contentStackedWidget->setCurrentIndex(i);
-	}
 }
 
 
@@ -104,14 +96,15 @@ void MainWindow::aptGetUpdate()
 		contentStackedWidget->setCurrentIndex(1);
 		nextPushButton->setDisabled(TRUE);
 
+		updateProcess = new QProcess(this);
 		output.clear();
 		startProgressBar();
 		QStringList arguments;
 		arguments.append("update");
 		QString program = "apt-get";
-		connect( process, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
-		connect( process, SIGNAL(finished(int)),this, SLOT(processFinished()));
-		process->start(program, arguments );
+		connect( updateProcess, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
+		connect( updateProcess, SIGNAL(finished(int)),this, SLOT(processFinished()));
+		updateProcess->start(program, arguments );
 	}
 	else
 		removePackages();
@@ -134,14 +127,15 @@ void MainWindow::removePackages()
 		item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
 		item1->setText( 0, "Please wait..." );
 
+		removeProcess1 = new QProcess(this);
 		output.clear();
 		QStringList arguments;
 		arguments.append("remove");
 		arguments += remove;
 		QString program = appDir+"sh/getDep.sh";
-		connect( process, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
-		connect( process, SIGNAL(finished(int)),this, SLOT(processOutput()));
-		process->start(program, arguments );
+		connect( removeProcess1, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
+		connect( removeProcess1, SIGNAL(finished(int)),this, SLOT(processOutput()));
+		removeProcess1->start(program, arguments );
 	}
 	else
 		installPackages();
@@ -155,15 +149,16 @@ void MainWindow::removePackagesDpkg()
 	nextPushButton->setDisabled(TRUE);
 	outputTextBrowser->clear();
 
+	removeProcess2 = new QProcess(this);
 	output.clear();
 	startProgressBar();
 	QStringList arguments;
 	arguments.append("-r");
 	arguments += removedPackages;
 	QString program = "dpkg";
-	connect( process, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
-	connect( process, SIGNAL(finished(int)),this, SLOT(processFinished()));
-	process->start(program, arguments );
+	connect( removeProcess2, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
+	connect( removeProcess2, SIGNAL(finished(int)),this, SLOT(processFinished()));
+	removeProcess2->start(program, arguments );
 
 
 
@@ -187,15 +182,16 @@ void MainWindow::installPackages()
 		QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
 		item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
 		item1->setText( 0, "Please wait..." );
-	
+
+		installProcess1 = new QProcess(this);
 		output.clear();
 		QStringList arguments;
 		arguments.append("install");
 		arguments += install;
 		QString program = appDir+"sh/getDep.sh";
-		connect( process, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
-		connect( process, SIGNAL(finished(int)),this, SLOT(processOutput()));
-		process->start(program, arguments );
+		connect( installProcess1, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
+		connect( installProcess1, SIGNAL(finished(int)),this, SLOT(processOutput()));
+		installProcess1->start(program, arguments );
 	}
 	else
 		workDone();
@@ -251,15 +247,16 @@ void MainWindow::installPackagesDpkg()
 	outputTextBrowser->clear();
 	nextPushButton->setDisabled(TRUE);
 
+	installProcess2 = new QProcess(this);
 	output.clear();
 	startProgressBar();
 	QStringList arguments;
 	arguments.append("-i");
 	arguments += storedDebFiles;
 	QString program = "dpkg";
-	connect( process, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
-	connect( process, SIGNAL(finished(int)),this, SLOT(processOutput()));
-	process->start(program, arguments );
+	connect( installProcess2, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
+	connect( installProcess2, SIGNAL(finished(int)),this, SLOT(processOutput()));
+	installProcess2->start(program, arguments );
 
 }
 
@@ -292,7 +289,20 @@ void MainWindow::processFinished()
 
 void MainWindow::readOutput()
 {
-	QByteArray result= process->readAllStandardOutput();
+	QByteArray result;
+	if( status == "aptGetUpdate" )
+		result = updateProcess->readAllStandardOutput();
+	else if(  status == "removePackages" )
+		result = removeProcess1->readAllStandardOutput();
+	else if(  status == "removePackagesDpkg" )
+		result = removeProcess2->readAllStandardOutput();
+	else if(  status == "installPackages" )
+		result = installProcess1->readAllStandardOutput();
+	else if(  status == "installPackagesDpkg" )
+		result = installProcess2->readAllStandardOutput();
+	else if(  status == "downloadPackages" )
+		result = downloadProcess->readAllStandardOutput();
+  
 	QStringList lines = QString(result).split("\n");
 	foreach (QString line, lines)
 		if(line != "")
@@ -439,26 +449,22 @@ void MainWindow::runProgressBar()
 
  void MainWindow::downloadFile()
  {
-	if( currentDownload < downloads.count()) {
-		output.clear();
-		QStringList arguments;
-		arguments.append(downloads[currentDownload]);
-		QString program = "wget";
-		connect( process2, SIGNAL(readyReadStandardError()),this, SLOT(updateDownloadStatus()));
-		connect( process2, SIGNAL(finished(int)),this, SLOT(downloadFinished()));
-		process2->setWorkingDirectory("/var/cache/apt/archives");
-		process2->start(program, arguments );
-		downloadLabel->setText(tr("Downloading %1.").arg(downloads[currentDownload]));
-	}
-	else 
-		nextPushButton->setEnabled(TRUE);
+
+	downloadProcess = new QProcess(this);
+	output.clear();
+	QString program = "wget";
+	connect( downloadProcess, SIGNAL(readyReadStandardError()),this, SLOT(updateDownloadStatus()));
+	connect( downloadProcess, SIGNAL(finished(int)),this, SLOT(downloadFinished()));
+	downloadProcess->setWorkingDirectory("/var/cache/apt/archives");
+	downloadProcess->start(program, downloads );
+	//downloadLabel->setText(tr("Downloading %1.").arg(downloads[currentDownload]));	
 
 
  }
 
  void MainWindow::updateDownloadStatus()
  {
-	QByteArray result= process2->readAllStandardError();
+	QByteArray result= downloadProcess->readAllStandardError();
 	QStringList test = QString::fromUtf8(result).split(" ");
 
 
@@ -477,9 +483,7 @@ void MainWindow::runProgressBar()
  	downloadProgressBar->setValue(100);
 	//if( downloadTreeWidget->findItems(downloads[currentDownload], Qt::MatchExactly, 2 ).count() > 0 ) {
 	//	downloadTreeWidget->findItems(downloads[currentDownload], Qt::MatchExactly, 2 ).first()->setIcon(0,QIcon( appDir+"icons/install.png") ); }
-
-	currentDownload++;
-	downloadFile();
+	nextPushButton->setEnabled(TRUE);
  }
 
 
