@@ -1,10 +1,5 @@
-eduversum (0.1.8) UNRELEASED; urgency=low
+eduversum (0.1.8) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Fabian Wuertz ]
-  * installer: de translation files added
   * installer: de translation files added 
   * installer: welcome message fixed
 
