@@ -53,7 +53,7 @@
 	connect(detailsPushButton, SIGNAL(clicked()), SLOT(toggleDetails()));
 
 	status = "welcome";
-	titleLabel->setText("<h3>"+tr("Welcome")+QLocale::system().name()+"</h3>");
+	titleLabel->setText("<h3>"+tr("Welcome")+"</h3>");
 	appDir = "/usr/share/eduversum-installer/"; 
  }
 
