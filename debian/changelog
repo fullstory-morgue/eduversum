@@ -5,8 +5,9 @@ eduversum (0.1.8) UNRELEASED; urgency=low
 
   [ Fabian Wuertz ]
   * installer: de translation files added
+  * installer: de translation files added 
 
- -- Fabian Wuertz <xadras@sidux.com>  Sun, 11 Jan 2009 22:59:26 +0100
+ -- Fabian Wuertz <xadras@sidux.com>  Sun, 11 Jan 2009 23:04:38 +0100
 
 eduversum (0.1.7) unstable; urgency=low
 
