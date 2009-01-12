@@ -1,8 +1,13 @@
 eduversum (0.1.9) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 12 Jan 2009 00:49:16 +0100
+  [ Fabian Wuertz ]
+  * installer: de translation updated
+  * debian: wget dependency added 
+
+ -- Fabian Wuertz <xadras@sidux.com>  Mon, 12 Jan 2009 09:49:36 +0100
 
 eduversum (0.1.8) unstable; urgency=low
 
