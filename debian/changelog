@@ -1,9 +1,5 @@
-eduversum (0.1.10) UNRELEASED; urgency=low
+eduversum (0.1.10) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Fabian Wuertz ]
   * translation: de updated
   * installer: debconf added
 
