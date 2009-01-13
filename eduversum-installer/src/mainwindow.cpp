@@ -155,7 +155,7 @@ void MainWindow::removePackagesDpkg()
 	QStringList arguments;
 	arguments.append("-r");
 	arguments += removedPackages;
-	QString program = "dpkg";
+	QString program = appDir+"sh/applyChanges.sh";
 	connect( removeProcess2, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
 	connect( removeProcess2, SIGNAL(finished(int)),this, SLOT(processFinished()));
 	removeProcess2->start(program, arguments );
@@ -252,9 +252,9 @@ void MainWindow::installPackagesDpkg()
 	output.clear();
 	startProgressBar();
 	QStringList arguments;
-	arguments.append("-i");
+	arguments.append( "-i" );
 	arguments += storedDebFiles;
-	QString program = "dpkg";
+	QString program = appDir+"sh/applyChanges.sh";
 	connect( installProcess2, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
 	connect( installProcess2, SIGNAL(finished(int)),this, SLOT(processOutput()));
 	installProcess2->start(program, arguments );
