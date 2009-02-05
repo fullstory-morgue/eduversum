@@ -83,13 +83,23 @@ void MainWindow::loadGui()
   
 
 	// tray
+	trayIcon = new QSystemTrayIcon(this);
+	trayIcon->setContextMenu(trayIconMenu);
+
+
 	trayIcon = new QSystemTrayIcon;
 
-	quitAction = new QAction(tr("&Beenden"), this);
+	stuffAction = new QAction("Arbeitsmaterialen", this);
+	connect(stuffAction, SIGNAL(triggered()), this, SLOT(showStuff()));
+	aboutAction = new QAction(QString::fromUtf8("Über Eduversum"), this);
+	connect(aboutAction, SIGNAL(triggered()), this, SLOT(showAbout()));
+	quitAction = new QAction("&Beenden", this);
 	connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
 
 	trayIconMenu = new QMenu(this);
-	trayIconMenu->addSeparator();
+	//trayIconMenu->addSeparator();
+	trayIconMenu->addAction(stuffAction);
+	trayIconMenu->addAction(aboutAction);
 	trayIconMenu->addAction(quitAction);
 
 	trayIcon->setContextMenu(trayIconMenu);
@@ -341,7 +351,7 @@ void MainWindow::copyDir(QString sourceDir, QString destinationDir)
 //------------------------------------------------------------------------------
 
 void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
- {
+{
 	switch (reason) {
 		case QSystemTrayIcon::Trigger:
 		case QSystemTrayIcon::DoubleClick:
@@ -352,21 +362,77 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 		case QSystemTrayIcon::MiddleClick:
 		default:
 			;
-     }
- }
+	}
+}
 
 
 
- void MainWindow::closeEvent(QCloseEvent *event)
- {
+void MainWindow::closeEvent(QCloseEvent *event)
+{
 	if (trayIcon->isVisible()) {
 	    QMessageBox::information(this, "Systray",
 				    QString::fromUtf8("Um das Programm zu beenden, wählen sie 'Beenden' im Kontextmenue des Programms im Systemabschnitt der Leiste.") );
 	    hide();
 	    event->ignore();
 	}
- }
+}
 
+
+void MainWindow::showAbout()
+{
+	QString about; 
+
+	about += "\nEntwickler:\n";
+	about += QString::fromUtf8("Fabian Würtz <xadras@sidux.com>\n");
+
+	about += "\nPaketzusammenstellung und Dokumentation:\n";
+	about += "Roland Engert (RoEn)\n";
+	about += QString::fromUtf8("Björn Jilg (BlueShadow)\n");
+	about += "Thomas Kross (captagon)\n";
+	about += "Hendrik Lehmbruch (hendrikL)\n";
+	about += "Dinko Sabo (cobra) <cobra@sidux.com>\n";
+
+	
+	about += "\nIcons:\n";
+	about += QString::fromUtf8("Bernard Gray")+" <bernard.gray@gmail.com>\n";
+
+	about += "\nWeitere Beteiligte:\n";
+	about += "Stefan Lippers-Hollmann (slh)\n";
+	about += "Ferdi Thommes (devil)\n";
+	about += "Horst Tritremmel (hjt)\n";
+ 	about += "Wolf-Dieter Zimmermann (emile)\n";
+
+	about += "\nLicenz: GPL" ;
+
+	trayIcon->showMessage ( QString::fromUtf8("Über Eduversum"), about, QSystemTrayIcon::Information, 20000 );
+}
+
+
+void MainWindow::showStuff()
+{
+	QString exec;
+	if( QFile::exists("/usr/bin/dolphin") )
+		exec = "dolphin";
+	else if( QFile::exists("/usr/bin/konqueror") )
+		exec = "konqueror";
+	else if( QFile::exists("/usr/bin/nautilus") )
+		exec = "nautilus";
+	else if( QFile::exists("/usr/bin/thunar") )
+		exec = "thunar";
+	else if( QFile::exists("/usr/bin/pcmanfm") )
+		exec = "pcmanfm";
+	else {
+		QMessageBox::information(this, QString::fromUtf8("Fehler"), QString::fromUtf8("Es wurde kein Dateimanager gefunden") );
+		return;
+	}
+
+	QStringList arguments;
+	arguments << "/usr/share/seminarix-samples";
+
+	QProcess *myProcess = new QProcess(this);
+	myProcess->start(exec, arguments);
+
+}
 
 //------------------------------------------------------------------------------
 //-- tray events ---------------------------------------------------------------

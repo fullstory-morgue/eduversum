@@ -45,10 +45,8 @@ class MainWindow : public QWidget, Ui::eduversumGui
 		virtual void cancelChanges();
 		virtual void discardChanges();
 		virtual void showChanges();
-
-
-
-
+		virtual void showAbout();
+		virtual void showStuff();
 
 
 	private slots:
@@ -60,6 +58,8 @@ class MainWindow : public QWidget, Ui::eduversumGui
 		QAction *maximizeAction;
 		QAction *restoreAction;
 		QAction *quitAction;
+		QAction *aboutAction;
+		QAction *stuffAction;
 		QSystemTrayIcon *trayIcon;
 		QMenu *trayIconMenu;
 
