@@ -402,7 +402,7 @@ void MainWindow::showAbout()
 	about += "Horst Tritremmel (hjt)\n";
  	about += "Wolf-Dieter Zimmermann (emile)\n";
 
-	about += "\nLicenz: GPL" ;
+	about += "\nLizenz: GPL" ;
 
 	trayIcon->showMessage ( QString::fromUtf8("Über Eduversum"), about, QSystemTrayIcon::Information, 20000 );
 }

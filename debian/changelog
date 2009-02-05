@@ -6,8 +6,9 @@ eduversum (0.1.11) UNRELEASED; urgency=low
   [ Fabian Wuertz ]
   * eduversum: about added
   * eduversum: showStuff added 
+  * eduversum: typo
 
- -- Fabian Wuertz <xadras@sidux.com>  Thu, 05 Feb 2009 18:59:50 +0100
+ -- Fabian Wuertz <xadras@sidux.com>  Thu, 05 Feb 2009 19:04:39 +0100
 
 eduversum (0.1.10) unstable; urgency=low
 
