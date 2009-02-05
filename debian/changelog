@@ -1,9 +1,5 @@
-eduversum (0.1.11) UNRELEASED; urgency=low
+eduversum (0.1.11) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Fabian Wuertz ]
   * eduversum: about added
   * eduversum: showStuff added 
   * eduversum: typo
