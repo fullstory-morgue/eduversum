@@ -18,32 +18,24 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
- #ifndef MAINWINDOW_H
- #define MAINWINDOW_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
- #include <QDialog>
-
- #include <QDialogButtonBox>
- #include <QFile>
- #include <QHttp>
- #include <QHttpResponseHeader>
- #include <QLabel>
- #include <QLineEdit>
-  #include <QProgressDialog>
-  #include <QPushButton>
-  #include <QSslError>
-  #include <QAuthenticator>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QFile>
+#include <QLabel>
+#include <QLineEdit>
+#include <QProgressDialog>
+#include <QPushButton>
 
 
-#include "QMenu"
+#include <QMenu>
 #include <QSystemTrayIcon>
 #include <QCloseEvent>
 #include <QMessageBox>
 #include <QProcess>
-#include <QHttp>
 #include <QFile>
-#include <QProgressDialog>
-#include <QDialogButtonBox>
 
 
 #include "ui_mainwindow.h"
@@ -54,10 +46,10 @@ class MainWindow : public QWidget, Ui::eduversumGui
 
 	public:
 		MainWindow(QStringList, QWidget* parent = 0, Qt::WFlags flags = 0);
-		QString status, appDir;
+		QString status, mode, appDir;
 		int progress, currentDownload;
 		QTimer *timer;
-		QProcess *updateProcess, *removeProcess1, *removeProcess2, *installProcess1, *installProcess2, *downloadProcess;
+		QProcess *updateProcess, *removeProcess1, *removeProcess2, *installProcess1, *installProcess2, *downloadProcess, *duDownloadProcess;
 		QStringList output, install, remove, newPackages, updatedPackages, removedPackages, downloads;
 
 
@@ -86,18 +78,13 @@ class MainWindow : public QWidget, Ui::eduversumGui
 		void runProgressBar();
 
 		// download functions
+		void duDownload();
 		void downloadFile();
 		void downloadFinished();
 		void updateDownloadStatus();
 
 		void toggleDetails();
 
-
-	private:
-		QProgressDialog *progressDialog;
-		QHttp *http;
-		int httpGetId;
-		bool httpRequestAborted;
  };
 
  #endif

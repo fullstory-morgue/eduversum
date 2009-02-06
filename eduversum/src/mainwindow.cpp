@@ -370,10 +370,9 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 void MainWindow::closeEvent(QCloseEvent *event)
 {
 	if (trayIcon->isVisible()) {
-	    QMessageBox::information(this, "Systray",
-				    QString::fromUtf8("Um das Programm zu beenden, wählen sie 'Beenden' im Kontextmenue des Programms im Systemabschnitt der Leiste.") );
-	    hide();
-	    event->ignore();
+		QMessageBox::information(this, "Systray", QString::fromUtf8("Um das Programm zu beenden, wählen sie 'Beenden' im Kontextmenue des Programms im Systemabschnitt der Leiste.") );
+		hide();
+		event->ignore();
 	}
 }
 
@@ -524,7 +523,7 @@ void MainWindow::applyChanges()
 	QString program = "su-to-root";
 	QStringList arguments;
 	//arguments << "-X" << "-c" << "x-terminal-emulator -e /usr/share/eduversum/sh/applyChanges"+addRemoveApp;
-	arguments << "-X" << "-c" << "eduversum-installer"+addRemoveApp;
+	arguments << "-X" << "-c" << "sidux-apt-qt4"+addRemoveApp;
 
 	QProcess *myProcess = new QProcess(this);
 	myProcess->start(program, arguments);

@@ -1,6 +1,6 @@
 
 TEMPLATE = subdirs
 
- SUBDIRS = eduversum \
-	eduversum-installer
+SUBDIRS = eduversum \
+          sidux-apt-qt4
 

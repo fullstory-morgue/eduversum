@@ -24,15 +24,15 @@
 
 
 
- int main(int argc, char *argv[])
- {
+int main(int argc, char *argv[])
+{
 
-
+	QString appName = "sidux-apt-qt4";
 	QApplication app(argc, argv);
 	QStringList args = app.arguments();
         QString locale = QLocale::system().name();
         QTranslator translator;
-        translator.load("eduversum-installer_"+locale, "/usr/share/eduversum-installer/translations" );
+        translator.load(appName+"_"+locale, "/usr/share/"+appName+"/translations" );
         app.installTranslator(&translator);
 
 	if (getuid() != 0)

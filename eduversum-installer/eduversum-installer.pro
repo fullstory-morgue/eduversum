@@ -10,22 +10,22 @@ OBJECTS_DIR = build/
 MOC_DIR = build/
 UI_DIR = ui/
 
-TRANSLATIONS = eduversum-installer_de.ts
+TRANSLATIONS = translations/sidux-apt-qt4_de.ts
 
 SOURCES += src/main.cpp \
  src/mainwindow.cpp
 DESTDIR = .
 
 target.path = /usr/bin
-data.path = /usr/share/eduversum-installer
+data.path = /usr/share/sidux-apt-qt4
 data.files = icons sh
-langtarget.path = /usr/share/eduversum-installer/translations/
-langtarget.files = eduversum-installer_de.qm
+langtarget.path = /usr/share/sidux-apt-qt4/translations/
+langtarget.files = translations/sidx-apt-qt4_de.qm
 
 INSTALLS += target data langtarget
 
 HEADERS += src/mainwindow.h
-TARGET = src/eduversum-installer
+TARGET = src/sidux-apt-qt4
 
 FORMS += src/mainwindow.ui
 

@@ -30,18 +30,7 @@
  {
 
 
-	//load input;
-	foreach (QString package, args) {
-		if ( package.left(1) == "+")
-			install.append(package.mid(1));
-		else if ( package.left(1) == "-")
-			remove.append(package.mid(1));
-	}
-
-
-
 	timer = new QTimer(this);
-	http = new QHttp(this);
 	setupUi(this);
 	contentStackedWidget->setCurrentIndex(0);
 	//setWindowIcon( QPixmap( appdir+"/icons/eduversum.png") );
@@ -52,13 +41,37 @@
 	connect(nextPushButton, SIGNAL(clicked()), SLOT(next()));
 	connect(detailsPushButton, SIGNAL(clicked()), SLOT(toggleDetails()));
 
+
+	appDir = "/usr/share/sidux-apt-qt4/"; 
 	status = "welcome";
 	titleLabel->setText("<h3>"+tr("Welcome")+"</h3>");
-	appDir = "/usr/share/eduversum-installer/"; 
- }
+
+	//get mode;
+	mode = "default";
+	if( args[1] == "update") {
+		mode = "update";
+		aptGetUpdate();
+	}
+	else if ( args[1] == "download") {
+		mode = "download";
+	}
+    
+
+	//load input;
+	if( mode == "default")
+		foreach (QString package, args) {
+			if ( package.left(1) == "+")
+				install.append(package.mid(1));
+			else if ( package.left(1) == "-")
+				remove.append(package.mid(1));
+		}
+
+}
 
 
-
+//------------------------------------------------------------------------------
+//-- next ----------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
 
 void MainWindow::next()
@@ -90,8 +103,9 @@ void MainWindow::next()
 void MainWindow::aptGetUpdate()
 {
 
+	status = "aptGetUpdate";
 	if( radioButton->isChecked() ) {
-		status = "aptGetUpdate";
+
 		titleLabel->setText("<h3>"+tr("Resynchronize the package index files")+"</h3>");
 		contentStackedWidget->setCurrentIndex(1);
 		nextPushButton->setDisabled(TRUE);
@@ -107,7 +121,7 @@ void MainWindow::aptGetUpdate()
 		updateProcess->start(program, arguments );
 	}
 	else
-		removePackages();
+		next();
 }
 
 
@@ -117,28 +131,40 @@ void MainWindow::aptGetUpdate()
 
 void MainWindow::removePackages()
 {
-	if( remove.count() > 0 ) {
-		status = "removePackages";
-		titleLabel->setText("<h3>"+tr("Remove packages")+"</h3>");
-		contentStackedWidget->setCurrentIndex(2);
-		nextPushButton->setDisabled(TRUE);
-
-		QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
-		item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
-		item1->setText( 0, tr("Please wait...") );
-
-		removeProcess1 = new QProcess(this);
-		output.clear();
-		QStringList arguments;
-		arguments.append("remove");
-		arguments += remove;
-		QString program = appDir+"sh/getDep.sh";
-		connect( removeProcess1, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
-		connect( removeProcess1, SIGNAL(finished(int)),this, SLOT(processOutput()));
-		removeProcess1->start(program, arguments );
+	if( mode == "update") {
+		workDone();
+		return;
 	}
-	else
+	if( mode == "download" ) {
+		duDownload();
+		return;
+	}
+	if( remove.count() == 0 ) {
 		installPackages();
+		return;
+	}
+
+
+	status = "removePackages";
+	titleLabel->setText("<h3>"+tr("Remove packages")+"</h3>");
+	contentStackedWidget->setCurrentIndex(2);
+	nextPushButton->setDisabled(TRUE);
+
+	QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
+	item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
+	item1->setText( 0, tr("Please wait...") );
+
+	removeProcess1 = new QProcess(this);
+	output.clear();
+	QStringList arguments;
+	arguments.append("remove");
+	arguments += remove;
+	QString program = appDir+"sh/getDep.sh";
+	connect( removeProcess1, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
+	connect( removeProcess1, SIGNAL(finished(int)),this, SLOT(processOutput()));
+	removeProcess1->start(program, arguments );
+
+		
 }
 
 void MainWindow::removePackagesDpkg()
@@ -171,63 +197,71 @@ void MainWindow::removePackagesDpkg()
 void MainWindow::installPackages()
 {
 
-	if( install.count() > 0 ) {
-		status = "installPackages";
-		titleLabel->setText("<h3>"+tr("Install packages")+"</h3>");
-		contentStackedWidget->setCurrentIndex(2);
-		nextPushButton->setDisabled(TRUE);
-
-
-		treeWidget->clear();
-		QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
-		item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
-		item1->setText( 0, tr("Please wait...") );
-
-		installProcess1 = new QProcess(this);
-		output.clear();
-		QStringList arguments;
-		arguments.append("install");
-		arguments += install;
-		QString program = appDir+"sh/getDep.sh";
-		connect( installProcess1, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
-		connect( installProcess1, SIGNAL(finished(int)),this, SLOT(processOutput()));
-		installProcess1->start(program, arguments );
-	}
-	else
+	if( install.count() == 0 ) {
 		workDone();
+		return;
+	}
+
+	status = "installPackages";
+	titleLabel->setText("<h3>"+tr("Install packages")+"</h3>");
+	contentStackedWidget->setCurrentIndex(2);
+	nextPushButton->setDisabled(TRUE);
+
+
+	treeWidget->clear();
+	QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
+	item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
+	item1->setText( 0, tr("Please wait...") );
+
+	installProcess1 = new QProcess(this);
+	output.clear();
+	QStringList arguments;
+	arguments.append("install");
+	arguments += install;
+	QString program = appDir+"sh/getDep.sh";
+	connect( installProcess1, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
+	connect( installProcess1, SIGNAL(finished(int)),this, SLOT(processOutput()));
+	installProcess1->start(program, arguments );
 }
 
 void MainWindow::downloadPackages()
 {
-	if( downloads.count() > 0 ) {
-		status = "downloadPackages";
-		titleLabel->setText("<h3>"+tr("Download packages")+"</h3>");
-		nextPushButton->setDisabled(TRUE);
-		contentStackedWidget->setCurrentIndex(3);
-		treeWidget->clear();
-		foreach (QString download, downloads) {
-			//downloadFile(download);
-			QTreeWidgetItem *item = new QTreeWidgetItem(downloadTreeWidget, 0);
-			QStringList tmpArray = download.split("/");
-			QStringList tmpArray2 = tmpArray[tmpArray.count()-1].split("_");
-			QString packageName = tmpArray2[0];
-			QString packageVersion = tmpArray2[1];
-			item->setIcon( 0, QIcon( appDir+"icons/notok.png") );
-			item->setText( 1, packageName);
-			item->setText( 2, packageVersion);
-			item->setText( 3, download);
-			downloadTreeWidget->header()->resizeSection(0, 23);
-		}
-		currentDownload = 0;
-		downloadFile();
+	if( downloads.count() == 0 ) {
+		   installPackagesDpkg();
+		   return;
 	}
-	else
-		installPackagesDpkg();
+
+	status = "downloadPackages";
+	titleLabel->setText("<h3>"+tr("Download packages")+"</h3>");
+	nextPushButton->setDisabled(TRUE);
+	contentStackedWidget->setCurrentIndex(3);
+	treeWidget->clear();
+	foreach (QString download, downloads) {
+		//downloadFile(download);
+		QTreeWidgetItem *item = new QTreeWidgetItem(downloadTreeWidget, 0);
+		QStringList tmpArray = download.split("/");
+		QStringList tmpArray2 = tmpArray[tmpArray.count()-1].split("_");
+		QString packageName = tmpArray2[0];
+		QString packageVersion = tmpArray2[1];
+		item->setIcon( 0, QIcon( appDir+"icons/notok.png") );
+		item->setText( 1, packageName);
+		item->setText( 2, packageVersion);
+		item->setText( 3, download);
+		downloadTreeWidget->header()->resizeSection(0, 23);
+	}
+	currentDownload = 0;
+	downloadFile();
+		
 }
 
 
 void MainWindow::installPackagesDpkg()
 {
+	if( mode == "download" ) {
+		workDone();
+		return;
+	}
+
 	status = "installPackagesDpkg";
 	titleLabel->setText("<h3>"+tr("Install packages")+"</h3>");
 	QStringList storedDebFiles;
@@ -256,8 +290,36 @@ void MainWindow::installPackagesDpkg()
 	arguments += storedDebFiles;
 	QString program = appDir+"sh/applyChanges.sh";
 	connect( installProcess2, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
-	connect( installProcess2, SIGNAL(finished(int)),this, SLOT(processOutput()));
+	connect( installProcess2, SIGNAL(finished(int)),this, SLOT(processFinished()));
 	installProcess2->start(program, arguments );
+
+;
+}
+
+//-----------------------------------------''-----------------------------------
+//-- du download ---------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+void MainWindow::duDownload()
+{
+	status = "duDownload";
+	titleLabel->setText("<h3>"+tr("Search for downloads")+"</h3>");
+	contentStackedWidget->setCurrentIndex(2);
+	nextPushButton->setDisabled(TRUE);
+
+	QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
+	item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
+	item1->setText( 0, tr("Please wait...") );
+
+	duDownloadProcess = new QProcess(this);
+	output.clear();
+	QStringList arguments;
+	arguments.append("-d");
+	arguments.append("dist-upgrade");
+	QString program = appDir+"sh/getDep.sh";
+	connect( duDownloadProcess, SIGNAL(readyReadStandardOutput()),this, SLOT(readOutput()));
+	connect( duDownloadProcess, SIGNAL(finished(int)),this, SLOT(processOutput()));
+	duDownloadProcess->start(program, arguments );
 }
 
 //------------------------------------------------------------------------------
@@ -267,10 +329,10 @@ void MainWindow::installPackagesDpkg()
 void MainWindow::workDone()
 {
 	status = "workDone";
-	titleLabel->setText("<h3>"+tr("Process finished")+"</h3>");
+// 	titleLabel->setText("<h3>"+tr("Process finished")+"</h3>");
 	nextPushButton->setEnabled(TRUE);
 	nextPushButton->setText( tr("close") );
-	contentStackedWidget->setCurrentIndex(4);
+// 	contentStackedWidget->setCurrentIndex(4);
 }
 
 //------------------------------------------------------------------------------
@@ -282,7 +344,18 @@ void MainWindow::workDone()
 void MainWindow::processFinished()
 {
 	stopProgressBar();
-	nextPushButton->setEnabled(TRUE);
+	QApplication::beep();
+
+	if( status == "aptGetUpdate" and mode == "update" )
+		workDone();
+	else if( status == "downloadPackages" && mode == "download" )
+		workDone();
+	else if( status == "removePackagesDpkg" and install.count() == 0)
+		workDone();
+	else if( status == "installPackagesDpkg" )
+		workDone();
+	else
+		nextPushButton->setEnabled(TRUE);
 }
 
 
@@ -302,6 +375,10 @@ void MainWindow::readOutput()
 		result = installProcess2->readAllStandardOutput();
 	else if(  status == "downloadPackages" )
 		result = downloadProcess->readAllStandardOutput();
+	else if(  status == "duDownload" )
+		result = duDownloadProcess->readAllStandardOutput();
+
+
   
 	QStringList lines = QString(result).split("\n");
 	foreach (QString line, lines)
@@ -404,7 +481,11 @@ void MainWindow::processOutput()
 				line.replace("'","");
 				downloads.append(line);
 			}
-	} 
+	}
+
+	if( mode == "download" )
+		downloadPackages();
+
 }
 
 //------------------------------------------------------------------------------
@@ -461,8 +542,6 @@ void MainWindow::runProgressBar()
  {
 	QByteArray result= downloadProcess->readAllStandardError();
 
-
-
 	QStringList test = QString::fromUtf8(result).split(" ");
 
 	if( currentDownload < downloads.count() )
@@ -492,7 +571,12 @@ void MainWindow::runProgressBar()
 	if( downloadTreeWidget->findItems(downloads[downloads.count()-1], Qt::MatchExactly, 3 ).count() > 0 ) {
 		downloadTreeWidget->findItems(downloads[downloads.count()-1], Qt::MatchExactly, 3 ).first()->setIcon(0,QIcon( appDir+"icons/ok.png") );
 	}
-	nextPushButton->setEnabled(TRUE);
+
+	QApplication::beep();
+	if( mode == "download" )
+		workDone();
+	else
+		nextPushButton->setEnabled(TRUE);
  }
 
 
