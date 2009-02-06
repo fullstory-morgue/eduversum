@@ -7,8 +7,9 @@ eduversum (0.1.12) UNRELEASED; urgency=low
   * eduversum-installer moved to sidux-apt-qt4 1/2.
   * sidux-apt-qt4: donwload and update function added.
   * eduversum-installer moved to sidux-apt-qt4 2/2. 
+  * sidux-apt-qt4: build problems fixed. 
 
- -- Fabian Wuertz <xadras@sidux.com>  Fri, 06 Feb 2009 19:13:37 +0100
+ -- Fabian Wuertz <xadras@sidux.com>  Fri, 06 Feb 2009 19:18:06 +0100
 
 eduversum (0.1.11) unstable; urgency=low
 
