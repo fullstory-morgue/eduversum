@@ -1,29 +1,28 @@
 <html>
 <head>
-
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+	<title>Seminarix Handbuch</title>
 </head>
-
 <body>
 
+<!-- getApps.js contains the names of the xml files -->
 <script src="getApps.js" type="text/javascript"></script>
-
 
 <script type="text/javascript">
 
-	xmlDoc=document.implementation.createDocument("","",null);
-	xmlDoc.async=false;
 
+	// init vars
 	var nameArray        = new Array();
 	var homepageArray    = new Array();
  	var seminarixArray   = new Array();
  	var descriptionArray = new Array();
+	var categoriesArray  = [ "Allgemein", "Chemie", "Erdkunde", "Informatik", "Kunst", "Lernspiele", "Mathematik", "Musik", "Physik", "Religion", "Sprachen", "Technik" ];
 
 
-
+	// import The application information from xml files
 	var filesArray = getApps();
-
-
-
+	xmlDoc=document.implementation.createDocument("","",null);
+	xmlDoc.async=false;
 	for (var i = 0; i < filesArray.length; i++) {
 		xmlDoc.load("../apps/"+filesArray[i]);
 		nameArray[i]        = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
@@ -33,29 +32,25 @@
 
 	}
 
-
-
-
+	// this functions shows all programs of a category   
 	function showCategory(x) {
-		var newDiv = document.createElement('DIV');
-		newDiv.id = 'showCategory2';
+		var html = "";
 
 		for (var i = 0; i < seminarixArray.length; i++) {
-
 			if( seminarixArray[i].indexOf(x) != -1 ) {
-				var homepageElement = document.createElement('A');
-				homepageElement.appendChild( document.createTextNode( nameArray[i] ) );
-				homepageElement.setAttribute("href", "javascript:showApp('"+nameArray[i]+"')" );
-				newDiv.appendChild(homepageElement);
-				newDiv.appendChild(document.createTextNode(" "));
+				html = html+"<a id='submenu_text' href=\"javascript:showApp('"+nameArray[i]+"')\">"+nameArray[i]+"</a><br>";
 			}
 
 		}
-		document.getElementById('showCategory1').removeChild(document.getElementById('showCategory2'));
-		document.getElementById('showCategory1').appendChild(newDiv);
+		for (var i = 0; i < categoriesArray.length; i++) {
+			document.getElementById(categoriesArray[i]).innerHTML=''; 
+			document.getElementById(categoriesArray[i]).className='hideSubmenu'; 
+		}
+ 		document.getElementById(x).innerHTML=html;
+ 		document.getElementById(x).className='showSubmenu'; 
 	}
 
-
+	// this functions shows the information of a application
 	function showApp(x) {
 		var id = nameArray.indexOf(x);
 		var descripton = descriptionArray[id]; /Microsoft/g
@@ -64,37 +59,20 @@
 		descripton = descripton.replace(/\[li\]/g, "<li>");
 		descripton = descripton.replace(/\[\/li\]/g, "</li>");
 		descripton = descripton.replace(/\\n/g, "<br>");
- 		var html = "<h1>"+nameArray[id]+"</h2>"+descripton+"<br><br><a href="+homepageArray[id]+">Homepage</a>";
+		var html = "<div class='app_header'><a class='menu_text'>"+nameArray[id]+"</a></div><div class='app_content'>"+descripton+"<br><br><a href="+homepageArray[id]+">Homepage</a></div>";
  		document.getElementById('showApp').innerHTML=html;
+}
+
+
+	// write left menu
+	document.write("<table><tr><td  valign='top'>");
+	for (var i = 0; i < categoriesArray.length; i++) {
+		var category = categoriesArray[i];
+		document.write("<div id='menu'><a class='menu_text' href=javascript:showCategory('"+category+"')>"+category+"</a></div>");
+		document.write("<div ID='"+category+"' class='hideSubmenu'></div>");
 	}
-      
+	document.write("</td><td width=10></td><td valign='top'><div ID='showApp'></div></td></tr><table>");
 
 </script>
-
-
-<a href="javascript:showCategory('Allgemein')">Allgemein</a> 
-<a href="javascript:showCategory('Chemie')">Chemie</a> 
-<a href="javascript:showCategory('Erdkunde')">Erdkunde</a> 
-<a href="javascript:showCategory('Informatik')">Informatik</a> 
-<a href="javascript:showCategory('Kunst')">Kunst</a> 
-<a href="javascript:showCategory('Lernspiele')">Lernspiele</a> 
-<a href="javascript:showCategory('Mathematik')">Mathematik</a> 
-<a href="javascript:showCategory('Musik')">Musik</a> 
-<a href="javascript:showCategory('Physik')">Physik</a> 
-<a href="javascript:showCategory('Religion')">Religion</a> 
-<a href="javascript:showCategory('Sprachen')">Sprachen</a> 
-<a href="javascript:showCategory('Technik')">Technik</a> 
-
-
-<hr>
-
-<div ID="showCategory1"><div ID="showCategory2"></div></div>
-
-<hr>
-
-<div ID="showApp"></div>
-
-
 </body>
 </html>
-

@@ -1,0 +1,88 @@
+#menu {
+	height : 24px;
+	color : #666666;
+	margin-bottom : 0px;
+	margin-left : 5px;
+	margin-right : 5px;
+	margin-top : 0px;
+	background-color : #f0f0f0;
+	background-image : url(bar.gif);
+	background-repeat : repeat-x;
+	border : 1px solid #d0d0d0;
+        width: 170px;
+}
+
+div.showSubmenu {
+	color : #666666;
+	margin-bottom : 5px;
+	margin-left : 5px;
+	margin-right : 5px;
+	margin-top : 0px;
+	background-color : #f0f0f0;
+	border : 1px solid #d0d0d0;
+        width: 160px;
+	padding: 5px
+}
+
+
+div.hideSubmenu {
+	margin-bottom : 5px;
+	height: 0px;
+	padding: 0px
+}
+
+
+#submenu_text {
+
+	color : #666666;
+	text-decoration: none;
+}
+
+a.menu_text {
+
+	font-family : Geneva, Arial, Helvetica, sans-serif;
+	font-size : 11px;
+	overflow : hidden;
+	display : block;
+	height : 24px;
+	line-height : 24px;
+	line-height : 22px;
+	color : #666666;
+	float : left;
+	padding-left : 10px;
+	text-decoration: none;
+}
+
+#pathway_text a:hover {
+	color : #2c2c2c;
+	text-decoration : none;
+
+}
+
+
+div.app_header {
+	height : 24px;
+	color : #666666;
+	margin-bottom : 0px;
+	margin-left : 5px;
+	margin-right : 5px;
+	margin-top : 0px;
+	background-color : #f0f0f0;
+	background-image : url(bar.gif);
+	background-repeat : repeat-x;
+	border : 1px solid #d0d0d0;
+}
+
+div.app_content {
+	color : #666666;
+	margin-bottom : 5px;
+	margin-left : 5px;
+	margin-right : 5px;
+	margin-top : 0px;
+	background-color : #f0f0f0;
+	border : 1px solid #d0d0d0;
+        width: 600px;
+	padding: 5px
+}
+
+
