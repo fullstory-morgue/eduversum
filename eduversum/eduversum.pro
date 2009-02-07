@@ -30,7 +30,7 @@ shortcuttarget.path = /usr/share/applications
 shortcuttarget.files = src/eduversum.desktop
 
 appdata.path = /usr/share/eduversum
-appdata.files = data/apps data/categories data/icons data/sh
+appdata.files = data/apps data/categories data/icons data/sh data/manual
 
 INSTALLS += target iconstarget langtarget shortcuttarget appdata
 

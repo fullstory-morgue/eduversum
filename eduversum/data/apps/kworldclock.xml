@@ -3,5 +3,6 @@
 <eduversum>
 	<name>KWorldClock</name>
 	<seminarix>Physik</seminarix>
+	<homepage>http://www.kde.org</homepage>
 	<description lang="de">Das Programm zeigt an, wo in der Welt es gerade dunkel und wo es hell ist. Auch die Lokalzeit in allen größeren Städten kann dargestellt werden. Das Programm kann sowohl als Einzelanwendung laufen wie auch in der KDE-Taskleiste.</description>
 </eduversum>

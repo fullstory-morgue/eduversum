@@ -1,0 +1,100 @@
+<html>
+<head>
+
+</head>
+
+<body>
+
+<script src="getApps.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+
+	xmlDoc=document.implementation.createDocument("","",null);
+	xmlDoc.async=false;
+
+	var nameArray        = new Array();
+	var homepageArray    = new Array();
+ 	var seminarixArray   = new Array();
+ 	var descriptionArray = new Array();
+
+
+
+	var filesArray = getApps();
+
+
+
+	for (var i = 0; i < filesArray.length; i++) {
+		xmlDoc.load("../apps/"+filesArray[i]);
+		nameArray[i]        = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+		homepageArray[i]    = xmlDoc.getElementsByTagName("homepage")[0].childNodes[0].nodeValue;
+		seminarixArray[i]   = xmlDoc.getElementsByTagName("seminarix")[0].childNodes[0].nodeValue;
+		descriptionArray[i] = xmlDoc.getElementsByTagName("description")[0].childNodes[0].nodeValue;
+
+	}
+
+
+
+
+	function showCategory(x) {
+		var newDiv = document.createElement('DIV');
+		newDiv.id = 'showCategory2';
+
+		for (var i = 0; i < seminarixArray.length; i++) {
+
+			if( seminarixArray[i].indexOf(x) != -1 ) {
+				var homepageElement = document.createElement('A');
+				homepageElement.appendChild( document.createTextNode( nameArray[i] ) );
+				homepageElement.setAttribute("href", "javascript:showApp('"+nameArray[i]+"')" );
+				newDiv.appendChild(homepageElement);
+				newDiv.appendChild(document.createTextNode(" "));
+			}
+
+		}
+		document.getElementById('showCategory1').removeChild(document.getElementById('showCategory2'));
+		document.getElementById('showCategory1').appendChild(newDiv);
+	}
+
+
+	function showApp(x) {
+		var id = nameArray.indexOf(x);
+		var descripton = descriptionArray[id]; /Microsoft/g
+		descripton = descripton.replace(/\[ul\]/g, "<ul>");
+		descripton = descripton.replace(/\[\/ul\]/g, "</ul>");
+		descripton = descripton.replace(/\[li\]/g, "<li>");
+		descripton = descripton.replace(/\[\/li\]/g, "</li>");
+		descripton = descripton.replace(/\\n/g, "<br>");
+ 		var html = "<h1>"+nameArray[id]+"</h2>"+descripton+"<br><br><a href="+homepageArray[id]+">Homepage</a>";
+ 		document.getElementById('showApp').innerHTML=html;
+	}
+      
+
+</script>
+
+
+<a href="javascript:showCategory('Allgemein')">Allgemein</a> 
+<a href="javascript:showCategory('Chemie')">Chemie</a> 
+<a href="javascript:showCategory('Erdkunde')">Erdkunde</a> 
+<a href="javascript:showCategory('Informatik')">Informatik</a> 
+<a href="javascript:showCategory('Kunst')">Kunst</a> 
+<a href="javascript:showCategory('Lernspiele')">Lernspiele</a> 
+<a href="javascript:showCategory('Mathematik')">Mathematik</a> 
+<a href="javascript:showCategory('Musik')">Musik</a> 
+<a href="javascript:showCategory('Physik')">Physik</a> 
+<a href="javascript:showCategory('Religion')">Religion</a> 
+<a href="javascript:showCategory('Sprachen')">Sprachen</a> 
+<a href="javascript:showCategory('Technik')">Technik</a> 
+
+
+<hr>
+
+<div ID="showCategory1"><div ID="showCategory2"></div></div>
+
+<hr>
+
+<div ID="showApp"></div>
+
+
+</body>
+</html>
+
