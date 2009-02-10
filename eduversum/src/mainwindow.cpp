@@ -35,14 +35,12 @@
 //-- init ----------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-MainWindow::MainWindow (QWidget* parent, Qt::WFlags flags): QWidget (parent, flags)
+MainWindow::MainWindow (QMainWindow* parent, Qt::WFlags flags): QMainWindow (parent, flags)
 {
 	appdir      = "/usr/share/eduversum/";
 
 	loadGui();
 	loadData();
-
-
 
 }
 
@@ -52,7 +50,7 @@ void MainWindow::loadGui()
 
  	setupUi(this);
 	iconloader = new IconLoader();
-	frame2->hide();
+
 	execPushButton->setIcon( QPixmap( appdir+"/icons/exec.png") );
 	homepagePushButton->setIcon( QPixmap( appdir+"/icons/homepage.png") );
 	examplePushButton->setIcon( QPixmap( appdir+"/icons/example.png") );
@@ -63,7 +61,7 @@ void MainWindow::loadGui()
 	applyChangesPushButton->setIcon( QPixmap( appdir+"/icons/apply.png") );
 
 	setWindowIcon( QPixmap( appdir+"/icons/eduversum.png") );
-	descriptionTextBrowser->setOpenExternalLinks(TRUE); // open links in a external browser
+	//descriptionTextBrowser->setOpenExternalLinks(TRUE); // open links in a external browser
 
 	connect(categoriesTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)),this, SLOT( showCategoryApps() ) );
 	connect(treeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)),this, SLOT( showApp() ) );
@@ -111,8 +109,9 @@ void MainWindow::loadGui()
 	connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
 		this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 
-
-	descriptionTextBrowser->setText( QString::fromUtf8("<h2>Willkomen</h2>Eduversum ist Hilfsmittel, mit dessen Hilfe Programme aus dem Bildungsbereich sehr einfach installiert (im leeren Kästchen vor der Anwendung einen Haken setzen) oder deinstalliert werden (den Haken entfernen) können. Zu diesem Zwecke ist das Administratorenpasswort erforderlich, da Softwareinstallation bzw. die Deinstallation von Anwendungen in der Regel eine systemweite Arbeit ist.") );
+	setAbout();
+	setHelp();
+	descriptionTextBrowser->setText( "<h2>Willkomen</h2>"+help );
 
 
 
@@ -123,8 +122,7 @@ void MainWindow::loadGui()
 
 void MainWindow::unsetGui()
 {
-	frame1->show();
-	frame2->hide();
+	stackedWidget->setCurrentIndex(0);
 	execPushButton->hide();
 	homepagePushButton->hide();
 	examplePushButton->hide();
@@ -162,6 +160,9 @@ void MainWindow::showCategoryApps()
 		return;
 	treeWidget->clear();
 
+	treeWidget->show();
+	frame0->show();
+	stackedWidget->show();
 
 	// show category descrption
 	QString category = categoriesTreeWidget->selectedItems().first()->text(1);
@@ -377,10 +378,12 @@ void MainWindow::closeEvent(QCloseEvent *event)
 }
 
 
-void MainWindow::showAbout()
-{
-	QString about; 
+//------------------------------------------------------------------------------
+//-- about ---------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
+void MainWindow::setAbout()
+{
 	about += "\nEntwickler:\n";
 	about += QString::fromUtf8("Fabian Würtz <xadras@sidux.com>\n");
 
@@ -402,10 +405,37 @@ void MainWindow::showAbout()
  	about += "Wolf-Dieter Zimmermann (emile)\n";
 
 	about += "\nLizenz: GPL" ;
-
-	trayIcon->showMessage ( QString::fromUtf8("Über Eduversum"), about, QSystemTrayIcon::Information, 20000 );
 }
 
+
+
+void MainWindow::showAbout()
+{
+	if( isHidden() )
+		trayIcon->showMessage ( QString::fromUtf8("Über Eduversum"), about, QSystemTrayIcon::Information, 20000 );
+	else
+		QMessageBox::information(this, QString::fromUtf8("Über Eduversum"), about );
+	
+}
+
+//------------------------------------------------------------------------------
+//-- help ---------------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+void MainWindow::setHelp()
+{
+	help = QString::fromUtf8("Eduversum gibt einen Überblick über frei Programme aus dem Bildungsbereich. Programme die nicht auf dem System vorhanden sind, können sehr einfach installiert (im leeren Kästchen vor der Anwendung einen Haken setzen) oder deinstalliert werden (den Haken entfernen) können. Zu diesem Zwecke ist das Administratorenpasswort erforderlich, da Softwareinstallation bzw. die Deinstallation von Anwendungen in der Regel eine systemweite Arbeit ist.");
+}
+
+
+void MainWindow::showHelp()
+{ 
+	QMessageBox::information(this, "Eduversum Hilfe", help );
+}
+
+//------------------------------------------------------------------------------
+//-- stuff ---------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
 void MainWindow::showStuff()
 {
@@ -434,7 +464,7 @@ void MainWindow::showStuff()
 }
 
 //------------------------------------------------------------------------------
-//-- tray events ---------------------------------------------------------------
+//-- changed -------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
 void MainWindow::changed()
@@ -511,8 +541,7 @@ void MainWindow::showChanges()
 		QMessageBox::information(this, QString::fromUtf8("Keine Veränderungen"), QString::fromUtf8("Es sind keine Veränderungen vorhanden. Zum Programme zu installieren oder zu deinstallieren einfach das Markierungsfeld aktiveren bzw. deaktivieren.") );
 	else {
 		descriptionTextBrowser->setText("<h3>&Auml;nderungen ausf&uuml;hren</h3>Die aufgef&uuml;hrten Programme in der oberen Liste werden installiert (gr&uuml;n) beziehungsweise deinstalliert (rot).");
-		frame1->hide();
-		frame2->show();
+		stackedWidget->setCurrentIndex(1);
 	}
 
 }

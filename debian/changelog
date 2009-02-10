@@ -1,8 +1,13 @@
 eduversum (0.1.13) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 07 Feb 2009 23:33:07 +0100
+  [ Fabian Wuertz ]
+  * eduversum: menu added.
+  * eduversum: data: qgis removed. 
+
+ -- Fabian Wuertz <xadras@sidux.com>  Tue, 10 Feb 2009 14:41:18 +0100
 
 eduversum (0.1.12) unstable; urgency=low
 

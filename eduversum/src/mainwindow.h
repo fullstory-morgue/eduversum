@@ -11,21 +11,20 @@
 
 #include "ui_mainwindow.h"
 
-class MainWindow : public QWidget, Ui::eduversumGui
+class MainWindow : public QMainWindow, Ui::eduversumGui
 {
 	Q_OBJECT
 
 	public:
-		MainWindow (QWidget* parent = 0, Qt::WFlags flags = 0);
+		MainWindow (QMainWindow* parent = 0, Qt::WFlags flags = 0);
 
 		void loadGui();
 		void unsetGui();
 		void loadData();
 		void showAppInList(QTreeWidgetItemIterator);
 
-
-		QString appdir;
-		QString iconpath;
+		QString appdir, iconpath;
+		QString about, help;
 		QString addRemoveApp;
 		QTreeWidget *appTreeWidget;
 		IconLoader *iconloader;
@@ -45,7 +44,10 @@ class MainWindow : public QWidget, Ui::eduversumGui
 		virtual void cancelChanges();
 		virtual void discardChanges();
 		virtual void showChanges();
+		virtual void setAbout();
 		virtual void showAbout();
+		virtual void setHelp();
+		virtual void showHelp();
 		virtual void showStuff();
 
 
