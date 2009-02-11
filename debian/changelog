@@ -1,8 +1,12 @@
 eduversum (0.1.14) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 10 Feb 2009 20:09:52 +0100
+  [ Fabian Wuertz ]
+  * eduversum: typo 
+
+ -- Fabian Wuertz <xadras@sidux.com>  Wed, 11 Feb 2009 12:22:37 +0100
 
 eduversum (0.1.13) unstable; urgency=low
 

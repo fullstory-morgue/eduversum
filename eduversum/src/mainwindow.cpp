@@ -424,7 +424,7 @@ void MainWindow::showAbout()
 
 void MainWindow::setHelp()
 {
-	help = QString::fromUtf8("Eduversum gibt einen Überblick über frei Programme aus dem Bildungsbereich. Programme die nicht auf dem System vorhanden sind, können sehr einfach installiert (im leeren Kästchen vor der Anwendung einen Haken setzen) oder deinstalliert werden (den Haken entfernen) können. Zu diesem Zwecke ist das Administratorenpasswort erforderlich, da Softwareinstallation bzw. die Deinstallation von Anwendungen in der Regel eine systemweite Arbeit ist.");
+	help = QString::fromUtf8("Eduversum gibt einen Überblick über freie Programme aus dem Bildungsbereich. Programme die nicht auf dem System vorhanden sind, können sehr einfach installiert (im leeren Kästchen vor der Anwendung einen Haken setzen) oder deinstalliert werden (den Haken entfernen) können. Zu diesem Zwecke ist das Administratorenpasswort erforderlich, da Softwareinstallation bzw. die Deinstallation von Anwendungen in der Regel eine systemweite Arbeit ist.");
 }
 
 
