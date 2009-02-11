@@ -227,8 +227,12 @@ void MainWindow::installPackages()
 void MainWindow::downloadPackages()
 {
 	if( downloads.count() == 0 ) {
-		   installPackagesDpkg();
-		   return;
+		treeWidget->clear();
+		QTreeWidgetItem *item = new QTreeWidgetItem(treeWidget, 0);
+		item->setIcon( 0, QIcon( appDir+"icons/wait.png") );
+		item->setText( 0, tr("There are no downloads!") );
+		installPackagesDpkg();
+		return;
 	}
 
 	status = "downloadPackages";
@@ -416,6 +420,21 @@ void MainWindow::processOutput()
 		lineNumber++;
 	}
 
+	foreach (QString line, output)
+		if(line.contains("http://")) { 
+			line = line.split(" ")[0];
+			line.replace("'","");
+			downloads.append(line);
+		}
+
+
+	if( mode == "download" )
+	{
+		downloadPackages();
+		return;
+	}
+
+
 	if(newPackages.count() + updatedPackages.count() + removedPackages.count()== 0 ) {
 		if(status == "removePackages")
 			installPackages();
@@ -474,17 +493,7 @@ void MainWindow::processOutput()
 					item->setBackground(0, QColor(241, 76, 76, 127) );
 			}
 		}
-
-		foreach (QString line, output)
-			if(line.contains("http://")) { 
-				line = line.split(" ")[0];
-				line.replace("'","");
-				downloads.append(line);
-			}
 	}
-
-	if( mode == "download" )
-		downloadPackages();
 
 }
 
