@@ -1,9 +1,5 @@
-eduversum (0.1.15) UNRELEASED; urgency=low
+eduversum (0.1.15) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Fabian Wuertz ]
   * sidux-apt-get: download-note bug fixed. 
 
  -- Fabian Wuertz <xadras@sidux.com>  Wed, 11 Feb 2009 23:22:28 +0100
