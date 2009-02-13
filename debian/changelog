@@ -1,5 +1,8 @@
-eduversum (0.1.16) unstable; urgency=low
+eduversum (0.1.16) UNRELEASED; urgency=low
 
+  * NOT RELEASED YET
+
+  [ Dinko Sabo ]
   * sync with berlios (0.1.16)
   * typo fixes
   * modified welcome text
@@ -7,7 +10,11 @@ eduversum (0.1.16) unstable; urgency=low
   * added missing depends
   * added text in seminarix-latex.xml
 
- -- Dinko Sabo <cobra@sidux.com>  Thu, 12 Feb 2009 11:15:10 +0100
+  [ Stefan Lippers-Hollmann ]
+  * fis depends stanza.
+  * drop latex, it's getting too large.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 13 Feb 2009 01:49:56 +0100
 
 eduversum (0.1.15) unstable; urgency=low
 
