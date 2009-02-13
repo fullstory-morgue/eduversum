@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>solfege-oss</name>
+	<seminarix>Musik</seminarix>
+	<homepage>http://www.solfege.org/</homepage>
+	<description lang="de">Sound Modul für solfege</description>
+</eduversum>

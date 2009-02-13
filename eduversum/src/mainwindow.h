@@ -49,6 +49,8 @@ class MainWindow : public QMainWindow, Ui::eduversumGui
 		virtual void setHelp();
 		virtual void showHelp();
 		virtual void showStuff();
+		virtual void showSeminarixLatex();
+		virtual void showOpenSource();
 
 
 	private slots:

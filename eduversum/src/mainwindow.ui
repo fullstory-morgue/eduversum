@@ -245,7 +245,7 @@
      <x>0</x>
      <y>0</y>
      <width>735</width>
-     <height>29</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDatei" >
@@ -260,6 +260,8 @@
     </property>
     <addaction name="actionEduversumHilfe" />
     <addaction name="actionArbeitsmaterialen" />
+    <addaction name="actionSeminarix_latex" />
+    <addaction name="actionGrundsatzartikel" />
     <addaction name="actionUeberEduversum" />
    </widget>
    <addaction name="menuDatei" />
@@ -283,6 +285,16 @@
   <action name="actionArbeitsmaterialen" >
    <property name="text" >
     <string>Arbeitsmaterialen</string>
+   </property>
+  </action>
+  <action name="actionGrundsatzartikel" >
+   <property name="text" >
+    <string>Grundsatzartikel</string>
+   </property>
+  </action>
+  <action name="actionSeminarix_latex" >
+   <property name="text" >
+    <string>seminarix-latex</string>
    </property>
   </action>
  </widget>
@@ -352,10 +364,44 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionGrundsatzartikel</sender>
+   <signal>activated()</signal>
+   <receiver>eduversumGui</receiver>
+   <slot>showOpenSource()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>367</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSeminarix_latex</sender>
+   <signal>activated()</signal>
+   <receiver>eduversumGui</receiver>
+   <slot>showSeminarixLatex()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>301</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>213</x>
+     <y>451</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>showHelp()</slot>
   <slot>showAbout()</slot>
   <slot>showStuff()</slot>
+  <slot>showOpenSource()</slot>
+  <slot>showSeminarixLatex()</slot>
  </slots>
 </ui>

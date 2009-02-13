@@ -424,7 +424,7 @@ void MainWindow::showAbout()
 
 void MainWindow::setHelp()
 {
-	help = QString::fromUtf8("Eduversum gibt einen Überblick über freie Programme aus dem Bildungsbereich. Programme die nicht auf dem System vorhanden sind, können sehr einfach installiert (im leeren Kästchen vor der Anwendung einen Haken setzen) oder deinstalliert werden (den Haken entfernen) können. Zu diesem Zwecke ist das Administratorenpasswort erforderlich, da Softwareinstallation bzw. die Deinstallation von Anwendungen in der Regel eine systemweite Arbeit ist.");
+	help = QString::fromUtf8("Eduversum ist ein Hilfsmittel, mit dessen Hilfe Programme aus dem Bildungsbereich sehr einfach installiert oder deinstalliert werden können (Installation: im leeren Kästchen vor der Anwendung einen Haken setzen, Deinstallation: den Haken entfernen). Zu diesem Zwecke ist das Administratorpasswort erforderlich, da Softwareinstallation bzw. die Deinstallation in der Regel systemweite Arbeiten sind.");
 }
 
 
@@ -456,12 +456,75 @@ void MainWindow::showStuff()
 	}
 
 	QStringList arguments;
-	arguments << "/usr/share/seminarix-samples";
+	arguments << "/usr/share/seminarix-notebook-training/uebersicht.html";
 
 	QProcess *myProcess = new QProcess(this);
 	myProcess->start(exec, arguments);
 
 }
+
+
+//------------------------------------------------------------------------------
+//--seminarix-latex-----------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+void MainWindow::showSeminarixLatex()
+{
+	QString exec;
+	if( QFile::exists("/usr/bin/dolphin") )
+		exec = "dolphin";
+	else if( QFile::exists("/usr/bin/konqueror") )
+		exec = "konqueror";
+	else if( QFile::exists("/usr/bin/nautilus") )
+		exec = "nautilus";
+	else if( QFile::exists("/usr/bin/thunar") )
+		exec = "thunar";
+	else if( QFile::exists("/usr/bin/pcmanfm") )
+		exec = "pcmanfm";
+	else {
+		QMessageBox::information(this, QString::fromUtf8("Fehler"), QString::fromUtf8("Es wurde kein Dateimanager gefunden") );
+		return;
+	}
+
+	QStringList arguments;
+	arguments << "/usr/share/seminarix-latex";
+
+	QProcess *myProcess = new QProcess(this);
+	myProcess->start(exec, arguments);
+
+}
+
+//------------------------------------------------------------------------------
+//--open-source-----------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+void MainWindow::showOpenSource()
+{
+	QString exec;
+	if( QFile::exists("/usr/bin/dolphin") )
+		exec = "dolphin";
+	else if( QFile::exists("/usr/bin/konqueror") )
+		exec = "konqueror";
+	else if( QFile::exists("/usr/bin/nautilus") )
+		exec = "nautilus";
+	else if( QFile::exists("/usr/bin/thunar") )
+		exec = "thunar";
+	else if( QFile::exists("/usr/bin/pcmanfm") )
+		exec = "pcmanfm";
+	else {
+		QMessageBox::information(this, QString::fromUtf8("Fehler"), QString::fromUtf8("Es wurde kein Dateimanager gefunden") );
+		return;
+	}
+
+	QStringList arguments;
+	arguments << "/usr/share/seminarix-notebook-training/projekte/freiesoftware/freiesoftware.html";
+
+	QProcess *myProcess = new QProcess(this);
+	myProcess->start(exec, arguments);
+
+}
+
+
 
 //------------------------------------------------------------------------------
 //-- changed -------------------------------------------------------------------

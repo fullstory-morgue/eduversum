@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>QGis</name>
-	<seminarix>Erdkunde</seminarix>
-	<homepage>http://www.qgis.org </homepage>
-	<description lang="de">Quantum GIS (häufig als QGIS abgekürzt) ist ein freies Geoinformationssystem zum Betrachten, Bearbeiten und Erfassen von räumlichen Daten. Es unterstützt gängige Vektor- und Rasterformate wie zum Beispiel Shapefile oder GeoTIFF, daneben aber auch Datenbanken wie PostGIS. Dank verschiedenen Plugins kann QGIS auch strukturierte Textdateien oder GPX Dateien lesen. Das GRASS-GIS-Plugin erlaubt GRASS-Datenbanken zu lesen und schreiben und sämtliche Funktionen von GRASS zu nutzen. Über eine Plugin-Schnittstelle können weitere Funktionen eingebaut werden.</description>
-</eduversum>

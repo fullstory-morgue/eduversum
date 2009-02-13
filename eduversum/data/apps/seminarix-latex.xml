@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>seminarix-latex</name>
+	<seminarix>Allgemein</seminarix>
+	<description lang="de">LaTeX ist Programm für den professionellen Textsatz. Die Stärken liegen im Satz wissenschaftlicher Arbeiten, aber auch Briefe oder Karteikärtchen zum Lernen (Frage-Antwort-Kärtchen) lassen sich problemlos erstellen. Interessant für Lehrer ist vielleicht auch die Möglichkeit, Ausgabensammlungen anzulegen und die einzelnen Aufgaben dann in eine Klassenarbeit oder in ein Aufgabenblatt sauber einzubinden. Dieses Paket installiert eine komplette LaTeX-Umgebung mit der Entwicklungsumgebung Kile sowie einige Vorlagen z.B. für Arbeitsblätter, Briefe oder Karteikärtchen. Ebenfalls enthalten ist ein Schnelleinstieg, der erklärt, wie Sie von der Installation zu einem ersten fertigen Dokument gelangen. Nach der Installation finden Sie die Vorlagen im entsprechenden Menü in Kile und die Dokumente und Beispiele unter /usr/share/seminarix-latex/. Diesen Ordner können Sie direkt ansteuern über die Funktion seminarix-latex im Hilfe Menü</description>
+</eduversum>

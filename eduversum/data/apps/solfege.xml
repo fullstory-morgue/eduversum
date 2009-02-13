@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>solfege</name>
+	<seminarix>Musik</seminarix>
+	<homepage>http://www.solfege.org/</homepage>
+	<description lang="de">Solfege ist ein Musiktrainingsprogramm, welches Sie zum Trainieren Ihrer Rhytmus-, Intervall- und Akkordkenntnisse benutzen können. Dabei können Sie sich theoretische Kapitel zu verschiedenen Themen durchlesen oder auch Ihre Kenntnisse in praktischen Hörtests überprüfen. Wenn kein sound bzw. Ton vorhanden ist, bitte die solfge-oss installieren!</description>
+</eduversum>

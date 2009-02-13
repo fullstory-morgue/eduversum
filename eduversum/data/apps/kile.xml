@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Kile</name>
+	<seminarix>Allgemein</seminarix>
+	<homepage>http://kile.sourceforge.net/</homepage>
+	<description lang="de">Kile ist eine Entwicklungsumgebung für LaTeX. Die Basis ist ein Texteditor, der über Syntax-Highlighting, Vervollständigung und Rechtschreibkontrolle verfügt, jedoch gibt es auch Menüs, die das Einfügen bestimmter Zeichen und Symbole (zum Beispiel das griechische Alphabet oder mathematische Operatoren) erleichtern. Außerdem gibt es Assistenten zur Erstellung neuer Dokumente aus bestehenden Vorlagen sowie zum Einbinden von Grafiken, Verzeichnissen oder Tabellen. Nach der Eingabe des LaTeX-Dokumentes wird auf Knopfdruck ein PDF erzeugt und im PDF-Betrachter angezeigt.</description>
+</eduversum>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Planets</name>
+	<seminarix>Physik</seminarix>
+	<homepage>http://planets.homedns.org/</homepage>
+	<desktoppath>/usr/share/applications/planets.desktop</desktoppath>
+	<description lang="de">Der Schwerkrafts-Simulator "Planets" ist ein einfaches, interaktives Programm, welches auf spielerische Weise Planetensysteme simuliert und daher gut geeignet ist, um die Einflüsse der Schwerkraft zwischen mehreren planetaren Körpern zu demonstrieren.
+ Das Benutzerinterface ist sehr einfach gestaltet und daher auch gut für Schüler niedriger Klassen geeignet. (Für ganz kleine Kinder gibt es sogar einen speziellen "Kid-Mode")
+ Das Programm bietet vielfältige Optionen, beispielsweise lässt sich einstellen, ob die Planeten bei Brührung voneinander abprallen oder miteinender verschmelzen sollen (letzteres eignet sich gut, um die Entstehungsgeschichte des Sonnensystems zu demonsterieren)
+ </description>
+</eduversum>

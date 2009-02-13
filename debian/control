@@ -17,7 +17,9 @@ Depends: ${shlibs:Depends},
          ${misc:Depends}, 
          menu,
          seminarix-samples,
-         sidux-apt-qt4
+         sidux-apt-qt4,
+	 seminarix-notebook-training,
+	 seminarix-latex,
 Description: program starter and menu system for educational applications
  generic menu system to act dynamically on installed packages and describe 
  their uses for educational purposes

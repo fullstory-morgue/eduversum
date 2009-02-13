@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>iTALC</name>
+	<seminarix>Allgemein</seminarix>
+	<homepage>http://italc.sourceforge.net/localizations.php</homepage>
+	<exec>italc</exec>
+	<terminal>true</terminal>
+	<description lang="de">iTALC (Intelligent Teaching And Learning with Computers) ist eine freie Bildschirmsteuersoftware, die vor allem auf den schulischen Bereich abzielt. iTALC verfügt u.a. über folgende Funktionen[ul]
+		[li]Übersichtsmodus (kleine Vorschaufenster für alle Schüler-Computer[/li]
+		[li]Fernsteuerung oder bestimmten Computer im Vollbild überwachen[/li]
+		[li]eine Demo zeigen (entweder Vollbild oder in einem Fenster) – der Bildschirm des Lehrer-PCs wird auf alle Schüler-Computer in Echtzeit übertragen[/li]
+		[li]Sperren der Schüler-Computer, um Aufmerksamkeit auf andere Dinge zu lenken[/li]
+		[li]Senden von Text-Nachrichten[/li]
+		[li]Schnappschüsse zur Beweismaterialsicherung, z. B. bei Übertretung einer etwaigen Benutzer-Ordnung.[/li]
+	[/ul]</description>
+</eduversum>

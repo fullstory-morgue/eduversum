@@ -2,7 +2,7 @@
 <!DOCTYPE eduversum>
 <eduversum>
 	<name>Blender</name>
-	<seminarix>Informatik,Kunst</seminarix>
+	<seminarix>Kunst</seminarix>
 	<homepage>http://www.blender.org/</homepage>
 	<desktoppath>/usr/share/applications/blender-windowed.desktop</desktoppath>
 	<description lang="de">Blender ist ein freies 3D-Graphik Programm. Mit Blender können dreidimensionale Körper modelliert werden, man kann sie texturieren (mit bestimmten Materialflächen versehen), animieren und rendern. Blender verfügt über einen eingebauten Videoschnitteditor und eine Spiel-Engine. Der Funktionsumfang hat sich in den letzten Jahren dynamisch weiterentwickelt, z.B. ist die Simulation von Flüssigkeiten und Compositing mit eingeflossen.</description>
