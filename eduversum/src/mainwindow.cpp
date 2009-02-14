@@ -471,27 +471,34 @@ void MainWindow::showStuff()
 void MainWindow::showSeminarixLatex()
 {
 	QString exec;
-	if( QFile::exists("/usr/bin/dolphin") )
-		exec = "dolphin";
-	else if( QFile::exists("/usr/bin/konqueror") )
-		exec = "konqueror";
-	else if( QFile::exists("/usr/bin/nautilus") )
-		exec = "nautilus";
-	else if( QFile::exists("/usr/bin/thunar") )
-		exec = "thunar";
-	else if( QFile::exists("/usr/bin/pcmanfm") )
-		exec = "pcmanfm";
-	else {
-		QMessageBox::information(this, QString::fromUtf8("Fehler"), QString::fromUtf8("Es wurde kein Dateimanager gefunden") );
-		return;
+	QDir dir("/usr/share/seminarix-latex");
+	if (!dir.exists())
+	{
+		QMessageBox::information(this, QString::fromUtf8("Fehler"), QString::fromUtf8("Diese Funktion ist erst nach Installation des Paketes seminarix-latex verfügbar. Dieses können Sie bequem unter der Kategorie Allgemein installieren. Die Installation des Programmes ist jedoch nur im Falle einer Festplatteninstallation zu empfehlen, da sie große Datenmengen mitinstalliert.") );
 	}
+	else
+	{
+		if( QFile::exists("/usr/bin/dolphin") )
+			exec = "dolphin";
+		else if( QFile::exists("/usr/bin/konqueror") )
+			exec = "konqueror";
+		else if( QFile::exists("/usr/bin/nautilus") )
+			exec = "nautilus";
+		else if( QFile::exists("/usr/bin/thunar") )
+			exec = "thunar";
+		else if( QFile::exists("/usr/bin/pcmanfm") )
+			exec = "pcmanfm";
+		else {
+			QMessageBox::information(this, QString::fromUtf8("Fehler"), QString::fromUtf8("Es wurde kein Dateimanager gefunden") );
+			return;
+		}
 
-	QStringList arguments;
-	arguments << "/usr/share/seminarix-latex";
+		QStringList arguments;
+		arguments << "/usr/share/seminarix-latex";
 
-	QProcess *myProcess = new QProcess(this);
-	myProcess->start(exec, arguments);
-
+		QProcess *myProcess = new QProcess(this);
+		myProcess->start(exec, arguments);
+	}
 }
 
 //------------------------------------------------------------------------------

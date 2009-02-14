@@ -1,4 +1,4 @@
-eduversum (0.1.16) UNRELEASED; urgency=low
+eduversum (0.1.16) unstable; urgency=low
 
   * NOT RELEASED YET
 
@@ -13,8 +13,9 @@ eduversum (0.1.16) UNRELEASED; urgency=low
   [ Stefan Lippers-Hollmann ]
   * fis depends stanza.
   * drop latex, it's getting too large.
+  * add patch from cobra to test for /usr/share/seminarix-latex/.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 13 Feb 2009 01:49:56 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 14 Feb 2009 02:09:07 +0100
 
 eduversum (0.1.15) unstable; urgency=low
 
