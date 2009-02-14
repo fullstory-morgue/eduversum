@@ -1,8 +1,8 @@
-eduversum (0.1.17) UNRELEASED; urgency=low
+eduversum (0.1.17) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix path to seminarix-notebook-training, thanks to cobra.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 14 Feb 2009 02:41:46 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 14 Feb 2009 19:03:59 +0100
 
 eduversum (0.1.16) unstable; urgency=low
 

@@ -524,7 +524,7 @@ void MainWindow::showOpenSource()
 	}
 
 	QStringList arguments;
-	arguments << "/usr/share/seminarix-notebook-training/projekte/freiesoftware/freiesoftware.html";
+	arguments << "/usr/share/seminarix-notebook-training/projekte/freiesoftware";
 
 	QProcess *myProcess = new QProcess(this);
 	myProcess->start(exec, arguments);
