@@ -421,7 +421,7 @@ void MainWindow::processOutput()
 	}
 
 	foreach (QString line, output)
-		if(line.contains("http://")) { 
+		if(line.contains("http://") or line.contains("ftp://") or line.contains("https://") ) { 
 			line = line.split(" ")[0];
 			line.replace("'","");
 			downloads.append(line);

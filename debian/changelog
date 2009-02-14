@@ -15,7 +15,10 @@ eduversum (0.1.16) unstable; urgency=low
   * drop latex, it's getting too large.
   * add patch from cobra to test for /usr/share/seminarix-latex/.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 14 Feb 2009 02:09:07 +0100
+  [ Fabian Wuertz ]
+  * sidux-apt-qt4: ftp and https support added 
+
+ -- Fabian Wuertz <xadras@sidux.com>  Sat, 14 Feb 2009 02:22:09 +0100
 
 eduversum (0.1.15) unstable; urgency=low
 
