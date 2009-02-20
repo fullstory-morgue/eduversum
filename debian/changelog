@@ -1,8 +1,8 @@
-eduversum (0.1.18) UNRELEASED; urgency=low
+eduversum (0.1.18) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix desktop-entry-contains-encoding-key.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 14 Feb 2009 19:11:53 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 20 Feb 2009 15:47:48 +0100
 
 eduversum (0.1.17) unstable; urgency=low
 
