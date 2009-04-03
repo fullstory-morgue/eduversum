@@ -1,5 +1,6 @@
 eduversum (0.1.19) unstable; urgency=low
 
+  [ Dinko Sabo ]
   * renamed and rearranged menu
   * changed menu functions
   * changed help function
@@ -9,7 +10,10 @@ eduversum (0.1.19) unstable; urgency=low
   * changed copyright date
   * minor enhancements
 
- -- Dinko Sabo <cobra@sidux.com>  Sun, 08 Mar 2009 11:44:50 +0100
+  [ Stefan Lippers-Hollmann ]
+  * bump standards versions to 3.8.1, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 04 Apr 2009 01:02:36 +0200
 
 eduversum (0.1.18) unstable; urgency=low
 
