@@ -248,23 +248,22 @@
      <height>20</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuDatei" >
-    <property name="title" >
-     <string>Datei</string>
-    </property>
-    <addaction name="actionBeenden" />
-   </widget>
    <widget class="QMenu" name="menuHilfe" >
     <property name="title" >
      <string>Hilfe</string>
     </property>
     <addaction name="actionEduversumHilfe" />
+    <addaction name="actionUeberEduversum" />
+   </widget>
+   <widget class="QMenu" name="menuArbeitsmaterialien" >
+    <property name="title" >
+     <string>Arbeitsmaterialien</string>
+    </property>
     <addaction name="actionArbeitsmaterialen" />
     <addaction name="actionSeminarix_latex" />
     <addaction name="actionGrundsatzartikel" />
-    <addaction name="actionUeberEduversum" />
    </widget>
-   <addaction name="menuDatei" />
+   <addaction name="menuArbeitsmaterialien" />
    <addaction name="menuHilfe" />
   </widget>
   <action name="actionUeberEduversum" >
@@ -284,7 +283,7 @@
   </action>
   <action name="actionArbeitsmaterialen" >
    <property name="text" >
-    <string>Arbeitsmaterialen</string>
+    <string>Notebook-Ausbildung</string>
    </property>
   </action>
   <action name="actionGrundsatzartikel" >
@@ -300,22 +299,6 @@
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>actionBeenden</sender>
-   <signal>activated()</signal>
-   <receiver>eduversumGui</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>367</x>
-     <y>199</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>actionEduversumHilfe</sender>
    <signal>activated()</signal>
@@ -387,8 +370,8 @@
    <slot>showSeminarixLatex()</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>301</x>
-     <y>50</y>
+     <x>-1</x>
+     <y>-1</y>
     </hint>
     <hint type="destinationlabel" >
      <x>213</x>

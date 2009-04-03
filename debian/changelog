@@ -1,8 +1,15 @@
-eduversum (0.1.19) UNRELEASED; urgency=low
+eduversum (0.1.19) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * renamed and rearranged menu
+  * changed menu functions
+  * changed help function
+  * added eduversum-howto dependency
+  * removed setHelp() in menu
+  * changed help menu position
+  * changed copyright date
+  * minor enhancements
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 20 Feb 2009 15:50:14 +0100
+ -- Dinko Sabo <cobra@sidux.com>  Sun, 08 Mar 2009 11:44:50 +0100
 
 eduversum (0.1.18) unstable; urgency=low
 

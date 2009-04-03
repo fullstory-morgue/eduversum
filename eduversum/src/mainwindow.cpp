@@ -87,7 +87,7 @@ void MainWindow::loadGui()
 
 	trayIcon = new QSystemTrayIcon;
 
-	stuffAction = new QAction("Arbeitsmaterialen", this);
+	stuffAction = new QAction("Notebook-Ausbildung", this);
 	connect(stuffAction, SIGNAL(triggered()), this, SLOT(showStuff()));
 	aboutAction = new QAction(QString::fromUtf8("Über Eduversum"), this);
 	connect(aboutAction, SIGNAL(triggered()), this, SLOT(showAbout()));
@@ -386,6 +386,7 @@ void MainWindow::setAbout()
 {
 	about += "\nEntwickler:\n";
 	about += QString::fromUtf8("Fabian Würtz <xadras@sidux.com>\n");
+	about += "Dinko Sabo <cobra@sidux.com>\n";
 
 	about += "\nPaketzusammenstellung und Dokumentation:\n";
 	about += "Roland Engert (RoEn)\n";
@@ -430,7 +431,28 @@ void MainWindow::setHelp()
 
 void MainWindow::showHelp()
 { 
-	QMessageBox::information(this, "Eduversum Hilfe", help );
+	QString exec;
+	if( QFile::exists("/usr/bin/dolphin") )
+		exec = "dolphin";
+	else if( QFile::exists("/usr/bin/konqueror") )
+		exec = "konqueror";
+	else if( QFile::exists("/usr/bin/nautilus") )
+		exec = "nautilus";
+	else if( QFile::exists("/usr/bin/thunar") )
+		exec = "thunar";
+	else if( QFile::exists("/usr/bin/pcmanfm") )
+		exec = "pcmanfm";
+	else {
+		QMessageBox::information(this, QString::fromUtf8("Fehler"), QString::fromUtf8("Es wurde kein Dateimanager gefunden") );
+		return;
+	}
+
+	QStringList arguments;
+	arguments << "/usr/share/eduversum-howto/benutzung-eduversum.html";
+
+	QProcess *myProcess = new QProcess(this);
+	myProcess->start(exec, arguments);
+
 }
 
 //------------------------------------------------------------------------------
@@ -456,7 +478,7 @@ void MainWindow::showStuff()
 	}
 
 	QStringList arguments;
-	arguments << "/usr/share/seminarix-notebook-training/uebersicht.html";
+	arguments << "/usr/share/seminarix-notebook-training/";
 
 	QProcess *myProcess = new QProcess(this);
 	myProcess->start(exec, arguments);
