@@ -28,14 +28,14 @@
 
 
 #include "apploader.h"
-#include "mainwindow.h"
+#include "eduversum.h"
 
 
 //------------------------------------------------------------------------------
 //-- init ----------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-MainWindow::MainWindow (QMainWindow* parent, Qt::WFlags flags): QMainWindow (parent, flags)
+Eduversum::Eduversum (QMainWindow* parent, Qt::WFlags flags): QMainWindow (parent, flags)
 {
 	appdir      = "/usr/share/eduversum/";
 
@@ -45,7 +45,7 @@ MainWindow::MainWindow (QMainWindow* parent, Qt::WFlags flags): QMainWindow (par
 }
 
 
-void MainWindow::loadGui()
+void Eduversum::loadGui()
 {
 
  	setupUi(this);
@@ -87,11 +87,11 @@ void MainWindow::loadGui()
 
 	trayIcon = new QSystemTrayIcon;
 
-	stuffAction = new QAction("Notebook-Ausbildung", this);
+	stuffAction = new QAction(tr("Notebook-Ausbildung"), this);
 	connect(stuffAction, SIGNAL(triggered()), this, SLOT(showStuff()));
-	aboutAction = new QAction(QString::fromUtf8("Über Eduversum"), this);
+	aboutAction = new QAction(tr("Über Eduversum"), this);
 	connect(aboutAction, SIGNAL(triggered()), this, SLOT(showAbout()));
-	quitAction = new QAction("&Beenden", this);
+	quitAction = new QAction(tr("&Beenden"), this);
 	connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
 
 	trayIconMenu = new QMenu(this);
@@ -111,7 +111,7 @@ void MainWindow::loadGui()
 
 	setAbout();
 	setHelp();
-	descriptionTextBrowser->setText( "<h2>Willkomen</h2>"+help );
+	descriptionTextBrowser->setText( "<h2>"+tr("Willkomen")+"</h2>"+help );
 
 
 
@@ -120,7 +120,7 @@ void MainWindow::loadGui()
 }
 
 
-void MainWindow::unsetGui()
+void Eduversum::unsetGui()
 {
 	stackedWidget->setCurrentIndex(0);
 	execPushButton->hide();
@@ -129,7 +129,7 @@ void MainWindow::unsetGui()
 }
 
 
-void MainWindow::loadData()
+void Eduversum::loadData()
 {
 	AppLoader *apploader = new AppLoader();
 
@@ -154,7 +154,7 @@ void MainWindow::loadData()
 //-- show apps -----------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-void MainWindow::showCategoryApps()
+void Eduversum::showCategoryApps()
 {
 
 	if ( categoriesTreeWidget->selectedItems().count() < 1 )
@@ -198,7 +198,7 @@ void MainWindow::showCategoryApps()
 }
 
 
-void MainWindow::searchApps()
+void Eduversum::searchApps()
 {
 	treeWidget->clear();
 
@@ -212,7 +212,7 @@ void MainWindow::searchApps()
 	unsetGui();
 }
 
-void MainWindow::showAppInList(QTreeWidgetItemIterator it)
+void Eduversum::showAppInList(QTreeWidgetItemIterator it)
 {
 	QTreeWidgetItem *item = new QTreeWidgetItem(treeWidget, 0);
 	item->setText(  0, (*it)->text( 0) ); // name
@@ -247,7 +247,7 @@ void MainWindow::showAppInList(QTreeWidgetItemIterator it)
 
 }
 
-void MainWindow::showApp()
+void Eduversum::showApp()
 {
 
 	if ( treeWidget->selectedItems().count() < 1 ) 
@@ -287,7 +287,7 @@ void MainWindow::showApp()
 //-- button functions ----------------------------------------------------------
 //------------------------------------------------------------------------------
 
-void MainWindow::execApp()
+void Eduversum::execApp()
 {
 	if ( treeWidget->selectedItems().count() < 1 ) 
 		return;
@@ -313,7 +313,7 @@ void MainWindow::execApp()
 }
 
 
-void MainWindow::showHomepage()
+void Eduversum::showHomepage()
 {
 	if ( treeWidget->selectedItems().count() < 1 ) 
 		return;
@@ -324,7 +324,7 @@ void MainWindow::showHomepage()
 }
 
 
-void MainWindow::copyExample()
+void Eduversum::copyExample()
 {
 	if(QMessageBox::question(this, "Beispieldateien", "Sollen die Beispieldateien auf dem Desktop angezeigt werden?", QMessageBox::Yes, QMessageBox::No ) == QMessageBox::Yes )
 	{
@@ -334,7 +334,7 @@ void MainWindow::copyExample()
 	}
 }
 
-void MainWindow::copyDir(QString sourceDir, QString destinationDir)
+void Eduversum::copyDir(QString sourceDir, QString destinationDir)
 {
 	if( !QFile::exists( destinationDir ) )
 		QDir().mkdir(destinationDir);
@@ -353,7 +353,7 @@ void MainWindow::copyDir(QString sourceDir, QString destinationDir)
 //-- tray events ---------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
+void Eduversum::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
 	switch (reason) {
 		case QSystemTrayIcon::Trigger:
@@ -370,10 +370,10 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 
 
 
-void MainWindow::closeEvent(QCloseEvent *event)
+void Eduversum::closeEvent(QCloseEvent *event)
 {
 	if (trayIcon->isVisible()) {
-		QMessageBox::information(this, "Systray", QString::fromUtf8("Um das Programm zu beenden, wählen sie 'Beenden' im Kontextmenue des Programms im Systemabschnitt der Leiste.") );
+		QMessageBox::information(this, tr("Systray"), QString::fromUtf8("Um das Programm zu beenden, wählen sie 'Beenden' im Kontextmenue des Programms im Systemabschnitt der Leiste.") );
 		hide();
 		event->ignore();
 	}
@@ -384,7 +384,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 //-- about ---------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-void MainWindow::setAbout()
+void Eduversum::setAbout()
 {
 	about += "\nEntwickler:\n";
 	about += QString::fromUtf8("Fabian Würtz <xadras@sidux.com>\n");
@@ -407,17 +407,17 @@ void MainWindow::setAbout()
 	about += "Horst Tritremmel (hjt)\n";
  	about += "Wolf-Dieter Zimmermann (emile)\n";
 
-	about += "\nLizenz: GPL" ;
+	about += "\n"+tr("Lizenz")+": GPL" ;
 }
 
 
 
-void MainWindow::showAbout()
+void Eduversum::showAbout()
 {
 	if( isHidden() )
-		trayIcon->showMessage ( QString::fromUtf8("Über Eduversum"), about, QSystemTrayIcon::Information, 20000 );
+		trayIcon->showMessage ( tr("Über Eduversum"), about, QSystemTrayIcon::Information, 20000 );
 	else
-		QMessageBox::information(this, QString::fromUtf8("Über Eduversum"), about );
+		QMessageBox::information(this, tr("Über Eduversum"), about );
 	
 }
 
@@ -425,13 +425,13 @@ void MainWindow::showAbout()
 //-- help ---------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-void MainWindow::setHelp()
+void Eduversum::setHelp()
 {
-	help = QString::fromUtf8("Eduversum ist ein Hilfsmittel, mit dessen Hilfe Programme aus dem Bildungsbereich sehr einfach installiert oder deinstalliert werden können (Installation: im leeren Kästchen vor der Anwendung einen Haken setzen, Deinstallation: den Haken entfernen). Zu diesem Zwecke ist das Administratorpasswort erforderlich, da Softwareinstallation bzw. die Deinstallation in der Regel systemweite Arbeiten sind.");
+	help = tr("Eduversum ist ein Hilfsmittel, mit dessen Hilfe Programme aus dem Bildungsbereich sehr einfach installiert oder deinstalliert werden können (Installation: im leeren Kästchen vor der Anwendung einen Haken setzen, Deinstallation: den Haken entfernen). Zu diesem Zwecke ist das Administratorpasswort erforderlich, da Softwareinstallation bzw. die Deinstallation in der Regel systemweite Arbeiten sind.");
 }
 
 
-void MainWindow::showHelp()
+void Eduversum::showHelp()
 { 
 	QString exec;
 	if( QFile::exists("/usr/bin/dolphin") )
@@ -445,7 +445,7 @@ void MainWindow::showHelp()
 	else if( QFile::exists("/usr/bin/pcmanfm") )
 		exec = "pcmanfm";
 	else {
-		QMessageBox::information(this, QString::fromUtf8("Fehler"), QString::fromUtf8("Es wurde kein Dateimanager gefunden") );
+		QMessageBox::information(this, tr("Fehler"), tr("Es wurde kein Dateimanager gefunden") );
 		return;
 	}
 
@@ -461,7 +461,7 @@ void MainWindow::showHelp()
 //-- stuff ---------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-void MainWindow::showStuff()
+void Eduversum::showStuff()
 {
 	QString exec;
 	if( QFile::exists("/usr/bin/dolphin") )
@@ -475,7 +475,7 @@ void MainWindow::showStuff()
 	else if( QFile::exists("/usr/bin/pcmanfm") )
 		exec = "pcmanfm";
 	else {
-		QMessageBox::information(this, QString::fromUtf8("Fehler"), QString::fromUtf8("Es wurde kein Dateimanager gefunden") );
+		QMessageBox::information(this, tr("Fehler"), tr("Es wurde kein Dateimanager gefunden") );
 		return;
 	}
 
@@ -492,13 +492,13 @@ void MainWindow::showStuff()
 //--seminarix-latex-----------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-void MainWindow::showSeminarixLatex()
+void Eduversum::showSeminarixLatex()
 {
 	QString exec;
 	QDir dir("/usr/share/seminarix-latex");
 	if (!dir.exists())
 	{
-		QMessageBox::information(this, QString::fromUtf8("Fehler"), QString::fromUtf8("Diese Funktion ist erst nach Installation des Paketes seminarix-latex verfügbar. Dieses können Sie bequem unter der Kategorie Allgemein installieren. Die Installation des Programmes ist jedoch nur im Falle einer Festplatteninstallation zu empfehlen, da sie große Datenmengen mitinstalliert.") );
+		QMessageBox::information(this, tr("Fehler"), tr("Diese Funktion ist erst nach Installation des Paketes seminarix-latex verfügbar. Dieses können Sie bequem unter der Kategorie Allgemein installieren. Die Installation des Programmes ist jedoch nur im Falle einer Festplatteninstallation zu empfehlen, da sie große Datenmengen mitinstalliert.") );
 	}
 	else
 	{
@@ -513,7 +513,7 @@ void MainWindow::showSeminarixLatex()
 		else if( QFile::exists("/usr/bin/pcmanfm") )
 			exec = "pcmanfm";
 		else {
-			QMessageBox::information(this, QString::fromUtf8("Fehler"), QString::fromUtf8("Es wurde kein Dateimanager gefunden") );
+			QMessageBox::information(this, tr("Fehler"), tr("Es wurde kein Dateimanager gefunden") );
 			return;
 		}
 
@@ -529,7 +529,7 @@ void MainWindow::showSeminarixLatex()
 //--open-source-----------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-void MainWindow::showOpenSource()
+void Eduversum::showOpenSource()
 {
 	QString exec;
 	if( QFile::exists("/usr/bin/dolphin") )
@@ -543,7 +543,7 @@ void MainWindow::showOpenSource()
 	else if( QFile::exists("/usr/bin/pcmanfm") )
 		exec = "pcmanfm";
 	else {
-		QMessageBox::information(this, QString::fromUtf8("Fehler"), QString::fromUtf8("Es wurde kein Dateimanager gefunden") );
+		QMessageBox::information(this, tr("Fehler"), tr("Es wurde kein Dateimanager gefunden") );
 		return;
 	}
 
@@ -561,7 +561,7 @@ void MainWindow::showOpenSource()
 //-- changed -------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-void MainWindow::changed()
+void Eduversum::changed()
 {
 	if ( treeWidget->selectedItems().count() < 1 ) 
 		return;
@@ -603,7 +603,7 @@ void MainWindow::changed()
 
 
 
-void MainWindow::showChanges()
+void Eduversum::showChanges()
 {
 	QTreeWidgetItemIterator it(appTreeWidget);
 	addRemoveApp.clear();
@@ -632,16 +632,16 @@ void MainWindow::showChanges()
 	}
 
 	if( noChanges )
-		QMessageBox::information(this, QString::fromUtf8("Keine Veränderungen"), QString::fromUtf8("Es sind keine Veränderungen vorhanden. Zum Programme zu installieren oder zu deinstallieren einfach das Markierungsfeld aktiveren bzw. deaktivieren.") );
+		QMessageBox::information(this, tr("Keine Veränderungen"), tr("Es sind keine Veränderungen vorhanden. Zum Programme zu installieren oder zu deinstallieren einfach das Markierungsfeld aktiveren bzw. deaktivieren.") );
 	else {
-		descriptionTextBrowser->setText("<h3>&Auml;nderungen ausf&uuml;hren</h3>Die aufgef&uuml;hrten Programme in der oberen Liste werden installiert (gr&uuml;n) beziehungsweise deinstalliert (rot).");
+		descriptionTextBrowser->setText(tr("<h3>&Auml;nderungen ausf&uuml;hren</h3>Die aufgef&uuml;hrten Programme in der oberen Liste werden installiert (gr&uuml;n) beziehungsweise deinstalliert (rot)."));
 		stackedWidget->setCurrentIndex(1);
 	}
 
 }
 
 
-void MainWindow::applyChanges()
+void Eduversum::applyChanges()
 {
 	QString program = "su-to-root";
 	QStringList arguments;
@@ -657,7 +657,7 @@ void MainWindow::applyChanges()
 
 }
 
-void MainWindow::applyChangesFinished()
+void Eduversum::applyChangesFinished()
 {
 	setEnabled ( TRUE );
 	QTreeWidgetItemIterator it(appTreeWidget);
@@ -677,7 +677,7 @@ void MainWindow::applyChangesFinished()
 	cancelChanges();
 }
 
-void MainWindow::discardChanges()
+void Eduversum::discardChanges()
 {
 	QTreeWidgetItemIterator it(appTreeWidget);
 	while (*it) {
@@ -695,7 +695,7 @@ void MainWindow::discardChanges()
 }
 
 
-void MainWindow::cancelChanges()
+void Eduversum::cancelChanges()
 {
 	treeWidget->clear();
 	descriptionTextBrowser->clear();

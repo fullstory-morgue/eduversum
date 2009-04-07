@@ -16,7 +16,7 @@ TRANSLATIONS = translations/eduversum_de.ts
 
 
 SOURCES += src/main.cpp \
- src/mainwindow.cpp \
+ src/eduversum.cpp \
  src/iconloader.cpp \
  src/apploader.cpp
 DESTDIR = .
@@ -34,10 +34,10 @@ appdata.files = data/apps data/categories data/icons data/sh data/manual
 
 INSTALLS += target iconstarget langtarget shortcuttarget appdata
 
-HEADERS += src/mainwindow.h \
+HEADERS += src/eduversum.h \
 src/iconloader.h \
 src/apploader.h
 TARGET = src/eduversum
 
-FORMS += src/mainwindow.ui
+FORMS += src/eduversum.ui
 

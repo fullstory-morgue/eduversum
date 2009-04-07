@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef EDUVERSUM_H
+#define EDUVERSUM_H
 
 #include "iconloader.h"
 #include "QMenu"
@@ -9,14 +9,14 @@
 
 
 
-#include "ui_mainwindow.h"
+#include "ui_eduversum.h"
 
-class MainWindow : public QMainWindow, Ui::eduversumGui
+class Eduversum : public QMainWindow, Ui::Eduversum
 {
 	Q_OBJECT
 
 	public:
-		MainWindow (QMainWindow* parent = 0, Qt::WFlags flags = 0);
+		Eduversum (QMainWindow* parent = 0, Qt::WFlags flags = 0);
 
 		void loadGui();
 		void unsetGui();
@@ -69,8 +69,6 @@ class MainWindow : public QMainWindow, Ui::eduversumGui
 
 	protected:
 		void closeEvent(QCloseEvent *event);
-
-
 
 
 };

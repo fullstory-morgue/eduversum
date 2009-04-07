@@ -1,13 +1,13 @@
 
 #include <QApplication>
-#include "mainwindow.h"
+#include "eduversum.h"
 
 int main ( int argc, char *argv[] )
 {
 
 	QApplication app(argc, argv);
-	MainWindow *mainwindow = new MainWindow();
-	mainwindow -> show();
+	Eduversum *mainWindow = new Eduversum();
+	mainWindow -> show();
 	return app.exec();
 
 }

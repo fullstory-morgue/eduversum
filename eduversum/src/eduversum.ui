@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>eduversumGui</class>
- <widget class="QMainWindow" name="eduversumGui" >
+ <class>Eduversum</class>
+ <widget class="QMainWindow" name="Eduversum" >
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -302,7 +302,7 @@
   <connection>
    <sender>actionEduversumHilfe</sender>
    <signal>activated()</signal>
-   <receiver>eduversumGui</receiver>
+   <receiver>Eduversum</receiver>
    <slot>showHelp()</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -318,7 +318,7 @@
   <connection>
    <sender>actionUeberEduversum</sender>
    <signal>activated()</signal>
-   <receiver>eduversumGui</receiver>
+   <receiver>Eduversum</receiver>
    <slot>showAbout()</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -334,7 +334,7 @@
   <connection>
    <sender>actionArbeitsmaterialen</sender>
    <signal>activated()</signal>
-   <receiver>eduversumGui</receiver>
+   <receiver>Eduversum</receiver>
    <slot>showStuff()</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -350,7 +350,7 @@
   <connection>
    <sender>actionGrundsatzartikel</sender>
    <signal>activated()</signal>
-   <receiver>eduversumGui</receiver>
+   <receiver>Eduversum</receiver>
    <slot>showOpenSource()</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -366,7 +366,7 @@
   <connection>
    <sender>actionSeminarix_latex</sender>
    <signal>activated()</signal>
-   <receiver>eduversumGui</receiver>
+   <receiver>Eduversum</receiver>
    <slot>showSeminarixLatex()</slot>
    <hints>
     <hint type="sourcelabel" >
