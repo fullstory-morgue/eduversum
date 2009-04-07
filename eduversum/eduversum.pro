@@ -11,7 +11,7 @@ MOC_DIR = build/
 UI_DIR = ui/
 
 
-#TRANSLATIONS = de.ts
+TRANSLATIONS = translations/eduversum_de.ts
 
 
 
@@ -24,8 +24,8 @@ DESTDIR = .
 target.path = /usr/bin
 iconstarget.path = /usr/share/icons/hicolor/32x32/apps/
 iconstarget.files = src/eduversum.png
-langtarget.path = /usr/share/eduversum/lang
-langtarget.files = *.qm
+langtarget.path = /usr/share/eduversum_de/translations/
+langtarget.files = translations/eduversum_de_de.qm
 shortcuttarget.path = /usr/share/applications
 shortcuttarget.files = src/eduversum.desktop
 

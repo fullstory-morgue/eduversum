@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Allgemein</name>
+	<icon>eduversum_allgemein</icon>
+	<description>
+		In dieser Abteilung sind solche Programme aufgeführt, die bei der täglichen Arbeit der Lehrerin und des Lehrers in der Ausbildung (und natürlich auch noch danach) hilfreich sein können.\n\n
+
+		Hier sind neben dem sehr schnellen KOffice-Paket auch Programme zum Abspielen von Video und Multimediadateien ebenso wie Grafikbearbeitungsprogramme oder das DeskTopPublishing Programm Scribus enthalten.\n\n
+
+		Auch ein Programm zur Visualisierung von Gedanken und Prozessen (vym) ist integriert. Es gibt noch viele mehr. \n\n
+
+		Für die meisten "Lehrerarbeiten" müssten diese Anwendungen eigentlich ausreichen.Die wichtigsten stellen wir hier vor.\n\n
+
+		Suchen Sie Hilfen und Informationen zu irgendeinem der KOfficepakete, klicken Sie auf den Menüpunkt "Hilfe" im jeweiligen Programm.\n\n
+
+		Ein Blick auf [a="http://docs.kde.org/development/de/koffice/"]http://docs.kde.org/development/de/koffice/[/a] kann ebenfalls hilfreich sein - dort werden (auch) alle übrigen KOffice-Handbücher und Informationen in Deutsch veröffentlicht, die aus Platzgründen keinen Platz auf dieser CD gefunden haben.\n\n
+
+		In allen Fällen, in denen wir im Internet zusätzliche Hilfen gefunden haben, haben wir sie (mitunter in Englisch) unter [i]Info[/i] unterhalb der Programm Beschreibung verlinkt.\n\n
+
+		Mitunter sind es Zeitschriftenartikel, mitunter Wiki-Einträge. Da wir nicht die Herren dieser Einträge sind, gibt es auch keine Gewähr, dass diese Links dann funktionieren, wenn Sie sich Hilfe davon versprechen.
+	</description>
+
+</eduversum>

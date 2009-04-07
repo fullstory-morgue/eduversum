@@ -33,8 +33,10 @@ AppLoader::AppLoader()
 
 QTreeWidget* AppLoader::importApps()
 {
+	QString lang = "de";
+
 	QTreeWidget *outputTreeWidget = new QTreeWidget;
-	QString applicationsDir = appdir+"apps/";
+	QString applicationsDir = appdir+"apps/"+lang+"/";
 	QStringList appslicationFiles = QDir( applicationsDir ).entryList( QDir::Files );
 
 
@@ -78,12 +80,7 @@ QTreeWidget* AppLoader::importApps()
 		if( icon == "")
 			icon = id.toLower();
 		//descripition
-		description.replace("	", "");
-		description.replace("\\n", "<br>");
-		description.replace("[ul]", "<ul>");
-		description.replace("[/ul]", "</ul>");
-		description.replace("[li]", "<li>");
-		description.replace("[/li]", "</li>");
+		description = toHtml(description);
 		// status
 		if( QFile::exists( "/usr/share/doc/"+package.split(" ")[0]+"/copyright" ) )
 			status = "installed";
@@ -118,8 +115,9 @@ QTreeWidget* AppLoader::importApps()
 
 QTreeWidget* AppLoader::importCategories() {
 
+	QString lang = "de";
 	QTreeWidget *outputTreeWidget = new QTreeWidget;
-	QString categoriesDir = appdir+"categories/";
+	QString categoriesDir = appdir+"categories/"+lang+"/";
 	QStringList categoriesFiles = QDir( categoriesDir ).entryList( QDir::Files );
 
 
@@ -131,6 +129,8 @@ QTreeWidget* AppLoader::importCategories() {
 		item->setText( 1, getXmlValue(categoryValues, "name") );
 		QString id = QString(*it).replace(".xml", "");
 		item->setText( 2, id );
+		QString description = getXmlValue(categoryValues, "description");
+		item->setText( 3, toHtml(description) );
 	}
 
 	return outputTreeWidget;
@@ -173,3 +173,22 @@ QString AppLoader::getXmlValue(QTreeWidget *inputTreeWidget, QString inputString
 		outputString = inputTreeWidget->findItems(inputString, Qt::MatchExactly, 0).first()->text(1);
 	return outputString;
 }
+
+
+QString AppLoader::toHtml(QString inputString) {
+
+	inputString.replace("	", "");
+	inputString.replace("\\n", "<br>");
+	inputString.replace("[ul]", "<ul>");
+	inputString.replace("[/ul]", "</ul>");
+	inputString.replace("[li]", "<li>");
+	inputString.replace("[/li]", "</li>");
+	inputString.replace("[i]", "<i>");
+	inputString.replace("[/i]", "</i>");
+	inputString.replace("[a=", "<a href=");
+	inputString.replace("\"]", "\">");
+	inputString.replace("[/a]", "</a>");
+	return inputString;
+}
+
+

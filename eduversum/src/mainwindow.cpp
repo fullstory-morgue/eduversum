@@ -144,6 +144,7 @@ void MainWindow::loadData()
 		item->setIcon( 0, QIcon( appdir+"categories/icons/"+(*it)->text(0)) );
 		item->setText( 0, (*it)->text(1) );
 		item->setText( 1, (*it)->text(2) );
+		item->setText( 2, (*it)->text(3) );
 		++it;
 	}
 
@@ -165,9 +166,10 @@ void MainWindow::showCategoryApps()
 	stackedWidget->show();
 
 	// show category descrption
-	QString category = categoriesTreeWidget->selectedItems().first()->text(1);
+	QString category    = categoriesTreeWidget->selectedItems().first()->text(1);
+	QString description = categoriesTreeWidget->selectedItems().first()->text(2);
 	descriptionTextBrowser->clear();
-	descriptionTextBrowser->setSource(appdir+"categories/html/"+category+".html");
+	descriptionTextBrowser->setHtml("<h3>"+category+"</h3>"+description);
 
 
 

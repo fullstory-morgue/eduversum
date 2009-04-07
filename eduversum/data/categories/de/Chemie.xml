@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Chemie</name>
+	<icon>eduversum_chemie</icon>
+	<description>
+		Die Programme im Fachbereich Chemie sind auf die Darstellung und Informationen zum Periodensystem ausgerichtet.\n\n
+
+		Simuliert werden können chemische Prozesse in der Regel dann plattformunabhängig, wenn sie in Java geschrieben sind.\n\n
+
+		Dann lassen sie sich ausnahmslos auch hier unter Linux anwenden. Daneben ist ein Spiel "KAtomic", das &Auml;hnlichkeiten mit dem Spiel Sokoban aufweist.\n\n
+
+		Mit diesem Spiel werden aus Atomen Moleküle.\n\n
+
+		Sind Sie an Formeln und deren Darstellung interessiert, prüfen Sie bitte im KOffice-Paket, ob Sie mit der Anwendung KFormula nicht weiter kommen.\n\n
+
+		In allen Fällen, in denen wir im Internet zusätzliche Hilfen gefunden haben, haben wir sie (mitunter in Englisch) unter [i]Info[/i] unterhalb der Programm Beschreibung verlinkt.\n\n
+
+		Mitunter sind es Zeitschriftenartikel, mitunter Wiki-Einträge. Da wir nicht die Herren dieser Einträge sind, gibt es auch keine Gewähr, dass diese Links dann funktionieren, wenn Sie sich Hilfe davon versprechen.
+	</description>
+</eduversum>

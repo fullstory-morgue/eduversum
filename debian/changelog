@@ -1,8 +1,12 @@
 eduversum (0.1.20) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 04 Apr 2009 01:04:26 +0200
+  [ Fabian Wuertz ]
+  * eduversum prepared for english language files 
+
+ -- Fabian Wuertz <xadras@sidux.com>  Tue, 07 Apr 2009 14:38:13 +0200
 
 eduversum (0.1.19) unstable; urgency=low
 

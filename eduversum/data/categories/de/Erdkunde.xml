@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name lang="de">Erdkunde</name>
+
+	<icon>eduversum_erdkunde</icon>
+	<description>
+		Im Bereich Erdkunde sind Programme, die geografische Analysen unterstützen bzw. durchführen, die Wahl der Stunde. Das erste Programm stammt aus dieser.\n\n
+		
+		In allen Fällen, in denen wir im Internet zusätzliche Hilfen gefunden haben, haben wir sie (mitunter in Englisch) unter [i]Info[/i] unterhalb der Programm Beschreibung verlinkt.\n\n
+		
+		Mitunter sind es Zeitschriftenartikel, mitunter Wiki-Einträge. Da wir nicht die Herren dieser Einträge sind, gibt es auch keine Gewähr, dass diese Links dann funktionieren, wenn Sie sich Hilfe davon versprechen.
+	</description>
+</eduversum>

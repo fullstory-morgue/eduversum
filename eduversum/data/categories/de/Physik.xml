@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Physik</name>
+	<icon>eduversum_physik</icon>
+	<description>
+		Für das Fach Physik liegen mehrheitlich Programme vor, die
+		Sterne, Sternkonstellationen und Simulationen zeigen. Originäre
+		Programme für das Fach Physik sind offenkundig seltener.
+	</description>
+</eduversum>

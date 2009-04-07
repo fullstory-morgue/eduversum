@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Lernspiele</name>
+	<icon>eduversum_lernspiele</icon>
+	<description>
+		Mit Lernspielen kommen viele in einen näheren und schnelleren Kontakt mit Möglichkeiten, die die Rechner bieten.\n\n
+
+		In der Arbeit mit Jüngeren (etwa Grundschulen) bieten sie darüber hinaus auch noch Gelegenheiten, einfache Routinen (z.B. Umgang mit der Maus oder der Tastatur) und Kombinationsspiele einzuüben.
+	</description>
+</eduversum>
