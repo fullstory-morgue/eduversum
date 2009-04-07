@@ -3,7 +3,7 @@ from xml.etree.ElementTree import ElementTree
 
 import os
 
-path="../apps/"  # insert the path to the directory of interest
+path="../apps/de"  # insert the path to the directory of interest
 dirList=os.listdir(path)
 
 seminarixArray  = []
@@ -14,7 +14,7 @@ descriptionArray     = []
 for fileName in dirList:
 	if fileName.find (".xml") > 0:
 		tree = ElementTree()
-		tree.parse("../apps/"+fileName)
+		tree.parse("../apps/de/"+fileName)
 
 		title = tree.find("name")
 		title = title.text.encode('utf-8')
