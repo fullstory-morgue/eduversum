@@ -433,28 +433,7 @@ void Eduversum::setHelp()
 
 void Eduversum::showHelp()
 { 
-	QString exec;
-	if( QFile::exists("/usr/bin/dolphin") )
-		exec = "dolphin";
-	else if( QFile::exists("/usr/bin/konqueror") )
-		exec = "konqueror";
-	else if( QFile::exists("/usr/bin/nautilus") )
-		exec = "nautilus";
-	else if( QFile::exists("/usr/bin/thunar") )
-		exec = "thunar";
-	else if( QFile::exists("/usr/bin/pcmanfm") )
-		exec = "pcmanfm";
-	else {
-		QMessageBox::information(this, tr("Fehler"), tr("Es wurde kein Dateimanager gefunden") );
-		return;
-	}
-
-	QStringList arguments;
-	arguments << "/usr/share/eduversum-howto/benutzung-eduversum.html";
-
-	QProcess *myProcess = new QProcess(this);
-	myProcess->start(exec, arguments);
-
+	QDesktopServices::openUrl(QUrl("/usr/share/eduversum-howto/benutzung-eduversum.html"));
 }
 
 //------------------------------------------------------------------------------
