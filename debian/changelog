@@ -10,8 +10,9 @@ eduversum (0.1.20) UNRELEASED; urgency=low
   * tr tags added
   * showHelp function updated 
   * english app files added
+  * english app files updated 
 
- -- Fabian Wuertz <xadras@sidux.com>  Thu, 09 Apr 2009 17:19:15 +0200
+ -- Fabian Wuertz <xadras@sidux.com>  Thu, 09 Apr 2009 17:50:19 +0200
 
 eduversum (0.1.19) unstable; urgency=low
 
