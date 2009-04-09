@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KVerbos</name>
+	<seminarix>Languages</seminarix>
+	<homepage>http://edu.kde.org/kverbos/</homepage>
+	<description lang="en">Students can learn Spanish verb forms with KVerbos. The program suggests a verb and a time and the student enters the different verb forms. The program corrects the user's input and gives feedback. The student can edit the list of verbs. The program can build regular verb forms by itself. Irregular verb forms can be entered by the user. If you are not sure about a form of a verb, the Interne offers good sources. The most interesting feature in the newest version is the usage of KFeeder. This is a separate program and the user has to install it by themselves if they want to use it. If it is installed, the learning process will be displayed in KFeeder. If you are a good student a dog runs around and gets fed with bones. If not he will just lie there most of the time. By clicking on the help button in the Kverbos program, you can call a detailed user manual.</description>
+</eduversum>

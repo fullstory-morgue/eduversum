@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Computer Science</name>
+	<icon>eduversum_informatik</icon>
+	<description>
+		Naturally a lot of programs that work with and under Linux come from the field of computer science, since we are firstly talking here about an Operating System. As a consequence a lot basic programing languages appear here.\n\n
+
+		Available are compilers for various programing languages: The [a href="http://gcc.gnu.org/"]GNU Compiler Collection (GCC)[/a] contains compilers for C, C++, Objective C, Java, Ada, Fortran, [a href="http://www.gnu-pascal.de"]Pascal[/a]. Also available is [a href="http://wiki.lazarus.freepascal.org/index.php/Main_Page/de"]Freepascal/Lazarus[/a], a programing environment similar and compatible to Delphi®. Added to the above are scripting languages like for example [a href="http://www.perl-archiv.de/"]Perl[/a] or [a href="http://www.python.org/"]python[/a].\n\n
+
+		Of course there was not enough space on the CD for an integrated development environment (for example [a href="http://www.eclipse.org"]Eclipse[/a]) for these languages to be used in a graphical environment (for example KDE or Gnome).\n\n
+
+		Because of that reason the Seminarix-CD only contains the languages Perl and python and they CAN NOT be run from the Seminarix KDE-Menu but only from the command line.\n\n
+
+		In all cases in which we found additional help on the Internet, we have linked it with [i]Info[/i] under the program description (some of it in English).\n\n
+
+		Some links are magazine articles, some are Wiki-Articles. Since we are not the owners of these Articles, we can not guarantee that these links will work when you depend on them to get help.
+	</description>
+</eduversum>
+
+

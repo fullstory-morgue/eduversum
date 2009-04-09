@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Kpdf</name>
+	<seminarix>General</seminarix>
+	<homepage>http://kpdf.kde.org/</homepage>
+	<description lang="en">Program to view PDF files.</description>
+</eduversum>

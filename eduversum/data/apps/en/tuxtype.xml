@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>TuxType</name>
+	<seminarix>Educational Games</seminarix>
+	<homepage>http://tuxtype.sourceforge.net/</homepage>
+	<exec>/usr/games/tuxtype</exec>
+	<description lang="en">TuxtType is a training-software with which children can learn to use the keyboard in a playful manner. The principal of the game is similar to that of the program 'Missile Command', which means that fish with letters fall from the top of the screen and Tux has to catch them and eat them. For that you have to type in the right letter/word. There are various game-modes you can choose - from typing single letters through to long words. Three difficulty levels are offered.</description>
+</eduversum>

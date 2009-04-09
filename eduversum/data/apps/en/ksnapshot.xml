@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KSnapshot</name>
+	<seminarix>Art</seminarix>
+	<homepage>http://www.kde.de/software/screenshots/graphik.php</homepage>
+	<description lang="en">With KSnapshot you can easily take screen-shots of your desktop. This can either be done automatically with time delay or with a mouse click by the user. Depending on your choice, KSnapshot takes a screen-shot of your whole desktop or only a part of it and supports most file formats.</description>
+</eduversum>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Quanta Plus</name>
+	<seminarix>General;Computer Science</seminarix>
+	<homepage>http://quanta.kdewebdev.org/</homepage>
+	<description lang="en">Quanta Plus is a development environment for creation of webpages. It offers project management and supports arbitrary markuplanguages but it focuses on web-based languages and technologies like HTML, XHTML, CSS, JavaScript, Java or PHP. Quanta Plus supports a multitude of external komponents and tools, which support the development. Therefore Quanta provides a rich but still easy to use environment with which you can create and manage your websites fast and with efficiency.</description>
+</eduversum>

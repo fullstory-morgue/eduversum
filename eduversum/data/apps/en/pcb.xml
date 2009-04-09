@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>PCB</name>
+	<seminarix>Engineering</seminarix>
+	<homepage>http://pcb.sourceforge.net/</homepage>
+	<description lang="en">Whoever wants to avoid using ready made circuit boards and wants to design his own instead, he can create them with the help of this program. Available electronic components have to be connected and positioned by the user (integrated is a virtual circuit tester). In addition to automatic conductor evaluation, you can also manually edit those.</description>
+</eduversum>

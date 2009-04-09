@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>digiKam</name>
+	<seminarix>Art</seminarix>
+	<homepage>http://www.digikam.org/</homepage>
+	<description lang="en">digiKam is an advanced photo management program for KDE. It can import, organize, enhance, search and export your digital images to and from your computer. With the help of Gphoto2 it can read images from almost any digital camera. It can manipulate pictures via the kipi-plugins. digiKam supports all popular picture formats and via dcraw it also supports RAW-data. The collection data, picture information and the EXIF-data are stored in a SQLite data bank. </description>
+</eduversum>

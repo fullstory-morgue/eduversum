@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Chemistry</name>
+	<icon>eduversum_chemie</icon>
+	<description>
+		The programs in the chemistry section are oriented towards providing information and represent the periodical system.\n\n
+
+		When the chemical processes are written in Java then they can be usually simulated platform independently.\n\n
+
+		Then they can be also used in Linux. Moreover there is a game called "KAtomic", which looks similar to the game Sokoban.\n\n
+
+		In this game atoms are created from molecules.\n\n
+
+		If you are interested in formulas and their representation, please check in the KOffice-package for the application KFormula.\n\n
+
+		In all cases in which we found additional help on the Internet, we have linked it with [i]Info[/i] under the program description (some of it in English).\n\n
+
+		Some links are magazine articles, some are Wiki-Articles. Since we are not the owners of these Articles, we can not guarantee that these links will work when you depend on them to get help.
+	</description>
+</eduversum>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Itools</name>
+	<seminarix>Religion</seminarix>
+	<homepage>http://www.arabeyes.org/project.php?proj=ITL</homepage>
+	<exec>ical</exec>
+	<terminal>true</terminal>
+	<description lang="en">itools is a collection of command line tools. itools contains Islamic Hijri calendar and prayer time tools. The following commands are available:[ul]
+		[li]ical: Displays a Hijri calendar.[/li]
+		[li]idate: is an extensive Hijri/Gregorian date converter.[/li]
+		[li]ipraytime: Prayer times and Qibla calculator and schedule table generator.[/li]
+		[li]ireminder: Prayer time reminder (Perl-Script).[/li]
+	[/ul]</description>
+</eduversum>

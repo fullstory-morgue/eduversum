@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Kdict</name>
+	<seminarix>Languages</seminarix>
+	<homepage>http://www.dict.org/</homepage>
+	<description lang="en">Extensive dictionary from the KDE-project which, at the moment, offers more than 15 languages.</description>
+</eduversum>

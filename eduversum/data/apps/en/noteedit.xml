@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>NoteEdit</name>
+	<seminarix>Music</seminarix>
+	<homepage>http://noteedit.berlios.de/</homepage>
+	<package>noteedit timidity lilypond</package>
+	<description lang="en">NoteEdit is an Open-Source musical score editor. It offers the following functions:[ul]
+		[li]Support of polyphonic voices of unlimited number and length.[/li]
+		[li]MIDI-rendering of the written notes, chords, texts.[/li]
+		[li]It contains a number of export and import filters for various formats like MIDI, MusicXML, ABC, MUP, PMX, MusiXTeX αnd LilyPond.[/li]
+		[li]Graphical interface for note inputting and print preview of those, which you can later optimize with the powerful score program LilyPond (it gets installed automatically with NoteEdit) or with MusiXTeX.[/li]
+		[li]Reading and rendering from a MIDI-Keyboard.[/li]
+		[li]Automatic set-up of measure lines when a measure is given and more.[/li]
+	[/ul]</description>
+</eduversum>

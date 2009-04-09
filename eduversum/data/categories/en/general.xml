@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>General</name>
+	<icon>eduversum_allgemein</icon>
+	<description>
+		In this "General" section you will find a list of programs  which can be helpful with the teacher's professional duties.\n\n
+
+		There are, besides the very fast KOffice-Package, programs to play videos and multimedia files and also programs like graphic editors or the DeskTop Publishing program Scribus.\n\n
+
+		Also intergrated is a program to visualise thoughts and processes (vym). There are a lot more Applications. \n\n
+
+		For most "teacher's work", these Applications should be enough. We will introduce here the most important ones.\n\n
+
+		If you are looking for help or information for one of the KOffice packages, click on the "Help" menu in the respective program.\n\n
+
+		Reading [a href="http://docs.kde.org/development/en/koffice/"]http://docs.kde.org/development/en/koffice/[/a] can also be helpful - there you can find all the KOffice-Manuals and information that did not make it on to the CD due to limited space.\n\n
+
+		In all cases in where we have found additional help information on the Internet, we have linked it with [i]Info[/i] under the program description. Some of the links are only availble in English.\n\n
+
+		Some of them are magazine articles, some are Wiki-Articles. Since we are not the owners of these Articles, we can not guarantee that these links will work when you depend on them to get help.
+	</description>
+
+</eduversum>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KWordQuiz</name>
+	<seminarix>Languages</seminarix>
+	<homepage>http://wiki.skolelinux.de/LernSoftware/KWordQuiz</homepage>
+	<description lang="en">It is a tool that works with flashcards and it helps the user train his vocabulary. It can be used It can be used for learning a language or any kind of "special" terminology. The program allows access to various vocabulary data banks. It supports .kvtml files, which are used by other KDE programs like for example KVocTrain, .wql files, which are used by WORD Quiz for Windows, .cvs files with text separated by commas and .xml .gz files created by the application pauker. This package is part of the official KDE Edutainment module.</description>
+</eduversum>

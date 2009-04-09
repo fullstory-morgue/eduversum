@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>GIMP</name>
+	<seminarix>Art</seminarix>
+	<homepage>http://www.gimp.org</homepage>
+	<description lang="en">GIMP (GNU Image Manipulation Program) is a picture editor. With its support for multiple layers, numerous filters and a lot of possibilities to edit pictures, it can be compared to expensive and proprietary professional products like Adobe Photoshop.</description>
+</eduversum>

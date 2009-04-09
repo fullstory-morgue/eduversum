@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Kalzium</name>
+	<seminarix>Chemistry</seminarix>
+	<homepage>http://edu.kde.org/kalzium/</homepage>
+	<description lang="en">Kalzium is a program about the periodic table of elements, that informs you over everything that is contained in the PSE. It contains various interactive features, that make the numerous facts accessible for students of all ages, (among them is a quiz and the possibility to calculate molecule masses).
+
+	Information on the elements can be highlighted by various criteria. Data can be shown as graphics, and chemical terms and devices can be looked up in the programs glossary. A time slider, to show the year of discovery for each element, and a temperature slider, to show the different states of aggregation, is integrated, too..\n\n
+
+	Kalzium enjoys a great popularity amongst scientists. It is used at the Max-Planck-Institut für Kernphysik, the University of Oxford and the France's Sorbonne University.</description>
+</eduversum>

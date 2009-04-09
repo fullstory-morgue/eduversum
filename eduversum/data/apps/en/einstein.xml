@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Einstein</name>
+	<seminarix>Educational Games</seminarix>
+	<homepage>http://games.flowix.com/en/index.html</homepage>
+	<description lang="en">Einstein Puzzle is a program for people which are good in logical thinking. The objective is to fill a 6x6 field with symbols. For this, hints are given which describe the relationship between the symbols' positions. The program contains a help-file in English.</description>
+</eduversum>

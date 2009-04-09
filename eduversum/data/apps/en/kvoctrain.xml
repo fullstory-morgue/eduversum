@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KVocTrain</name>
+	<seminarix>Language</seminarix>
+	<homepage>http://docs.kde.org/development/de/kdeedu/kvoctrain/index.html</homepage>
+	<description lang="en">KVocTrain is a small tool which helps you learn vocabulary when you are trying to learn a foreign language. You can create your own data bank with the words you need. It serves as a substitute to flashcards. You probably remember using flashcards in school. You just put the card aside if you knew the translation. As a first step please load the "Examples file". This package is part of the official KDE Edutainment module.</description>
+</eduversum>

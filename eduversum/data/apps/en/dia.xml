@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Dia</name>
+	<seminarix>Mathematics;Computer Science</seminarix>
+	<homepage>http://www.gnome.org/projects/dia/</homepage>
+	<desktoppath>/usr/share/applications/dia-common.desktop</desktoppath>
+	<description lang="en">Dia has similarities to the proprietary program 'Visio'. With Dia various kinds of diagrams, flow charts and structural diagrams can be prepared. Logical switches and networks are also representable. The products can be exported into various formats like EPS, SVG, XFIG, WMF and PNG.</description>
+</eduversum>

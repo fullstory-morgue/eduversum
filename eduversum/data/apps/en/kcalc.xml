@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KCalc</name>
+	<seminarix>Mathematics</seminarix>
+	<homepage>http://docs.kde.org/stable/de/kdeutils/kcalc/index.html</homepage>
+	<description lang="en">KCalc is a software scientific calculator for your computer's desktop. KCalc provides all the common calculator functions (also statistic functions). The program allows you to transform decimal, hexadecimal, octal and binary numbers into one another. KCalc provides numerous mathematical and natural constants and allows you to define your own constants. Calculations can be copied into other applications. </description>
+</eduversum>

@@ -27,16 +27,16 @@
 
 AppLoader::AppLoader()
 {
+        language = QLocale::system().name().left(2);
 	appdir = "/usr/share/eduversum/";
 }
 
 
 QTreeWidget* AppLoader::importApps()
 {
-	QString lang = "de";
 
 	QTreeWidget *outputTreeWidget = new QTreeWidget;
-	QString applicationsDir = appdir+"apps/"+lang+"/";
+	QString applicationsDir = appdir+"apps/"+language+"/";
 	QStringList appslicationFiles = QDir( applicationsDir ).entryList( QDir::Files );
 
 
@@ -115,9 +115,8 @@ QTreeWidget* AppLoader::importApps()
 
 QTreeWidget* AppLoader::importCategories() {
 
-	QString lang = "de";
 	QTreeWidget *outputTreeWidget = new QTreeWidget;
-	QString categoriesDir = appdir+"categories/"+lang+"/";
+	QString categoriesDir = appdir+"categories/"+language+"/";
 	QStringList categoriesFiles = QDir( categoriesDir ).entryList( QDir::Files );
 
 

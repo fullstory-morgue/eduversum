@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Planets</name>
+	<seminarix>Physics</seminarix>
+	<homepage>http://planets.homedns.org/</homepage>
+	<desktoppath>/usr/share/applications/planets.desktop</desktoppath>
+	<description lang="en">The gravitational force simulator "Planets" is an easy, interactive program which simulates, planetary systems in a playful manner. Planets is suitable for demonstrating the effects the gravitational forces between multiple space objects. The user interface has a simple design and because of that it is suitable for students in lower classes, that is for very young children, in a special "Kid-Mode". The program offers many options, for example you can adjust so the planets will bounce or merge when they touch one an other, (the second option is well suited for demonstrating the creation of the solar system).
+ </description>
+</eduversum>

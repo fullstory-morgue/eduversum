@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Art</name>
+	<icon>eduversum_kunst</icon>
+	<description>
+		In this section under the term "art" you will find sketch and drawing programs which should indirectly be thought as belonging to the handicrafts side of "art".\n\n
+
+		The question, in which class do graphics programs belong to, had us at first think of the Art Class. The question is though, how much should a graphic program be able to manipulate a file, which makes this classification hard to assess.
+	</description>
+</eduversum>

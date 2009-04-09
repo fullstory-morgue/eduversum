@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KDissert</name>
+	<seminarix>General</seminarix>
+	<homepage>http://freehackers.org/~tnagy/kdissert/</homepage>
+	<description lang="en">A program from the KDE-Project with which you can create Mindmaps. Very useful for representing bigger and more intellectual connections and projects. With the help of the right mouse button, you can add objects into the mind-map and you can edit the "thoughts card".</description>
+</eduversum>

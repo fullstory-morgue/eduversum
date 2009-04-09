@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KTouch</name>
+	<seminarix>Educational Games</seminarix>
+	<homepage>http://edu.kde.org/ktouch/</homepage>
+	<description lang="en">KTouch is a typewriting training program for KDE. To begin with you have to choose the right keyboard-layout in Settings - Keyboard Layouts (probably English - en). Then under File - Edit Lecture choose "Open a default lecture" and there select a lecture from the drop-down menu (probably english.ktouch.xml).</description>
+</eduversum>

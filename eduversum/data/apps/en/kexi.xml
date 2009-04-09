@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Kexi</name>
+	<seminarix>General</seminarix>
+	<homepage>http://www.kexi-project.org/</homepage>
+	<description lang="en">Kexi is a free and open Data-bank-Manager and is developed as an alternative to MS-Access. Kexi can be used to generate Data-bank schema, to edit, add, query and manage the data of a data-bank. Forms could be create with Kexi, to get a tailor-made user environment for the data management. All data-bank objects like tables, queries and forms are held in a relational data-bank. Data can be taken from a MySQL or PostgreSQL data-bank so it can be used with Kexi and Kexi-Data-bank files can be exported into a MySQL or PostgreSQL server. Moreover Kexi can take over MS-Access-Data-bank-Tables. Macros and the programing languages Python and Ruby are supported (still in development).</description>
+</eduversum>

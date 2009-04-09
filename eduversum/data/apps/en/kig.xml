@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Kig</name>
+	<seminarix>Mathematics</seminarix>
+	<homepage>http://edu.kde.org/kig/</homepage>
+	<description lang="en">Kig is an interactive, KDE based Geometry-Program, part of the kdeedu-Metapackage. Kig allows dynamic geometrical constructions, giving the student the opportunity to easily alter the geometric figures. With trial and error you can explore the laws of geometry in a phenomenologically way. The data created with Kig can be integrated into other documents very well. Whilst Kig is primarily aimed at elementry level, it is also applicable for high school and college students, as it provides essential elements of analytic geometry (vector analysis).</description>
+</eduversum>
+

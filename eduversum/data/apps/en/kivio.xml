@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KIvio</name>
+	<seminarix>Mathematics;Computer Science</seminarix>
+	<homepage>http://www.koffice.org/kivio/</homepage>
+	<description lang="en">Also from the KOffice-Project comes the application Kivio, with which you can create flow-charts and edit statistics.</description>
+</eduversum>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>OpenOffice.org Draw (Graphics program)</name>
+	<seminarix>Art</seminarix>
+	<homepage>http://www.openoffice.org/</homepage>
+	<desktoppath>/usr/share/applications/ooo-draw.desktop</desktoppath>
+	<exec>ooffice -draw</exec>
+	<description lang="en">With Draw you can create anything from simple diagrams to dynamic 3-D illustrations with special effects.</description>
+	<icon>ooo-draw</icon>
+</eduversum>

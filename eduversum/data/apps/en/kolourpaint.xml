@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KolourPaint</name>
+	<seminarix>Art</seminarix>
+	<homepage>http://kolourpaint.sourceforge.net/</homepage>
+	<description lang="en">KolourPaint is an Open-Source and easy to use drawing and sketch program for KDE. It is well suited for everyday tasks like:[ul]
+		[li]Drawing of diagrams and "freehand drawing"[/li]
+		[li]Editing of wallpapers and photos with the use of effects[/li]
+		[li]Editing of symbols - drawing cliparts and logos with transparency[/li]
+	[/ul]</description>
+</eduversum>

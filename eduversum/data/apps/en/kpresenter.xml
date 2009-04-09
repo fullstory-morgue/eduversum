@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KPresenter</name>
+	<seminarix>General</seminarix>
+	<homepage>http://www.koffice.org/kpresenter/</homepage>
+	<description lang="en">KPresenter is a presentation program contained in KOffice. With the help of KPresenter, slides for an on-screen presentation or for printing, can be prepared. The slides can contain text and graphics in various formats and of course components from other KOffice-programs. An on-screen KPresenter presentation can be exported into HTML and so it can be directly used in websites for example as a slide-show.</description>
+</eduversum>

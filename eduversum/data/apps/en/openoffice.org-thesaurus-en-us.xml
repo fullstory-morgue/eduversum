@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>OpenOffice.org Thesaurus</name>
+	<seminarix>Allgemein</seminarix>
+	<homepage>http://de.openoffice.org/</homepage>
+	<desktoppath>/usr/share/applications/openoffice.desktop</desktoppath>
+	<description lang="de">Das Programm sucht nach Sinnverwandten Wörtern.</description>
+</eduversum>

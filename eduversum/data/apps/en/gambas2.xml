@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Gambas</name>
+	<seminarix>Computer Science</seminarix>
+	<homepage>http://gambas.sourceforge.net/</homepage>
+	<description lang="en">Gambas is a very productive development environment with a Basic-dialect that is reminiscent of VisualBasic.</description>
+</eduversum>

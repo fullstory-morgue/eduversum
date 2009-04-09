@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Karbon</name>
+	<seminarix>Art</seminarix>
+	<homepage>http://www.koffice.org/karbon/</homepage>
+	<description lang="en">Karbon belongs to the KOffice-Project. With Karbon scalable graphics can be created and also edited. Scalable graphics have the big advantage, that when they are enlarged they do not show the "staircase" effect known from Bitmaps but they still look good in big dimensions. Karbon works with vector-graphics.</description>
+</eduversum>

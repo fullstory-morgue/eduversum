@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>OpenOffice Cliparts</name>
+	<seminarix>General</seminarix>
+	<homepage>http://www.openclipart.org</homepage>
+	<desktoppath>/usr/share/applications/openoffice.desktop</desktoppath>
+	<description lang="en">OpenClipart offers numerous clips and pictures which can (mostly) be used freely and in (not only) OpenOffice applications. The license for each clip is listed. A lot is Public Domain, others are licensed under the Creative Common License.
+The library can save you the time needed to find material usable in schools.
+</description>
+</eduversum>

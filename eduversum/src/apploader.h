@@ -34,6 +34,7 @@ class AppLoader
 		QTreeWidget* xmlToList(QString);
 		QString getXmlValue(QTreeWidget*, QString);
 		QString appdir;
+		QString language;
 		QString toHtml(QString);
 
 };

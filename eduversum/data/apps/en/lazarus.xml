@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Lazarus</name>
+	<seminarix>Computer Science</seminarix>
+	<homepage>http://www.lazarus.freepascal.org/</homepage>
+	<description lang="en">Lazarus is a programing environment, with a good set of visual tools like 'object inspector and formula designer', built upon the Pascal-Dialect, freepascal and the graphical library LCL. With Lazarus there is the possibility to develop programs which reach over to other platforms fast and efficiently (the same code can be compiled for various platforms). Lazarus can be seen as an open source alternative to Delphi since Delphi-programs can be usually ported without much effort.</description>
+</eduversum>

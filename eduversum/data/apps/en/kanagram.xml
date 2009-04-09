@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KAnagram</name>
+	<seminarix>Educational Games</seminarix>
+	<homepage>http://edu.kde.org/kanagram/</homepage>
+	<description lang="en">KAnagram is a letters puzzle game: In the game you are given a word with its letters placed randomly and you have to put the letters in the correct order to find the word. There is no time limit and you have arbitrary many tries to solve the puzzle. With Kanagram students get a set of vocabulary-files to play with. More can be downloaded from the Internet. Kanagram provides, with the help-button (symbolised by a book), a manual.</description>
+</eduversum>

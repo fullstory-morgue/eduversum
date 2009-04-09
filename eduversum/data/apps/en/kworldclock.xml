@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KWorldClock</name>
+	<seminarix>Physics</seminarix>
+	<homepage>http://www.kde.org</homepage>
+	<description lang="en">The program shows, at the specific time, where on earth it is dark and where there is light. Also the local time in all major cities can be presented. The program can run both as stand-alone or in the KDE task-bar.</description>
+</eduversum>

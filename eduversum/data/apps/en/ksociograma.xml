@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>KSociograma</name>
+	<seminarix>General</seminarix>
+	<homepage>http://www.kde-apps.org/content/show.php?content=12666</homepage>
+	<desktoppath>/usr/share/applnk/Edutainment/Micellaneous/ksociograma.desktop</desktoppath>
+	<description lang="en">KSociograma helps in creating a sociogram for a study group. At the same time various questions, to be chosen/declined from the students, can be given: Who with whom and with this but without that. The evaluation result is statistically and graphically represented. (The 'admin' starts with the password ksocio and can add a sociogramm).</description>
+</eduversum>

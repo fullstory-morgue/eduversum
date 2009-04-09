@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>wxMaxima</name>
+	<seminarix>Mathematics</seminarix>
+	<homepage>http://www.lehrer-online.de/maxima.php</homepage>
+	<description lang="en">Graphical interface for the maxima computer algebra system (CAS). Maxima is an Open-Source and a productive computer algebra system. Some functions and capabilities:[ul]
+		[li]Solving equations and systems of equations[/li]
+		[li]Determination of limits[/li]
+		[li]Trigonometrical calculations[/li]
+		[li]Manipulation of polynomials[/li]
+		[li]Differentiating and solving differential equations of degree 1. and 2.[/li]
+		[li]Integrating[/li]
+		[li]Matrices[/li]
+		[li]various applications of probability calculations[/li]
+	[/ul] and much more. (wx)Maxima can represent graphically, 2 and 3 dimensional function graphs and can also print them. It also works with the function plotting program Gnuplot.</description>
+	<icon>/usr/share/wxMaxima/icons/maximaicon.xpm</icon>
+</eduversum>

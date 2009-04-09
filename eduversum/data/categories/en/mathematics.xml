@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Mathematics</name>
+	<icon>eduversum_mathematik</icon>
+	<description>
+		Mathematicians have naturally a close working relationship to computers and operating systems. This is not only because the computer only understands two states, namely 0 and 1. As a consequence there is a variety of programs in Linux for mathematicians. Below you will only find a small selection.
+	
+	</description>
+</eduversum>

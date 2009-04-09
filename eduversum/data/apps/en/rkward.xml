@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>RKWard</name>
+	<seminarix>Mathematics</seminarix>
+	<homepage>http://rkward.sourceforge.net/</homepage>
+	<description lang="en">RKWard is a graphical user interface for the scripting language R. R offers a wide variety of functions to solve statistical problems. Furthermore you can expand R by adding extra packages.</description>
+</eduversum>

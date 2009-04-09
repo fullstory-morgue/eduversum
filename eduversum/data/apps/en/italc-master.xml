@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>italc-master</name>
+	<seminarix>General</seminarix>
+	<homepage>http://italc.sourceforge.net/localizations.php</homepage>
+	<exec>italc</exec>
+	<terminal>true</terminal>
+	<description lang="en">iTALC (Intelligent Teaching And Learning with Computers) is a free screen control software which has mainly schools in its usage scope. iTALC provides, besides others, the following functions:[ul]
+		[li]Overview mode (small preview windows for all student-computers)[/li]
+		[li]Window control or the ability to watch over specific computers in full-screen[/li]
+		[li]show a demo (either full-screen or in a window) – the teacher's screen is transfered onto all student-computers in real-time[/li]
+		[li]Locking of student-computers, to steer attention to other things[/li]
+		[li]Text-messages sending[/li]
+		[li]Snapshots to secure evidence for example when the rules of usage are violated[/li]
+	[/ul]</description>
+</eduversum>

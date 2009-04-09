@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Octave</name>
+	<seminarix>Mathematics</seminarix>
+	<homepage>http://www.gnu.org/software/octave/</homepage>
+	<description lang="en">Octave is a scripting language with which you can numerically solve mathematical problems. The program can be used to for example to solve differential equations or for matrix calculations. Octave is almost completely compatible to the commercial program MATLAB.</description>
+</eduversum>

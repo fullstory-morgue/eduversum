@@ -166,7 +166,7 @@ void Eduversum::showCategoryApps()
 	stackedWidget->show();
 
 	// show category descrption
-	QString category    = categoriesTreeWidget->selectedItems().first()->text(1);
+	QString category    = categoriesTreeWidget->selectedItems().first()->text(0);
 	QString description = categoriesTreeWidget->selectedItems().first()->text(2);
 	descriptionTextBrowser->clear();
 	descriptionTextBrowser->setHtml("<h3>"+category+"</h3>"+description);

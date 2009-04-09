@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Kiten</name>
+	<seminarix>Languages</seminarix>
+	<homepage>http://edu.kde.org/kiten/</homepage>
+	<description lang="en">Kiten includes three main functions:[ul]
+		[li]English-Japanise dictionary[/li]
+		[li]Kanji dictionary, with multiple ways to look up specific characters[/li]
+		[li]Tool to help you learn Kanji[/li]
+	[/ul]</description>
+</eduversum>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Physics</name>
+	<icon>eduversum_physik</icon>
+	<description>
+		In the physics section you can find many programs that show the stars, star constellations and simulations. 
+		Obviously original physics programs are scarce.
+	</description>
+</eduversum>

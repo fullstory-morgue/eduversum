@@ -5,236 +5,302 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>735</width>
-    <height>453</height>
+    <width>647</width>
+    <height>452</height>
    </rect>
   </property>
   <property name="windowTitle" >
    <string>Eduversum</string>
   </property>
   <widget class="QWidget" name="centralwidget" >
-   <layout class="QGridLayout" name="gridLayout_5" >
-    <item rowspan="4" row="0" column="0" >
-     <widget class="QTreeWidget" name="categoriesTreeWidget" >
-      <property name="minimumSize" >
-       <size>
-        <width>140</width>
-        <height>0</height>
-       </size>
+   <layout class="QGridLayout" name="gridLayout" >
+    <item row="0" column="0" >
+     <widget class="QSplitter" name="splitter1" >
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
       </property>
-      <property name="maximumSize" >
-       <size>
-        <width>140</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="iconSize" >
-       <size>
-        <width>32</width>
-        <height>3332</height>
-       </size>
-      </property>
-      <property name="rootIsDecorated" >
-       <bool>false</bool>
-      </property>
-      <property name="headerHidden" >
-       <bool>true</bool>
-      </property>
-      <column>
-       <property name="text" >
-        <string>1</string>
+      <widget class="QWidget" native="1" name="leftwidget" >
+       <property name="minimumSize" >
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
        </property>
-      </column>
-     </widget>
-    </item>
-    <item row="0" column="1" >
-     <widget class="QFrame" name="frame0" >
-      <property name="frameShape" >
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow" >
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_3" >
-       <item row="0" column="0" >
-        <widget class="QLabel" name="label" >
-         <property name="text" >
-          <string>Suchen:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1" >
-        <widget class="QLineEdit" name="searchLineEdit" />
-       </item>
-       <item row="0" column="2" >
-        <spacer name="horizontalSpacer2" >
-         <property name="orientation" >
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0" >
-          <size>
-           <width>168</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="3" >
-        <widget class="QComboBox" name="comboBox" >
-         <item>
-          <property name="text" >
-           <string>Alle Programme</string>
-          </property>
-         </item>
-         <item>
-          <property name="text" >
-           <string>Nur installierte</string>
-          </property>
-         </item>
-         <item>
-          <property name="text" >
-           <string>Nur nicht installierte</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="1" column="1" >
-     <widget class="QTreeWidget" name="treeWidget" >
-      <property name="iconSize" >
-       <size>
-        <width>32</width>
-        <height>32</height>
-       </size>
-      </property>
-      <property name="rootIsDecorated" >
-       <bool>false</bool>
-      </property>
-      <property name="headerHidden" >
-       <bool>true</bool>
-      </property>
-      <column>
-       <property name="text" >
-        <string>1</string>
+       <property name="maximumSize" >
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
        </property>
-      </column>
-     </widget>
-    </item>
-    <item row="2" column="1" >
-     <widget class="QStackedWidget" name="stackedWidget" >
-      <property name="currentIndex" >
-       <number>0</number>
-      </property>
-      <widget class="QWidget" name="page0" >
        <layout class="QGridLayout" name="gridLayout_2" >
         <property name="margin" >
          <number>0</number>
         </property>
         <item row="0" column="0" >
-         <widget class="QPushButton" name="execPushButton" >
-          <property name="text" >
-           <string>Starten</string>
+         <widget class="QTreeWidget" name="categoriesTreeWidget" >
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Expanding" hsizetype="Preferred" >
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
-          <property name="checkable" >
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1" >
-         <widget class="QPushButton" name="homepagePushButton" >
-          <property name="text" >
-           <string>Homepage</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2" >
-         <widget class="QPushButton" name="examplePushButton" >
-          <property name="text" >
-           <string>Beispieldateien</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3" >
-         <spacer name="horizontalSpacer3" >
-          <property name="orientation" >
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0" >
+          <property name="minimumSize" >
            <size>
-            <width>175</width>
-            <height>24</height>
+            <width>0</width>
+            <height>0</height>
            </size>
           </property>
-         </spacer>
-        </item>
-        <item row="0" column="4" >
-         <widget class="QPushButton" name="showChangesPushButton" >
-          <property name="text" >
-           <string>Änderungen anzeigen</string>
+          <property name="maximumSize" >
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
           </property>
+          <property name="iconSize" >
+           <size>
+            <width>32</width>
+            <height>3332</height>
+           </size>
+          </property>
+          <property name="rootIsDecorated" >
+           <bool>false</bool>
+          </property>
+          <property name="headerHidden" >
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text" >
+            <string>1</string>
+           </property>
+          </column>
          </widget>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page1" >
-       <layout class="QGridLayout" name="gridLayout" >
+      <widget class="QWidget" native="1" name="content" >
+       <layout class="QGridLayout" name="gridLayout_4" >
         <property name="margin" >
          <number>0</number>
         </property>
         <item row="0" column="0" >
-         <widget class="QPushButton" name="cancelChangesPushButton" >
-          <property name="text" >
-           <string>Abbrechen</string>
-          </property>
-          <property name="checkable" >
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1" >
-         <spacer name="horizontalSpacer4" >
+         <widget class="QSplitter" name="splitter2" >
           <property name="orientation" >
-           <enum>Qt::Horizontal</enum>
+           <enum>Qt::Vertical</enum>
           </property>
-          <property name="sizeHint" stdset="0" >
-           <size>
-            <width>50</width>
-            <height>25</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="2" >
-         <widget class="QPushButton" name="discardChangesPushButton" >
-          <property name="text" >
-           <string>Alle Änderungen verwerfen</string>
-          </property>
-          <property name="checkable" >
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3" >
-         <widget class="QPushButton" name="applyChangesPushButton" >
-          <property name="text" >
-           <string>Änderungen ausführen</string>
-          </property>
-          <property name="checkable" >
-           <bool>false</bool>
-          </property>
+          <widget class="QWidget" native="1" name="topWidget" >
+           <layout class="QGridLayout" name="gridLayout_6" >
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <item row="0" column="0" >
+             <widget class="QFrame" name="frame0" >
+              <property name="frameShape" >
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow" >
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_5" >
+               <item row="0" column="0" >
+                <widget class="QLabel" name="label" >
+                 <property name="text" >
+                  <string>Suchen:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1" >
+                <widget class="QLineEdit" name="searchLineEdit" />
+               </item>
+               <item row="0" column="2" >
+                <spacer name="horizontalSpacer2" >
+                 <property name="orientation" >
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0" >
+                  <size>
+                   <width>168</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="3" >
+                <widget class="QComboBox" name="comboBox" >
+                 <item>
+                  <property name="text" >
+                   <string>Alle Programme</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text" >
+                   <string>Nur installierte</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text" >
+                   <string>Nur nicht installierte</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="0" >
+             <widget class="QTreeWidget" name="treeWidget" >
+              <property name="iconSize" >
+               <size>
+                <width>32</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="rootIsDecorated" >
+               <bool>false</bool>
+              </property>
+              <property name="headerHidden" >
+               <bool>true</bool>
+              </property>
+              <column>
+               <property name="text" >
+                <string>1</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+            <item row="2" column="0" >
+             <widget class="QStackedWidget" name="stackedWidget" >
+              <property name="sizePolicy" >
+               <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="currentIndex" >
+               <number>1</number>
+              </property>
+              <widget class="QWidget" name="page0" >
+               <layout class="QGridLayout" name="gridLayout_7" >
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <item row="0" column="3" >
+                 <spacer name="horizontalSpacer3" >
+                  <property name="orientation" >
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0" >
+                   <size>
+                    <width>175</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="0" column="0" >
+                 <widget class="QPushButton" name="execPushButton" >
+                  <property name="text" >
+                   <string>Starten</string>
+                  </property>
+                  <property name="checkable" >
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1" >
+                 <widget class="QPushButton" name="homepagePushButton" >
+                  <property name="text" >
+                   <string>Homepage</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2" >
+                 <widget class="QPushButton" name="examplePushButton" >
+                  <property name="text" >
+                   <string>Beispieldateien</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="4" >
+                 <widget class="QPushButton" name="showChangesPushButton" >
+                  <property name="text" >
+                   <string>Änderungen anzeigen</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="page1" >
+               <layout class="QGridLayout" name="gridLayout_8" >
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <item row="0" column="0" >
+                 <widget class="QPushButton" name="cancelChangesPushButton" >
+                  <property name="text" >
+                   <string>Abbrechen</string>
+                  </property>
+                  <property name="checkable" >
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1" >
+                 <spacer name="horizontalSpacer4" >
+                  <property name="orientation" >
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0" >
+                   <size>
+                    <width>50</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="0" column="2" >
+                 <widget class="QPushButton" name="discardChangesPushButton" >
+                  <property name="text" >
+                   <string>Alle Änderungen verwerfen</string>
+                  </property>
+                  <property name="checkable" >
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="3" >
+                 <widget class="QPushButton" name="applyChangesPushButton" >
+                  <property name="text" >
+                   <string>Änderungen ausführen</string>
+                  </property>
+                  <property name="checkable" >
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" native="1" name="bottomWidget" >
+           <layout class="QGridLayout" name="gridLayout_9" >
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <item row="0" column="0" >
+             <widget class="QTextBrowser" name="descriptionTextBrowser" >
+              <property name="openExternalLinks" >
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
        </layout>
       </widget>
-     </widget>
-    </item>
-    <item row="3" column="1" >
-     <widget class="QTextBrowser" name="descriptionTextBrowser" >
-      <property name="openExternalLinks" >
-       <bool>true</bool>
-      </property>
      </widget>
     </item>
    </layout>
@@ -244,8 +310,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>735</width>
-     <height>20</height>
+     <width>647</width>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuHilfe" >

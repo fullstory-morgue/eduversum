@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>JuK</name>
+	<seminarix>Music</seminarix>
+	<homepage>http://developer.kde.org/~wheeler/juk.html</homepage>
+	<description lang="en">JuK is a Jukebox-Program written especially for KDE. JuK is mostly used to manage audio files but of course it can also play them. It supports MP3, Ogg Vorbis and FLAC audio files.</description>
+</eduversum>
