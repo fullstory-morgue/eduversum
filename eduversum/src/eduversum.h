@@ -66,6 +66,7 @@ class Eduversum : public QMainWindow, Ui::Eduversum
 		QAction *stuffAction;
 		QSystemTrayIcon *trayIcon;
 		QMenu *trayIconMenu;
+		QString chooseFilenamanager();
 
 	protected:
 		void closeEvent(QCloseEvent *event);

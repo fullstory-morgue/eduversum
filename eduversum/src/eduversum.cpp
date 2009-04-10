@@ -87,11 +87,11 @@ void Eduversum::loadGui()
 
 	trayIcon = new QSystemTrayIcon;
 
-	stuffAction = new QAction(tr("Notebook-Ausbildung"), this);
+	stuffAction = new QAction(tr("Notebook-Education"), this);
 	connect(stuffAction, SIGNAL(triggered()), this, SLOT(showStuff()));
-	aboutAction = new QAction(tr("Über Eduversum"), this);
+	aboutAction = new QAction(tr("About Eduversum"), this);
 	connect(aboutAction, SIGNAL(triggered()), this, SLOT(showAbout()));
-	quitAction = new QAction(tr("&Beenden"), this);
+	quitAction = new QAction(tr("&Quit"), this);
 	connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
 
 	trayIconMenu = new QMenu(this);
@@ -111,7 +111,7 @@ void Eduversum::loadGui()
 
 	setAbout();
 	setHelp();
-	descriptionTextBrowser->setText( "<h2>"+tr("Willkomen")+"</h2>"+help );
+	descriptionTextBrowser->setText( "<h2>"+tr("Welcome")+"</h2>"+help );
 
 
 
@@ -373,7 +373,7 @@ void Eduversum::iconActivated(QSystemTrayIcon::ActivationReason reason)
 void Eduversum::closeEvent(QCloseEvent *event)
 {
 	if (trayIcon->isVisible()) {
-		QMessageBox::information(this, tr("Systray"), QString::fromUtf8("Um das Programm zu beenden, wählen sie 'Beenden' im Kontextmenue des Programms im Systemabschnitt der Leiste.") );
+		QMessageBox::information(this, tr("Systray"), tr("To close the program, chose 'Quit' in the menu of the systray.") );
 		hide();
 		event->ignore();
 	}
@@ -390,24 +390,24 @@ void Eduversum::setAbout()
 	about += QString::fromUtf8("Fabian Würtz <xadras@sidux.com>\n");
 	about += "Dinko Sabo <cobra@sidux.com>\n";
 
-	about += "\nPaketzusammenstellung und Dokumentation:\n";
+	about += "\n"+tr("Combination of the packages and documentation")+":\n";
 	about += "Roland Engert (RoEn)\n";
 	about += QString::fromUtf8("Björn Jilg (BlueShadow)\n");
 	about += "Thomas Kross (captagon)\n";
 	about += "Hendrik Lehmbruch (hendrikL)\n";
-	about += "Dinko Sabo (cobra) <cobra@sidux.com>\n";
-
+	about += "Nikolas Poniros <nponiros@yahoo.com>\n";
+	about += "Dinko Sabo <cobra@sidux.com>\n";
 	
-	about += "\nIcons:\n";
+	about += "\n"+tr("Icons")+":\n";
 	about += QString::fromUtf8("Bernard Gray")+" <bernard.gray@gmail.com>\n";
 
-	about += "\nWeitere Beteiligte:\n";
+	about += "\n"+tr("Other involved persons")+":\n";
 	about += "Stefan Lippers-Hollmann (slh)\n";
 	about += "Ferdi Thommes (devil)\n";
 	about += "Horst Tritremmel (hjt)\n";
  	about += "Wolf-Dieter Zimmermann (emile)\n";
 
-	about += "\n"+tr("Lizenz")+": GPL" ;
+	about += "\n"+tr("Lizence")+": GPL" ;
 }
 
 
@@ -415,9 +415,9 @@ void Eduversum::setAbout()
 void Eduversum::showAbout()
 {
 	if( isHidden() )
-		trayIcon->showMessage ( tr("Über Eduversum"), about, QSystemTrayIcon::Information, 20000 );
+		trayIcon->showMessage ( tr("About Eduversum"), about, QSystemTrayIcon::Information, 20000 );
 	else
-		QMessageBox::information(this, tr("Über Eduversum"), about );
+		QMessageBox::information(this, tr("About Eduversum"), about );
 	
 }
 
@@ -427,14 +427,35 @@ void Eduversum::showAbout()
 
 void Eduversum::setHelp()
 {
-	help = tr("Eduversum ist ein Hilfsmittel, mit dessen Hilfe Programme aus dem Bildungsbereich sehr einfach installiert oder deinstalliert werden können (Installation: im leeren Kästchen vor der Anwendung einen Haken setzen, Deinstallation: den Haken entfernen). Zu diesem Zwecke ist das Administratorpasswort erforderlich, da Softwareinstallation bzw. die Deinstallation in der Regel systemweite Arbeiten sind.");
+	help = tr("Eduversum is a tool with which you can easily install or uninstall educational programs (Installation: click on the empty box next to the application's name, Unistallation: click the box to remove the tick). For this purpose, the administrator password is required, because software installation or uninstallation is, as a rule, system-wide work.");
 }
 
 
 void Eduversum::showHelp()
 { 
-	QDesktopServices::openUrl(QUrl("/usr/share/eduversum-howto/benutzung-eduversum.html"));
+	QDesktopServices::openUrl(QUrl("/usr/share/doc/eduversum/benutzung-eduversum.html"));
 }
+
+//------------------------------------------------------------------------------
+//-- chose filemanager ---------------------------------------------------------
+//------------------------------------------------------------------------------
+
+QString Eduversum::chooseFilenamanager()
+{
+	QString fileManager;
+	if( QFile::exists("/usr/bin/dolphin") )
+		fileManager = "dolphin";
+	else if( QFile::exists("/usr/bin/konqueror") )
+		fileManager = "konqueror";
+	else if( QFile::exists("/usr/bin/nautilus") )
+		fileManager = "nautilus";
+	else if( QFile::exists("/usr/bin/thunar") )
+		fileManager = "thunar";
+	else if( QFile::exists("/usr/bin/pcmanfm") )
+		fileManager = "pcmanfm";
+	return fileManager;
+}
+
 
 //------------------------------------------------------------------------------
 //-- stuff ---------------------------------------------------------------------
@@ -442,19 +463,9 @@ void Eduversum::showHelp()
 
 void Eduversum::showStuff()
 {
-	QString exec;
-	if( QFile::exists("/usr/bin/dolphin") )
-		exec = "dolphin";
-	else if( QFile::exists("/usr/bin/konqueror") )
-		exec = "konqueror";
-	else if( QFile::exists("/usr/bin/nautilus") )
-		exec = "nautilus";
-	else if( QFile::exists("/usr/bin/thunar") )
-		exec = "thunar";
-	else if( QFile::exists("/usr/bin/pcmanfm") )
-		exec = "pcmanfm";
-	else {
-		QMessageBox::information(this, tr("Fehler"), tr("Es wurde kein Dateimanager gefunden") );
+	QString exec = chooseFilenamanager();
+	if (exec.isEmpty() ) {
+		QMessageBox::information(this, tr("Error"), tr("No file-manager was found!") );
 		return;
 	}
 
@@ -477,22 +488,13 @@ void Eduversum::showSeminarixLatex()
 	QDir dir("/usr/share/seminarix-latex");
 	if (!dir.exists())
 	{
-		QMessageBox::information(this, tr("Fehler"), tr("Diese Funktion ist erst nach Installation des Paketes seminarix-latex verfügbar. Dieses können Sie bequem unter der Kategorie Allgemein installieren. Die Installation des Programmes ist jedoch nur im Falle einer Festplatteninstallation zu empfehlen, da sie große Datenmengen mitinstalliert.") );
+		QMessageBox::information(this, tr("Error"), tr("This functionality is only available after the installation of the seminarix-latex package. You can easily install this from the General category. It is recommended that you install this program only if you are installing onto a hard disk as the size of the data it installs is big.") );
 	}
 	else
 	{
-		if( QFile::exists("/usr/bin/dolphin") )
-			exec = "dolphin";
-		else if( QFile::exists("/usr/bin/konqueror") )
-			exec = "konqueror";
-		else if( QFile::exists("/usr/bin/nautilus") )
-			exec = "nautilus";
-		else if( QFile::exists("/usr/bin/thunar") )
-			exec = "thunar";
-		else if( QFile::exists("/usr/bin/pcmanfm") )
-			exec = "pcmanfm";
-		else {
-			QMessageBox::information(this, tr("Fehler"), tr("Es wurde kein Dateimanager gefunden") );
+		QString exec = chooseFilenamanager();
+		if (exec.isEmpty() ) {
+			QMessageBox::information(this, tr("Error"), tr("No file-manager was found!") );
 			return;
 		}
 
@@ -510,19 +512,9 @@ void Eduversum::showSeminarixLatex()
 
 void Eduversum::showOpenSource()
 {
-	QString exec;
-	if( QFile::exists("/usr/bin/dolphin") )
-		exec = "dolphin";
-	else if( QFile::exists("/usr/bin/konqueror") )
-		exec = "konqueror";
-	else if( QFile::exists("/usr/bin/nautilus") )
-		exec = "nautilus";
-	else if( QFile::exists("/usr/bin/thunar") )
-		exec = "thunar";
-	else if( QFile::exists("/usr/bin/pcmanfm") )
-		exec = "pcmanfm";
-	else {
-		QMessageBox::information(this, tr("Fehler"), tr("Es wurde kein Dateimanager gefunden") );
+	QString exec = chooseFilenamanager();
+	if (exec.isEmpty() ) {
+		QMessageBox::information(this, tr("Error"), tr("No file-manager was found!") );
 		return;
 	}
 
@@ -611,9 +603,9 @@ void Eduversum::showChanges()
 	}
 
 	if( noChanges )
-		QMessageBox::information(this, tr("Keine Veränderungen"), tr("Es sind keine Veränderungen vorhanden. Zum Programme zu installieren oder zu deinstallieren einfach das Markierungsfeld aktiveren bzw. deaktivieren.") );
+		QMessageBox::information(this, tr("No Changesn"), tr("There are no changes. To install/uninstall a program just click the box on the left of the program's name.") );
 	else {
-		descriptionTextBrowser->setText(tr("<h3>&Auml;nderungen ausf&uuml;hren</h3>Die aufgef&uuml;hrten Programme in der oberen Liste werden installiert (gr&uuml;n) beziehungsweise deinstalliert (rot)."));
+		descriptionTextBrowser->setText(tr("<h3>Apply Changes</h3>The programs listed above are going to be installed (green) respectively uninstalled (red)."));
 		stackedWidget->setCurrentIndex(1);
 	}
 

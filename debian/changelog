@@ -11,8 +11,10 @@ eduversum (0.1.20) UNRELEASED; urgency=low
   * showHelp function updated 
   * english app files added
   * english app files updated 
+  * doc files added
+  * english program translation added 
 
- -- Fabian Wuertz <xadras@sidux.com>  Thu, 09 Apr 2009 17:50:19 +0200
+ -- Fabian Wuertz <xadras@sidux.com>  Fri, 10 Apr 2009 12:23:05 +0200
 
 eduversum (0.1.19) unstable; urgency=low
 

@@ -2,3 +2,4 @@ debian/tmp/usr/bin/eduversum                          usr/bin
 debian/tmp/usr/share/eduversum                        usr/share/
 debian/tmp/usr/share/applications                     usr/share/
 debian/tmp/usr/share/icons                            usr/share/
+debian/tmp/usr/share/doc/eduversum                    usr/share/doc

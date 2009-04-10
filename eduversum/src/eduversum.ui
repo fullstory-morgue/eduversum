@@ -104,7 +104,7 @@
                <item row="0" column="0" >
                 <widget class="QLabel" name="label" >
                  <property name="text" >
-                  <string>Suchen:</string>
+                  <string>Search:</string>
                  </property>
                 </widget>
                </item>
@@ -128,17 +128,17 @@
                 <widget class="QComboBox" name="comboBox" >
                  <item>
                   <property name="text" >
-                   <string>Alle Programme</string>
+                   <string>All Programs</string>
                   </property>
                  </item>
                  <item>
                   <property name="text" >
-                   <string>Nur installierte</string>
+                   <string>Only installed</string>
                   </property>
                  </item>
                  <item>
                   <property name="text" >
-                   <string>Nur nicht installierte</string>
+                   <string>Only not installed</string>
                   </property>
                  </item>
                 </widget>
@@ -176,7 +176,7 @@
                </sizepolicy>
               </property>
               <property name="currentIndex" >
-               <number>1</number>
+               <number>0</number>
               </property>
               <widget class="QWidget" name="page0" >
                <layout class="QGridLayout" name="gridLayout_7" >
@@ -199,7 +199,7 @@
                 <item row="0" column="0" >
                  <widget class="QPushButton" name="execPushButton" >
                   <property name="text" >
-                   <string>Starten</string>
+                   <string>Start</string>
                   </property>
                   <property name="checkable" >
                    <bool>false</bool>
@@ -216,14 +216,14 @@
                 <item row="0" column="2" >
                  <widget class="QPushButton" name="examplePushButton" >
                   <property name="text" >
-                   <string>Beispieldateien</string>
+                   <string>Example Files</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="4" >
                  <widget class="QPushButton" name="showChangesPushButton" >
                   <property name="text" >
-                   <string>Änderungen anzeigen</string>
+                   <string>Show changes</string>
                   </property>
                  </widget>
                 </item>
@@ -237,7 +237,7 @@
                 <item row="0" column="0" >
                  <widget class="QPushButton" name="cancelChangesPushButton" >
                   <property name="text" >
-                   <string>Abbrechen</string>
+                   <string>Canacel</string>
                   </property>
                   <property name="checkable" >
                    <bool>false</bool>
@@ -260,7 +260,7 @@
                 <item row="0" column="2" >
                  <widget class="QPushButton" name="discardChangesPushButton" >
                   <property name="text" >
-                   <string>Alle Änderungen verwerfen</string>
+                   <string>Dismiss all changes</string>
                   </property>
                   <property name="checkable" >
                    <bool>false</bool>
@@ -270,7 +270,7 @@
                 <item row="0" column="3" >
                  <widget class="QPushButton" name="applyChangesPushButton" >
                   <property name="text" >
-                   <string>Änderungen ausführen</string>
+                   <string>Apply changes</string>
                   </property>
                   <property name="checkable" >
                    <bool>false</bool>
@@ -316,14 +316,14 @@
    </property>
    <widget class="QMenu" name="menuHilfe" >
     <property name="title" >
-     <string>Hilfe</string>
+     <string>Help</string>
     </property>
     <addaction name="actionEduversumHilfe" />
     <addaction name="actionUeberEduversum" />
    </widget>
    <widget class="QMenu" name="menuArbeitsmaterialien" >
     <property name="title" >
-     <string>Arbeitsmaterialien</string>
+     <string>Teaching Aids</string>
     </property>
     <addaction name="actionArbeitsmaterialen" />
     <addaction name="actionSeminarix_latex" />
@@ -334,27 +334,27 @@
   </widget>
   <action name="actionUeberEduversum" >
    <property name="text" >
-    <string>Über Eduversum</string>
+    <string>About Eduversum</string>
    </property>
   </action>
-  <action name="actionBeenden" >
+  <action name="actionQuit" >
    <property name="text" >
-    <string>Beenden</string>
+    <string>Quit</string>
    </property>
   </action>
   <action name="actionEduversumHilfe" >
    <property name="text" >
-    <string>Eduversum Hilfe</string>
+    <string>Eduversum Help</string>
    </property>
   </action>
   <action name="actionArbeitsmaterialen" >
    <property name="text" >
-    <string>Notebook-Ausbildung</string>
+    <string>Notebook-Education</string>
    </property>
   </action>
   <action name="actionGrundsatzartikel" >
    <property name="text" >
-    <string>Grundsatzartikel</string>
+    <string>Articles of Principle</string>
    </property>
   </action>
   <action name="actionSeminarix_latex" >
