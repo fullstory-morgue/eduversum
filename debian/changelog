@@ -13,8 +13,9 @@ eduversum (0.1.20) UNRELEASED; urgency=low
   * english app files updated 
   * doc files added
   * english program translation added 
+  * eduversum-howto dependency removed
 
- -- Fabian Wuertz <xadras@sidux.com>  Fri, 10 Apr 2009 12:23:05 +0200
+ -- Fabian Wuertz <xadras@sidux.com>  Fri, 10 Apr 2009 12:25:53 +0200
 
 eduversum (0.1.19) unstable; urgency=low
 
