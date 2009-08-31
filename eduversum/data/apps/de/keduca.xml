@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KEduca</name>
-	<seminarix>Allgemein</seminarix>
-	<homepage>http://edu.kde.org/keduca/</homepage>
-	<description lang="de">Mit Hilfe dieses Programms lassen sich Tests und Abfragen zu beliebigen Inhalten als auch Multiple-Choice-Abfragen entwickeln und am Rechner durchführen. Das zu Keduca zugehörige Programm KEducaBuilder ermöglicht das Erstellen und das Bearbeiten der Multiple-Choice-Tests.</description>
-</eduversum>

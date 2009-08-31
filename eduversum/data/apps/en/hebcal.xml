@@ -5,5 +5,5 @@
 	<seminarix>Religion</seminarix>
 	<homepage>http://www.hebcal.com/</homepage>
 	<terminal>true</terminal>
-	<description lang="en">Hebcal is a command line program which prints out the days in the Jewish calendar for a given Gregorian year. Hebcal is fairly flexible in terms of which events in the Jewish calendar it displays.</description>
+	<description lang="en">Hebcal is a command line program which, for a given Gregorian year, prints out the days in the Jewish calendar. Hebcal provides flexiblity for showing the events in the Jewish calendar year.</description>
 </eduversum>

@@ -386,7 +386,7 @@ void Eduversum::closeEvent(QCloseEvent *event)
 
 void Eduversum::setAbout()
 {
-	about += "\nEntwickler:\n";
+	about += "\n"+tr("Developer")+":\n";
 	about += QString::fromUtf8("Fabian Würtz <xadras@sidux.com>\n");
 	about += "Dinko Sabo <cobra@sidux.com>\n";
 
@@ -401,13 +401,13 @@ void Eduversum::setAbout()
 	about += "\n"+tr("Icons")+":\n";
 	about += QString::fromUtf8("Bernard Gray")+" <bernard.gray@gmail.com>\n";
 
-	about += "\n"+tr("Other involved persons")+":\n";
+	about += "\n"+tr("Contributors")+":\n";
 	about += "Stefan Lippers-Hollmann (slh)\n";
 	about += "Ferdi Thommes (devil)\n";
 	about += "Horst Tritremmel (hjt)\n";
  	about += "Wolf-Dieter Zimmermann (emile)\n";
 
-	about += "\n"+tr("Lizence")+": GPL" ;
+	about += "\n"+tr("License")+": GPL" ;
 }
 
 
@@ -433,7 +433,10 @@ void Eduversum::setHelp()
 
 void Eduversum::showHelp()
 { 
-	QDesktopServices::openUrl(QUrl("/usr/share/doc/eduversum/benutzung-eduversum.html"));
+	QString locale = QLocale::system().name().left(2);
+	if( locale != "de" )
+		locale = "en";
+	QDesktopServices::openUrl(QUrl("/usr/share/doc/eduversum/benutzung-eduversum-"+locale+".html"));
 }
 
 //------------------------------------------------------------------------------
@@ -603,7 +606,7 @@ void Eduversum::showChanges()
 	}
 
 	if( noChanges )
-		QMessageBox::information(this, tr("No Changesn"), tr("There are no changes. To install/uninstall a program just click the box on the left of the program's name.") );
+		QMessageBox::information(this, tr("No Changes"), tr("There are no changes. To install/uninstall a program just click the box on the left of the program's name.") );
 	else {
 		descriptionTextBrowser->setText(tr("<h3>Apply Changes</h3>The programs listed above are going to be installed (green) respectively uninstalled (red)."));
 		stackedWidget->setCurrentIndex(1);

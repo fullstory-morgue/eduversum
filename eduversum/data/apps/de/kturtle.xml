@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>KtTurtle</name>
+	<name>KTurtle</name>
 	<seminarix>Informatik</seminarix>
 	<homepage>http://edu.kde.org/kturtle/</homepage>
 	<description lang="de">KTurtle dient dazu, Grundlagen im Programmieren und algorithmische Verfahren kennenzulernen. KTurtle basiert auf Logo. Die standardmäßig mitgelieferten Programmierbefehle sind in deutscher Sprache und können durch eigene Befehle erweitert werden. Eine Schildkröte kann auf einer Zeichenfläche durch entsprechende Programmierbefehle auf einer Zeichenfläche gesteuert werden und dabei diverse Aufgaben, z.B. Zeichen- oder Rechenaufgaben ausführen. Auch das Programmieren und Ausführen interaktiver Dialoge ist möglich. </description>

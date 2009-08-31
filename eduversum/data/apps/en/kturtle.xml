@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eduversum>
 <eduversum>
-	<name>KtTurtle</name>
+	<name>KTurtle</name>
 	<seminarix>Computer Science</seminarix>
 	<homepage>http://edu.kde.org/kturtle/</homepage>
-	<description lang="en">KTurtle is an educational programming environment using the Logo programming language. It tries to make programming as easy and accessible as possible. This makes KTurtle suitable for teaching kids the basics of mathematics, geometry and programming. The commands used to program are in the style of the Logo programming language. The unique feature of Logo is that the commands are often translated into the speaking language of the programmer. KTurtle is named after "the turtle" that plays a central role in the programming environment. The user programs the turtle, using the Logo commands, to draw a picture on the canvas.Note that this version of Logo is only focused on the educational qualities of the programming language and will not try to suit professional programmers' needs. </description>
+	<description lang="en">KTurtle is an educational programming environment using the Logo programming language. It tries to make programming as easy and accessible as possible. This makes KTurtle suitable for teaching kids the basics of mathematics, geometry and programming. The commands used to program are in the style of the Logo programming language. The unique feature of Logo is that the commands are often translated into the speaking language of the programmer. Note that this version of Logo is only focused on the educational qualities of the programming language and will not try to suit professional programmers' needs. </description>
 </eduversum>

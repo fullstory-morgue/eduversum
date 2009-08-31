@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KLatin</name>
-	<seminarix>Languages</seminarix>
-	<homepage>http://edu.kde.org/klatin/</homepage>
-	<description lang="en">It offers help for revising Latin. It has three sections in which different aspects of the language can be learned. These are:  Vocabulary, grammar and tests for the correct building of verbs. In addition there is a set of revision notes that can be used for self-guided revision. In the vocabulary section there is a built-in XML file which can be used to translate many words into other languages. KLatin asks the user, via a multiple choice questionaire, for the correct translation of words. In the grammar section, the program asks for specific forms of a verb or a noun, for example the "ablative singular", or the "1st person indicative passive plural". This section is not multiple choice. In the settings you can choose various language combinations. This package is part of the official KDE Edutainment module.</description>
-</eduversum>

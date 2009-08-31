@@ -4,7 +4,6 @@ body {
 font-family : Verdana, Helvetica, Arial, sans-serif;
 color : black;
 background-position : center;
-background:#2a5ea5;
 text-align : center;
 margin : 0 auto;
 padding : 5% 0;
@@ -16,8 +15,12 @@ text-align : left;
 margin : 0 auto;
 padding : 3%;
 background-color : #ffffff;
-width : 75%;
-border : 0;
+width : 65%;
+border:thin solid #800000;
+}
+
+p {
+max-width : 95%;
 }
 
 a {
@@ -42,3 +45,9 @@ border : 0;
 }
 
 p.img {margin-left : 2%;}
+
+img.img_w3c { max-width : 100%;}
+
+hr {color : #800000;
+    background-color : inherit;
+}

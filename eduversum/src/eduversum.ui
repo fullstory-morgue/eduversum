@@ -237,7 +237,7 @@
                 <item row="0" column="0" >
                  <widget class="QPushButton" name="cancelChangesPushButton" >
                   <property name="text" >
-                   <string>Canacel</string>
+                   <string>Cancel</string>
                   </property>
                   <property name="checkable" >
                    <bool>false</bool>

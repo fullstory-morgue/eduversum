@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KEduca</name>
-	<seminarix>General</seminarix>
-	<homepage>http://edu.kde.org/keduca/</homepage>
-	<description lang="en">With the help of this program you can create tests, quizzes and multiple choice questions with arbitrary contents and then you can run them on the computer. The program KEducaBuilder which is associated to Keduca allows you to create and edit the multiple choice tests.</description>
-</eduversum>

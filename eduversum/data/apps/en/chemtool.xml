@@ -4,5 +4,5 @@
 	<name>Chemtool</name>
 	<seminarix>Chemie</seminarix>
 	<homepage>http://ruby.chemie.uni-freiburg.de/~martin/chemtool/chemtool.html</homepage>
-	<description lang="de">Chemtool is a 2D-Molecule editor, in which you can compose organic molecules or import molecules in mol and pdb format, (the imported molecules can be edited. 3D-Molecules can be also imported and transformed into 2D-versions). The created molecules can be exported in various formats. (The program possesses a help program with which you can determinate the sum formulas and calculate the mol-masses.)</description>
+	<description lang="en">Chemtool is a 2D-Molecule editor, in which you can compose organic molecules or import molecules in mol and pdb format, (the imported molecules can be edited. 3D-Molecules can be also imported and transformed into 2D-versions). The created molecules can be exported in various formats. (The program possesses a help program with which you can determinate the sum formulas and calculate the mol-masses.)</description>
 </eduversum>

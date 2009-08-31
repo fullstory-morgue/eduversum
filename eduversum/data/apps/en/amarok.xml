@@ -4,23 +4,8 @@
 	<name>Amarok</name>
 	<seminarix>Music</seminarix>
 	<homepage>http://amarok.kde.org/</homepage>
-	<description lang="en">Amarok tries to be a little different, providing a simple drag and drop interface that really makes playlist handling easy.\n\n
- 
-				Features include:[ul]
-				  [li]rapid playlist creation, with drag and drop from a directory view[/li]
-				  [li]nice playlist browser for your existing playlists (PLS or M3U formats)[/li]
-				  [li]collection-indexing support, for smart browsing and playlist creation[/li]
-				  [li]possibility of accessing media via kioslaves, allowing you to play via smb:// or fish:// (normal streams are of course supported)[/li]
-				  [li]inline ID3 tag editing, capable of retrieving tags via MusicBrainz[/li]
-				  [li]album cover support: automatically displays album covers from the filesystem, or downloaded on the fly[/li]
-				  [li]miscellaneous audio effects, including crossfading[/li]
-				  [li]easy bindable global shortcuts, rich DCOP interface[/li]
-				  [li]On-Screen Display (OSD), on track change or at keypress[/li]
-				  [li]iPod and iRiver support[/li]
-				  [li]Last.fm stream playing support[/li]
-				  [li]Track "mood" display (requires moodbar package installed)[/li]
-				  [/ul]
-				  
-			Support for libvisual visualization plugins is also compiled in (you need to have libvisual-0.4-plugins installed to be able to use it).
+	<description lang="en">Amarok is an open-source player for audio files and streams. It is developed for KDE but it also works under other desktop environments like GNOME. It stands out because of its many functions and its capability to store media information into a database. Amarok does not directly play the audio files but it uses various programs and libraries like GStreamer and xine. The support of various audio formats also depends on them.\n\n
+
+	You can in many ways change the looks of Amarok. For example the play window can be shown in the same window as the play-list or in a different window. You can change the colors independently of KDE's colors. The context information are presented using a CSS file.
 </description>
 </eduversum>

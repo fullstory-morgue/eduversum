@@ -51,11 +51,13 @@ class MainWindow : public QWidget, Ui::eduversumGui
 		QTimer *timer;
 		QProcess *updateProcess, *removeProcess1, *removeProcess2, *installProcess1, *installProcess2, *downloadProcess, *duDownloadProcess;
 		QStringList output, install, remove, newPackages, updatedPackages, removedPackages, downloads;
+		QString about;
 
 
 	private slots:
 		void next();
-
+		void setAbout();
+		void showAbout();
 		void aptGetUpdate();
 
 		void removePackages();

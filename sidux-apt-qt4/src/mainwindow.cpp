@@ -40,6 +40,8 @@
 	noteLabel->hide();
 	connect(nextPushButton, SIGNAL(clicked()), SLOT(next()));
 	connect(detailsPushButton, SIGNAL(clicked()), SLOT(toggleDetails()));
+	connect(aboutPushButton, SIGNAL(clicked()), SLOT(showAbout()));
+	setAbout();
 
 
 	appDir = "/usr/share/sidux-apt-qt4/"; 
@@ -65,7 +67,6 @@
 			else if ( package.left(1) == "-")
 				remove.append(package.mid(1));
 		}
-
 }
 
 
@@ -335,7 +336,7 @@ void MainWindow::workDone()
 	status = "workDone";
 // 	titleLabel->setText("<h3>"+tr("Process finished")+"</h3>");
 	nextPushButton->setEnabled(TRUE);
-	nextPushButton->setText( tr("close") );
+	nextPushButton->setText( tr("Close") );
 // 	contentStackedWidget->setCurrentIndex(4);
 }
 
@@ -446,8 +447,8 @@ void MainWindow::processOutput()
 		allPackages += newPackages;
 		allPackages += updatedPackages;
 		allPackages += removedPackages;
-		if( allPackages.filter("xorg").count() > 0 or allPackages.filter("xserver").count() > 0 or allPackages.filter("x11").count()  ) {
-			QMessageBox::information(this, tr("Error"), tr("It is not allowed to change xserver packages during the xserver is running!") );
+		if( allPackages.filter("xorg").count() > 0 or allPackages.filter("xserver").count() ) {
+			QMessageBox::information(this, tr("Error"), tr("It is not allowed to change xserver packages while the xserver is running!") );
 			close();
 		}
 
@@ -520,7 +521,7 @@ void MainWindow::runProgressBar()
 {
 	if( pFrame->x()+pFrame->width()+5+4 > progressBarFrame->width() and progress > 0)
 		progress = 0-5;
-	else if( pFrame->x()-5-4 < 0 and progress < 0)
+	else if( pFrame->x()-5 < 0 and progress < 0)
 		progress = 5;
 	pFrame->setGeometry( pFrame->x()+progress, pFrame->y(), 100, 26);
 }
@@ -598,12 +599,29 @@ void MainWindow::toggleDetails()
 {
 	if( outputTextBrowser->isVisible() ) {
 		outputTextBrowser->hide();
-		detailsPushButton->setText( tr("show details") );
+		detailsPushButton->setText( tr("Show details") );
 	}
 	else {
 		outputTextBrowser->show();
-		detailsPushButton->setText( tr("hide details") );
+		detailsPushButton->setText( tr("Hide details") );
 	}
 }
 
+//------------------------------------------------------------------------------
+//-- about ---------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
+void MainWindow::setAbout()
+{
+	about += "\n"+tr("Developer")+":\n";
+	about += QString::fromUtf8("Fabian Würtz <xadras@sidux.com>\n");
+	about += "Dinko Sabo <cobra@sidux.com>\n";
+	about += "\n"+tr("Contributors")+":\n";
+        about += "Nikolas Poniros <nponiros@sidux.com>\n";
+	about += "Hendrik Lehmbruch (hendrikL)\n";
+}
+
+void MainWindow::showAbout()
+{
+	QMessageBox::information(this, tr("About sidux-apt-qt4"), about );
+}

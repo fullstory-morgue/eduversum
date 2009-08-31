@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KView</name>
-	<seminarix>Art</seminarix>
-	<homepage>http://www.ph.unimelb.edu.au/~ssk/kde/kview/kview.html</homepage>
-	<description lang="en">KView, formally KuickShow is part of the KDE-project. The picture browser supports many formats (GIF, JPEG, PNG, BMP, XBM, XPM, TIFF, PBM (P1), PGM (P2), PPM (P3), PBMRAW (P4), PGMRAW (P5) and PPMRAW (P6)). Slide show support is also intended.</description>
-</eduversum>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="de">
+<!DOCTYPE TS>
+<TS version="2.0" language="de_DE">
 <defaultcodec></defaultcodec>
 <context>
     <name>Eduversum</name>
@@ -37,7 +38,7 @@
     </message>
     <message>
         <source>Only not installed</source>
-        <translation>Only not installed</translation>
+        <translation>Nur nicht-installierte</translation>
     </message>
     <message>
         <source>Start</source>
@@ -52,16 +53,16 @@
         <translation>Änderungen anzeigen</translation>
     </message>
     <message>
-        <source>Canacel</source>
+        <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
         <source>Dismiss all changes</source>
-        <translation>Dismiss all changes</translation>
+        <translation>Verwerfe alle Änderungen</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Dismiss all changes</translation>
+        <translation>Änderungen anwenden</translation>
     </message>
     <message>
         <source>Help</source>
@@ -93,7 +94,7 @@
     </message>
     <message>
         <source>Welcome</source>
-        <translation>Welcome</translation>
+        <translation>Willkommen</translation>
     </message>
     <message>
         <source>To close the program, chose &apos;Quit&apos; in the menu of the systray.</source>
@@ -108,11 +109,11 @@
         <translation>Icons</translation>
     </message>
     <message>
-        <source>Other involved persons</source>
+        <source>Contributors</source>
         <translation>Weitere Beteiligte</translation>
     </message>
     <message>
-        <source>Lizence</source>
+        <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
@@ -129,10 +130,10 @@
     </message>
     <message>
         <source>This functionality is only available after the installation of the seminarix-latex package. You can easily install this from the General category. It is recommended that you install this program only if you are installing onto a hard disk as the size of the data it installs is big.</source>
-        <translation>Diese Funktion ist erst nach Installation des Paketes seminarix-latex verfügbar. Dieses können  Sie bequem unter der Kategorie Allgemein installieren. Die Installation des Programmes ist jedoch nur im Falle einer Festplatteninstallation zu empfehlen, da sie grosse Datenmengen mitinstalliert.</translation>
+        <translation>Diese Funktion ist erst nach Installation des Paketes seminarix-latex verfügbar. Dieses können  Sie bequem unter der Kategorie Allgemein installieren. Die Installation des Programmes ist jedoch nur im Falle einer Festplatteninstallation zu empfehlen, da sie grosse Datenmengen mitinstalliert.</translation>
     </message>
     <message>
-        <source>No Changesn</source>
+        <source>No Changes</source>
         <translation>Keine Veränderungen</translation>
     </message>
     <message>
@@ -141,11 +142,15 @@
     </message>
     <message>
         <source>&lt;h3&gt;Apply Changes&lt;/h3&gt;The programs listed above are going to be installed (green) respectively uninstalled (red).</source>
-        <translation>&lt;h3&gt;Änderungenn ausführen&lt;/h3&gt;Die aufgeführten Programme in der oberen Liste werden installiert (gün) beziehungsweise deinstalliert (rot).</translation>
+        <translation>&lt;h3&gt;Änderungen ausführen&lt;/h3&gt;Die aufgeführten Programme in der oberen Liste werden installiert (grün) beziehungsweise deinstalliert (rot).</translation>
     </message>
     <message>
         <source>Quit</source>
-        <translation></translation>
+        <translation>Beenden</translation>
+    </message>
+    <message>
+        <source>Developer</source>
+        <translation>Entwickler</translation>
     </message>
 </context>
 </TS>

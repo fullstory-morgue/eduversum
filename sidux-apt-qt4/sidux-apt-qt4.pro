@@ -20,7 +20,7 @@ target.path = /usr/bin
 data.path = /usr/share/sidux-apt-qt4
 data.files = icons sh
 langtarget.path = /usr/share/sidux-apt-qt4/translations/
-langtarget.files = translations/sidx-apt-qt4_de.qm
+langtarget.files = translations/sidux-apt-qt4_de.qm
 
 INSTALLS += target data langtarget
 
