@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.0" language="de_DE">
-<defaultcodec></defaultcodec>
 <context>
     <name>Eduversum</name>
     <message>
@@ -105,10 +104,6 @@
         <translation>Paketzusammenstellung und Dokumentation</translation>
     </message>
     <message>
-        <source>Icons</source>
-        <translation>Icons</translation>
-    </message>
-    <message>
         <source>Contributors</source>
         <translation>Weitere Beteiligte</translation>
     </message>
@@ -151,6 +146,38 @@
     <message>
         <source>Developer</source>
         <translation>Entwickler</translation>
+    </message>
+    <message>
+        <source>border:0</source>
+        <translation>border:0</translation>
+    </message>
+    <message>
+        <source>Applications</source>
+        <translation>Programme</translation>
+    </message>
+    <message>
+        <source>Weblinks</source>
+        <translation>Weblinks</translation>
+    </message>
+    <message>
+        <source>margin:0</source>
+        <translation>margin:0</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Bitstream Vera Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Here you find a collection of teaching aids. To open one, double click on the specific entry.</source>
+        <translation>Hier finden Sie eine Sammlung von Arbeitsmaterialen. Zum öffenen einfach einen Eintrag doppelt anklicken.</translation>
+    </message>
+    <message>
+        <source>Here you find a collection of links, that are relation with the topics linux and education.To a link, double click on the specific entry.</source>
+        <translation>Hier finden Sie eine Sammlung von Links rund um das Thema Linux und Bildung. Zum öffenen einfach einen Link doppelt anklicken.</translation>
     </message>
 </context>
 </TS>

@@ -20,8 +20,13 @@ eduversum (0.1.20) UNRELEASED; urgency=low
 
   [ Fabian Wuertz ]
   * noc sync
+  * svg icons added
+  * easyXml class added
+  * teaching aids view added
+  * weblink view added
+  * app files updated
 
- -- Fabian Wuertz <xadras@sidux.com>  Mon, 31 Aug 2009 14:29:12 +0200
+ -- Fabian Wuertz <xadras@sidux.com>  Thu, 03 Sep 2009 11:16:50 +0200
 
 eduversum (0.1.19) unstable; urgency=low
 

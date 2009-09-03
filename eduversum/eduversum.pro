@@ -18,12 +18,13 @@ TRANSLATIONS = translations/eduversum_de.ts
 SOURCES += src/main.cpp \
  src/eduversum.cpp \
  src/iconloader.cpp \
- src/apploader.cpp
+ src/apploader.cpp \
+ src/easyXml.cpp
 DESTDIR = .
 
 target.path = /usr/bin
-iconstarget.path = /usr/share/icons/hicolor/32x32/apps/
-iconstarget.files = src/eduversum.png
+iconstarget.path = /usr/share/icons/hicolor/scalable/apps/
+iconstarget.files = src/eduversum.svgz
 langtarget.path = /usr/share/eduversum/translations/
 langtarget.files = translations/eduversum_de.qm
 shortcuttarget.path = /usr/share/applications
@@ -38,6 +39,7 @@ INSTALLS += target iconstarget langtarget shortcuttarget appdata doctarget
 
 HEADERS += src/eduversum.h \
 src/iconloader.h \
+src/easyXml.h \
 src/apploader.h
 TARGET = src/eduversum
 

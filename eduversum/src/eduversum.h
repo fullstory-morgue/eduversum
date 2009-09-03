@@ -6,28 +6,32 @@
 #include <QSystemTrayIcon>
 #include <QCloseEvent>
 #include <QMessageBox>
+#include <QDomElement>
 
 
 
 #include "ui_eduversum.h"
 
-class Eduversum : public QMainWindow, Ui::Eduversum
+class Eduversum : public QWidget, Ui::Eduversum
 {
 	Q_OBJECT
 
 	public:
-		Eduversum (QMainWindow* parent = 0, Qt::WFlags flags = 0);
+		Eduversum (QWidget* parent = 0, Qt::WFlags flags = 0);
 
 		void loadGui();
 		void unsetGui();
 		void loadData();
 		void showAppInList(QTreeWidgetItemIterator);
 
+
 		QString appdir, iconpath;
 		QString about, help;
 		QString addRemoveApp;
 		QTreeWidget *appTreeWidget;
 		IconLoader *iconloader;
+
+                void readTree(QDomNode, QTreeWidgetItem *parentItem = 0);
 
  
 	public slots:
@@ -51,6 +55,13 @@ class Eduversum : public QMainWindow, Ui::Eduversum
 		virtual void showStuff();
 		virtual void showSeminarixLatex();
 		virtual void showOpenSource();
+		virtual void showAppsPage();
+		virtual void showDocsPage();
+		virtual void showDoc();
+		virtual void showDocDescription();
+		virtual void showWeblinkPage();
+		virtual void showWebDescription();
+		virtual void showWeblink();
 
 
 	private slots:

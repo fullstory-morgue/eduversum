@@ -29,126 +29,209 @@
 
 #include "apploader.h"
 #include "eduversum.h"
+#include "easyXml.h"
 
 
 //------------------------------------------------------------------------------
 //-- init ----------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
-Eduversum::Eduversum (QMainWindow* parent, Qt::WFlags flags): QMainWindow (parent, flags)
+Eduversum::Eduversum (QWidget* parent, Qt::WFlags flags): QWidget (parent, flags)
 {
 	appdir      = "/usr/share/eduversum/";
-
 	loadGui();
 	loadData();
-
 }
 
 
 void Eduversum::loadGui()
 {
 
- 	setupUi(this);
-	iconloader = new IconLoader();
+    setupUi(this);
+    iconloader = new IconLoader();
+    setWindowIcon( QIcon("/usr/share/icons/hicolor/scalable/apps/eduversum.svgz") );
 
-	execPushButton->setIcon( QPixmap( appdir+"/icons/exec.png") );
-	homepagePushButton->setIcon( QPixmap( appdir+"/icons/homepage.png") );
-	examplePushButton->setIcon( QPixmap( appdir+"/icons/example.png") );
-	showChangesPushButton->setIcon( QPixmap( appdir+"/icons/show.png") );
-
-	cancelChangesPushButton->setIcon( QPixmap( appdir+"/icons/cancel.png") );
-	discardChangesPushButton->setIcon( QPixmap( appdir+"/icons/discard.png") );
-	applyChangesPushButton->setIcon( QPixmap( appdir+"/icons/apply.png") );
-
-	setWindowIcon( QPixmap( appdir+"/icons/eduversum.png") );
-	//descriptionTextBrowser->setOpenExternalLinks(TRUE); // open links in a external browser
-
-	connect(categoriesTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)),this, SLOT( showCategoryApps() ) );
-	connect(treeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)),this, SLOT( showApp() ) );
-	connect(treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*,int)),this, SLOT( changed() ) );
-	connect(treeWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),this, SLOT( execApp() ) );
-	connect(searchLineEdit, SIGNAL(textChanged(const QString)), SLOT(searchApps()));
-	connect(comboBox, SIGNAL(currentIndexChanged(int)),this, SLOT( showCategoryApps() ) );
-	connect(execPushButton, SIGNAL(clicked()), SLOT(execApp()));
-	connect(homepagePushButton, SIGNAL(clicked()), SLOT(showHomepage()));
-	connect(examplePushButton, SIGNAL(clicked()), SLOT(copyExample()));
-	connect(showChangesPushButton, SIGNAL(clicked()), SLOT(showChanges()));
-	connect(cancelChangesPushButton, SIGNAL(clicked()), SLOT(cancelChanges()));
-	connect(discardChangesPushButton, SIGNAL(clicked()), SLOT(discardChanges()));
-	connect(applyChangesPushButton, SIGNAL(clicked()), SLOT(applyChanges()));
+    // buttons
+    applicationsButton->setIcon( QPixmap(appdir+"/icons/apps.svg") );
+    webButton->setIcon( QPixmap( appdir+"/icons/web.svg") );
+    docsButton->setIcon( QPixmap( appdir+"/icons/docs.svg") );
+    helpButton->setIcon( QPixmap(appdir+"/icons/help.svg") );
+    execPushButton->setIcon( QPixmap( appdir+"/icons/exec.png") );
+    homepagePushButton->setIcon( QPixmap( appdir+"/icons/homepage.png") );
+    examplePushButton->setIcon( QPixmap( appdir+"/icons/example.png") );
+    showChangesPushButton->setIcon( QPixmap( appdir+"/icons/show.png") );
+    cancelChangesPushButton->setIcon( QPixmap( appdir+"/icons/cancel.png") );
+    discardChangesPushButton->setIcon( QPixmap( appdir+"/icons/discard.png") );
+    applyChangesPushButton->setIcon( QPixmap( appdir+"/icons/apply.png") );
 
 
-  
+    //descriptionTextBrowser->setOpenExternalLinks(TRUE); // open links in a external browser
+    connect(categoriesTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)),this, SLOT( showCategoryApps() ) );
+    connect(treeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)),this, SLOT( showApp() ) );
+    connect(treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*,int)),this, SLOT( changed() ) );
+    connect(treeWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),this, SLOT( execApp() ) );
+    connect(searchLineEdit, SIGNAL(textChanged(const QString)), SLOT(searchApps()));
+    connect(comboBox, SIGNAL(currentIndexChanged(int)),this, SLOT( showCategoryApps() ) );
+    connect(execPushButton, SIGNAL(clicked()), SLOT(execApp()));
+    connect(homepagePushButton, SIGNAL(clicked()), SLOT(showHomepage()));
+    connect(examplePushButton, SIGNAL(clicked()), SLOT(copyExample()));
+    connect(showChangesPushButton, SIGNAL(clicked()), SLOT(showChanges()));
+    connect(cancelChangesPushButton, SIGNAL(clicked()), SLOT(cancelChanges()));
+    connect(discardChangesPushButton, SIGNAL(clicked()), SLOT(discardChanges()));
+    connect(applyChangesPushButton, SIGNAL(clicked()), SLOT(applyChanges()));
 
-	// tray
-	trayIcon = new QSystemTrayIcon(this);
-	trayIcon->setContextMenu(trayIconMenu);
 
-
-	trayIcon = new QSystemTrayIcon;
-
-	stuffAction = new QAction(tr("Notebook-Education"), this);
-	connect(stuffAction, SIGNAL(triggered()), this, SLOT(showStuff()));
-	aboutAction = new QAction(tr("About Eduversum"), this);
-	connect(aboutAction, SIGNAL(triggered()), this, SLOT(showAbout()));
-	quitAction = new QAction(tr("&Quit"), this);
-	connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
-
-	trayIconMenu = new QMenu(this);
-	//trayIconMenu->addSeparator();
-	trayIconMenu->addAction(stuffAction);
-	trayIconMenu->addAction(aboutAction);
-	trayIconMenu->addAction(quitAction);
-
-	trayIcon->setContextMenu(trayIconMenu);
-	trayIcon->setIcon(QPixmap( appdir+"/icons/eduversum.png"));
-	trayIcon->setVisible(TRUE);
-	trayIcon->show();
-
-	//connect(trayIcon, SIGNAL(messageClicked()), this, SLOT(messageClicked()));
-	connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-		this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
-
-	setAbout();
-	setHelp();
-	descriptionTextBrowser->setText( "<h2>"+tr("Welcome")+"</h2>"+help );
+    // help menu
+    QMenu *helpMenu = new QMenu(this);
+    QAction *helpAction = new QAction(QIcon(appdir+"/icons/help.svg"),tr("Eduversum Help"), this);
+    connect(helpAction, SIGNAL(triggered()), this, SLOT(showHelp()));
+    aboutAction = new QAction( QIcon("/usr/share/icons/hicolor/scalable/apps/eduversum.svgz"), tr("About Eduversum"), this);
+    connect(aboutAction, SIGNAL(triggered()), this, SLOT(showAbout()));
+    helpMenu->addAction(helpAction);
+    helpMenu->addAction(aboutAction);
+    helpButton->setMenu(helpMenu);
 
 
 
-	unsetGui();
+    // tray
+    trayIcon = new QSystemTrayIcon(this);
+    trayIcon->setContextMenu(trayIconMenu);
+    trayIcon = new QSystemTrayIcon;
+    //stuffAction = new QAction(tr("Notebook-Education"), this);
+    //connect(stuffAction, SIGNAL(triggered()), this, SLOT(showStuff()));
+    quitAction = new QAction(QIcon(appdir+"/icons/exit.svg"), tr("&Quit"), this);
+    connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+    trayIconMenu = new QMenu(this);
+    //trayIconMenu->addSeparator();
+    //trayIconMenu->addAction(stuffAction);
+    trayIconMenu->addAction(helpAction);
+    trayIconMenu->addAction(aboutAction);
+    trayIconMenu->addAction(quitAction);
+    trayIcon->setContextMenu(trayIconMenu);
+    trayIcon->setIcon(QIcon("/usr/share/icons/hicolor/scalable/apps/eduversum.svgz"));
+    trayIcon->setVisible(TRUE);
+    trayIcon->show();
+    connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+
+
+    setAbout();
+    setHelp();
+    descriptionTextBrowser->setText( "<h2>"+tr("Welcome")+"</h2>"+help );
+
+
+    unsetGui();
 
 }
 
 
-void Eduversum::unsetGui()
+void Eduversum::showAppsPage()
 {
-	stackedWidget->setCurrentIndex(0);
-	execPushButton->hide();
-	homepagePushButton->hide();
-	examplePushButton->hide();
+    contentStackedWidget->setCurrentIndex(0);
+}
+
+
+void Eduversum::unsetGui() {
+    stackedWidget->setCurrentIndex(0);
+    execPushButton->hide();
+    homepagePushButton->hide();
+    examplePushButton->hide();
 }
 
 
 void Eduversum::loadData()
 {
+	QString  language = "en";
+	if( QLocale::system().name().left(2) == "de" )
+		language = "de";  
+  
+  
+	// load apps
 	AppLoader *apploader = new AppLoader();
-
 	appTreeWidget = apploader->importApps();
 	QTreeWidget *catTreeWidget = apploader->importCategories();
 
-
-	// show categories
+	// load categories
 	QTreeWidgetItemIterator it(catTreeWidget);
 	while (*it) {
-		QTreeWidgetItem *item = new QTreeWidgetItem(categoriesTreeWidget, 0);
-		item->setIcon( 0, QIcon( appdir+"categories/icons/"+(*it)->text(0)) );
-		item->setText( 0, (*it)->text(1) );
-		item->setText( 1, (*it)->text(2) );
-		item->setText( 2, (*it)->text(3) );
-		++it;
+			QTreeWidgetItem *item = new QTreeWidgetItem(categoriesTreeWidget, 0);
+			item->setIcon( 0, QIcon( appdir+"categories/icons/"+(*it)->text(0)) );
+			item->setText( 0, (*it)->text(1) );
+			item->setText( 1, (*it)->text(2) );
+			item->setText( 2, (*it)->text(3) );
+			++it;
 	}
 
+	// load docs
+	docsTextBrowser->setText("<h2>"+tr("Teaching Aids")+"</h2>"+tr("Here you find a collection of teaching aids. To open one, double click on the specific entry."));
+	QStringList docs = QDir( appdir+"/docs/"+language+"/").entryList( QDir::Files );
+	foreach(QString doc, docs) {
+		EasyXml *projectData = new EasyXml(appdir+"/docs/"+language+"/"+doc);
+		if(projectData->getValue("name").count() > 0) {
+			QTreeWidgetItem *item = new QTreeWidgetItem(docsTreeWidget);
+			item->setText( 0, projectData->getValue("name")[0] );
+			QStringList tmpList = projectData->getValue("description");
+			if( tmpList.count() > 0)
+				item->setText( 2, tmpList[0] );
+			QStringList titles = projectData->getValue((QStringList() << "document" << "title" ));
+			QStringList paths  = projectData->getValue((QStringList() << "document" << "path"  ));
+			if(titles.count() == paths.count()) {
+				for (int i = 0; i < titles.count(); i++) {
+					QTreeWidgetItem *item2 = new QTreeWidgetItem(item);
+					item2->setText( 0, titles[i] );
+					item2->setText( 1, paths[i] );
+				}
+			}
+		}
+	}
+    
+  
+	// load web links
+	webTextBrowser->setText("<h2>"+tr("Weblinks")+"</h2>"+tr("Here you find a collection of links, that are relation with the topics linux and education.To a link, double click on the specific entry."));
+	QStringList links = QDir( appdir+"/weblinks/"+language+"/").entryList( QDir::Files );
+	foreach(QString link, links) {
+		EasyXml *projectData = new EasyXml(appdir+"/weblinks/"+language+"/"+link);
+		QStringList tmp;
+		QTreeWidgetItem *item = new QTreeWidgetItem(webTreeWidget);
+		tmp = projectData->getValue((QStringList() << "title" ));
+		if( tmp.count() > 0 )
+			item->setText( 0, tmp[0] );
+		tmp = projectData->getValue((QStringList() << "url" ));
+		if( tmp.count() > 0 )
+			item->setText( 1, tmp[0] );
+		tmp = projectData->getValue((QStringList() << "description" ));
+		if( tmp.count() > 0 )
+			item->setText( 2, tmp[0] );
+    }
+    
 }
+
+
+
+
+void Eduversum::readTree(QDomNode n, QTreeWidgetItem *item)
+{
+
+    while(!n.isNull()) {
+        QDomElement e = n.toElement(); // try to convert the node to an element.
+        if(!e.isNull()) {
+            QTreeWidgetItem *item2;
+            if (item)
+                item2 = new QTreeWidgetItem(item);
+            else
+                item2 = new QTreeWidgetItem(docsTreeWidget);
+            item2->setText( 0, e.tagName() );
+            item2->setText( 1, e.text() );
+            item2->setSelected(true);
+
+            readTree(n.firstChild(), item2);
+
+         }
+         n = n.nextSibling();
+    }
+}
+
+
+
 
 //------------------------------------------------------------------------------
 //-- show apps -----------------------------------------------------------------
@@ -212,6 +295,7 @@ void Eduversum::searchApps()
 	unsetGui();
 }
 
+
 void Eduversum::showAppInList(QTreeWidgetItemIterator it)
 {
 	QTreeWidgetItem *item = new QTreeWidgetItem(treeWidget, 0);
@@ -246,6 +330,7 @@ void Eduversum::showAppInList(QTreeWidgetItemIterator it)
 	}
 
 }
+
 
 void Eduversum::showApp()
 {
@@ -282,6 +367,7 @@ void Eduversum::showApp()
 
 
 }
+
 
 //------------------------------------------------------------------------------
 //-- button functions ----------------------------------------------------------
@@ -324,6 +410,7 @@ void Eduversum::showHomepage()
 }
 
 
+
 void Eduversum::copyExample()
 {
 	if(QMessageBox::question(this, "Beispieldateien", "Sollen die Beispieldateien auf dem Desktop angezeigt werden?", QMessageBox::Yes, QMessageBox::No ) == QMessageBox::Yes )
@@ -333,6 +420,7 @@ void Eduversum::copyExample()
 		copyDir("/usr/share/seminarix-samples/"+package, QDir::homePath ()+"/Desktop/"+package );
 	}
 }
+
 
 void Eduversum::copyDir(QString sourceDir, QString destinationDir)
 {
@@ -347,6 +435,69 @@ void Eduversum::copyDir(QString sourceDir, QString destinationDir)
 	for( int i = 2; i < dirList.count(); i++)
 	      copyDir(sourceDir+"/"+dirList[i], destinationDir+"/"+dirList[i] ); 
 }
+
+
+//------------------------------------------------------------------------------
+//-- documents -----------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+void Eduversum::showDocsPage()
+{
+    contentStackedWidget->setCurrentIndex(2);
+}
+
+
+void Eduversum::showDoc()
+{
+        if ( docsTreeWidget->selectedItems().count() < 1 )
+                return;
+
+        QString homepage = docsTreeWidget->selectedItems().first()->text(1);
+        if(!homepage.isEmpty())
+            QDesktopServices::openUrl(QUrl(homepage));
+
+}
+
+
+void Eduversum::showDocDescription()
+{
+	if ( docsTreeWidget->selectedItems().count() < 1 ) 
+		return;
+	QString title = docsTreeWidget->selectedItems().first()->text(0);
+	QString description = docsTreeWidget->selectedItems().first()->text(2);
+	if( !description.isEmpty() )
+	    docsTextBrowser->setText("<h2>"+title+"</h2>"+description);
+}
+
+
+
+//------------------------------------------------------------------------------
+//-- web links -----------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+void Eduversum::showWeblinkPage()
+{
+    contentStackedWidget->setCurrentIndex(1);
+}
+
+
+void Eduversum::showWebDescription()
+{
+	if ( webTreeWidget->selectedItems().count() < 1 ) 
+		return;
+	QString title = webTreeWidget->selectedItems().first()->text(0);
+	QString description = webTreeWidget->selectedItems().first()->text(2);
+	webTextBrowser->setText("<h2>"+title+"</h2>"+description);
+}
+
+
+void Eduversum::showWeblink()
+{
+	if ( webTreeWidget->selectedItems().count() < 1 ) 
+		return;
+	QDesktopServices::openUrl(webTreeWidget->selectedItems().first()->text(1));
+}
+
 
 
 //------------------------------------------------------------------------------
@@ -367,7 +518,6 @@ void Eduversum::iconActivated(QSystemTrayIcon::ActivationReason reason)
 			;
 	}
 }
-
 
 
 void Eduversum::closeEvent(QCloseEvent *event)
@@ -397,9 +547,6 @@ void Eduversum::setAbout()
 	about += "Hendrik Lehmbruch (hendrikL)\n";
 	about += "Nikolas Poniros <nponiros@yahoo.com>\n";
 	about += "Dinko Sabo <cobra@sidux.com>\n";
-	
-	about += "\n"+tr("Icons")+":\n";
-	about += QString::fromUtf8("Bernard Gray")+" <bernard.gray@gmail.com>\n";
 
 	about += "\n"+tr("Contributors")+":\n";
 	about += "Stefan Lippers-Hollmann (slh)\n";
@@ -411,7 +558,6 @@ void Eduversum::setAbout()
 }
 
 
-
 void Eduversum::showAbout()
 {
 	if( isHidden() )
@@ -420,6 +566,7 @@ void Eduversum::showAbout()
 		QMessageBox::information(this, tr("About Eduversum"), about );
 	
 }
+
 
 //------------------------------------------------------------------------------
 //-- help ---------------------------------------------------------------------
@@ -438,6 +585,7 @@ void Eduversum::showHelp()
 		locale = "en";
 	QDesktopServices::openUrl(QUrl("/usr/share/doc/eduversum/benutzung-eduversum-"+locale+".html"));
 }
+
 
 //------------------------------------------------------------------------------
 //-- chose filemanager ---------------------------------------------------------
@@ -509,6 +657,7 @@ void Eduversum::showSeminarixLatex()
 	}
 }
 
+
 //------------------------------------------------------------------------------
 //--open-source-----------------------------------------------------------------
 //------------------------------------------------------------------------------
@@ -528,7 +677,6 @@ void Eduversum::showOpenSource()
 	myProcess->start(exec, arguments);
 
 }
-
 
 
 //------------------------------------------------------------------------------
@@ -574,7 +722,6 @@ void Eduversum::changed()
 	appTreeWidget->findItems(name, Qt::MatchExactly, 0 ).first()->setText(4,newStatus );
 
 }
-
 
 
 void Eduversum::showChanges()
@@ -631,6 +778,7 @@ void Eduversum::applyChanges()
 
 }
 
+
 void Eduversum::applyChangesFinished()
 {
 	setEnabled ( TRUE );
@@ -650,6 +798,7 @@ void Eduversum::applyChangesFinished()
 	}
 	cancelChanges();
 }
+
 
 void Eduversum::discardChanges()
 {
@@ -675,5 +824,4 @@ void Eduversum::cancelChanges()
 	descriptionTextBrowser->clear();
 	unsetGui();
 }
-
 

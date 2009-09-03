@@ -6,6 +6,27 @@ It was downloaded from http://www.wuertz.org/downloads
 Copyright:
 	© 2007-2009 Fabian Wuertz <xadras@sidux.com>
 	© 2009 Dinko Sabo <cobra@sidux.com>
+
+
+The following icons are from gnome-icon-theme
+Copyright © 2005 Gnome Artwork Team
+	eduversum/data/icons/help.svg (help-browser.svg)
+	eduversum/data/icons/apps.svg (emblem-system.svg)
+	eduversum/data/icons/docs.svg (emblem-documents.svg)
+	eduversum/data/icons/exit.svg (application-exit.svg)
+	eduversum/data/icons/web.svg  (emblem-web.svg)
+
+
+The following icons are from gnome-icon-theme
+Copyright © 2007-2009 David Vignoni <david@icon-king.com>
+Copyright © 2007-2009 Johann Ollivier Lapeyre <johann@oxygen-icons.org>
+Copyright © 2007-2009 Kenneth Wimer <kwwii@bootsplash.org>
+Copyright © 2007-2009 Nuno Fernades Pinheiro <nf.pinheiro@gmail.com>
+Copyright © 2007-2009 Riccardo Iaconelli <riccardo@oxygen-icons.org>
+Copyright © 2007-2009 David Miller <miller@oxygen-icons.org>
+and others
+	eduversum/data/icons/eduversum.svgz (applications_education.svgz)
+
 	
 License:
 	This program is free software; you can redistribute it and/or modify

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<title>Skolelinux</title>
+	<url>http://www.skolelinux.de/</url>
+	<description lang="de">Skolelinux ist eine Linuxdistribution welche auf die Bedürfnisse von Bildungseinrichtungen ausgerichtet ist. Sie ermöglicht auch ungeschulten Anwendern in wenigen Schritten sowohl einen Kommunikationsserver mit LDAP-Nutzerdatenbank, einen Terminalserver, eine Arbeitsstation oder einen Laptop als Einzelplatzrechner einzurichten.</description>
+</eduversum>
