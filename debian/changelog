@@ -1,4 +1,4 @@
-eduversum (0.1.20) UNRELEASED; urgency=low
+eduversum (1.0) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
   * WORK IN PROGRESS, DO NOT UPLOAD
@@ -27,8 +27,9 @@ eduversum (0.1.20) UNRELEASED; urgency=low
   * app files updated
   * english app files disabled
   * english app files removed
+  * converter files removed
 
- -- Fabian Wuertz <xadras@sidux.com>  Sat, 05 Sep 2009 15:24:35 +0200
+ -- Fabian Wuertz <xadras@sidux.com>  Sat, 05 Sep 2009 15:38:45 +0200
 
 eduversum (0.1.19) unstable; urgency=low
 
