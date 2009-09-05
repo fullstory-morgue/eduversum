@@ -1,7 +1,4 @@
-eduversum (1.0) UNRELEASED; urgency=low
-
-  * NOT RELEASED YET
-  * WORK IN PROGRESS, DO NOT UPLOAD
+eduversum (1.0) unstable; urgency=low
 
   [ Fabian Wuertz ]
   * eduversum prepared for english language files 
@@ -14,11 +11,6 @@ eduversum (1.0) UNRELEASED; urgency=low
   * doc files added
   * english program translation added 
   * eduversum-howto dependency removed
-
-  [ Stefan Lippers-Hollmann ]
-  * bump standards version to 3.8.3, no changes necessary.
-
-  [ Fabian Wuertz ]
   * noc sync
   * svg icons added
   * easyXml class added
@@ -28,6 +20,9 @@ eduversum (1.0) UNRELEASED; urgency=low
   * english app files disabled
   * english app files removed
   * converter files removed
+
+  [ Stefan Lippers-Hollmann ]
+  * bump standards version to 3.8.3, no changes necessary.
 
  -- Fabian Wuertz <xadras@sidux.com>  Sat, 05 Sep 2009 15:38:45 +0200
 
