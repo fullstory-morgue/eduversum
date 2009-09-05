@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>Ding</name>
-	<seminarix>Languages</seminarix>
-	<homepage>http://www-user.tu-chemnitz.de/~fri/ding/</homepage>
-	<desktoppath>/usr/share/doc/ding/examples/ding.desktop</desktoppath>
-	<description lang="en">Ding is a program to search within a German-English dictionary with approx. 216.000 entries. You can, in Ding, set the search parameters, the language (German or English) and the color. It has a history function and a help function. Sensible keyboard and mouse assignments make searching fast and easy. Ding allows you, in an easy way, to display translation suggestions of words or word groups from various documents (web-pages, text documents, slides, etc.). For that it is enough to highlight the respective word or word group and the translation will be automatically be displayed.</description>
-</eduversum>

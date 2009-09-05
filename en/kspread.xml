@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KSpread</name>
-	<seminarix>Mathematics</seminarix>
-	<homepage>http://www.koffice.org/kspread/</homepage>
-	<description lang="en">KSpread is a spreadsheet editor which can also be used for complex mathematical formulas and statistics. A part of the KOffice-Project.</description>
-</eduversum>

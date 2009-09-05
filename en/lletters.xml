@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>lletters</name>
-	<seminarix>Educational Games;Languages</seminarix>
-	<homepage>http://lln.sourceforge.net/</homepage>
-	<description lang="en">A program, to learn the meaning of numbers and letters, for children in preschool and primary school. After you click on a number or a letter, a picture of an object with a name that begins with the corresponding letter (for a number the corresponding number of objects) including the correct spelling of the word is shown. Unfortunately this program is only available in English and French. Because of that it is also suitable for older children which are starting to learn a foreign language.</description>
-</eduversum>

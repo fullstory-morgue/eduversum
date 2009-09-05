@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KWord</name>
-	<seminarix>General</seminarix>
-	<homepage>http://www.koffice.org/kword/</homepage>
-	<description lang="en">KWord is an easy to use Open-source word editor and part of the KOffice Office-package which was specially developed to be used with KDE. A lot of standard functions are integrated into KWord, however KWord does not look 'functions bloated' like other word editors. For the time being, a unique function of KWord is its ability not only to print to PDF-Documents but also to read and edit them. Depending on the pattern, the transfer is more or less equivalent to the original.</description>
-</eduversum>

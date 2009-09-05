@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>Pingus</name>
-	<seminarix>Educational Games</seminarix>
-	<homepage>http://pingus.seul.org/</homepage>
-	<description lang="en">Pingus is an Open-Source clone of the old game "Lemmings": Save the penguins!</description>
-</eduversum>

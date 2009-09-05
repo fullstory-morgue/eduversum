@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KPlato</name>
-	<seminarix>General</seminarix>
-	<homepage>http://www.koffice.org/kplato/</homepage>
-	<description lang="en">KPlato is a program to plan and manage projects and it is part of the KOffice-Suite. KPlato offers resource management, a hierarchical calendar, tasks with dependencies and sub-tasks, diagram creation, planing of project's deadline (pessimistic, expected, optimistic), a project-structure-plan (PSP), a 'critical path with resources' and embedding in other KOffice-applications.</description>
-</eduversum>

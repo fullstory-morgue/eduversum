@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>Hunspell (Rechtschreibprüfung)</name>
-	<seminarix>General</seminarix>
-	<homepage>http://hunspell.sourceforge.net/</homepage>
-	<exec>none</exec>
-	<description lang="en">Hunspell is a spell-checker which is, amongst others, used by KDE programs like for example KWord.</description>
-</eduversum>

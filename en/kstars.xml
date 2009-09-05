@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KStars</name>
-	<seminarix>Physics</seminarix>
-	<homepage>http://docs.kde.org/development/de/kdeedu/kstars/index.html</homepage>
-	<description lang="en">KStars is a graphical desktop planetarium for KDE. It depicts an accurate simulation of the night sky, including stars, constellations, star clusters, nebulae, galaxies, all planets, the Sun, the Moon, comets and asteroids. You can see the sky as it appears from any location on Earth, on any date. The user interface is highly intuitive and flexible. The display can be panned and zoomed with the mouse, and you can easily identify objects and track their motion across the sky. KStars includes many powerful features, yet the interface is clean and simple and fun to use. Kstars can also be used with a beamer.</description>
-</eduversum>

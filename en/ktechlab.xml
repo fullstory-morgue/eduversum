@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KTechlab</name>
-	<seminarix>Engineering</seminarix>
-	<homepage>http://ktechlab.org/</homepage>
-	<desktoppath>/usr/share/applnk/Development/ktechlab.desktop</desktoppath>
-	<description lang="en">KTechlab is a developers tool for electrical circuits and micro controllers. The program can simulate many discrete components (logical, linear, integrating, non-linear and reactive). The simulation and error correction of PIC (Programmable Intelligent Computer) micro-controllers is carried out by gpsim (a multi-functional software simulator for PIC micro-controllers by Microchip). KTechlab is based on the higher programming systems Flowcode (for the creating of program flowcharts) and Microbe (a basic-like programming language). Created programs can be applied onto a specific circuit design (a 'virtual PIC') so that more complex micro-controller based circuits can be created.</description>
-</eduversum>

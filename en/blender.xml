@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>Blender</name>
-	<seminarix>Art</seminarix>
-	<homepage>http://www.blender.org/</homepage>
-	<desktoppath>/usr/share/applications/blender-windowed.desktop</desktoppath>
-	<description lang="en">Blender is an open-source 3D-Graphics program. With Blender you can model three dimensional object, you can texture them (cover them with a specific material), animate them and render them. Blender offers a built-in video editor and a player-engine.In the last few years the program was dynamically developed and new functions were added like for example the possibility to simulate liquids and compositing.</description>
-</eduversum>

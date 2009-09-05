@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>Gnuplot</name>
-	<seminarix>Mathematics</seminarix>
-	<homepage>http://gnuplot.sourceforge.net/</homepage>
-	<terminal>true</terminal>
-	<description lang="en">Gnuplot is a powerful command-line oriented interactive plot program which is also used by graphically based programs like wxmaxima. The program is used to create 2D and 3D graphs of data fields and functions. It supports numerous formats, including drivers for numerous printers, (La)TeX, (x)fig, Postscript, and more. The data fields and the self created functions can be driven with an internal C-like programing language. Gnuplot can also work with complex numbers.</description>
-</eduversum>

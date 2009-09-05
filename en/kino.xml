@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>Kino</name>
-	<seminarix>Art</seminarix>
-	<homepage>http://www.kinodv.org</homepage>
-	<desktoppath>/usr/share/applications/Kino.desktop</desktoppath>
-	<description lang="en">Kino is an Open-Source Video Editor, which allows, editing, cutting, shortening, clips addition and more, to a video which is played on a video camera which is connected via Firewire.</description>
-</eduversum>

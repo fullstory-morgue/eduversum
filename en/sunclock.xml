@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>SunClock</name>
-	<seminarix>Geography</seminarix>
-	<homepage>http://frmas.free.fr/li_1.htm</homepage>
-	<exec>/usr/bin/sunclock</exec>
-	<description lang="en">SunClock presents a map of the earth and indicates, at a given time, the illuminated portions of the globe. At the presentation you can switch between a time window and a map window. The time window shows a small section (and needs less working memory). The map window shows a big map and offers a list of further functions: local time, sun's possition, position of the moon etc.</description>
-</eduversum>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KHangMan</name>
-	<seminarix>Educational Games</seminarix>
-	<homepage>http://edu.kde.org/khangman/</homepage>
-	<description lang="en">KHangMan is based on the known hangman game. It is suitable for children that are 6 years old or older and it has four difficulty levels: Animals (Animal names), easy, medium and hard. A word is randomly chosen, its letters covered and the student has to guess the word by giving one after the other letters he assumes are part of the word. Every time you give a wrong letter, part of the hangman is drawn. Students have to guess the word before the hangman is completely drawn! For that you have 10 tries. You can call the manual by using the help-button.</description>
-</eduversum>

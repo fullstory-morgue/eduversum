@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>Tipptrainer</name>
-	<seminarix>Educational Games</seminarix>
-	<homepage>http://tipptrainer.pingos.org/index.shtml</homepage>
-	<exec>/usr/bin/tipptrainer</exec>
-	<description lang="en">Tipptrainer is used for learning and training the touch type system. The student is provided with numerous tutorials to learn how to type specific letter combinations and texts. There are courses for beginners and more advanced users.</description>
-</eduversum>

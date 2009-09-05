@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KAtomic</name>
-	<seminarix>Chemistry</seminarix>
-	<homepage>http://games.kde.org/game.php?game=katomic</homepage>
-	<description lang="en">A game that comes from the KDE-Games and reminds us a bit of Sokoban, in which you build various atoms by combining molecules.</description>
-</eduversum>

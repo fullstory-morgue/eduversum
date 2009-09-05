@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>Hanzim</name>
-	<seminarix>Languages</seminarix>
-	<homepage>http://hanzim.com/</homepage>
-	<description lang="en">Hanzim is a program to help you learn Chinese characters. It does that by helping you internalize their various systematics so you can more easily understand the characters. It displays lists of characters with the same radicals, same remaining parts, and same pronunciations. It does not only display the characters, it also displays pinyin pronunciations and lists of compounds. The program is also usable as a simple dictionary. You can search for characters and compounds by using radical or pinyin.</description>
-</eduversum>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>Midnight Commander</name>
-	<seminarix>General</seminarix>
-	<homepage>http://www.ibiblio.org/mc/</homepage>
-	<terminal>true</terminal>
-	<description lang="en">The Midnight Commander works in the command line with the twin view technique.</description>
-</eduversum>

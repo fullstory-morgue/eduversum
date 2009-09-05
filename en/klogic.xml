@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KLogic</name>
-	<seminarix>Engineering</seminarix>
-	<homepage>http://www.a-rostin.de/klogic/indexd.html</homepage>
-	<description lang="en">KLogic is an application for easily building and simulating digital circuits. KLogic allows you to easily build circuits using standard components like AND, OR, XOR and flipflops like RS and JK. To build more complex and reusable circuits, you can create, store and reuse sub-circuits.</description>
-</eduversum>

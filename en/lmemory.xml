@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>LMemory</name>
-	<seminarix>Educational Games</seminarix>
-	<homepage>http://lgames.sourceforge.net/index.php?project=LMemory</homepage>
-	<exec>/usr/games/lmemory</exec>
-	<description lang="en">LMemory is the known memory card game with covered picture-cards. Lmemory has various difficulty levels. As an extra option you can choose for example to have to find 3 card which are the same instead of 2.</description>
-</eduversum>

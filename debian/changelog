@@ -26,8 +26,9 @@ eduversum (0.1.20) UNRELEASED; urgency=low
   * weblink view added
   * app files updated
   * english app files disabled
+  * english app files removed
 
- -- Fabian Wuertz <xadras@sidux.com>  Thu, 03 Sep 2009 11:19:54 +0200
+ -- Fabian Wuertz <xadras@sidux.com>  Sat, 05 Sep 2009 15:24:35 +0200
 
 eduversum (0.1.19) unstable; urgency=low
 

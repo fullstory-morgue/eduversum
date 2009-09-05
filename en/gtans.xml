@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>gTans</name>
-	<seminarix>Educational Games</seminarix>
-	<homepage>http://gtans.sourceforge.net/</homepage>
-	<desktoppath>/usr/share/gnome/apps/Games/gtans.desktop</desktoppath>
-	<description lang="en">gTans is an electronic version of the Chinese puzzle game Tangram in which the player has to arrange a set of pieces to match a given shape.</description>
-</eduversum>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>Kaffeine</name>
-	<seminarix>Music</seminarix>
-	<homepage>http://kaffeine.kde.org/</homepage>
-	<description lang="en">Kaffeine is a media player for KDE. It supports multiple player engines and that gives Kaffeine a wide variety of supported media types and it lets it access CDs, DVDs and network streams easily.  </description>
-</eduversum>

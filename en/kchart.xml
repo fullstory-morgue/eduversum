@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KChart</name>
-	<seminarix>General</seminarix>
-	<homepage>http://www.koffice.org/kchart/</homepage>
-	<description lang="en">KChart is the diagram-creating program of the KOffice-Suite. It can be used to add diagrams into KOffice-documents, for example in Kword, the KOffice's word editor, or KPresent, the KOffice's presentation program.</description>
-</eduversum>

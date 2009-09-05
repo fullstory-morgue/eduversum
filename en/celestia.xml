@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>Celestia</name>
-	<seminarix>Physics</seminarix>
-	<homepage>http://www.shatters.net/celestia</homepage>
-	<desktoppath>/usr/share/applnk/Edutainment/Science/celestia.desktop</desktoppath>
-	<description lang="en">Unlike most software-planetariums, Celestia is not earth bound. It offers you a free flight through the galaxy with breath taking views of the solar system and for over 100,000 stars. A functioning 3D-Graphics driver is needed.</description>
-</eduversum>

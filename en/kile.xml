@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>Kile</name>
-	<seminarix>General</seminarix>
-	<homepage>http://kile.sourceforge.net/</homepage>
-	<description lang="en">Kile is a programing environment for LaTeX. The basis is a text editor which supports Syntax-Highlighting, code completion, spell-checking and has menus to make the insertion of specific characters and symbols (for example the Greek alphabet or mathematical operators) easier. In addition to the above, there is an assistant to help create new documents from existing templates and to insert graphics, directories or tables. After you have created the LaTeX-Document, by clicking on a button a PDF is created and opened in a PDF viewing program.</description>
-</eduversum>

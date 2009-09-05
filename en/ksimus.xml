@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KSimus</name>
-	<seminarix>Engineering</seminarix>
-	<homepage>http://ksimus.berlios.de/</homepage>
-	<description lang="en">KSimus is a logical circuits simulator (we could also say digital circuits). It has no built-in elements but it has a plug-ins interface with which you can load dynamic libraries which implement the digital elements. Two libraries are provided by the author. [b]Boolean[/b] implements a RS-Flipflop, AND, OR, XOR and their negation, a pulse generator and an input/output. [b]Data Recorder[/b] is used for recording signals.</description>
-</eduversum>
