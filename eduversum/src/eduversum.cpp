@@ -163,9 +163,9 @@ void Eduversum::loadData()
 
 	// load docs
 	docsTextBrowser->setText("<h2>"+tr("Teaching Aids")+"</h2>"+tr("Here you find a collection of teaching aids. To open one, double click on the specific entry."));
-	QStringList docs = QDir( appdir+"/docs/"+language+"/").entryList( QDir::Files );
-	foreach(QString doc, docs) {
-		EasyXml *projectData = new EasyXml(appdir+"/docs/"+language+"/"+doc);
+	QStringList teachings = QDir( appdir+"/teaching/"+language+"/").entryList( QDir::Files );
+	foreach(QString teaching, teachings) {
+		EasyXml *projectData = new EasyXml(appdir+"/teaching/"+language+"/"+teaching);
 		if(projectData->getValue("name").count() > 0) {
 			QTreeWidgetItem *item = new QTreeWidgetItem(docsTreeWidget);
 			item->setText( 0, projectData->getValue("name")[0] );
@@ -438,7 +438,7 @@ void Eduversum::copyDir(QString sourceDir, QString destinationDir)
 
 
 //------------------------------------------------------------------------------
-//-- documents -----------------------------------------------------------------
+//-- teaching -----------------------------------------------------------------
 //------------------------------------------------------------------------------
 
 void Eduversum::showDocsPage()
