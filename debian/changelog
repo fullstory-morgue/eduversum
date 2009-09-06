@@ -1,9 +1,5 @@
-eduversum (1.0.1) UNRELEASED; urgency=low
+eduversum (1.0.1) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Fabian Wuertz ]
   * teaching path updated
   * dependencies updated
 
