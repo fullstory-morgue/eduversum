@@ -33,7 +33,7 @@ doctarget.path = /usr/share/doc/eduversum
 doctarget.files = doc/*
 
 appdata.path = /usr/share/eduversum
-appdata.files = data/apps data/categories data/icons data/sh data/manual
+appdata.files = data/apps data/categories data/icons data/sh data/manual data/weblinks
 
 INSTALLS += target iconstarget langtarget shortcuttarget appdata doctarget
 

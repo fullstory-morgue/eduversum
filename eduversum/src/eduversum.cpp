@@ -545,7 +545,7 @@ void Eduversum::setAbout()
 	about += QString::fromUtf8("Björn Jilg (BlueShadow)\n");
 	about += "Thomas Kross (captagon)\n";
 	about += "Hendrik Lehmbruch (hendrikL)\n";
-	about += "Nikolas Poniros <nponiros@yahoo.com>\n";
+        about += "Nikolas Poniros <edhunter@sidux.com>\n";
 	about += "Dinko Sabo <cobra@sidux.com>\n";
 
 	about += "\n"+tr("Contributors")+":\n";

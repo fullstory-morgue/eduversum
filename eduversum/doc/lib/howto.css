@@ -30,6 +30,11 @@ background-color : inherit;
 border : 0;
 }
 
+dt.index {
+font-weight : bold;
+font-size : 107%;
+}
+
 p.itl {
 font-style : italic;
 }

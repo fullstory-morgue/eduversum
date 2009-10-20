@@ -8,10 +8,6 @@
 
 		Compiler für verschiedene Programmiersprachen sind verfügbar: Die [a="http://gcc.gnu.org/"]GNU Compiler Collection (GCC)[/a] enthält Compiler für C, C++, Objective C, Java, Ada, Fortran,  [a="http://www.gnu-pascal.de"]Pascal[/a]. Darüber hinaus ist u.a. [a="http://wiki.lazarus.freepascal.org/index.php/Main_Page/de"]Freepascal/Lazarus[/a] verfügbar, eine Programmierumgebung ähnlich Delphi; und dazu weitgehend kompatibel. Hinzu kommen Skriptsprachen wie z.B. [a="http://www.perl-archiv.de/"]perl[/a] oder [a="http://www.python.org/"]python[/a].\n\n
 
-		Allerdings war auf der CD nicht genügend Platz für eine integrierte Entwicklungsentwicklung (z.B. [a="http://www.eclipse.org"]Eclipse[/a]) für diese Sprachen, wie man sie in einer grafischen Umgebung (z.B.  KDE oder Gnome) einsetzen würde.\n\n
-
-		Aus diesem Grund sind nur die Sprachen perl und python auf der Seminarix-CD enthalten, und sie sind auch NICHT über das KDE-Menu von Seminarix, sondern nur im Kommandozeilenmodus aufrufbar.\n\n
-
 		In allen Fällen, in denen wir im Internet zusätzliche Hilfen gefunden haben, haben wir sie (mitunter in Englisch) unter [i]Info[/i] unterhalb der Programm Beschreibung verlinkt.\n\n
 
 		Mitunter sind es Zeitschriftenartikel, mitunter Wiki-Einträge. Da wir nicht die Herren dieser Einträge sind, gibt es auch keine Gewähr, dass diese Links dann funktionieren, wenn Sie sich Hilfe davon versprechen.
