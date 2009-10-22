@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>OpenJDK-jdk</name>
+	<seminarix>Informatik</seminarix>
+	<homepage>http://openjdk.java.net/</homepage>
+	<description lang="de">OpenJDK ist eine Entwicklungsumgebung/Werkzeugsatz für die Erstellung von 
+Anwendungen, Applets und Komponenten in der Programmiersprache Java.</description>
+</eduversum> 

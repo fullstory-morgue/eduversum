@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Step</name>
+	<seminarix>Physik</seminarix>
+	<homepage>http://edu.kde.org/step/</homepage>
+	<description lang="de">Bei Step handelt es sich um ein Werkzeug zum Veranschaulichen physikalischer Kräfte. Man positioniert verschiedene Körper im Arbeitsfenster und gibt eine oder mehrere Kräfte wie Gewicht, Schwerkraft oder die Coloumbkraft hinzu. Auch Gase und Flüssigkeiten lassen sich einsetzen. Nach dem Start der Simulation kann man verfolgen, wie die Kräfte auf die Körper und Substanzen wirken, und Parameter verändern, um deren Einfluss zu beobachten. Das Programm bringt einige Beispieldateien mit, sodass der Einstieg nicht schwerfällt.</description>
+</eduversum> 

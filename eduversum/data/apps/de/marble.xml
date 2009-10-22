@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Marble</name>
+	<seminarix>Erdkunde</seminarix>
+	<homepage>http://edu.kde.org/marble/</homepage>
+	<description lang="de">Marble gehört zum KDE-Edutainment-Project, das verschiedene Bildungsprogramme für den KDE-Desktop entwickelt.\n\n
+
+Nach dem ersten Start präsentiert Marble einen Globus. Das
+Fadenkreuz in der Bildmitte zeigt dabei auf Europa.
+Per Drag &amp; Drop rotieren Sie die künstliche Erde um ihre Achsen. Macht Sie diese
+Steuerungsmethode schwindlig, platzieren Sie einfach den Mauszeiger an einem der
+Fensterränder. Bei jedem Mausklick bewegt Marble dann die Karte in die
+entsprechende Richtung, die ein kleiner, weißer Pfeil anzeigt.\n\n
+
+Bei der Navigation hilft die gleichnamige Leiste am linken Bildschirmrand. Über
+die Knöpfe mit den Pfeilen rotieren Sie die virtuelle Erde in die gewünschte
+Richtung, über den Knopf mit dem Häuschen-Symbol springen Sie wieder zur
+Ausgangsansicht zurück. Mit der Lupen-Funktion zoomen in die jeweilige Ansicht
+hinein beziehungsweise wieder heraus. Letzteres erledigen Sie noch etwas
+schneller über das Mausrad.</description>
+</eduversum>
+

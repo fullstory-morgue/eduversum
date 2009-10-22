@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>LiVES</name>
+	<seminarix>Kunst</seminarix>
+	<homepage>http://lives.sourceforge.net/</homepage>
+	<description lang="de">LiVES ist ein freies Open Source Videobearbeitungs- und VJ Werkzeug. Videos 
+können geschnitten werden, mit Effekten bearbeitet und in andere Formate 
+konvertiert werden. LiVES ist durch die Möglichkeit von Echtzeit-Effekten wie 
+Überblendungen speziell für Visual Jockeys interessant. Über eine RFX-Plugin-
+Schnittstelle können User LiVES erweitern und an ihre eigenen Bedürfnisse 
+anpassen.\n\n
+2002 wurde LiVES unter dem Namen „Linux Video Editing System“ initiiert. 
+Mittlerweile läuft es auch unter Windows und Mac OS X und wurde deshalb in 
+„LiVES is a Video Editing System“ umbenannt.</description>
+</eduversum>

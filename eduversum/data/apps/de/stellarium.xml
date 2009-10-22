@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Stellarium</name>
+	<seminarix>Physik</seminarix>
+	<homepage>http://www.stellarium.org</homepage>
+	<description lang="de">Ein umfangreiches Planetarium mit einer realistischen 3D-Darstellung des Himmels, so wie man ihn mit bloßem Auge oder Teleskop sehen kann, bietet Stellarium. Im installierten Standardkatalog sind bereits mehr als 600 000 Sterne verzeichnet, weitere 210 Millionen Himmelskörper lassen sich nachinstallieren. Die Dokumentation zum Programm umfasst mehr als 100 Seiten, ein lebendiges Forum beantwortet eventuell noch offen bleibende Fragen. Echte Sterngucker binden Stellarium sogar als Wallpaper auf dem Desktop ein. Eine Alternative zu Stellarium ist Celestia.</description>
+</eduversum>

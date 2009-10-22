@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>ImageMagick</name>
+	<seminarix>Kunst</seminarix>
+	<homepage>http://www.imagemagick.org/script/index.php</homepage>
+	<description lang="de">ImageMagick ist ein Open-Source-Werkzeug, um Rastergrafiken zu erzeugen und zu 
+bearbeiten. Derzeit können über 100 Bildformate gelesen, manipuliert und 
+wieder geschrieben werden.\n
+Das Softwarepaket wird auch innerhalb von Webanwendungen verwendet um 
+automatisch Bilder zu generieren und für entsprechende Zwecke dynamisch 
+anzupassen.</description>
+</eduversum> 

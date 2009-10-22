@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Qalculate</name>
+	<seminarix>Mathematik</seminarix>
+	<homepage>http://qalculate.sourceforge.net/</homepage>
+	<description lang="de">Das Programm Qalculate ist nicht einfach nur ein Taschenrechner auf dem Computer, sondern ein mathematisch naturwissenschaftlich technisches Hilfsmittel, das vielfältige Berechnungsmöglichkeiten unterstützt:\n
+Dadurch ist Qalculate hervorragend für das selbständige Überprüfen eigener Rechenergebnisse oder auch zur Abkürzung bereits gefestigter Rechenfertigkeitengeeignet.\n
+Neben den normalen Taschenrechnerfunktionen bietet Qalculate:\n\n
+[ul]
+[li]Unterstützung auch für komplexe Zahlen[/li]
+[li]die mathematischen Ausdrücke und Berechnungen können Zahlen (auch Bruchzahlen), Funktionen, Einheiten (alle SI-Einheiten und weitere), Variablen (auch als Worte), Vektoren und Matrizen enthalten[/li]
+[li]alle Zahlensysteme von zwei (Binärzahlen) bis zu 36 Basisziffern, Zeitformat und Römische Zahlen sind möglich[/li]
+[li]exakte oder approximierte Ergebnisse können ausgegeben werden[/li]
+[li]Vereinfachung und Faktorisierung von Termen ist realisierbar[/li]
+[li]Differentiation und Integration[/li]
+[li]Lösen von Gleichungen und Ungleichungen[/li]
+[li]mehrere Lösungen können angegeben werden[/li]
+[li]viele statistische, finanzielle, geometrische und weitere Funktionen (nahezu 200) stehen zur Verfügung[/li]
+[li]auch ein If... then... else und weitere Möglichkeiten für flexible Funktionserzeugung können mit qalculate genutzt werden[/li]
+
+[li]Qalculate unterstützt das Umwandeln von Einheiten z.B. von kg·m/s² in N (Newton)[/li]
+[li]Qalculate hält mathematische Grundkonstanten (Pi, e) sowie viele physikalische Konstanten und Elemente bereit- dadurch werden zahlreiche Bereiche eines Tafelwerkes ersetzt.[/li]
+[li]es können bei qalculate über das Programm gnuplot auch Funktionen und Daten grafisch dargestellt werden, was als .png- oder Postscript-Datei abgespeichert werden kann[/li]
+[li]die mathematischen Ausdrücke können als Standard XML-Datei erzeugt, editiert und gespeichert werden[/li]
+[li]Qalculate verfügt über eine Rechenhistorie, so dass man auch seine Rechenwege zurückverfolgen kann[/li]
+[/ul]</description>
+</eduversum> 

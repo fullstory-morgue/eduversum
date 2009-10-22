@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>qgo</name>
+	<seminarix>Lernspiele</seminarix>
+	<homepage>http://qgo.sourceforge.net</homepage>
+	<description lang="de">Das über 1500 Jahre alte japanische Brettspiel Go findet seit etwa 100 Jahren auch in Europa viele Freunde. Mit GNU Go gibt es eine spielstarke Engine, für die Qgo als Brett dient. Beide Programme sind vorinstalliert. Alternativ gibt es als Spielbretter noch das flexible Quarry und die Java-Anwendung Gogui die auf allen Betriebssystemen die gleiche Oberfläche bietet.\n\n
+	
+	http://www.gnu.org/software/gnugo/ \n
+http://home.gna.org/quarry/ \n
+http://gogui.sourceforge.net/ \n</description>
+</eduversum>
+
+
+

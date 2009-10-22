@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Eclipse</name>
+	<seminarix>Informatik</seminarix>
+	<homepage>http://www.eclipse.org/</homepage>
+	<description lang="de">Eclipse ist eine integrierte Entwicklungsumgebung (IDE) zur Entwicklung von 
+Software verschiedenster Art. Ursprünglich gedacht als ein quelloffenes 
+Programmierwerkzeug für die Programmiersprache Java, wird es aufgrund seiner 
+Erweiterbarkeit aber mittlerweile auch für viele andere Entwicklungsaufgaben 
+eingesetzt. Z.B. für php, perl, ruby, python, C# und viele andere mehr. Es 
+gibt eine Vielzahl von Erweiterungen sowohl quelloffen als auch von 
+kommerziellen Anbietern für Eclipse. Eclipse selbst basiert auf Java-
+Technologie.</description>
+</eduversum>

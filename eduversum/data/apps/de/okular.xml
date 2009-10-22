@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Okular</name>
+	<seminarix>Allgemein</seminarix>
+	<homepage>http://okular.kde.org/</homepage>
+	<description lang="de">Okular ist der universelle Dokument-Betrachter von KDE4. Er ist Bestandteil 
+von kdegraphics und baut auf KPDF auf. Er löst Einzelprogramme wie KPDF, 
+KGhostView, KFax, KFaxview, KView und KDVI ab.\n
+Anders als bei KPDF ist z. B. ein System für Lesezeichen integriert. Ebenso 
+für Anmerkungen, Es wird Unterstützung für Formulare und Multimedia-Inhalte, 
+mehrspaltige Anzeige und das Rotieren der Seiten angeboten.</description>
+</eduversum> 

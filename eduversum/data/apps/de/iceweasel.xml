@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Iceweasel</name>
+	<seminarix>Allgemein</seminarix>
+	<homepage>http://www.mozilla-europe.org/de/</homepage>
+	<description lang="de">Von Debian umbenannte und modifizierte Version des Mozilla-Webbrowsers Firefox. 
+Firefox ist der Hauptkonkurrent des Windows Internet Explorers und bietet die 
+Möglichkeit über sogenannte Addons benutzerspezifische Themes und Erweiterungen 
+einzubinden. Die Themes bieten dabei optische Anpassungen, die "Extensions" 
+ein breite Palette an Zusatzfunktionen, die sinnvollsten vor allem im Bereich 
+Sicherheit und Webentwicklung.</description>
+</eduversum>

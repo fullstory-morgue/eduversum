@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Monkey Studio</name>
+	<seminarix>Informatik</seminarix>
+	<homepage>http://monkeystudio.org/</homepage>
+	<description lang="de">Monkey Studio (MkS) ist eine in C++ geschriebene Integrierte Entwicklungsplattform (IDE) die die Qt Bibliotheken benutzt. Sie können MkS auf jeder Plattform benutzen die Qt 4 unterstützt. Oberstes Ziel ist es Projekte auf Basis von Qt (C++/QMake, Python-Qt und anderen) zu managen wobei der Einsatz von Plugins die Funktionalität erweitert. MkS besitzt einen Code Editor der auf QScintilla beruht und Syntax Hervorhebung für mehr als 22 Programmiersprachen mitbringt. Eine weitere wichtige Eigenschaft ist die Integration von sowohl Qt Designer als auch Qt Assistant so dass alles in einem Programm erledigt werden kann. Alles in Allem ist MkS eine leicht zu bedienende, relativ leichtgewichtige und schnelle IDE.</description>
+</eduversum>

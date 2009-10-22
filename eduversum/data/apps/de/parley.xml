@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>Parley</name>
+	<seminarix>Sprachen</seminarix>
+	<homepage>http://edu.kde.org/parley/</homepage>
+	<description lang="de">Für KDE existiert eine reiche Auswahl an mehr oder weniger komplexen Vokabeltrainern, die bekanntesten heißen KWordquiz KVoctrain und Parley.\n
+Allen gemeinsam ist die Basis der verwendeten Vokabeldateien im Format KVTML. Es
+gibt eine Unzahl an vordefinierten KVTML-Dateien, jedoch kann man auch eigene
+erstellen. Das erledigt man am Besten unter KWordquiz, da es dort am einfachsten
+ist. In welchem der genannten Tools man die Datei anschließend nutzt, spielt
+keine Rolle. Bei Parley handelt es sich um die Umsetzung von KVoctrain für KDE4,
+das Programm bietet sehr viele Optionen zur Konfiguration. Viele
+Informationen zu den Tools und dem Erstellen von KVTML-Dateien liefert
+http://edu.kde.org/contrib/kvtml.php.</description>
+</eduversum>
+

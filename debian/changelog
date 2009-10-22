@@ -1,15 +1,11 @@
-eduversum (1.0.2) UNRELEASED; urgency=low
+eduversum (1.0.2) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * added new files to eduversum-docs, thx to hendrikl
+  * removed obsolete converter folder
+  * removed temporary en descriptions folder
+  * synced with noc
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 06 Sep 2009 20:56:17 +0200
-
-eduversum (1.0.1) unstable; urgency=low
-
-  * teaching path updated
-  * dependencies updated
-
- -- Fabian Wuertz <xadras@sidux.com>  Sun, 06 Sep 2009 15:36:19 +0200
+ -- Dinko Sabo <cobra@sidux.com>  Mon, 19 Oct 2009 22:12:37 +0200
 
 eduversum (1.0) unstable; urgency=low
 
