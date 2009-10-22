@@ -2,21 +2,22 @@ Source: eduversum
 Section: admin
 Priority: extra
 Maintainer: Fabian Wuertz <xadras@sidux.com>
-Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>, Ferdinand Thommes <devil@sidux.com>
+Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>,
+ Ferdinand Thommes <devil@sidux.com>
 Build-Depends: cdbs,
-               debhelper (>= 7),
-               libqt4-dev,
-               qt4-qmake,
-               imagemagick
+ debhelper (>= 7),
+ libqt4-dev,
+ qt4-qmake,
+ imagemagick
 Standards-Version: 3.8.3
 
 Package: eduversum
 Architecture: any
 Depends: ${shlibs:Depends},
-         ${misc:Depends}, 
-         menu,
-         seminarix,
-         sidux-apt-qt4
+ ${misc:Depends}, 
+ menu,
+ seminarix,
+ sidux-apt-qt4
 Description: program starter and menu system for educational applications
  generic menu system to act dynamically on installed packages and describe 
  their uses for educational purposes
@@ -24,7 +25,7 @@ Description: program starter and menu system for educational applications
 Package: sidux-apt-qt4
 Architecture: any
 Depends: ${shlibs:Depends},
-         ${misc:Depends},
-         wget
+ ${misc:Depends},
+ wget
 Description: QT4 frontend for apt-get
  provide a wrapper for invoking apt-get command in QT4.
