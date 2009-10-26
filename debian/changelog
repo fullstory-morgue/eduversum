@@ -1,3 +1,9 @@
+eduversum (1.0.4) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 26 Oct 2009 13:59:31 +0100
+
 eduversum (1.0.3) unstable; urgency=low
 
   * added weblinks disclaimer to help menu and tray menu
