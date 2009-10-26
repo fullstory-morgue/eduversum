@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eduversum>
-<eduversum>
-	<name>KWord</name>
-	<seminarix>Allgemein</seminarix>
-	<homepage>http://www.koffice.org/kword/</homepage>
-	<description lang="de">KWord ist eine einfach zu bedienende OpenSource-Textverarbeitung und Teil des Office-Paketes KOffice, das speziell für den Einsatz mit KDE entwickelt wurde. Viele Standardfunktionen sind in KWord integriert, dennoch wirkt KWord nicht so funktionsüberladen wie andere Textverarbeitungen. Eine Besonderheit ist derzeit noch die Fähigkeit der Textverarbeitung PDF-Dokumente nicht nur ausgeben, sondern auch lesen und weiterverarbeiten zu können. Je nach Vorlage entspricht die Umsetzung hierbei mehr oder weniger dem Original.</description>
-</eduversum>

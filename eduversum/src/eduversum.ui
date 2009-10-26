@@ -598,6 +598,11 @@ p, li { white-space: pre-wrap; }
     <string>seminarix-latex</string>
    </property>
   </action>
+  <action name="actionDisclaimer">
+   <property name="text">
+    <string>Disclaimer</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections>
