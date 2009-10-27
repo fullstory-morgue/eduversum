@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eduversum>
+<eduversum>
+	<name>FileZilla</name>
+	<seminarix>Allgemein</seminarix>
+	<homepage>http://filezilla-project.org/</homepage>
+	<description lang="de">FileZilla ist ein modernes und leistungsstarkes FTP-Programm.\n\n
+	
+	Einige der Hauptfunktionen sind:\n
+	[ul]
+		[li]Wiederaufnahme abgebrochener Uploads/Downloads[/li]
+		[li]Verwaltung verschiedener FTP-Sites[/li]
+		[li]Keep-Alive-System[/li]
+		[li]SSL (Sichere Verbindungen)[/li]
+		[li]SFTP-Support[/li]
+		[li]Upload/Download Queue[/li]
+		[li]Drag&amp;Drop[/li]
+		[li]Proxy-Support[/li]
+	[/ul]
+	</description>
+</eduversum>

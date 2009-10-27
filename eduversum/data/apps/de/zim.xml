@@ -4,6 +4,6 @@
 	<name>Zim</name>
 	<seminarix>Allgemein</seminarix>
 	<homepage>http://zim-wiki.org/</homepage>
-	<description lang="de">Zim ist ein Texteditor der das Wiki Prinzip aus dem Internet lokal auf den Rechner umsetzt. Neben den normalen Funktionen eines Texteditors kann man es zum Sammeln von Notizen ebenso wie zum Schreiben von Büchern verwenden.\n
-Durch die Wiki Struktur kann man Seiten miteinander verlinken, Gespeichert wird als Text mit Wiki Syntax so dass eine Übernahme in ein richtiges Wiki problemlos möglich ist.</description>
+	<description lang="de">Zim ist ein Texteditor, der das aus dem Internet bekannte Wiki Prinzip lokal auf den Rechner umsetzt. Neben den normalen Funktionen eines Texteditors kann man es zum Sammeln von Notizen wie auch zum Schreiben von Büchern verwenden.\n
+Durch die Wiki Struktur kann man Seiten miteinander verlinken. Gespeichert wird als Text mit Wiki Syntax, so dass eine Übernahme in ein richtiges Wiki problemlos möglich ist.</description>
 </eduversum> 

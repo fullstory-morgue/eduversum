@@ -1,8 +1,8 @@
-eduversum (1.0.4) UNRELEASED; urgency=low
+eduversum (1.0.4) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * added weblinks files
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 26 Oct 2009 13:59:31 +0100
+ -- Dinko Sabo <cobra@sidux.com>  Tue, 27 Oct 2009 05:28:12 +0100
 
 eduversum (1.0.3) unstable; urgency=low
 

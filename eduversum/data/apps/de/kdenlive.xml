@@ -6,14 +6,14 @@
 	<homepage>http://www.kdenlive.org/</homepage>
 	<description lang="de">Kdenlive ist eine Komplettlösung zum Videobearbeitung auf Basis der neuesten 
 Videotechnologien und unterstützt z. B. HDV- und AVCHD-Camcorder.\n
-Formate, wie Mpeg2, mpeg4 und h264 AVCHD können verarbeitet werden. Auch der 
+Formate, wie mpeg2, mpeg4 und h264 AVCHD können verarbeitet werden. Auch der 
 Export in jedes von FFMPEG unterstützte Format ist möglich. Eine Auswahl 
-weiterer Features:\n\n
+weiterer Features sind:\n\n
 [ul]
 [li] Mehrspur-Bearbeitung mit Zeitleiste und einer theoretisch unbegrenzten 
 Anzahl von Video- und Audiospuren[/li]
 [li] Werkzeuge, um Audio und Video aus einem Clip in verschiedene Spuren 
-aufzuteilen, werden ebenfalls bereitgestellt[/li]
+aufzuteilen[/li]
 [li] Simple, aber sehr mächtige Videoeffekte und Übergänge[/li]
 [li] Automatische Erstellung von Diashows aus Verzeichnissen von Bilddateien mit 
 optionaler Überblendung zwischen den Bildern[/li]
