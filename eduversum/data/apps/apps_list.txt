@@ -10,6 +10,7 @@ dia.xml			OK
 digikam.xml		RECHECK (looks OK to bluewater ) 
 ding.xml		OK
 einstein.xml		RECHECK
+filezilla.xml		OK
 gambas2.xml		OK
 gcompris.xml		OK
 gimp.xml		OK
@@ -45,6 +46,7 @@ kiten.xml			OK
 klettres.xml		OK
 klogic.xml		RECHECK
 kmplot.xml		OK
+kompozer.xml		OK
 kplato.xml		OK
 kpresenter.xml		OK
 krita.xml		OK
@@ -94,3 +96,4 @@ vym.xml			OK
 wxmaxima.xml		OK
 xoscope.xml		OK
 xsane.xml		OK
+zim.xml			OK
