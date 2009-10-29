@@ -1,8 +1,10 @@
-eduversum (1.0.5) UNRELEASED; urgency=low
+eduversum (1.0.5) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix typos, thanks to RoEn.
+  * add new applications.
+  * add new picture.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 27 Oct 2009 11:36:01 +0100
+ -- Ferdinand Thommes <devil@sidux.com>  Wed, 28 Oct 2009 15:10:57 +0100
 
 eduversum (1.0.4) unstable; urgency=low
 
