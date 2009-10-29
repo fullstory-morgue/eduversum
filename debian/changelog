@@ -1,8 +1,14 @@
+eduversum (1.0.7) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 29 Oct 2009 23:31:48 +0100
+
 eduversum (1.0.6) unstable; urgency=low
 
   * added new picture with corrected typo.
 
- -- Ferdinand Thommes <devil@sidux.com>  Fri, 29 Oct 2009 13:42:34 +0100
+ -- Ferdinand Thommes <devil@sidux.com>  Thu, 29 Oct 2009 13:42:34 +0100
 
 eduversum (1.0.5) unstable; urgency=low
 
