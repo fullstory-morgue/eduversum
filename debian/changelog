@@ -6,6 +6,8 @@ eduversum (1.0.6) UNRELEASED; urgency=low
 
 eduversum (1.0.5) unstable; urgency=low
 
+  *added new picture with corrected typo
+
   * fix typos, thanks to RoEn.
   * add new applications.
   * add new picture.
