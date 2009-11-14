@@ -110,6 +110,34 @@
         <source>Search for downloads</source>
         <translation>Suche nach Downloads</translation>
     </message>
+    <message>
+        <source>The package you are trying to remove is not installed....</source>
+        <translation>Das Paket welches Sie deinstallieren möchten ist nicht installiert....</translation>
+    </message>
+    <message>
+        <source>One or more packages are not installable....</source>
+        <translation>Ein oder mehere Packete können nicht installiert werden....</translation>
+    </message>
+    <message>
+        <source>Need to get </source>
+        <translation>Es müssen </translation>
+    </message>
+    <message>
+        <source> of archives.</source>
+        <translation> an Archiven heruntergeladen werden.</translation>
+    </message>
+    <message>
+        <source>After this operation, </source>
+        <translation>Nach dieser Operation werden </translation>
+    </message>
+    <message>
+        <source> of additional disk space will be used.</source>
+        <translation> Plattenplatz zusätzlich benutzt.</translation>
+    </message>
+    <message>
+        <source> disk space will be freed.</source>
+        <translation> Plattenplatz freigegeben.</translation>
+    </message>
 </context>
 <context>
     <name>eduversumGui</name>

@@ -1,8 +1,10 @@
-eduversum (1.0.7) UNRELEASED; urgency=low
+eduversum (1.0.7) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * added size functions to sidux-apt-qt4
+  * reordered doc structure
+  * minor improvements
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 29 Oct 2009 23:31:48 +0100
+ -- Dinko Sabo <cobra@sidux.com>  Wed, 11 Nov 2009 05:05:08 +0100
 
 eduversum (1.0.6) unstable; urgency=low
 
@@ -33,6 +35,7 @@ eduversum (1.0.3) unstable; urgency=low
 
 eduversum (1.0.2) unstable; urgency=low
 
+  [ Dinko Sabo ]
   * added new files to eduversum-docs, thx to hendrikl
   * removed obsolete converter folder
   * removed temporary en descriptions folder

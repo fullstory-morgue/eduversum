@@ -177,7 +177,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Here you find a collection of links, that are relation with the topics linux and education.To a link, double click on the specific entry.</source>
-        <translation type="obsolete">Hier finden Sie eine Sammlung von Links rund um das Thema Linux und Bildung. Zum öffenen einfach einen Link doppelt anklicken.</translation>
+        <translation type="obsolete">Hier finden Sie eine Sammlung von Links rund um das Thema Linux und Bildung. Zum öffnen einfach einen Link doppelt anklicken.</translation>
     </message>
     <message>
         <source>Disclaimer</source>

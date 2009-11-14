@@ -50,8 +50,9 @@ class MainWindow : public QWidget, Ui::eduversumGui
 		int progress, currentDownload;
 		QTimer *timer;
 		QProcess *updateProcess, *removeProcess1, *removeProcess2, *installProcess1, *installProcess2, *downloadProcess, *duDownloadProcess;
-		QStringList output, install, remove, newPackages, updatedPackages, removedPackages, downloads;
+		QStringList output, install, remove, newPackages, updatedPackages, removedPackages, downloads, sizes;
 		QString about;
+		bool space_freed;
 
 
 	private slots:

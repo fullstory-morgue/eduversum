@@ -421,11 +421,19 @@ void MainWindow::processOutput()
                 lineNumber++;
         }
 
-        foreach (QString line, output)
+	space_freed = false;
+	foreach (QString line, output) {
                 if(line.contains("http://") or line.contains("ftp://") or line.contains("https://") ) {
                         line = line.split(" ")[0];
                         line.replace("'","");
                         downloads.append(line);
+		}else if(line.contains("Need to get") or line.contains("After this operation,") ) {
+			// Need to see if space gets freed or used
+			if (line.contains("will be freed.") )
+				space_freed = true;
+			line = line.split(" ")[3];
+			sizes.append(line);
+		}
                 }
 
 
@@ -436,11 +444,14 @@ void MainWindow::processOutput()
         }
 
 
-        #
  if(newPackages.count() + updatedPackages.count() + removedPackages.count()== 0 ) {
-               if(status == "removePackages")
+		if(status == "removePackages"){
+			treeWidget->clear();
+			QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
+			item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
+			item1->setText( 0, tr("The package you are trying to remove is not installed...." ));
                       installPackages();
-              else if(status == "installPackages") {
+		}else if(status == "installPackages"){
                      treeWidget->clear();
                      QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
                      item1->setIcon( 0, QIcon( appDir+"icons/wait.png") );
@@ -448,8 +459,7 @@ void MainWindow::processOutput()
                      workDone();
 
     }
-}
-        else {
+	} else {
                 QStringList allPackages;
                 allPackages += newPackages;
                 allPackages += updatedPackages;
@@ -501,6 +511,22 @@ void MainWindow::processOutput()
                                         item->setBackground(0, QColor(241, 76, 76, 127) );
                         }
                 }
+		// if size is 2 then we are both downloading packages and using/freeing space
+		if (sizes.size() == 2) {
+			QTreeWidgetItem *item = new QTreeWidgetItem(treeWidget, 0);
+			item->setText( 0, tr("Need to get ") + sizes.at(0) + tr(" of archives.") );
+			QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
+			if (!space_freed)
+				item1->setText( 0, tr("After this operation, ") + sizes.at(1) + tr(" of additional disk space will be used.") );
+			else
+				item1->setText( 0, tr("After this operation, ") + sizes.at(1) + tr(" disk space will be freed.") );
+		}else{
+			QTreeWidgetItem *item1 = new QTreeWidgetItem(treeWidget, 0);
+			if (!space_freed)
+				item1->setText( 0, tr("After this operation, ") + sizes.at(0) + tr(" of additional disk space will be used.") );
+			else
+				item1->setText( 0, tr("After this operation, ") + sizes.at(0) + tr(" disk space will be freed.") );
+		}
         }
 
 }

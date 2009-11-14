@@ -5,15 +5,13 @@
 	<icon>eduversum_chemie</icon>
 	<description>
 		Die Programme im Fachbereich Chemie sind auf die Darstellung und Informationen zum Periodensystem ausgerichtet.\n\n
+		
+		Zu nennen wäre das Spiel "KAtomic", das &Auml;hnlichkeiten mit dem Spiel Sokoban aufweist. In diesem Spiel werden Atomen spielend einach zu Moleküle zusammengefügt.\n\n
+		
+		Simuliert werden können auch chemische Prozesse. Wenn sie plattformunabhängig in Java geschrieben sind, lassen sie sich ausnahmslos auch hier unter Linux anwenden.\n\n 
 
-		Simuliert werden können chemische Prozesse in der Regel dann plattformunabhängig, wenn sie in Java geschrieben sind.\n\n
+		In allen Fällen, in denen wir im Internet zusätzliche Hilfen gefunden haben, haben wir sie (mitunter in englisch) unter [i]Info[/i] unterhalb der Programm-Beschreibung verlinkt.\n\n
 
-		Dann lassen sie sich ausnahmslos auch hier unter Linux anwenden. Daneben ist ein Spiel "KAtomic", das &Auml;hnlichkeiten mit dem Spiel Sokoban aufweist.\n\n
-
-		Mit diesem Spiel werden aus Atomen Moleküle.\n\n
-
-		In allen Fällen, in denen wir im Internet zusätzliche Hilfen gefunden haben, haben wir sie (mitunter in Englisch) unter [i]Info[/i] unterhalb der Programm Beschreibung verlinkt.\n\n
-
-		Mitunter sind es Zeitschriftenartikel, mitunter Wiki-Einträge. Da wir nicht die Herren dieser Einträge sind, gibt es auch keine Gewähr, dass diese Links dann funktionieren, wenn Sie sich Hilfe davon versprechen.
+		Mitunter sind es Zeitschriftenartikel, mitunter Wiki-Einträge. Da wir nicht die Urheber dieser Beiträge sind, gibt es auch keine Gewähr, dass diese Links dann funktionieren, wenn Sie sich Hilfe davon versprechen.
 	</description>
 </eduversum>
