@@ -1,8 +1,8 @@
-eduversum (1.0.8) UNRELEASED; urgency=low
+eduversum (1.0.8) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * rebuild with gcc-4.4.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 14 Nov 2009 01:33:40 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 08 Dec 2009 18:33:04 +0100
 
 eduversum (1.0.7) unstable; urgency=low
 
