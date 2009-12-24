@@ -44,18 +44,14 @@ color : red;
 background-color : inherit; 
 }
 
-p.bold {
-font-weight : bold;
-}
+p.bold { font-weight : bold;}
 
 img {
 max-width : 65%;
 border : 0;
 }
 
-p.img {
-margin-left : 5%;
-}
+p.img {margin-left : 5%;}
 
 img.img_w3c { max-width : 100%;}
 

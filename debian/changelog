@@ -1,8 +1,11 @@
-eduversum (1.0.9) UNRELEASED; urgency=low
+eduversum (1.0.9) unstable; urgency=low
 
-  * NOT RELEASED YET
+  [ Dinko Sabo ]
+  * modified documentation structure (thx to hendrikl)
+  * adapted translations
+  * corrected hyperlinks
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 08 Dec 2009 18:34:05 +0100
+ -- Dinko Sabo <cobra@sidux.com>  Thu, 24 Dec 2009 07:12:20 +0100
 
 eduversum (1.0.8) unstable; urgency=low
 
