@@ -1,6 +1,5 @@
 eduversum (1.0.9) unstable; urgency=low
 
-  [ Dinko Sabo ]
   * modified documentation structure (thx to hendrikl)
   * adapted translations
   * corrected hyperlinks
