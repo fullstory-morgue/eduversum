@@ -1,8 +1,10 @@
-eduversum (1.0.10) UNRELEASED; urgency=low
+eduversum (1.0.10) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * switch to compact dh7 rules.
+  * bump standards version to 3.8.4, no changes necessary.
+  * Build-Conflicts: libqt3-dev.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 28 Dec 2009 02:23:12 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 05 May 2010 02:46:14 +0200
 
 eduversum (1.0.9) unstable; urgency=low
 
