@@ -1,8 +1,8 @@
-eduversum (1.0.11) UNRELEASED; urgency=low
+eduversum (1.0.11) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * switch to dpkg-source 3.0 (native) format.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 05 May 2010 02:53:24 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 05 May 2010 02:53:49 +0200
 
 eduversum (1.0.10) unstable; urgency=low
 
