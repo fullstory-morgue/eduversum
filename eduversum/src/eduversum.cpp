@@ -780,7 +780,7 @@ void Eduversum::applyChanges()
         QString program = "su-to-root";
         QStringList arguments;
         //arguments << "-X" << "-c" << "x-terminal-emulator -e /usr/share/eduversum/sh/applyChanges"+addRemoveApp;
-        arguments << "-X" << "-c" << "sidux-apt-qt4"+addRemoveApp;
+        arguments << "-X" << "-c" << "aptosid-apt-qt4"+addRemoveApp;
 
         QProcess *myProcess = new QProcess(this);
         myProcess->start(program, arguments);

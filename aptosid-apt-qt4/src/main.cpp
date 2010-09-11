@@ -27,7 +27,7 @@
 int main(int argc, char *argv[])
 {
 
-	QString appName = "sidux-apt-qt4";
+	QString appName = "aptosid-apt-qt4";
 	QApplication app(argc, argv);
 	QStringList args = app.arguments();
         QString locale = QLocale::system().name();

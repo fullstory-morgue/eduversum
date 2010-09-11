@@ -2,5 +2,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS = eduversum \
-          sidux-apt-qt4
+          aptosid-apt-qt4
 

@@ -44,7 +44,7 @@
         setAbout();
 
 
-        appDir = "/usr/share/sidux-apt-qt4/";
+        appDir = "/usr/share/aptosid-apt-qt4/";
         status = "welcome";
         titleLabel->setText("<h3>"+tr("Welcome")+"</h3>");
 
@@ -648,13 +648,13 @@ void MainWindow::setAbout()
 {
         about += "\n"+tr("Developer")+":\n";
         about += QString::fromUtf8("Fabian Würtz <xadras@sidux.com>\n");
-        about += "Dinko Sabo <cobra@sidux.com>\n";
+        about += "Dinko Sabo <cobra@aptosid.com>\n";
         about += "\n"+tr("Contributors")+":\n";
-        about += "Nikolas Poniros <edhunter@sidux.com>\n";
+        about += "Nikolas Poniros <edhunter@aptosid.com>\n";
         about += "Hendrik Lehmbruch (hendrikL)\n";
 }
 
 void MainWindow::showAbout()
 {
-        QMessageBox::information(this, tr("About sidux-apt-qt4"), about );
+        QMessageBox::information(this, tr("About aptosid-apt-qt4"), about );
 }
