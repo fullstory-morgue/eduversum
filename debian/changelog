@@ -1,8 +1,9 @@
-eduversum (1.0.12) UNRELEASED; urgency=low
+eduversum (1.0.12) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * bump standards version to 3.9.0, no changes necessary.
+  * prepare for compat level 8.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 05 May 2010 02:56:32 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 22 Jul 2010 03:16:14 +0200
 
 eduversum (1.0.11) unstable; urgency=low
 
