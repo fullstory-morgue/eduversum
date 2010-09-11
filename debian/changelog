@@ -1,8 +1,8 @@
-eduversum (1.0.14) unstable; urgency=low
+eduversum (1.1.0) unstable; urgency=low
 
   * import eduversum-howto into eduversum.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 03 Aug 2010 18:04:11 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 03 Aug 2010 18:09:04 +0200
 
 eduversum (1.0.13) unstable; urgency=low
 
