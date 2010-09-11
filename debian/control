@@ -14,12 +14,12 @@ Standards-Version: 3.9.1
 Package: eduversum
 Architecture: any
 Depends: ${shlibs:Depends},
- ${misc:Depends}, 
+ ${misc:Depends},
  menu,
  seminarix,
  sidux-apt-qt4
 Description: program starter and menu system for educational applications
- generic menu system to act dynamically on installed packages and describe 
+ generic menu system to act dynamically on installed packages and describe
  their uses for educational purposes. Missing applications can be installed
  from within eduversum.
 
