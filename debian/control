@@ -23,6 +23,12 @@ Description: program starter and menu system for educational applications
  their uses for educational purposes. Missing applications can be installed
  from within eduversum.
 
+Package: eduversum-howto
+Architecture: all
+Depends: ${misc:Depends}
+Description: eduversum manual
+ HTML manual for eduversum
+
 Package: sidux-apt-qt4
 Architecture: any
 Depends: ${shlibs:Depends},

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="de-DE">
+	<head>
+		<title>How to use the eduversum</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="./lib/howto.css" type="text/css">
+	</head>
+	<body>
+		<div id="page">
+		<h1>Anleitung zur Benutzung von Eduversum </h1>
+		<h2>Allgemeines</h2>
+		<p>Im Eduversum sind in einem ansehnlichen Umfange bildungsrelevante Programme aufgelistet, die durch die seminarix-Ersteller favorisiert werden. Davon ist leider nur gewisse Anzahl von Programmen auf der Live-CD vorinstalliert, da der Umfang einer Live-CD  auf ca. 700 MB begrenzt ist.</p>
+
+		<p>Da aber auch Programme vorgstellt werden, die nicht auf der Live-CD enthalten sind, wird das Handling mit diesen Programmen in diesem HowTo im Weiteren kurz beschrieben. <p>
+		<p class="img"><img src="./pictures/eduversum-1.png" alt="bild-eduversum"></p>
+		<p>Durch Doppelklick auf das Programm-Icon oder Klick auf &lt;&nbsp;Starten&nbsp;&gt; wird das jeweilige installierte Programm gestartet. </p>
+		<p>&nbsp;</p>
+			
+		<p class="img"><img src="./pictures/eduversum-2.png" alt="eduversum start"></p>
+		<p>Unter dem Men&uuml;punkt "Arbeitsmaterialien" k&ouml;nnen Arbeitsmaterialien (Beispiele), Artikel zu seminarix und Freier Software gefunden werden.</p>
+		<p>&nbsp;</p>
+		
+		<h2>Installation von nicht installierten Programmen</h2>
+		
+		<p>Dazu ist im Auswahlfenster oben rechts der Men&uuml;-Punkt &lt;&nbsp;Nur&nbsp;nicht&nbsp;installierte&nbsp;&gt; auszuw&auml;hlen. </p>
+		<p>Bei vorhandener Internetanbindung ist es m&ouml;glich auch nicht auf der CD enthaltene, aber im Men&uuml;system aufgef&uuml;hrte Programme
+			einfach zu installieren. </p>
+		<p>Daf&uuml;r wird das entsprechende Programm (hier als Beispiel „NoteEdit“ ) markiert und der Button &lt;&nbsp;&Auml;nderungen&nbsp;anzeigen&nbsp;&gt; geklickt.</p>
+		<p class="img"><img src="./pictures/eduversum-3.png" alt="eduversum navigation"></p>
+		<p>&nbsp;</p>
+		
+		<p>Nun wird der Button (Knopf) &lt;&nbsp;&Auml;nderungen&nbsp;ausf&uuml;hren&nbsp;&gt; angeklickt um die Installation des Programms zu starten.</p>
+		<p class="img"><img src="./pictures/eduversum-4.png" alt="eduversum navigation"></p>
+		<p><i>Wie gesagt, eine funktionierende Internet-Anbindung ist notwendig!</i></p>
+		<p>&nbsp;</p>
+		
+		<p>Ein "root acount" muss nat&uuml;rlich vorhanden sein, ansonsten wird hier die Installation abgebrochen.</p> 
+		<p>Dies dient zur eigenen Sicherheit.</p>
+		<ul>
+			<li>Nur "root" hat auf Linux-Systemen Zugang zu systemspezifischen Daten und Einstellungen. Dadurch ist das System vor Missbrauch sicherer.</li>
+			<li>Die unbefugte Installation eines Programmes wird damit unterbunden.</li>
+			<li>Auf diese Art wird un&uuml;berlegtes Handeln verhindert.</li>
+		</ul>
+		<p><i>Weitere Informationen zu diesem Thema k&ouml;nnen in den entsprechenden Tutorien gefunden werden.</i></p>
+		<p class="img"><img src="./pictures/eduversum-5.png" alt="Passwort eingabe Dialog"></p>
+		<p>Das "root" Passwort eingeben und auf &lt;&nbsp;OK&nbsp;&gt; klicken.</p>
+		<p>&nbsp;</p>
+		
+		<p>Nun sollte die interne Paketdatenbank auf den aktuellsten Stand gebracht werden.</p>
+		<p>Resynchronize the package […] markieren.</p>
+		<p class="img"><img src="./pictures/eduversum-6.png" alt="apt-get update dialog"></p>
+		<p>Auf &lt;&nbsp;next&nbsp;&gt; (weiter) klicken.</p>
+		<p>&nbsp;</p>
+		
+		<p>Wenn &lt;&nbsp;show details&nbsp;&gt; (Details anzeigen) angeklickt wird, kann gesehen werden, was geschieht.</p>
+		<p>Hier die Ausgabe der Aktualisierung des internen Paket-Indexes.</p>
+		<p class="img"><img src="./pictures/eduversum-7.png" alt="aktualisierungs Dialog"></p>
+		<p>&nbsp;</p>
+		
+		<p>Nun wird angezeigt welche &Auml;nderungen vorgenommen werden.</p>
+		<p>Die angezeigten Dateien werden in diesem Falle installiert.</p>
+		<p>Farbig hervorgehobene Dateien werden aus Programm Abh&auml;ngigkeitsgr&uuml;nden zus&auml;tzlich installiert bzw. aktualisiert.</p> 
+		<p class="img"><img src="./pictures/eduversum-8.png" alt="Aenderungs Dialog"></p>
+		<p>Auf &lt;&nbsp;next&nbsp;&gt; (weiter) klicken um die Installation der entsprechenden Programme zu starten.</p>
+		<p>&nbsp;</p>
+		
+		<h2>Der Download-Dialog</h2>
+		<p class="img"><img src="./pictures/eduversum-9.png" alt="Download Dialog start des downloads"></p>
+		<p>&nbsp;</p>
+		
+		<p class="img"><img src="./pictures/eduversum-10.png" alt="Download Dialog 2"></p>
+		<p>Ist der Download abgeschlossen, auf &lt;&nbsp;next&nbsp;&gt; (weiter) klicken.</p>
+		<p>&nbsp;</p>
+		
+		<h2>Der Installationsdialog</h2>
+		<p class="img"><img src="./pictures/eduversum-11.png" alt="Installations Dialog"></p>
+		<p>Wenn die Installation beendet ist, auf &lt;&nbsp;close&nbsp;&gt; (schlie&szlig;en) klicken.</p>
+		<p><i>Wenn Sie mehr &uuml;ber den Installationsprozess unter Debian erfahren wollen, konsultiern Sie bitte die entsprechenden Howto's und/oder "man&nbsp;pages" (man&nbsp;apt, man&nbsp;apt-get,...).</i></p>		
+		<p>&nbsp;</p>
+		
+		<h2>Das installierte Programm starten</h2>
+			
+		<p>Nun w&auml;hlen Sie die entsprechende Abteilung aus, in diesem Fall "Musik" und markieren das Programm (hier NoteEdit).</p> 
+		<p class="img"><img src="./pictures/eduversum-12.png" alt="eduvversum Programm starten"></p>
+		<p>Klicken Sie &lt;&nbsp;Starten&nbsp;&gt;.</p>
+		<p>&nbsp;</p>
+		
+		<h2>N&uuml;tzliche Links</h2>
+		<ul>
+			<li><a href="http://www.seminarix.org" target="self" name="seminarix homepage" rel="Bookmark">seminarix Homepage: http://www.seminarix.org</a></li>
+			<li><a href="http://sidux.com/index.php?&amp;newlang=deu" target="self" name="sidux homepage" rel="Bookmark">sidux Homepage: http://www.sidux.com</a></li>
+			<li><a href="http://manual.sidux.com/de/welcome-de.htm" target="self" name="sidux manual" rel="Bookmark">sidux Handbuch: http://manual.sidux.com/</a></li>
+			<li><a href="http://www.sidux.com/index.php?module=pnWikka&amp;tag=Startseite" target="self" name="sidux wiki" rel="Bookmark">sidux wiki: http://www.sidux.com/module-pnWikka.html</a></li>
+		</ul>
+			<p>&nbsp;</p>
+			<p>Die Programm-&Uuml;bersichten wurden mit kSnapshot erstellt.
+      </p>
+      <p>Ein dank an Roland Engert (RoEn) und Dinko Sabo (cobra) f&uuml;r die tatkr&auml;ftige Unterst&uuml;tzung, sowie dem ganzen "edu Team".</p>
+
+      <p>&nbsp;</p>
+		<hr>
+		<p>Copyright &copy; 2009, Hendrik Lehmbruch: <a href="http://creativecommons.org/licenses/by-sa/3.0/de/" target="self" name="creativ- commons lizenz" rel="license">CC-by-SA 3.0</a></p>
+		<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401-blue" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>&nbsp;<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS ist valide!"></a></p>
+  			
+		</div>	
+	</body>
+</html>

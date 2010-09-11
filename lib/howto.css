@@ -1,0 +1,36 @@
+/* howto.css für benutzung-eduversum.html */
+
+body {
+font-family : Verdana, Helvetica, Arial, sans-serif;
+color : black;
+background-position : center;
+background:#2a5ea5;
+text-align : center;
+margin : 0 auto;
+padding : 5% 0;
+max-width : 100%;
+}
+
+div#page {
+text-align : left;
+margin : 0 auto;
+padding : 3%;
+background-color : #ffffff;
+width : 75%;
+border : 0;
+}
+
+/* link formartierung */
+a {
+text-decoration: none;
+color : blue;
+background-color : inherit;
+border : 0;
+}
+
+img {
+max-width : 100%;
+border : 0;
+}
+
+p.img {margin-left : 2%;}
