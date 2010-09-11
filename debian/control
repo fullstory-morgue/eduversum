@@ -9,7 +9,7 @@ Build-Depends: debhelper (>= 7.4.16),
  qt4-qmake,
  imagemagick
 Build-Conflicts: libqt3-dev
-Standards-Version: 3.9.0
+Standards-Version: 3.9.1
 
 Package: eduversum
 Architecture: any
