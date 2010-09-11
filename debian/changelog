@@ -2,8 +2,9 @@ eduversum (1.0.12) unstable; urgency=low
 
   * bump standards version to 3.9.0, no changes necessary.
   * prepare for compat level 8.
+  * elaborate long description, to make lintian a littler happier.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 22 Jul 2010 03:16:14 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 22 Jul 2010 03:24:26 +0200
 
 eduversum (1.0.11) unstable; urgency=low
 
