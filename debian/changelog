@@ -1,8 +1,8 @@
-eduversum (1.2.1) UNRELEASED; urgency=low
+eduversum (1.2.1) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix graphics.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 29 Aug 2010 18:21:44 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 01 Sep 2010 01:19:05 +0200
 
 eduversum (1.2.0) unstable; urgency=low
 
