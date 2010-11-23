@@ -24,11 +24,12 @@
 #include <QSystemTrayIcon>
 #include <QFrame>
 #include <QDesktopServices>
-#include <QUrl>
 
+
+
+#include "apploader.h"
 #include "eduversum.h"
 #include "easyXml.h"
-#include "settings.h"
 
 
 //------------------------------------------------------------------------------
@@ -37,16 +38,9 @@
 
 Eduversum::Eduversum (QWidget* parent, Qt::WFlags flags): QWidget (parent, flags)
 {
-    //QTime t1 = QTime::currentTime();
-
-    appdir = Settings::applicationPath();
-    alreadyDownloadedThumbmnails = QStringList();
-    pm = new PackageManager();
-    loadGui();
-    loadData();
-
-    //QTime t2 = QTime::currentTime();
-    //qDebug() << "Time to load: "+QString::number(t2.msec()-t1.msec()+1000*(t2.second()-t1.second()));
+        appdir      = "/usr/share/eduversum/";
+        loadGui();
+        loadData();
 }
 
 
@@ -54,52 +48,84 @@ void Eduversum::loadGui()
 {
 
     setupUi(this);
-    setWindowIcon( QIcon(Settings::iconPath()+"eduversum.svgz") );
+    iconloader = new IconLoader();
+    setWindowIcon( QIcon("/usr/share/icons/hicolor/scalable/apps/eduversum.svgz") );
+
+    // buttons
+    applicationsButton->setIcon( QPixmap(appdir+"/icons/apps.svg") );
+    webButton->setIcon( QPixmap( appdir+"/icons/web.svg") );
+    docsButton->setIcon( QPixmap( appdir+"/icons/docs.svg") );
+    helpButton->setIcon( QPixmap(appdir+"/icons/help.svg") );
+    execPushButton->setIcon( QPixmap( appdir+"/icons/exec.png") );
+    homepagePushButton->setIcon( QPixmap( appdir+"/icons/homepage.png") );
+    examplePushButton->setIcon( QPixmap( appdir+"/icons/example.png") );
+    showChangesPushButton->setIcon( QPixmap( appdir+"/icons/show.png") );
+    cancelChangesPushButton->setIcon( QPixmap( appdir+"/icons/cancel.png") );
+    discardChangesPushButton->setIcon( QPixmap( appdir+"/icons/discard.png") );
+    applyChangesPushButton->setIcon( QPixmap( appdir+"/icons/apply.png") );
+
+
 
     //descriptionTextBrowser->setOpenExternalLinks(TRUE); // open links in a external browser
     connect(categoriesTreeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)),this, SLOT( showCategoryApps() ) );
-    connect(treeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)),this, SLOT( showApp(QTreeWidgetItem*) ) );
+    connect(treeWidget, SIGNAL(itemClicked(QTreeWidgetItem*,int)),this, SLOT( showApp() ) );
+    connect(treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*,int)),this, SLOT( changed() ) );
     connect(treeWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),this, SLOT( execApp() ) );
     connect(searchLineEdit, SIGNAL(textChanged(const QString)), SLOT(searchApps()));
     connect(comboBox, SIGNAL(currentIndexChanged(int)),this, SLOT( showCategoryApps() ) );
     connect(execPushButton, SIGNAL(clicked()), SLOT(execApp()));
+    connect(homepagePushButton, SIGNAL(clicked()), SLOT(showHomepage()));
     connect(examplePushButton, SIGNAL(clicked()), SLOT(copyExample()));
-    connect(installRemovePushButton, SIGNAL(clicked()), SLOT(installRemove()));
-    http = new QHttp;
-    connect(http, SIGNAL(requestFinished(int, bool)), this, SLOT(httpRequestFinished(int, bool)));
+    connect(showChangesPushButton, SIGNAL(clicked()), SLOT(showChanges()));
+    connect(cancelChangesPushButton, SIGNAL(clicked()), SLOT(cancelChanges()));
+    connect(discardChangesPushButton, SIGNAL(clicked()), SLOT(discardChanges()));
+    connect(applyChangesPushButton, SIGNAL(clicked()), SLOT(applyChanges()));
+
 
     // help menu
     QMenu *helpMenu = new QMenu(this);
-    QAction *helpAction = new QAction(QIcon(":/res/help.svg"),tr("Eduversum Help"), this);
+    QAction *helpAction = new QAction(QIcon(appdir+"/icons/help.svg"),tr("Eduversum Help"), this);
     connect(helpAction, SIGNAL(triggered()), this, SLOT(showHelp()));
-    aboutAction = new QAction( QIcon(Settings::iconPath()+"eduversum.svgz"), tr("About Eduversum"), this);
+    aboutAction = new QAction( QIcon("/usr/share/icons/hicolor/scalable/apps/eduversum.svgz"), tr("About Eduversum"), this);
     connect(aboutAction, SIGNAL(triggered()), this, SLOT(showAbout()));
-    disclaimerAction = new QAction( QPixmap( ":/res/docs.svg"), tr("Disclaimer"), this);
+    disclaimerAction = new QAction( QPixmap( appdir+"/icons/docs.svg"), tr("Disclaimer"), this);
     connect(disclaimerAction, SIGNAL(triggered()), this, SLOT(showDisclaimer()));
     helpMenu->addAction(helpAction);
     helpMenu->addAction(aboutAction);
     helpMenu->addAction(disclaimerAction);
     helpButton->setMenu(helpMenu);
 
+
+
     // tray
     trayIcon = new QSystemTrayIcon(this);
-    quitAction = new QAction(QIcon(":/res/exit.svg"), tr("&Quit"), this);
+    trayIcon->setContextMenu(trayIconMenu);
+    trayIcon = new QSystemTrayIcon;
+    //stuffAction = new QAction(tr("Notebook-Education"), this);
+    //connect(stuffAction, SIGNAL(triggered()), this, SLOT(showStuff()));
+    quitAction = new QAction(QIcon(appdir+"/icons/exit.svg"), tr("&Quit"), this);
     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
     trayIconMenu = new QMenu(this);
+    //trayIconMenu->addSeparator();
+    //trayIconMenu->addAction(stuffAction);
     trayIconMenu->addAction(helpAction);
     trayIconMenu->addAction(aboutAction);
     trayIconMenu->addAction(disclaimerAction);
     trayIconMenu->addAction(quitAction);
     trayIcon->setContextMenu(trayIconMenu);
-    trayIcon->setIcon(QIcon(Settings::iconPath()+"eduversum.svgz"));
+    trayIcon->setIcon(QIcon("/usr/share/icons/hicolor/scalable/apps/eduversum.svgz"));
     trayIcon->setVisible(TRUE);
     trayIcon->show();
     connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 
+
+    setAbout();
     setHelp();
     descriptionTextBrowser->setText( "<h2>"+tr("Welcome")+"</h2>"+help );
 
+
     unsetGui();
+
 }
 
 
@@ -109,45 +135,107 @@ void Eduversum::showAppsPage()
 }
 
 
-void Eduversum::unsetGui()
-{
-    examplePushButton->hide();
+void Eduversum::unsetGui() {
+    stackedWidget->setCurrentIndex(0);
     execPushButton->hide();
-    installRemovePushButton->hide();
+    homepagePushButton->hide();
+    examplePushButton->hide();
 }
 
 
 void Eduversum::loadData()
 {
-    QString language = Settings::language();
+        QString  language = "en";
+        if( QLocale::system().name().left(2) == "de" )
+                language = "de";
 
-    // load apps and apps categories
-    apps = new AppLoader();
-    // clear categoriesTreeWidget
-    while(categoriesTreeWidget->topLevelItemCount() > 0)  {
-        categoriesTreeWidget->takeTopLevelItem(0);
+
+        // load apps
+        AppLoader *apploader = new AppLoader();
+        appTreeWidget = apploader->importApps();
+        QTreeWidget *catTreeWidget = apploader->importCategories();
+
+        // load categories
+        QTreeWidgetItemIterator it(catTreeWidget);
+        while (*it) {
+                        QTreeWidgetItem *item = new QTreeWidgetItem(categoriesTreeWidget, 0);
+                        item->setIcon( 0, QIcon( appdir+"categories/icons/"+(*it)->text(0)) );
+                        item->setText( 0, (*it)->text(1) );
+                        item->setText( 1, (*it)->text(2) );
+                        item->setText( 2, (*it)->text(3) );
+                        ++it;
+        }
+
+        // load docs
+        docsTextBrowser->setText("<h2>"+tr("Teaching Aids")+"</h2>"+tr("Here you find a collection of teaching aids. To open one, double click on the specific entry."));
+        QStringList teachings = QDir( appdir+"/teaching/"+language+"/").entryList( QDir::Files );
+        foreach(QString teaching, teachings) {
+                EasyXml *projectData = new EasyXml(appdir+"/teaching/"+language+"/"+teaching);
+                if(projectData->getValue("name").count() > 0) {
+                        QTreeWidgetItem *item = new QTreeWidgetItem(docsTreeWidget);
+                        item->setText( 0, projectData->getValue("name")[0] );
+                        QStringList tmpList = projectData->getValue("description");
+                        if( tmpList.count() > 0)
+                                item->setText( 2, tmpList[0] );
+                        QStringList titles = projectData->getValue((QStringList() << "document" << "title" ));
+                        QStringList paths  = projectData->getValue((QStringList() << "document" << "path"  ));
+                        if(titles.count() == paths.count()) {
+                                for (int i = 0; i < titles.count(); i++) {
+                                        QTreeWidgetItem *item2 = new QTreeWidgetItem(item);
+                                        item2->setText( 0, titles[i] );
+                                        item2->setText( 1, paths[i] );
+                                }
+                        }
+                }
+        }
+
+
+        // load web links
+        webTextBrowser->setText("<h2>"+tr("Weblinks")+"</h2>"+tr("Here you find a collection of links, that are relation with the topics linux and education.To visit a link, double click on the specific entry."));
+        QStringList links = QDir( appdir+"/weblinks/"+language+"/").entryList( QDir::Files );
+        foreach(QString link, links) {
+                EasyXml *projectData = new EasyXml(appdir+"/weblinks/"+language+"/"+link);
+                QStringList tmp;
+                QTreeWidgetItem *item = new QTreeWidgetItem(webTreeWidget);
+                tmp = projectData->getValue((QStringList() << "title" ));
+                if( tmp.count() > 0 )
+                        item->setText( 0, tmp[0] );
+                tmp = projectData->getValue((QStringList() << "url" ));
+                if( tmp.count() > 0 )
+                        item->setText( 1, tmp[0] );
+                tmp = projectData->getValue((QStringList() << "description" ));
+                if( tmp.count() > 0 )
+                        item->setText( 2, tmp[0] );
     }
-    categoriesTreeWidget->insertTopLevelItems(0, apps->importCategories());
-    categoriesTreeWidget->sortItems(0, Qt::AscendingOrder);
 
-    // load docs
-    docsTextBrowser->setText("<h2>"+tr("Teaching Aids")+"</h2>"+tr("Here you find a collection of teaching aids. To open one, double click on the specific entry."));
-    QStringList teachings = QDir( appdir+"/teaching/"+language+"/").entryList( QDir::Files );
-    foreach(QString teaching, teachings) {
-        QTreeWidgetItem *item = new QTreeWidgetItem(docsTreeWidget);
-        QMap<QString,QString> docsList = EasyXml::xmlToList(appdir+"/teaching/"+language+"/"+teaching);
-        item->setText( 0,docsList.value("name") );
-        item->setText( 2, docsList.value("description") );
-        QString titles = docsList.value("title");
-        QString paths  = docsList.value("path");
-    }
-
-    // load web links
-    webTextBrowser->setText("<h2>"+tr("Weblinks")+"</h2>"+tr("Here you find a collection of links, that are relation with the topics linux and education.To visit a link, double click on the specific entry."));
-    QString path = appdir+"/weblinks/"+language;
-    QStringList values = QStringList() << "title" << "url" << "description";
-    webTreeWidget->insertTopLevelItems(0, EasyXml::xmlsToList(path, values));
 }
+
+
+
+
+void Eduversum::readTree(QDomNode n, QTreeWidgetItem *item)
+{
+
+    while(!n.isNull()) {
+        QDomElement e = n.toElement(); // try to convert the node to an element.
+        if(!e.isNull()) {
+            QTreeWidgetItem *item2;
+            if (item)
+                item2 = new QTreeWidgetItem(item);
+            else
+                item2 = new QTreeWidgetItem(docsTreeWidget);
+            item2->setText( 0, e.tagName() );
+            item2->setText( 1, e.text() );
+            item2->setSelected(true);
+
+            readTree(n.firstChild(), item2);
+
+         }
+         n = n.nextSibling();
+    }
+}
+
+
 
 
 //------------------------------------------------------------------------------
@@ -156,159 +244,133 @@ void Eduversum::loadData()
 
 void Eduversum::showCategoryApps()
 {
-    treeWidget->show();
-    frame0->show();
 
-    // show category descrption
-    QString category    = categoriesTreeWidget->currentItem()->text(1);
-    QString name        = categoriesTreeWidget->currentItem()->text(0);
-    QString description = categoriesTreeWidget->currentItem()->text(2);
-    descriptionTextBrowser->clear();
-    descriptionTextBrowser->setHtml("<h3>"+name+"</h3>"+description);
+        if ( categoriesTreeWidget->selectedItems().count() < 1 )
+                return;
+        treeWidget->clear();
 
-    // add items to treeWidget
-    while(treeWidget->topLevelItemCount() > 0)  {
-        treeWidget->takeTopLevelItem(0);
-    }
-    int status = comboBox->currentIndex();
-    treeWidget->insertTopLevelItems(0, apps->list(category, status) );
+        treeWidget->show();
+        frame0->show();
+        stackedWidget->show();
 
-    unsetGui();
+        // show category descrption
+        QString category    = categoriesTreeWidget->selectedItems().first()->text(0);
+        QString description = categoriesTreeWidget->selectedItems().first()->text(2);
+        descriptionTextBrowser->clear();
+        descriptionTextBrowser->setHtml("<h3>"+category+"</h3>"+description);
+
+
+
+        QTreeWidgetItemIterator it(appTreeWidget);
+        while (*it) {
+                bool show = TRUE;
+                if( comboBox->currentIndex() == 0 ) {}       // all programms
+                else if( comboBox->currentIndex() == 1 ) {   // just installed programms
+                        QString status0 = (*it)->text(4);
+                        if( status0 == "notinstalled" or status0 == "install" )
+                                show = FALSE;
+                }
+                else if( comboBox->currentIndex() == 2 ) {   // just not installed programms
+                        QString status0 = (*it)->text(4);
+                        if( status0 == "installed" or  status0 == "remove" )
+                                show = FALSE;
+                }
+                if( ! (*it)->text(2).contains(category) )
+                        show = FALSE;
+                if( show)
+                        showAppInList(it);
+                ++it;
+        }
+
+        unsetGui();
 }
 
 
 void Eduversum::searchApps()
 {
-    // add items to treeWidget
-    while(treeWidget->topLevelItemCount() > 0)  {
-        treeWidget->takeTopLevelItem(0);
-    }
-    treeWidget->insertTopLevelItems(0, apps->search(searchLineEdit->text()) );
+        treeWidget->clear();
 
-    unsetGui();
+        QTreeWidgetItemIterator it(appTreeWidget);
+        while (*it) {
+                if( (*it)->text(1).contains( searchLineEdit->text() ) or (*it)->text(6).contains( searchLineEdit->text() ) )
+                        showAppInList(it);
+                ++it;
+        }
+
+        unsetGui();
 }
 
 
-
-void Eduversum::showApp(QTreeWidgetItem* item)
+void Eduversum::showAppInList(QTreeWidgetItemIterator it)
 {
+        QTreeWidgetItem *item = new QTreeWidgetItem(treeWidget, 0);
+        item->setText(  0, (*it)->text( 0) ); // name
+        item->setText(  1, (*it)->text( 1) ); // id
+        item->setText(  2, (*it)->text( 2) ); // category
+        item->setText(  3, (*it)->text( 3) ); // package
+        item->setText(  4, (*it)->text( 4) ); // status
+        item->setText(  5, (*it)->text( 5) ); // exec
+        item->setText(  6, (*it)->text( 6) ); // description
+        item->setText(  7, (*it)->text( 7) ); // homepage
+        item->setText(  8, (*it)->text( 8) ); // terminal
+        item->setText(  9, (*it)->text( 9) ); // icon
+        item->setText( 10, (*it)->text(10) ); // example
+        QPixmap icon = iconloader->getIcon((*it)->text( 9));
+        item->setIcon( 0, icon );
+        // show status
+        QString status = (*it)->text(4);
+        if( status == "installed" )
+                item->setCheckState(0,Qt::Checked);
+        else if( status == "notinstalled" )
+                item->setCheckState(0,Qt::Unchecked);
+        else if( status == "install" ) {
+                item->setCheckState(0,Qt::Checked);
+                for( int i = 0; i < 3; i++)
+                                item->setBackground(i, QColor(Qt::green) );
+        }
+        else if( status == "remove" ) {
+                item->setCheckState(0,Qt::Unchecked);
+                for( int i = 0; i < 3; i++)
+                                item->setBackground(i, QColor(Qt::red) );
+        }
 
-    // Show exec button
-    QString status = item->text(4);
-    QString exec = item->text(5);
-    if( status == "notinstalled" or status == "install" or exec == "none") {
-        execPushButton->hide();
-    } else {
-        execPushButton->show();
-    }
-
-    // Show install/remove button
-    installRemovePushButton->show();
-    if( status == "installed" ) {
-        installRemovePushButton->setText(tr("Remove"));
-        installRemovePushButton->setIcon( QIcon(":/res/remove.png") );
-    } else {
-        installRemovePushButton->setText(tr("Install"));
-        installRemovePushButton->setIcon( QIcon(":/res/add.png") );
-    }
-
-    // Show exmaple button
-    QString example = item->text(10);
-    if( example == "TRUE" ) {
-        examplePushButton->show();
-    } else {
-        examplePushButton->hide();
-    }
-
-    // Show description
-    QString packageName = item->text(3);
-    QString thumbnailPath = apps->thumbnailPath(packageName);
-    if( thumbnailPath.isEmpty() && !alreadyDownloadedThumbmnails.contains(packageName)) {
-        downloadThumbnail(packageName);
-    } else {
-        formatAppDescription();
-    }
-}
-
-void Eduversum::formatAppDescription()
-{
-    QTreeWidgetItem* item = treeWidget->currentItem();
-    QString description;
-    QString packageName = item->text(3);
-
-    // name
-    description += "<table cellpadding=0 cellspacing=0 style='margin:8px'><tr>";
-    description += "<td><img height=48 width=48 src='"+item->text(9)+"'></td>";
-    description += "<td valign='middle'><h2 style='margin:8px'>"+item->text(0)+"</h2></td>";
-    description += "</tr></table>";
-
-    // description
-    description += "<table cellpadding=0 cellspacing=0 style='margin:8px'><tr><td>";
-    if( item->text(6).isEmpty() ) {
-        QString desc = pm->getPackageDescription(packageName);
-        description += desc;
-        apps->setDescription(item, desc);
-    } else {
-        description += item->text(6);
-    }
-    // homepage
-    if(!item->text(7).isEmpty()) {
-        description += "<br><br><b>"+tr("Website")+":</b> <a href=\""+item->text(7)+"\">"+item->text(7)+"</a>";
-    }
-    description += "</td>";
-    // thumbnail;
-    QString thumbnailPath = apps->thumbnailPath(packageName);
-    if( !thumbnailPath.isEmpty() ) {
-       description += "<td width='170' align=right><img src='"+thumbnailPath+"'></td>";
-    }
-    description += "</tr></table>";
-    description += "</div>";
-    descriptionTextBrowser->setHtml( description );
 }
 
 
-void Eduversum::downloadThumbnail(QString packageName)
+void Eduversum::showApp()
 {
-    setDisabled(true);
 
-    alreadyDownloadedThumbmnails << packageName;
-    QUrl url("http://screenshots.debian.net/thumbnail/"+packageName);
-    QFileInfo fileInfo(url.path());
-    QString fileName = fileInfo.fileName();
-    file = new QFile(  QDir::homePath()+"/.cache/eduversum/"+packageName+".png");
+        if ( treeWidget->selectedItems().count() < 1 )
+                return;
 
-    http->setHost(url.host(), url.port() != -1 ? url.port() : 80);
-    if (!url.userName().isEmpty()) {
-        http->setUser(url.userName(), url.password());
-    }
+        // Show description
+        QString name = treeWidget->selectedItems().first()->text(0);
+        QString description =  treeWidget->selectedItems().first()->text(6);
+        descriptionTextBrowser->setText( "<h2>"+name+"</h2>"+description );
 
-    httpRequestAborted = false;
-    httpGetId = http->get(url.path(), file);
-}
+        //Show homepage buttons
+        QString homepage = treeWidget->selectedItems().first()->text(7);
+        if( homepage != "")
+                homepagePushButton->show();
+        else
+                homepagePushButton->hide();
+
+        // Show exec button
+        QString status = treeWidget->selectedItems().first()->text(4);
+        QString exec = treeWidget->selectedItems().first()->text(5);
+        if( status == "notinstalled" or status == "install" or exec == "none")
+                execPushButton->hide();
+        else
+                execPushButton->show();
+
+        // Show exmaple button
+        QString example = treeWidget->selectedItems().first()->text(10);
+        if( example == "TRUE" )
+                examplePushButton->show();
+        else
+                examplePushButton->hide();
 
 
-void Eduversum::httpRequestFinished(int requestId, bool error)
-{
-    setDisabled(false);
-
-    if (httpRequestAborted) {
-       if (file) {
-           file->close();
-           file->remove();
-           delete file;
-           file = 0;
-       }
-       return;
-    }
-    if (requestId != httpGetId) {return;}
-    file->close();
-    if (error) {
-       file->remove();
-       QMessageBox::information(this, tr("HTTP"), tr("Download failed: %1.").arg(http->errorString()));
-    }
-    delete file;
-    file = 0;
-    formatAppDescription();
 }
 
 
@@ -318,58 +380,65 @@ void Eduversum::httpRequestFinished(int requestId, bool error)
 
 void Eduversum::execApp()
 {
-    QString status = treeWidget->currentItem()->text(4);
-    QString exec = treeWidget->currentItem()->text(5);
-    if(  status == "notinstalled" or status == "install" or exec == "none" ) {return;}
+        if ( treeWidget->selectedItems().count() < 1 )
+                return;
 
-    QString terminal = treeWidget->currentItem()->text(8);
-    if( terminal == "true" or terminal == "yes") {
-        exec = "konsole --noclose -e "+exec;
-    }
+        QString status = treeWidget->selectedItems().first()->text(4);
+        QString exec = treeWidget->selectedItems().first()->text(5);
 
-    QStringList arguments = exec.split(" ");
-    QString program = arguments[0];
-    arguments.removeFirst();
+        if(  status == "notinstalled" or status == "install" or exec == "none" )
+                return;
 
-    QProcess *myProcess = new QProcess(this);
-    myProcess->start(program, arguments);
+        QString terminal = treeWidget->selectedItems().first()->text(8);
+        if( terminal == "true" or terminal == "yes")
+                exec = "konsole --noclose -e "+exec;
+
+
+        QStringList arguments = exec.split(" ");
+        QString program = arguments[0];
+        arguments.removeFirst();
+
+        QProcess *myProcess = new QProcess(this);
+        myProcess->start(program, arguments);
+
 }
 
 
 void Eduversum::showHomepage()
 {
-    QString homepage = treeWidget->currentItem()->text(7);
-    QDesktopServices::openUrl(QUrl(homepage));
+        if ( treeWidget->selectedItems().count() < 1 )
+                return;
+
+        QString homepage = treeWidget->selectedItems().first()->text(7);
+        QDesktopServices::openUrl(QUrl(homepage));
+
 }
 
 
 
 void Eduversum::copyExample()
 {
-    if(QMessageBox::question(this, "Beispieldateien", "Sollen die Beispieldateien auf dem Desktop angezeigt werden?", QMessageBox::Yes, QMessageBox::No ) == QMessageBox::Yes )
-    {
-        QString package = treeWidget->currentItem()->text(3);
-        package = package.split(" ")[0];
-        copyDir("/usr/share/seminarix-samples/"+package, QDir::homePath ()+"/Desktop/"+package );
-    }
+        if(QMessageBox::question(this, "Beispieldateien", "Sollen die Beispieldateien auf dem Desktop angezeigt werden?", QMessageBox::Yes, QMessageBox::No ) == QMessageBox::Yes )
+        {
+                QString package = treeWidget->selectedItems().first()->text(3);
+                package = package.split(" ")[0];
+                copyDir("/usr/share/seminarix-samples/"+package, QDir::homePath ()+"/Desktop/"+package );
+        }
 }
 
 
 void Eduversum::copyDir(QString sourceDir, QString destinationDir)
 {
-    if( !QFile::exists( destinationDir ) ) {
-        QDir().mkdir(destinationDir);
-    }
+        if( !QFile::exists( destinationDir ) )
+                QDir().mkdir(destinationDir);
 
-    QStringList fileList = QDir( sourceDir ).entryList( QDir::Files );
-    for ( QStringList::Iterator it = fileList.begin(); it != fileList.end(); ++it ) {
-        QFile(sourceDir+"/"+*it).copy( destinationDir+"/"+*it );
-    }
+        QStringList fileList = QDir( sourceDir ).entryList( QDir::Files );
+        for ( QStringList::Iterator it = fileList.begin(); it != fileList.end(); ++it )
+                QFile(sourceDir+"/"+*it).copy( destinationDir+"/"+*it );
 
-    QStringList dirList = QDir( sourceDir ).entryList( QDir::Dirs );
-    for( int i = 2; i < dirList.count(); i++) {
-        copyDir(sourceDir+"/"+dirList[i], destinationDir+"/"+dirList[i] );
-    }
+        QStringList dirList = QDir( sourceDir ).entryList( QDir::Dirs );
+        for( int i = 2; i < dirList.count(); i++)
+              copyDir(sourceDir+"/"+dirList[i], destinationDir+"/"+dirList[i] );
 }
 
 
@@ -385,20 +454,24 @@ void Eduversum::showDocsPage()
 
 void Eduversum::showDoc()
 {
-    QString homepage = docsTreeWidget->currentItem()->text(1);
-    if(!homepage.isEmpty()) {
-        QDesktopServices::openUrl(QUrl(homepage));
-    }
+        if ( docsTreeWidget->selectedItems().count() < 1 )
+                return;
+
+        QString homepage = docsTreeWidget->selectedItems().first()->text(1);
+        if(!homepage.isEmpty())
+            QDesktopServices::openUrl(QUrl(homepage));
+
 }
 
 
 void Eduversum::showDocDescription()
 {
-    QString title = docsTreeWidget->currentItem()->text(0);
-    QString description = docsTreeWidget->currentItem()->text(2);
-    if( !description.isEmpty() ) {
-        docsTextBrowser->setText("<h2>"+title+"</h2>"+description);
-    }
+        if ( docsTreeWidget->selectedItems().count() < 1 )
+                return;
+        QString title = docsTreeWidget->selectedItems().first()->text(0);
+        QString description = docsTreeWidget->selectedItems().first()->text(2);
+        if( !description.isEmpty() )
+            docsTextBrowser->setText("<h2>"+title+"</h2>"+description);
 }
 
 
@@ -415,16 +488,21 @@ void Eduversum::showWeblinkPage()
 
 void Eduversum::showWebDescription()
 {
-    QString title = webTreeWidget->currentItem()->text(0);
-    QString description = webTreeWidget->currentItem()->text(2);
-    webTextBrowser->setText("<h2>"+title+"</h2>"+description);
+        if ( webTreeWidget->selectedItems().count() < 1 )
+                return;
+        QString title = webTreeWidget->selectedItems().first()->text(0);
+        QString description = webTreeWidget->selectedItems().first()->text(2);
+        webTextBrowser->setText("<h2>"+title+"</h2>"+description);
 }
 
 
 void Eduversum::showWeblink()
 {
-    QDesktopServices::openUrl(webTreeWidget->currentItem()->text(1));
+        if ( webTreeWidget->selectedItems().count() < 1 )
+                return;
+        QDesktopServices::openUrl(webTreeWidget->selectedItems().first()->text(1));
 }
+
 
 
 //------------------------------------------------------------------------------
@@ -433,28 +511,27 @@ void Eduversum::showWeblink()
 
 void Eduversum::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
-    switch (reason) {
-        case QSystemTrayIcon::Trigger:
-        case QSystemTrayIcon::DoubleClick:
-            if( isHidden() ) {
-                show();
-            } else {
-                hide();
-            }
-        case QSystemTrayIcon::MiddleClick:
-        default:
-            ;
-    }
+        switch (reason) {
+                case QSystemTrayIcon::Trigger:
+                case QSystemTrayIcon::DoubleClick:
+                        if( isHidden() )
+                                show();
+                        else
+                                hide();
+                case QSystemTrayIcon::MiddleClick:
+                default:
+                        ;
+        }
 }
 
 
 void Eduversum::closeEvent(QCloseEvent *event)
 {
-    if (trayIcon->isVisible()) {
-        QMessageBox::information(this, tr("Systray"), tr("To close the program, chose 'Quit' in the menu of the systray.") );
-        hide();
-        event->ignore();
-    }
+        if (trayIcon->isVisible()) {
+                QMessageBox::information(this, tr("Systray"), tr("To close the program, chose 'Quit' in the menu of the systray.") );
+                hide();
+                event->ignore();
+        }
 }
 
 
@@ -462,13 +539,37 @@ void Eduversum::closeEvent(QCloseEvent *event)
 //-- about ---------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
+void Eduversum::setAbout()
+{
+        about += "\n"+tr("Developer")+":\n";
+        about += QString::fromUtf8("Fabian Würtz <xadras@sidux.com>\n");
+        about += "Dinko Sabo <cobra@sidux.com>\n";
+
+        about += "\n"+tr("Combination of the packages and documentation")+":\n";
+        about += "Roland Engert (RoEn)\n";
+        about += QString::fromUtf8("Björn Jilg (BlueShadow)\n");
+        about += "Thomas Kross (captagon)\n";
+        about += "Hendrik Lehmbruch (hendrikL)\n";
+        about += "Nikolas Poniros <edhunter@sidux.com>\n";
+        about += "Dinko Sabo <cobra@sidux.com>\n";
+
+        about += "\n"+tr("Contributors")+":\n";
+        about += "Stefan Lippers-Hollmann (slh)\n";
+        about += "Ferdi Thommes (devil)\n";
+        about += "Horst Tritremmel (hjt)\n";
+        about += "Wolf-Dieter Zimmermann (emile)\n";
+
+        about += "\n"+tr("License")+": GPL" ;
+}
+
+
 void Eduversum::showAbout()
 {
-    if( isHidden() ) {
-        trayIcon->showMessage ( tr("About Eduversum"), About::text() , QSystemTrayIcon::Information, 20000 );
-    } else {
-        QMessageBox::information(this, tr("About Eduversum"), About::text() );
-    }
+        if( isHidden() )
+                trayIcon->showMessage ( tr("About Eduversum"), about, QSystemTrayIcon::Information, 20000 );
+        else
+                QMessageBox::information(this, tr("About Eduversum"), about );
+
 }
 
 
@@ -478,53 +579,262 @@ void Eduversum::showAbout()
 
 void Eduversum::setHelp()
 {
-    help = tr("Eduversum is a tool with which you can easily install or uninstall educational programs (Installation: click on the empty box next to the application's name, Unistallation: click the box to remove the tick). For this purpose, the administrator password is required, because software installation or uninstallation is, as a rule, system-wide work.");
+        help = tr("Eduversum is a tool with which you can easily install or uninstall educational programs (Installation: click on the empty box next to the application's name, Unistallation: click the box to remove the tick). For this purpose, the administrator password is required, because software installation or uninstallation is, as a rule, system-wide work.");
 }
 
 
 void Eduversum::showHelp()
 {
-    QString locale = Settings::language();
-    if( locale != "de" ) {locale = "en";}
-    QDesktopServices::openUrl(QUrl("/usr/share/doc/eduversum/benutzung-eduversum-"+locale+".html"));
+        QString locale = QLocale::system().name().left(2);
+        if( locale != "de" )
+                locale = "en";
+        QDesktopServices::openUrl(QUrl("/usr/share/doc/eduversum/benutzung-eduversum-"+locale+".html"));
 }
-
 
 void Eduversum::showDisclaimer()
 {
-    QString locale = Settings::language();
-    if( locale != "de" ) {locale = "en";}
-    QDesktopServices::openUrl(QUrl(appdir+"weblinks/disclaimer-eduversum-"+locale+".html"));
+        QString locale = QLocale::system().name().left(2);
+        if( locale != "de" )
+                locale = "en";
+        QDesktopServices::openUrl(QUrl("/usr/share/eduversum/weblinks/disclaimer-eduversum-"+locale+".html"));
 }
 
 
 //------------------------------------------------------------------------------
-//-- install/remove ------------------------------------------------------------
+//-- chose filemanager ---------------------------------------------------------
 //------------------------------------------------------------------------------
 
-
-void Eduversum::installRemove()
+QString Eduversum::chooseFilenamanager()
 {
-    QStringList packages = treeWidget->currentItem()->text(3).split(" ");
-
-    setDisabled ( TRUE );
-    PackageManager *pm = new PackageManager();
-    connect(pm, SIGNAL(finished()), this, SLOT(installRemoveFinished()));
-    if(installRemovePushButton->text() == tr("Install")) {
-        pm->installPackages(packages);
-    } else {
-        pm->removePackages(packages);
-    }
+        QString fileManager;
+        if( QFile::exists("/usr/bin/dolphin") )
+                fileManager = "dolphin";
+        else if( QFile::exists("/usr/bin/konqueror") )
+                fileManager = "konqueror";
+        else if( QFile::exists("/usr/bin/nautilus") )
+                fileManager = "nautilus";
+        else if( QFile::exists("/usr/bin/thunar") )
+                fileManager = "thunar";
+        else if( QFile::exists("/usr/bin/pcmanfm") )
+                fileManager = "pcmanfm";
+        return fileManager;
 }
 
 
-void Eduversum::installRemoveFinished()
+//------------------------------------------------------------------------------
+//-- stuff ---------------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+void Eduversum::showStuff()
 {
-    setDisabled ( FALSE );
-    apps = new AppLoader();
-    QTreeWidgetItem *item = treeWidget->currentItem();
-    showCategoryApps();
-    item = apps->find(item->text(1) );
-    treeWidget->setCurrentItem(item);
-    showApp(item);
+        QString exec = chooseFilenamanager();
+        if (exec.isEmpty() ) {
+                QMessageBox::information(this, tr("Error"), tr("No file-manager was found!") );
+                return;
+        }
+
+        QStringList arguments;
+        arguments << "/usr/share/seminarix-notebook-training/";
+
+        QProcess *myProcess = new QProcess(this);
+        myProcess->start(exec, arguments);
+
 }
+
+
+//------------------------------------------------------------------------------
+//--seminarix-latex-----------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+void Eduversum::showSeminarixLatex()
+{
+        QString exec;
+        QDir dir("/usr/share/seminarix-latex");
+        if (!dir.exists())
+        {
+                QMessageBox::information(this, tr("Error"), tr("This functionality is only available after the installation of the seminarix-latex package. You can easily install this from the General category. It is recommended that you install this program only if you are installing onto a hard disk as the size of the data it installs is big.") );
+        }
+        else
+        {
+                QString exec = chooseFilenamanager();
+                if (exec.isEmpty() ) {
+                        QMessageBox::information(this, tr("Error"), tr("No file-manager was found!") );
+                        return;
+                }
+
+                QStringList arguments;
+                arguments << "/usr/share/seminarix-latex";
+
+                QProcess *myProcess = new QProcess(this);
+                myProcess->start(exec, arguments);
+        }
+}
+
+
+//------------------------------------------------------------------------------
+//--open-source-----------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+void Eduversum::showOpenSource()
+{
+        QString exec = chooseFilenamanager();
+        if (exec.isEmpty() ) {
+                QMessageBox::information(this, tr("Error"), tr("No file-manager was found!") );
+                return;
+        }
+
+        QStringList arguments;
+        arguments << "/usr/share/seminarix-notebook-training/projekte/freiesoftware";
+
+        QProcess *myProcess = new QProcess(this);
+        myProcess->start(exec, arguments);
+
+}
+
+
+//------------------------------------------------------------------------------
+//-- changed -------------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+void Eduversum::changed()
+{
+        if ( treeWidget->selectedItems().count() < 1 )
+                return;
+
+        QString name = treeWidget->selectedItems().first()->text(0);
+        QString status = treeWidget->selectedItems().first()->text(4);
+        QString newStatus;
+        QColor color;
+
+        if( treeWidget->selectedItems().first()->checkState(0) == Qt::Checked ) {
+                if( status == "notinstalled" ) {
+                        color = QColor(Qt::green);
+                        newStatus = "install";
+                }
+                else {
+                        color = QColor(Qt::white);
+                        newStatus = "installed";
+                }
+        }
+        else {
+                if( status == "installed" ) {
+                        color = QColor(Qt::red);
+                        newStatus = "remove";
+                }
+                else {
+                        color = QColor(Qt::white);
+                        newStatus = "notinstalled";
+                }
+        }
+
+
+
+        for( int i = 0; i < 3; i++)
+                treeWidget->selectedItems().first()->setBackground(i, color );
+
+        appTreeWidget->findItems(name, Qt::MatchExactly, 0 ).first()->setText(4,newStatus );
+
+}
+
+
+void Eduversum::showChanges()
+{
+        QTreeWidgetItemIterator it(appTreeWidget);
+        addRemoveApp.clear();
+
+        bool noChanges = TRUE;
+        while (*it) {
+                bool add = FALSE; QString pre;
+                if( (*it)->text(4) == "install"  ) {
+                        add = TRUE;
+                        pre = "+";
+                }
+                else if( (*it)->text(4) == "remove" ) {
+                        add = TRUE;
+                        pre = "-";
+                }
+                if( add ) {
+                        if( noChanges )
+                                treeWidget->clear();
+                        noChanges = FALSE;
+                        showAppInList(it);
+                        QStringList packages = (*it)->text(3).split(" ");
+                        for( QStringList::Iterator it = packages.begin(); it != packages.end(); ++it )
+                                addRemoveApp += " "+pre+*it;
+                }
+                ++it;
+        }
+
+        if( noChanges )
+                QMessageBox::information(this, tr("No Changes"), tr("There are no changes. To install/uninstall a program just click the box on the left of the program's name.") );
+        else {
+                descriptionTextBrowser->setText(tr("<h3>Apply Changes</h3>The programs listed above are going to be installed (green) respectively uninstalled (red)."));
+                stackedWidget->setCurrentIndex(1);
+        }
+
+}
+
+
+void Eduversum::applyChanges()
+{
+        QString program = "su-to-root";
+        QStringList arguments;
+        //arguments << "-X" << "-c" << "x-terminal-emulator -e /usr/share/eduversum/sh/applyChanges"+addRemoveApp;
+        arguments << "-X" << "-c" << "aptosid-apt-qt4"+addRemoveApp;
+
+        QProcess *myProcess = new QProcess(this);
+        myProcess->start(program, arguments);
+
+        connect(myProcess, SIGNAL(finished(int, QProcess::ExitStatus)), SLOT(applyChangesFinished()));
+        setDisabled ( TRUE );
+
+
+}
+
+
+void Eduversum::applyChangesFinished()
+{
+        setEnabled ( TRUE );
+        QTreeWidgetItemIterator it(appTreeWidget);
+        while (*it) {
+                        QString name = (*it)->text(0) ;
+                        QString package = (*it)->text(3);
+                        QString status;
+                        // status
+                        if( QFile::exists( "/usr/share/doc/"+package.split(" ")[0]+"/copyright" ) )
+                                status = "installed";
+                        else
+                                status = "notinstalled";
+                        appTreeWidget->findItems(name, Qt::MatchExactly, 0 ).first()->setText(4, status );
+
+                ++it;
+        }
+        cancelChanges();
+}
+
+
+void Eduversum::discardChanges()
+{
+        QTreeWidgetItemIterator it(appTreeWidget);
+        while (*it) {
+                if( (*it)->text(4) == "install"  ) {
+                        QString name = (*it)->text(0) ;
+                        appTreeWidget->findItems(name, Qt::MatchExactly, 0 ).first()->setText(4, "notinstalled" );
+                }
+                else if ( (*it)->text(4) == "remove" ) {
+                        QString name = (*it)->text(0) ;
+                        appTreeWidget->findItems(name, Qt::MatchExactly, 0 ).first()->setText(4, "installed" );
+                }
+                ++it;
+        }
+        cancelChanges();
+}
+
+
+void Eduversum::cancelChanges()
+{
+        treeWidget->clear();
+        descriptionTextBrowser->clear();
+        unsetGui();
+}
+

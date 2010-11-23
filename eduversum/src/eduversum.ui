@@ -65,10 +65,6 @@
         <property name="text">
          <string>Weblinks</string>
         </property>
-        <property name="icon">
-         <iconset resource="../eduversum.qrc">
-          <normaloff>:/res/web.svg</normaloff>:/res/web.svg</iconset>
-        </property>
         <property name="iconSize">
          <size>
           <width>22</width>
@@ -90,10 +86,6 @@
         </property>
         <property name="text">
          <string>Teaching Aids</string>
-        </property>
-        <property name="icon">
-         <iconset resource="../eduversum.qrc">
-          <normaloff>:/res/docs.svg</normaloff>:/res/docs.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -122,10 +114,6 @@
         </property>
         <property name="text">
          <string>Help</string>
-        </property>
-        <property name="icon">
-         <iconset resource="../eduversum.qrc">
-          <normaloff>:/res/help.svg</normaloff>:/res/help.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -339,86 +327,160 @@
                  </column>
                 </widget>
                </item>
-               <item row="3" column="0">
-                <widget class="QFrame" name="frame">
+               <item row="2" column="0">
+                <widget class="QStackedWidget" name="stackedWidget">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <layout class="QGridLayout" name="gridLayout_7">
-                  <property name="margin">
-                   <number>0</number>
-                  </property>
-                  <item row="0" column="1">
-                   <widget class="QPushButton" name="execPushButton">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string>Start</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../eduversum.qrc">
-                      <normaloff>:/res/exec.png</normaloff>:/res/exec.png</iconset>
-                    </property>
-                    <property name="checkable">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="4">
-                   <widget class="QPushButton" name="installRemovePushButton">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string>Install</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../eduversum.qrc">
-                      <normaloff>:/res/add.png</normaloff>:/res/add.png</iconset>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="2">
-                   <widget class="QPushButton" name="examplePushButton">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string>Example Files</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../eduversum.qrc">
-                      <normaloff>:/res/example.png</normaloff>:/res/example.png</iconset>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="3">
-                   <spacer name="horizontalSpacer3">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>175</width>
-                      <height>24</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                 </layout>
+                 <property name="currentIndex">
+                  <number>1</number>
+                 </property>
+                 <widget class="QWidget" name="page0">
+                  <layout class="QGridLayout" name="gridLayout_7">
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                   <item row="0" column="3">
+                    <spacer name="horizontalSpacer3">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>175</width>
+                       <height>24</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="execPushButton">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Start</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QPushButton" name="homepagePushButton">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Homepage</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2">
+                    <widget class="QPushButton" name="examplePushButton">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Example Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="4">
+                    <widget class="QPushButton" name="showChangesPushButton">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Show changes</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="page1">
+                  <layout class="QGridLayout" name="gridLayout_8">
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="cancelChangesPushButton">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Cancel</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <spacer name="horizontalSpacer4">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>50</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item row="0" column="2">
+                    <widget class="QPushButton" name="discardChangesPushButton">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Dismiss all changes</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="3">
+                    <widget class="QPushButton" name="applyChangesPushButton">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Apply changes</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
                 </widget>
                </item>
               </layout>
@@ -469,6 +531,13 @@
           <property name="styleSheet">
            <string/>
           </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Bitstream Vera Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
          </widget>
         </widget>
        </item>
@@ -514,15 +583,28 @@
     <string>Eduversum Help</string>
    </property>
   </action>
+  <action name="actionArbeitsmaterialen">
+   <property name="text">
+    <string>Notebook-Education</string>
+   </property>
+  </action>
+  <action name="actionGrundsatzartikel">
+   <property name="text">
+    <string>Articles of Principle</string>
+   </property>
+  </action>
+  <action name="actionSeminarix_latex">
+   <property name="text">
+    <string>seminarix-latex</string>
+   </property>
+  </action>
   <action name="actionDisclaimer">
    <property name="text">
     <string>Disclaimer</string>
    </property>
   </action>
  </widget>
- <resources>
-  <include location="../eduversum.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>actionEduversumHilfe</sender>
@@ -553,6 +635,54 @@
     <hint type="destinationlabel">
      <x>367</x>
      <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionArbeitsmaterialen</sender>
+   <signal>activated()</signal>
+   <receiver>Eduversum</receiver>
+   <slot>showStuff()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionGrundsatzartikel</sender>
+   <signal>activated()</signal>
+   <receiver>Eduversum</receiver>
+   <slot>showOpenSource()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSeminarix_latex</sender>
+   <signal>activated()</signal>
+   <receiver>Eduversum</receiver>
+   <slot>showSeminarixLatex()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>213</x>
+     <y>451</y>
     </hint>
    </hints>
   </connection>

@@ -1,71 +1,86 @@
 #include "easyXml.h"
-#include "settings.h"
 
 #include <QFile>
 #include <QMessageBox>
-#include <QXmlStreamReader>
-#include <QDir>
 
+EasyXml::EasyXml(QString path)
+{
 
-/*
-@name: xmlToList
-@description: This function import a xml file into a list.
-@author: Fabian Wuertz
-*/
+    outputTreeWidget = new QTreeWidget;
 
-QMap<QString,QString> EasyXml::xmlToList(QString inputString) {
-    QString language = Settings::language();
-    QMap<QString,QString> list;
-    QFile* file = new QFile(inputString);
-    if (!file->open(QIODevice::ReadOnly | QIODevice::Text)) {return list;}
-    QXmlStreamReader xml(file);
-    while(!xml.atEnd() && !xml.hasError()) {
-        /* Read next element.*/
-        QXmlStreamReader::TokenType token = xml.readNext();
-        /* If token is just StartDocument, we'll go to next.*/
-        if(token == QXmlStreamReader::StartDocument) {continue;}
-        /* If token is StartElement, we'll see if we can read it.*/
-        if(token == QXmlStreamReader::StartElement) {
-            QString name = xml.name().toString();
-            if(name == "eduversum") {
-                continue;
-            } else if( !name.isEmpty() ) {
-                QString lang = xml.attributes().value("xml:lang").toString();
-                if( lang == language ) {
-                    xml.readNext();
-                    list.insert(name, xml.text().toString() );
-                } else if ( lang.isEmpty() and !list.contains(name) ) {
-                    xml.readNext();
-                    list.insert(name, xml.text().toString() );
-                }
-            }
-        }
+    QDomDocument doc("mydocument");
+    QFile file( path );
+    if (!file.open(QIODevice::ReadOnly))
+            return;
+    if (!doc.setContent(&file)) {
+            file.close();
+            return;
     }
-    return list;
+    file.close();
+
+    QDomElement docElem = doc.documentElement();
+    readTree(docElem.firstChild());
+
 }
 
-/*
-@name: xmlsToList
-@description: This function import all xml files in a given directory into a list.
-@author: Fabian Wuertz
-*/
 
-QList<QTreeWidgetItem *> EasyXml::xmlsToList(QString path, QStringList values) {
-    // list diretory
-    path += "/";
-    QStringList xmls = QDir(path).entryList( QDir::Files );
 
-    // import a xml file into a QTreeWidget
-    QList<QTreeWidgetItem *> items;
-    foreach(QString xml, xmls) {
-        QMap<QString,QString> list = xmlToList(path+xml);
-        QTreeWidgetItem *item = new QTreeWidgetItem();
-        int i = 0;
-        foreach(QString value, values) {
-            item->setText( i, list.value(value) );
-            i++;
-        }
-        items.append(item);
+
+void EasyXml::readTree(QDomNode n, QTreeWidgetItem *item)
+{
+
+    while(!n.isNull()) {
+        QDomElement e = n.toElement(); // try to convert the node to an element.
+        if(!e.isNull()) {
+            QTreeWidgetItem *item2;
+            if (item)
+                item2 = new QTreeWidgetItem(item);
+            else
+                item2 = new QTreeWidgetItem(outputTreeWidget);
+            item2->setText( 0, e.tagName() );
+            item2->setText( 1, e.text() );
+            item2->setSelected(true);
+
+            readTree(n.firstChild(), item2);
+
+         }
+         n = n.nextSibling();
     }
-    return items;
+}
+
+
+
+
+
+QStringList EasyXml::getValue(QString value)
+{
+
+    return getValue(QStringList() << value);
+}
+
+
+QStringList EasyXml::getValue(QStringList values)
+{
+
+QStringList result;
+
+    QList<QTreeWidgetItem *> items;
+    items = outputTreeWidget->findItems(values[values.count()-1], Qt::MatchExactly | Qt::MatchRecursive, 0);
+
+    values.removeLast();
+
+    foreach(QTreeWidgetItem *item, items) {
+        QTreeWidgetItem *item2 = item;
+        QStringList parents;
+        while(item2->parent()) {
+               item2 = item2->parent();
+               parents.append(item2->text(0));
+        }
+        if( values ==  parents)
+            result.append(item->text(1));
+    }
+
+    return result;
+
+
 }

@@ -1,5 +1,6 @@
 
 TEMPLATE = subdirs
 
-SUBDIRS = eduversum
+SUBDIRS = eduversum \
+          aptosid-apt-qt4
 

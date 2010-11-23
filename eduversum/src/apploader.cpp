@@ -17,231 +17,177 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+
 #include <QFile>
 #include <QDir>
-#include <QXmlStreamReader>
-#include <QTextStream>
-#include <QDebug>
+#include <QDomDocument>
 
 
 #include "apploader.h"
-#include "easyXml.h"
-#include "settings.h"
-
 
 AppLoader::AppLoader()
 {
-        language = Settings::language();
-        appdir = Settings::applicationPath();
-        QDir::home().mkpath(".cache");
-        QDir::home().mkpath(".cache/eduversum");
-        QDir::home().mkpath(".cache/thumbnails");
-        iconloader = new IconLoader();
-        importApps();
+        language = QLocale::system().name().left(2);
+	appdir = "/usr/share/eduversum/";
 }
 
 
-QList<QTreeWidgetItem *> AppLoader::list()
+QTreeWidget* AppLoader::importApps()
 {
-        return apps;
-}
 
-QList<QTreeWidgetItem *> AppLoader::list(QString category, int status)
-{
-        QList<QTreeWidgetItem *> output;
-        QListIterator<QTreeWidgetItem*> i(apps);
-        while (i.hasNext()) {
-                QTreeWidgetItem *item = i.next();
-                // check category
-                if( !item->text(2).contains(category) ) {
-                       continue;
-                }
-                QString appStatus = item->text(4);
-                if( status == 1 and appStatus == "notinstalled") { // just installed programms
-                        continue;
-                } else if( status == 2 && appStatus == "installed") {   // just not installed programms
-                       continue;
-                }
-                output.append(item);
-        }
-        return output;
-}
-
-QList<QTreeWidgetItem *> AppLoader::search(QString searchString)
-{
-    QList<QTreeWidgetItem *> output;
-    QListIterator<QTreeWidgetItem*> i(apps);
-    while (i.hasNext()) {
-        QTreeWidgetItem *it = i.next();
-        if( it->text(1).contains( searchString ) or it->text(6).contains( searchString ) ) {
-            output.append(it);
-        }
-    }
-    return output;
-}
-
-QTreeWidgetItem* AppLoader::find(QString id)
-{
-    QListIterator<QTreeWidgetItem*> i(apps);
-    while (i.hasNext()) {
-        QTreeWidgetItem *item = i.next();
-        if( item->text(1) == id ) {
-            return item;
-        }
-    }
-    return false;
-}
-
-QString AppLoader::thumbnailPath(QString packageName) {
-    if( QFile::exists(appdir+"thumbnails/"+packageName+".png") ){
-        return appdir+"thumbnails/"+packageName+".png";
-    }
-    if( QFile::exists(QDir::homePath()+"/.cache/eduversum/thumbnails/"+packageName+".png") ) {
-        return QDir::homePath()+"/.cache/eduversum/thumbnails/"+packageName+".png";
-    }
-    return "";
-}
+	QTreeWidget *outputTreeWidget = new QTreeWidget;
+	QString applicationsDir = appdir+"apps/"+language+"/";
+	QStringList appslicationFiles = QDir( applicationsDir ).entryList( QDir::Files );
 
 
-void AppLoader::changePackageStatus(QTreeWidgetItem* package, QString status)
-{
-        int at = apps.indexOf(package);
-        apps.value(at)->setText(4, status );
-}
+	for ( QStringList::Iterator it = appslicationFiles.begin(); it != appslicationFiles.end(); ++it ) {
 
 
-void AppLoader::setDescription(QTreeWidgetItem* package, QString description)
-{
-    int at = apps.indexOf(package);
-    apps.value(at)->setText(6, description );
+		QString name;        //0
+		QString id;          //1
+		QString category;    //2
+		QString package;     //3
+		QString status;      //4
+		QString exec;        //5
+		QString description; //6
+		QString homepage;    //7
+		QString desktopPath; //6.1
+		QString terminal;    //8
+		QString icon;        //9
+		QString example;     //10
 
-    QDir::home().mkpath(".cache/eduversum/description");
-    QDir::home().mkpath(".cache/eduversum/description/"+language);
-    QString packageName = package->text(3);
-    QFile file( QDir::homePath()+"/.cache/eduversum/description/"+language+"/"+packageName+".html");
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text) ) { return;}
-    QTextStream out(&file);
-    out << description;
+		QTreeWidget *categoryValues = xmlToList( applicationsDir + *it );
+
+
+		id = QString(*it).replace(".xml", "");
+
+		name        = getXmlValue(categoryValues, "name");
+		category    = getXmlValue(categoryValues, "seminarix");
+		package     = getXmlValue(categoryValues, "package");
+		exec        = getXmlValue(categoryValues, "exec");
+		description = getXmlValue(categoryValues, "description");
+		desktopPath = getXmlValue(categoryValues, "desktopPath");
+		homepage    = getXmlValue(categoryValues, "homepage");
+		terminal    = getXmlValue(categoryValues, "terminal");
+		icon        = getXmlValue(categoryValues, "icon");
+
+		if(name == "")
+			name = id;
+		if( package == "" )
+			package = id.toLower();
+		if( exec == "")
+			exec = id.toLower();
+		if( icon == "")
+			icon = id.toLower();
+		//descripition
+		description = toHtml(description);
+		// status
+		if( QFile::exists( "/usr/share/doc/"+package.split(" ")[0]+"/copyright" ) )
+			status = "installed";
+		else
+			status = "notinstalled";
+		// hasExample
+		QString packageDir = "/usr/share/seminarix-samples/"+package.split( " " )[0];
+		if( QFile::exists(packageDir) )
+			example = "TRUE";
+		else
+			example =  "FALSE";
+
+
+		QTreeWidgetItem *item = new QTreeWidgetItem(outputTreeWidget, 0);
+		item->setText(  0, name);
+		item->setText(  1, id);
+		item->setText(  2, category);
+		item->setText(  3, package);
+		item->setText(  4, status);
+		item->setText(  5, exec);
+		item->setText(  6, description);
+		item->setText(  7, homepage);
+		item->setText(  8, terminal);
+		item->setText(  9, icon); 
+		item->setText( 10, example);
+
+	}
+
+	return outputTreeWidget;
 }
 
 
+QTreeWidget* AppLoader::importCategories() {
 
-void AppLoader::importApps()
-{
-    QString applicationsDir = appdir+"apps/xml/";
-    QStringList appslicationFiles = QDir( applicationsDir ).entryList( QDir::Files );
-    for ( QStringList::Iterator it = appslicationFiles.begin(); it != appslicationFiles.end(); ++it ) {
-        importApp(applicationsDir,*it);
-    }
+	QTreeWidget *outputTreeWidget = new QTreeWidget;
+	QString categoriesDir = appdir+"categories/"+language+"/";
+	QStringList categoriesFiles = QDir( categoriesDir ).entryList( QDir::Files );
+
+
+	for ( QStringList::Iterator it = categoriesFiles.begin(); it != categoriesFiles.end(); ++it ) {
+
+		QTreeWidget *categoryValues = xmlToList( categoriesDir + *it );
+		QTreeWidgetItem *item = new QTreeWidgetItem(outputTreeWidget, 0);
+		item->setText( 0, getXmlValue(categoryValues, "icon") );
+		item->setText( 1, getXmlValue(categoryValues, "name") );
+		QString id = QString(*it).replace(".xml", "");
+		item->setText( 2, id );
+		QString description = getXmlValue(categoryValues, "description");
+		item->setText( 3, toHtml(description) );
+	}
+
+	return outputTreeWidget;
 }
 
 
-void AppLoader::importApp(QString xmlFilePath, QString xmlFileName) {
+QTreeWidget* AppLoader::xmlToList(QString inputString) {
 
-    //  0: names
-    //  1: id
-    //  2: category
-    //  3: package
-    //  4: status
-    //  5: exec
-    //  6: description
-    //  7: homepage
-    //  6: desktopPath
-    //  8: terminal
-    //  9: icon
-    // 10: example
+	QTreeWidget *outputTreeWidget = new QTreeWidget;
 
-    QString id = QString(xmlFileName).replace(".xml", "");
-    QMap<QString,QString> appList = EasyXml::xmlToList(xmlFilePath+xmlFileName);
+	QDomDocument doc("mydocument");
+	QFile file( inputString );
+	if (!file.open(QIODevice::ReadOnly))
+		return outputTreeWidget;
+	if (!doc.setContent(&file)) {
+		file.close();
+		return outputTreeWidget;
+	}
+	file.close();
 
-    if( !appList.contains("name") )    { appList.insert("name",    id);}
-    if( !appList.contains("package") ) { appList.insert("package", id.toLower());}
-    if( !appList.contains("exec" ) )   { appList.insert("exec",    id.toLower());}
-    if( !appList.contains("icon") )    { appList.insert("icon",    id.toLower());}
+	QDomElement docElem = doc.documentElement();
+	QDomNode n = docElem.firstChild();
+	while(!n.isNull()) {
+		QDomElement e = n.toElement(); // try to convert the node to an element.
+		if(!e.isNull()) {
+			QTreeWidgetItem *item = new QTreeWidgetItem(outputTreeWidget, 0);
+			item->setText( 0, e.tagName() );
+			item->setText( 1, e.text() );
+		}
+		n = n.nextSibling();
+	}
+ 
+	return outputTreeWidget;
+}
 
-    // icon
-    appList.insert("icon", iconloader->getIconPath(appList.value("icon")) );
-    //descripition
+QString AppLoader::getXmlValue(QTreeWidget *inputTreeWidget, QString inputString) {
 
-    QStringList packages = appList.value("package").split(" ");
-
-    QString path = "apps/descriptions/"+language+"/"+packages[0]+".html";
-    QString description = getDescription(path);
-
-    // status
-    QString status;
-    if( QFile::exists( "/usr/share/doc/"+packages[0]+"/copyright" ) ) {
-        status = "installed";
-    } else {
-        status = "notinstalled";
-    }
-    // hasExample
-    QString example;
-    QString packageDir = "/usr/share/seminarix-samples/"+packages[0];
-    if( QFile::exists(packageDir) ) {
-        example = "TRUE";
-    } else {
-        example =  "FALSE";
-    }
-
-    QTreeWidgetItem *item = new QTreeWidgetItem();
-    item->setText(  0, appList.value("name"));
-    item->setText(  1, id);
-    item->setText(  2, appList.value("seminarix"));
-    item->setText(  3, appList.value("package"));
-    item->setText(  4, status);
-    item->setText(  5, appList.value("exec"));
-    item->setText(  6, description);
-    item->setText(  7, appList.value("homepage"));
-    item->setText(  8, appList.value("terminal"));
-    item->setText(  9, appList.value("icon"));
-    item->setText( 10, example);
-    QPixmap ico = iconloader->getIcon(appList.value("icon"));
-    item->setIcon( 0, ico );
-    apps.append(item);
-
+	QString outputString;
+	if( inputTreeWidget->findItems(inputString, Qt::MatchExactly, 0 ).count() > 0 )
+		outputString = inputTreeWidget->findItems(inputString, Qt::MatchExactly, 0).first()->text(1);
+	return outputString;
 }
 
 
-QString AppLoader::getDescription(QString path) {
+QString AppLoader::toHtml(QString inputString) {
 
-    if ( QFile::exists(appdir+path) ) {
-        QFile file(appdir+path);
-        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) { qDebug() << "Could not read file: " << appdir+path; };
-        return file.readLine();
-   } else if ( QFile::exists(QDir::homePath()+"/.cache/"+path) ) {
-        QFile file(QDir::homePath()+"/.cache/"+path);
-        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) { qDebug() << "Could not read file: " << QDir::homePath()+"/.cache/"+path; };
-        return file.readLine();
-   }
-   qDebug() << "Could not read file: " << appdir+path;
-   return "";
+	inputString.replace("	", "");
+	inputString.replace("\\n", "<br>");
+	inputString.replace("[ul]", "<ul>");
+	inputString.replace("[/ul]", "</ul>");
+	inputString.replace("[li]", "<li>");
+	inputString.replace("[/li]", "</li>");
+	inputString.replace("[i]", "<i>");
+	inputString.replace("[/i]", "</i>");
+	inputString.replace("[a=", "<a href=");
+	inputString.replace("\"]", "\">");
+	inputString.replace("[/a]", "</a>");
+	return inputString;
 }
 
-QList<QTreeWidgetItem *> AppLoader::importCategories() {
 
-    QString categoriesDir  = appdir+"categories/xml/";
-    QString descriptionDir = appdir+"categories/descriptions/";
-    QStringList categoriesFiles = QDir( categoriesDir ).entryList( QDir::Files );
-    if( QDir(descriptionDir+language).exists() ) {
-        descriptionDir += language+"/";
-    } else {
-        descriptionDir += "en/";
-    }
-
-    QList<QTreeWidgetItem *> items;
-    for ( QStringList::Iterator it = categoriesFiles.begin(); it != categoriesFiles.end(); ++it ) {
-        QMap<QString,QString> categoriesList = EasyXml::xmlToList(categoriesDir + *it);
-        QTreeWidgetItem *item = new QTreeWidgetItem();
-        item->setIcon( 0, QIcon( appdir+"categories/icons/"+categoriesList.value("icon")+".png" ) );
-        item->setText( 0, categoriesList.value("name") );
-        QString id = QString(*it).replace(".xml", "");
-        item->setText( 1, id );
-
-        QString path = "categories/descriptions/"+language+"/"+QString(*it).replace(".xml",".html");
-        item->setText( 2, getDescription(path) );
-        items.append(item);
-
-    }
-    return items;
-}

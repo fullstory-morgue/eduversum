@@ -7,8 +7,7 @@ Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>,
 Build-Depends: debhelper (>= 7.9.3),
  libqt4-dev,
  qt4-qmake,
- imagemagick,
- libpackagekit-qt-dev
+ imagemagick
 Build-Conflicts: libqt3-dev
 Standards-Version: 3.9.1
 
@@ -16,9 +15,17 @@ Package: eduversum
 Architecture: any
 Depends: ${shlibs:Depends},
  ${misc:Depends},
- menu
-Recommends: app-install-data
+ menu,
+ seminarix,
+Breaks: sidux-apt-qt4 (<< 1.2)
+Replaces: sidux-apt-qt4 (<< 1.2)
 Description: program starter and menu system for educational applications
  generic menu system to act dynamically on installed packages and describe
  their uses for educational purposes. Missing applications can be installed
  from within eduversum.
+
+Package: eduversum-howto
+Architecture: all
+Depends: ${misc:Depends}
+Description: eduversum manual
+ HTML manual for eduversum

@@ -22,29 +22,20 @@
 #define APPS_H
 
 #include <QTreeWidget>
-#include "iconloader.h"
+
+class AppLoader;
 
 class AppLoader
 {
-    public:
-        AppLoader();
-        QList<QTreeWidgetItem *> list();
-        QList<QTreeWidgetItem *> list(QString, int);
-        QList<QTreeWidgetItem *> search(QString);
-        QList<QTreeWidgetItem *> importCategories();
-        QTreeWidgetItem* find(QString);
-        QString thumbnailPath(QString);
-
-        void importApps();
-        void importApp(QString,QString);
-        void changePackageStatus(QTreeWidgetItem*, QString);
-        void setDescription(QTreeWidgetItem*, QString);
-
-        IconLoader *iconloader;
-        QString appdir;
-        QString language;
-        QString getDescription(QString);
-        QList<QTreeWidgetItem *> apps;
+	public:
+		AppLoader();
+		QTreeWidget* importApps();
+		QTreeWidget* importCategories();
+		QTreeWidget* xmlToList(QString);
+		QString getXmlValue(QTreeWidget*, QString);
+		QString appdir;
+		QString language;
+		QString toHtml(QString);
 
 };
 

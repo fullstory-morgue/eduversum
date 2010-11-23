@@ -3,18 +3,22 @@
 
 
 #include <QObject>
-#include <QMap>
-#include <QList>
-#include <QTreeWidgetItem>
-
+#include <QTreeWidget>
+#include <QDomDocument>
 
 class EasyXml : public QObject
 {
-    Q_OBJECT
+        Q_OBJECT
 
     public:
-        static QMap<QString,QString> xmlToList(QString);
-        static QList<QTreeWidgetItem *> xmlsToList(QString, QStringList);
+        EasyXml(QString path);
+        QStringList getValue(QString value);
+        QStringList getValue(QStringList values);
+        void readTree(QDomNode, QTreeWidgetItem *parentItem = 0);
+ private:
+
+     QTreeWidget *outputTreeWidget;
+
 };
 
 #endif
