@@ -21,61 +21,57 @@
 #include <QDir>
 #include <QDomDocument>
 
-
 #include "iconloader.h"
+#include "settings.h"
+
 
 IconLoader::IconLoader()
 {
-	iconpath = "/usr/share/icons/hicolor/";
-	iconpath2 = "/usr/share/icons/crystalsvg/";
-	appdir      = "/usr/share/eduversum/";
+    iconpath  = "/usr/share/icons/hicolor/";
+    iconpath2 = "/usr/share/icons/crystalsvg/";
+    appdir    = Settings::applicationPath();
 }
 
 
-QPixmap IconLoader::getIcon(QString iconname)
+QString IconLoader::getIconPath(QString iconname)
 {
+    if( QFile::exists(iconname) ) { return iconname;}
+    iconname = iconname.replace(".png", "").replace(".xpm", "");
+    QStringList paths;
+    paths.append(iconpath+"48x48/apps/"+iconname+".png");
+    paths.append(iconpath+"32x32/apps/"+iconname+".png");
+    paths.append(iconpath2+"32x32/apps/"+iconname+".png");
+    paths.append("/usr/share/pixmaps/"+iconname+".xpm");
+    paths.append("/usr/share/pixmaps/"+iconname+"-icon.xpm");
+    paths.append("/usr/share/pixmaps/"+iconname+".png");
+    paths.append("/usr/share/icons/"+iconname+".png");
+    paths.append("/usr/share/"+iconname+"/"+iconname+".xpm");
+    paths.append("/usr/share/"+iconname+"/pixmaps/"+iconname+".xpm");
+    paths.append("/usr/share/"+iconname+"/icons/"+iconname+".ico");
+    paths.append("/usr/share/"+iconname+"/icons/"+iconname+".xpm");
+    paths.append("/usr/share/"+iconname+"/images/icons/icon.png");
+    paths.append("/usr/share/app-install/icons/"+iconname+".png");
+    paths.append("/usr/share/app-install/icons/"+iconname+".xpm");
+    paths.append("/usr/share/app-install/icons/"+iconname+".svg");
+    foreach(QString path, paths) {
+        if( QFile::exists( path ) ) {return path;}
+    }
+    return "";
+}
 
-	QImage ico;
 
-	if( QFile::exists(iconname) )
-		ico = QImage(iconname);
-	else {
-		iconname = iconname.replace(".png", "").replace(".xpm", "");
-		if( QFile::exists(iconpath+"32x32/apps/"+iconname+".png") )
-			ico = QImage(iconpath+"32x32/apps/"+iconname+".png");
-		if( QFile::exists(iconpath2+"32x32/apps/"+iconname+".png") )
-			ico = QImage(iconpath2+"32x32/apps/"+iconname+".png");
-		else if( QFile::exists(iconpath+"48x48/apps/"+iconname+".png") )
-			ico = QImage(iconpath+"48x48/apps/"+iconname+".png");
-		else if( QFile::exists("/usr/share/pixmaps/"+iconname+".xpm") )
-			ico = QImage("/usr/share/pixmaps/"+iconname+".xpm");
-		else if( QFile::exists("/usr/share/pixmaps/"+iconname+"-icon.xpm") )
-			ico = QImage("/usr/share/pixmaps/"+iconname+"-icon.xpm");
-		else if( QFile::exists("/usr/share/pixmaps/"+iconname+".png") )
-			ico = QImage("/usr/share/pixmaps/"+iconname+".png");
-		else if( QFile::exists("/usr/share/icons/"+iconname+".png") )
-			ico = QImage("/usr/share/icons/"+iconname+".png");
-		else if( QFile::exists("/usr/share/"+iconname+"/"+iconname+".xpm") )
-			ico = QImage("/usr/share/"+iconname+"/"+iconname+".xpm");
-		else if( QFile::exists("/usr/share/"+iconname+"/pixmaps/"+iconname+".xpm") )
-			ico = QImage("/usr/share/"+iconname+"/pixmaps/"+iconname+".xpm");
-		else if( QFile::exists("/usr/share/"+iconname+"/icons/"+iconname+".ico") )
-			ico = QImage("/usr/share/"+iconname+"/icons/"+iconname+".ico");
-		else if( QFile::exists("/usr/share/"+iconname+"/icons/"+iconname+".xpm") )
-			ico = QImage("/usr/share/"+iconname+"/icons/"+iconname+".xpm");
-		else if( QFile::exists("/usr/share/"+iconname+"/images/icons/icon.png") )
-			ico = QImage("/usr/share/"+iconname+"/images/icons/icon.png");
-		else if( QFile::exists ( "/usr/share/app-install/+icons/"+iconname+".png" ) )
-			ico = QImage( "/usr/share/app-install/icons/"+iconname+".png" );
-		else if( QFile::exists( "/usr/share/app-install/icons/"+iconname+".xpm" ) )
-			ico = QImage( "/usr/share/app-install/icons/"+iconname+".xpm" );
-		else
-		{
-			ico = QImage( appdir+"icons/empty.png" );
-		}
-	}
+QPixmap IconLoader::getIcon(QString iconPath)
+{
+    QImage ico;
+    if( QFile::exists( iconPath.replace("48x48","32x32") ) ) {
+        ico = QImage(iconPath);
+    } else if( QFile::exists(iconPath) ) {
+        ico = QImage(iconPath);
+    } else {
+        ico = QImage(":/res/empty.png");
+    }
 
-	ico.scaledToHeight( 32, Qt::SmoothTransformation );
-	QPixmap icon = QPixmap::fromImage(ico);
-	return icon;
+    ico.scaledToHeight( 32, Qt::SmoothTransformation );
+    QPixmap icon = QPixmap::fromImage(ico);
+    return icon;
 }
