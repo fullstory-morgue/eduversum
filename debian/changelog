@@ -2,6 +2,7 @@ eduversum (1.2.2) ORPHANED; urgency=low
 
   * NOT RELEASED YET
   * OPRHAN PACKAGE
+  * refresh SVG graphics, shut up inkscape's migration from old versions.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 08 Sep 2010 16:09:49 +0200
 
